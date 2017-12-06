@@ -1,0 +1,256 @@
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110002\Documents\Visual Studio 2013\Projects\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Downloads\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Downloads\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Downloads\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Downloads\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Downloads\管理者\管理者\obj\Debug\WindowsApplication1.Form2.resources
+C:\Users\15110023\Desktop\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Desktop\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Desktop\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Desktop\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Form2.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\15110029\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Form2.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110023\Downloads\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110023\Desktop\編集中1116\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110023\Desktop\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\AlpacaRider\Downloads\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110002\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Downloads\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Desktop\美編集最新画面 (1)\最新画面\最新画面\管理者\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110023\Desktop\管理者\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110023\Desktop\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110022\Desktop\The_\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110022\Desktop\The_\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110022\Desktop\The_\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110022\Desktop\The_\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110029\Downloads\The_\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110029\Downloads\The_\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110029\Downloads\The_\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110029\Downloads\The_\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110029\Downloads\The_\管理者\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.MonthLowWatch.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110029\Downloads\The_\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\管理者.exe
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\管理者.pdb
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\管理者.xml
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110002\Desktop\The_c\管理者\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\DevExpress.Mvvm.dll
+C:\Users\15110002\Desktop\The_c\管理者\管理者\bin\Debug\DevExpress.Mvvm.UI.dll
+C:\Users\15110029\Downloads\分類済み\卒業\GitOnly\管理者\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Downloads\分類済み\卒業\GitOnly\管理者\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Downloads\分類済み\卒業\GitOnly\管理者\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Downloads\分類済み\卒業\GitOnly\管理者\管理者\obj\Debug\管理者.pdb
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\管理者.pdb
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\管理者.exe
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\管理者.pdb
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\管理者.xml
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\DevExpress.Mvvm.dll
+C:\Users\15110029\Source\Repos\children\管理者\bin\Debug\DevExpress.Mvvm.UI.dll
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.Week01.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.Week25.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110029\Source\Repos\children\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110029\Source\Repos\child2\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Source\Repos\child2\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Source\Repos\child2\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Source\Repos\child2\管理者\obj\Debug\管理者.pdb

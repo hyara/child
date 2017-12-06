@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+管理者
+</name>
+</assembly>
+<members>
+<member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+	<summary>
+ 画面を遷移する
+ </summary>
+	<param name="TransitionOriginal">遷移元</param>
+	<param name="TransitionTarget">遷移先</param>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+</members>
+</doc>
