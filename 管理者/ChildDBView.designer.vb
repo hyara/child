@@ -42,6 +42,7 @@ Partial Class ChildDBView
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.BunifuImageButton5 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuFlatButton4 = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -57,7 +58,6 @@ Partial Class ChildDBView
         Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Button4 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +107,7 @@ Partial Class ChildDBView
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 645.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 646.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 1, 0)
@@ -150,7 +150,7 @@ Partial Class ChildDBView
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(171, 7)
+        Me.TextBox1.Location = New System.Drawing.Point(170, 7)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(609, 39)
         Me.TextBox1.TabIndex = 2
@@ -159,7 +159,7 @@ Partial Class ChildDBView
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(171, 59)
+        Me.TextBox2.Location = New System.Drawing.Point(170, 59)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(609, 39)
         Me.TextBox2.TabIndex = 3
@@ -274,7 +274,7 @@ Partial Class ChildDBView
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 185.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 61.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 63.0!))
         Me.TableLayoutPanel2.Controls.Add(Me.CheckBox2, 3, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label6, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.CheckBox1, 1, 0)
@@ -291,7 +291,7 @@ Partial Class ChildDBView
         '
         Me.CheckBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(423, 17)
+        Me.CheckBox2.Location = New System.Drawing.Point(422, 17)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox2.TabIndex = 3
@@ -311,7 +311,7 @@ Partial Class ChildDBView
         '
         Me.CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(184, 17)
+        Me.CheckBox1.Location = New System.Drawing.Point(182, 17)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox1.TabIndex = 1
@@ -321,7 +321,7 @@ Partial Class ChildDBView
         '
         Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(234, 10)
+        Me.Label7.Location = New System.Drawing.Point(232, 10)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(145, 28)
         Me.Label7.TabIndex = 2
@@ -342,6 +342,15 @@ Partial Class ChildDBView
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(206, 708)
         Me.Panel2.TabIndex = 52
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(68, 40)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(75, 67)
+        Me.Button4.TabIndex = 42
+        Me.Button4.Text = "一時テスト用の削除するボタン"
+        Me.Button4.UseVisualStyleBackColor = True
         '
         'BunifuImageButton5
         '
@@ -661,15 +670,6 @@ Partial Class ChildDBView
         Me.ImageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
         Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        '
-        'Button4
-        '
-        Me.Button4.Location = New System.Drawing.Point(68, 40)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(75, 67)
-        Me.Button4.TabIndex = 42
-        Me.Button4.Text = "一時テスト用の削除するボタン"
-        Me.Button4.UseVisualStyleBackColor = True
         '
         'ChildDBView
         '

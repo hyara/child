@@ -85,6 +85,7 @@ Partial Class Month2Day
         Me.ChildAim4 = New System.Windows.Forms.RichTextBox()
         Me.ChildAim1 = New System.Windows.Forms.RichTextBox()
         Me.StateMonth = New System.Windows.Forms.RichTextBox()
+        Me.印刷ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,39 +108,39 @@ Partial Class Month2Day
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(93, 26)
+        Me.MenuStrip1.Size = New System.Drawing.Size(167, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ファイルFToolStripMenuItem
         '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.印刷ToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
         '上書き保存ToolStripMenuItem
         '
         Me.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem"
-        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.上書き保存ToolStripMenuItem.Text = "上書き保存(&S)"
         '
         '名前を付けて保存ToolStripMenuItem
         '
         Me.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem"
-        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(187, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 6)
         '
         '閉じるToolStripMenuItem
         '
         Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
-        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
         Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
         '
         'header
@@ -682,6 +683,12 @@ Partial Class Month2Day
         Me.StateMonth.TabIndex = 0
         Me.StateMonth.Text = ""
         '
+        '印刷ToolStripMenuItem
+        '
+        Me.印刷ToolStripMenuItem.Name = "印刷ToolStripMenuItem"
+        Me.印刷ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.印刷ToolStripMenuItem.Text = "印刷(&P)"
+        '
         'Month2Day
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -775,4 +782,5 @@ Partial Class Month2Day
     Friend WithEvents ChildAim4 As System.Windows.Forms.RichTextBox
     Friend WithEvents ChildAim1 As System.Windows.Forms.RichTextBox
     Friend WithEvents StateMonth As System.Windows.Forms.RichTextBox
+    Friend WithEvents 印刷ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

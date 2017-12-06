@@ -1,4 +1,6 @@
-﻿Public Class Month2Day
+﻿Imports Microsoft.Office.Interop.Excel
+
+Public Class Month2Day
 
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
 
@@ -205,5 +207,38 @@
 
     Private Sub BunifuVTrackbar2_ValueChanged(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub 印刷ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 印刷ToolStripMenuItem.Click
+        Dim fileName As String = "C:\test\test.xlsm"
+        Dim xlApp As New Application()
+        If xlApp IsNot Nothing Then
+            xlApp.Visible = True
+            xlApp.Workbooks.Open(fileName)
+            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+            Dim aRange As Range = xlApp.Range("C4")
+            If aRange IsNot Nothing Then
+                Console.WriteLine(aRange.Value2)
+                aRange.Value2 = StateMonth.Text
+                Console.WriteLine(aRange.Value2)
+            End If
+
+            aRange = xlApp.Range("K4")
+            If aRange IsNot Nothing Then
+                Console.WriteLine(aRange.Value2)
+                aRange.Value2 = AimNursing.Text
+                Console.WriteLine(aRange.Value2)
+            End If
+
+            aRange = xlApp.Range("K6")
+            If aRange IsNot Nothing Then
+                Console.WriteLine(aRange.Value2)
+                aRange.Value2 = AimEducation.Text
+                Console.WriteLine(aRange.Value2)
+            End If
+            xlApp.Worksheets.PrintPreview(fileName)
+            xlApp.ActiveWorkbook.Close()
+            xlApp.Quit()
+        End If
     End Sub
 End Class
