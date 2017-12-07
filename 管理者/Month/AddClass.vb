@@ -15,7 +15,7 @@
         Dim mainID, Errflg
         Errflg = 0
         mainID = 0
-        Dim sqltext = "SELECT COUNT(ClassName) FROM `test_cluss` WHERE `ClassName` LIKE '" & TextCluss.Text & "'"
+        Dim sqltext = "SELECT COUNT(ClassName) FROM `test_cluss` WHERE `ClassName` LIKE '" & TextClass.Text & "'"
         sql.DBConnect(sqltext)
         MsgBox(sqltext)
         Dim className = sql.DBResult(0, 0)
@@ -46,7 +46,7 @@
 
         End If
 
-        If Me.TextCluss.Text = "" Then
+        If Me.TextClass.Text = "" Then
             ErrerMessage1.Visible = True
             Errflg = 1
         End If
@@ -65,7 +65,7 @@
         If Errflg <> 1 Then
             Dim atai, atai2, atai3, atai4, sqlStr
 
-            atai = Me.TextCluss.Text
+            atai = Me.TextClass.Text
             atai2 = Me.Man.Text
             atai3 = Me.Girl.Text
             atai4 = Me.ComboBox1.Text
