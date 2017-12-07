@@ -263,3 +263,14 @@ C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\管理者.exe
 C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\管理者.xml
 C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\管理者.pdb
 C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\管理者.vbprojResolveAssemblyReference.cache
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.BaseForm.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.ChildDBView.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.AddClass.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.Month2Day.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.TeacherDBView.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.SelectAddDocument.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.MonthHigh.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.MonthLow.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\WindowsApplication1.AdministratorForm.resources
+C:\Users\15110029\Source\Repos\child3\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
