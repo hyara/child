@@ -192,7 +192,7 @@ Partial Class Week25
         Me.Panel2.Controls.Add(Me.ComboTeacher)
         Me.Panel2.Controls.Add(Me.DateTimePicker1)
         Me.Panel2.Controls.Add(Me.ComboClass)
-        Me.Panel2.Location = New System.Drawing.Point(-8, 12)
+        Me.Panel2.Location = New System.Drawing.Point(-16, 12)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1067, 726)
         Me.Panel2.TabIndex = 11
@@ -250,33 +250,33 @@ Partial Class Week25
         '
         Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSave, Me.ASave, Me.ToolStripMenuItem1, Me.XEnd})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
         'SSave
         '
         Me.SSave.Name = "SSave"
         Me.SSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SSave.Size = New System.Drawing.Size(218, 22)
+        Me.SSave.Size = New System.Drawing.Size(237, 22)
         Me.SSave.Text = "上書き保存(&S)"
         '
         'ASave
         '
         Me.ASave.Name = "ASave"
         Me.ASave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.ASave.Size = New System.Drawing.Size(218, 22)
+        Me.ASave.Size = New System.Drawing.Size(237, 22)
         Me.ASave.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(215, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(234, 6)
         '
         'XEnd
         '
         Me.XEnd.Name = "XEnd"
         Me.XEnd.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.XEnd.Size = New System.Drawing.Size(218, 22)
+        Me.XEnd.Size = New System.Drawing.Size(237, 22)
         Me.XEnd.Text = "終了(&X)"
         '
         'MenuStrip1
@@ -289,7 +289,7 @@ Partial Class Week25
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(1, 2)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(516, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(499, 24)
         Me.MenuStrip1.TabIndex = 50
         Me.MenuStrip1.Text = "MenuStrip1"
         '

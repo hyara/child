@@ -122,6 +122,12 @@
     <Compile Include="Month\Month2Day.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Month\Month35Age.designer.vb">
+      <DependentUpon>Month35Age.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Month\Month35Age.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MoveForm.vb" />
     <Compile Include="TeacherDBView.designer.vb">
       <DependentUpon>TeacherDBView.vb</DependentUpon>
@@ -133,12 +139,6 @@
       <DependentUpon>SelectAddDocument.vb</DependentUpon>
     </Compile>
     <Compile Include="SelectAddDocument.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Month\MonthHigh.designer.vb">
-      <DependentUpon>MonthHigh.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Month\MonthHigh.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Month\MonthLow.designer.vb">
@@ -201,14 +201,14 @@
     <EmbeddedResource Include="Month\Month2Day.resx">
       <DependentUpon>Month2Day.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Month\Month35Age.resx">
+      <DependentUpon>Month35Age.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherDBView.resx">
       <DependentUpon>TeacherDBView.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SelectAddDocument.resx">
       <DependentUpon>SelectAddDocument.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Month\MonthHigh.resx">
-      <DependentUpon>MonthHigh.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Month\MonthLow.resx">
       <DependentUpon>MonthLow.vb</DependentUpon>

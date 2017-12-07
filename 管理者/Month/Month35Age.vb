@@ -1,5 +1,4 @@
-﻿Public Class Month2Age
-
+﻿Public Class MonthHigh
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
 
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -69,7 +68,8 @@
         End If
     End Sub
 
-    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 名前を付けて保存ToolStripMenuItem.Click
+    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
+
 
         Dim sqlString As String = Input_month_main_high()
         Dim sqlConnect As New SQLConnectClass
@@ -78,15 +78,13 @@
             MsgBox(sqlConnect.ErrorMessage)
         Else
 
-            sqlConnect.DBConnect("SELECT MAX(month_main_2to2_id) FROM child_monthplan_main_2to2;")
+            sqlConnect.DBConnect("SELECT MAX(month_main_high_id) FROM child_monthplan_main_high;")
             Dim ds As DataSet = sqlConnect.DBResult()
             Dim dt As DataTable = ds.Tables.Item(0)
             Dim mainID As String = dt.Rows(0).Item(0)
-            For i = 0 To 5
+            For i = 0 To 2
                 Dim s As String = Input_month_table_high(i, mainID)
-                If sqlConnect.DBConnect(s) = False Then
-                    MsgBox(sqlConnect.ErrorMessage)
-                End If
+                sqlConnect.DBConnect(s)
             Next
         End If
         MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
@@ -97,99 +95,79 @@
         Dim sqlString As String
 
         sqlString = "INSERT INTO " _
-                        & "`child_monthplan_main_2to2`" _
-                    & "(" _
-                        & "`ClassName`,`BoysNumber`, `GirlsNumber`," _
-                        & "`CreatedDate`, `TargetYear`, `TargetMonth`," _
-                        & "`LeaderName`, `StateMonth`," _
-                        & "`AimNursing`, `AimEducation`," _
-                        & "`Event`, `Contents`, `HealthSafety`," _
-                        & "`EnvironmentalComposition`, `Eat`," _
-                        & "`EvaluationReflection`, `NextPoint`, `UpdateDate`" _
-                    & ")" _
+                    & "`child_monthplan_main_3to5`" _
+                        & "(" _
+                            & "`ClassName`, `BoysNumber`, `GirlsNumber`," _
+                            & "`CreatedDate`, `TargetYear`, `TargetMonth`," _
+                            & "`StateMonth`, `Aim`," _
+                            & "`LeaderName`, `EvaluationTeacher`, `CollaborationRegion`," _
+                            & "`Event`, `CollaborationStaff`, `CooperationHome`," _
+                            & "`SpecificChild`, `UpdateDate`" _
+                        & ")" _
                     & "VALUES (" _
-                               & "'" & ClassName.Text & "'" _
+                               & "'" & ComboBoxClassName.Text & "'" _
                         & ", " & "'" & TextBoxBoysNumber.Text & "'" _
                         & ", " & "'" & TextBoxGirlsNumber.Text & "'" _
                         & ", NOW()" _
-                        & ", " & "'" & TargetYear.Text & "'" _
-                        & ", " & "'" & TargetMonth.Text & "'" _
-                        & ", " & "'" & LeaderName.Text & "'" _
-                        & ", " & "'" & StateMonth.Text & "'" _
-                        & ", " & "'" & AimNursing.Text & "'" _
-                        & ", " & "'" & AimEducation.Text & "'" _
-                        & ", " & "'" & RichTextBox_Event.Text & "'" _
-                        & ", " & "'" & Contents.Text & "'" _
-                        & ", " & "'" & HealthSafety.Text & "'" _
-                        & ", " & "'" & EnvironmentalComposition.Text & "'" _
-                        & ", " & "'" & Eat.Text & "'" _
-                        & ", " & "'" & EvaluationReflection.Text & "'" _
-                        & ", " & "'" & NextPoint.Text & "'" _
+                        & ", " & "'" & ComboBoxTargetYear.Text & "'" _
+                        & ", " & "'" & ComboBoxTargetMonth.Text & "'" _
+                        & ", " & "'" & RichTextBoxStateMonth.Text & "'" _
+                        & ", " & "'" & RichTextBoxAim.Text & "'" _
+                        & ", " & "'" & ComboBoxLeaderName.Text & "'" _
+                        & ", " & "'" & RichTextBoxEvaluationTeacher.Text & "'" _
+                        & ", " & "'" & RichTextBoxCollaborationRegion.Text & "'" _
+                        & ", " & "'" & RichTextBoxEvent.Text & "'" _
+                        & ", " & "'" & RichTextBoxCollaborationStaff.Text & "'" _
+                        & ", " & "'" & RichTextBoxCooperationHome.Text & "'" _
+                        & ", " & "'" & RichTextBoxSpecificChild.Text & "'" _
                         & ", NOW()" _
                     & ");"
         Return sqlString
     End Function
 
     Private Function Input_month_table_high(i As Integer, main_id As String) As String
-        '確実に六回のみ呼び出してください
+        '確実に三回のみ呼び出してください
         Dim sqlString As String
-        Dim ChildName = New ComboBox() {
-                ChildName1,
-                ChildName2,
-                ChildName3,
-                ChildName4,
-                ChildName5,
-                ChildName6
+        Dim type = New String() {
+            "Nursing", "Education", "Food"
             }
-        Dim ChildAge = New NumericUpDown() {
-                ChildAge1,
-                ChildAge2,
-                ChildAge3,
-                ChildAge4,
-                ChildAge5,
-                ChildAge6
+        Dim Contents = New RichTextBox() {
+                RichTextBoxNursingContents,
+                RichTextBoxEducationContents,
+                RichTextBoxFoodContents
             }
-        Dim ChildAim = New RichTextBox() {
-                ChildAim1,
-                ChildAim2,
-                ChildAim3,
-                ChildAim4,
-                ChildAim5,
-                ChildAim6
+        Dim EnvironmentalComposition = New RichTextBox() {
+                RichTextBoxNursingConstitution,
+                RichTextBoxEducationConstitution,
+                RichTextBoxFoodConstitution
             }
-        Dim NurseryTeachers = New RichTextBox() {
-                NurseryTeachers1,
-                NurseryTeachers2,
-                NurseryTeachers3,
-                NurseryTeachers4,
-                NurseryTeachers5,
-                NurseryTeachers6
+        Dim ExpectedChild = New RichTextBox() {
+                RichTextBoxNursingExpectedChild,
+                RichTextBoxEducationExpectedChild,
+                RichTextBoxFoodExpectedChild
             }
-        Dim Contact = New RichTextBox() {
-                Contact1,
-                Contact2,
-                Contact3,
-                Contact4,
-                Contact5,
-                Contact6
+        Dim ChildcareAssistance = New RichTextBox() {
+                RichTextBoxNursingAssistance,
+                RichTextBoxEducationAssistance,
+                RichTextBoxFoodAssistance
             }
         sqlString = "INSERT INTO " _
-                        & "`child_monthplan_table_2to2`" _
+                    & "`child_monthplan_table_3to5`" _
                     & "(" _
-                        & "`month_main_2to2_id`, " _
-                        & "`ChildName`, " _
-                        & "`ChildAge`, " _
-                        & "`ChildAim`, " _
-                        & "`NurseryTeachers`, " _
-                        & "`Contact`" _
+                        & "`month_main_3to5_id`," _
+                        & "`type`," _
+                        & "`Contents`," _
+                        & "`EnvironmentalComposition`," _
+                        & "`ExpectedChild`," _
+                        & "`ChildcareAssistance`" _
                     & ")" _
                     & " VALUES(" _
                         & " " & main_id & "," _
-                        & "'" & ChildName(i).Text & "'," _
-                        & "'" & ChildAge(i).Text & "'," _
-                        & "'" & ChildAim(i).Text & "'," _
-                        & "'" & NurseryTeachers(i).Text & "'," _
-                        & "'" & Contact(i).Text & "'" _
+                        & "'" & type(i) & "'," _
+                        & "'" & Contents(i).Text & "'," _
+                        & "'" & EnvironmentalComposition(i).Text & "'," _
+                        & "'" & ExpectedChild(i).Text & "'," _
+                        & "'" & ChildcareAssistance(i).Text & "'" _
                     & ");"
 
         Return sqlString
@@ -203,11 +181,10 @@
         End If
     End Sub
 
-    Private Sub BunifuVTrackbar2_ValueChanged(sender As Object, e As EventArgs)
-
+    Private Sub Xend_Click(sender As Object, e As EventArgs)
+        Owner.Enabled = True
+        Me.Dispose()
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
-        Me.Close()
-    End Sub
+ 
 End Class

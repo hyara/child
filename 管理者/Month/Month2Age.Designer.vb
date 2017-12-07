@@ -35,6 +35,12 @@ Partial Class Month2Age
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.MonthLabel6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.MonthLabel = New System.Windows.Forms.Label()
         Me.RichTextBox_Event = New System.Windows.Forms.RichTextBox()
         Me.ChildAge3 = New System.Windows.Forms.NumericUpDown()
         Me.ChildAge4 = New System.Windows.Forms.NumericUpDown()
@@ -216,6 +222,12 @@ Partial Class Month2Age
         'Panel2
         '
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.Controls.Add(Me.MonthLabel6)
+        Me.Panel2.Controls.Add(Me.Label7)
+        Me.Panel2.Controls.Add(Me.Label6)
+        Me.Panel2.Controls.Add(Me.Label5)
+        Me.Panel2.Controls.Add(Me.Label2)
+        Me.Panel2.Controls.Add(Me.MonthLabel)
         Me.Panel2.Controls.Add(Me.RichTextBox_Event)
         Me.Panel2.Controls.Add(Me.ChildAge3)
         Me.Panel2.Controls.Add(Me.ChildAge4)
@@ -270,6 +282,60 @@ Partial Class Month2Age
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(754, 790)
         Me.Panel2.TabIndex = 1
+        '
+        'MonthLabel6
+        '
+        Me.MonthLabel6.AutoSize = True
+        Me.MonthLabel6.Location = New System.Drawing.Point(198, 528)
+        Me.MonthLabel6.Name = "MonthLabel6"
+        Me.MonthLabel6.Size = New System.Drawing.Size(24, 12)
+        Me.MonthLabel6.TabIndex = 108
+        Me.MonthLabel6.Text = "ヵ月"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(198, 466)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(24, 12)
+        Me.Label7.TabIndex = 107
+        Me.Label7.Text = "ヵ月"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(198, 404)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(24, 12)
+        Me.Label6.TabIndex = 106
+        Me.Label6.Text = "ヵ月"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(198, 343)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(24, 12)
+        Me.Label5.TabIndex = 105
+        Me.Label5.Text = "ヵ月"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(198, 280)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(24, 12)
+        Me.Label2.TabIndex = 104
+        Me.Label2.Text = "ヵ月"
+        '
+        'MonthLabel
+        '
+        Me.MonthLabel.AutoSize = True
+        Me.MonthLabel.Location = New System.Drawing.Point(198, 219)
+        Me.MonthLabel.Name = "MonthLabel"
+        Me.MonthLabel.Size = New System.Drawing.Size(24, 12)
+        Me.MonthLabel.TabIndex = 103
+        Me.MonthLabel.Text = "ヵ月"
         '
         'RichTextBox_Event
         '
@@ -682,7 +748,7 @@ Partial Class Month2Age
         Me.StateMonth.TabIndex = 0
         Me.StateMonth.Text = ""
         '
-        'Month2Day
+        'Month2Age
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -692,7 +758,7 @@ Partial Class Month2Age
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Month2Day"
+        Me.Name = "Month2Age"
         Me.Text = "Month2Day"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -775,4 +841,10 @@ Partial Class Month2Age
     Friend WithEvents ChildAim4 As System.Windows.Forms.RichTextBox
     Friend WithEvents ChildAim1 As System.Windows.Forms.RichTextBox
     Friend WithEvents StateMonth As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents MonthLabel As System.Windows.Forms.Label
+    Friend WithEvents MonthLabel6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

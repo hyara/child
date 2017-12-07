@@ -112,7 +112,7 @@ Partial Class Week01
         Me.Panel1.Controls.Add(Me.ComboTeacher)
         Me.Panel1.Controls.Add(Me.DateTimePicker1)
         Me.Panel1.Controls.Add(Me.ComboClass)
-        Me.Panel1.Location = New System.Drawing.Point(-6, 27)
+        Me.Panel1.Location = New System.Drawing.Point(-14, 27)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1021, 854)
         Me.Panel1.TabIndex = 0
@@ -480,7 +480,7 @@ Partial Class Week01
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(1023, 788)
+        Me.ClientSize = New System.Drawing.Size(1023, 750)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
