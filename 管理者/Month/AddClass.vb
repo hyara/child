@@ -1,4 +1,4 @@
-﻿Public Class AddCluss
+﻿Public Class AddClass
     Dim sql As New SQLConnectClass
 
     Private Sub AddCluss_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -51,7 +51,7 @@
             Errflg = 1
         End If
 
-       
+
         If Me.ComboBox1.Text = "" Then
             ErrerMessage3.Visible = True
             Errflg = 1

@@ -98,10 +98,10 @@
     <Compile Include="ChildDBView.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Month\AddCluss.designer.vb">
-      <DependentUpon>AddCluss.vb</DependentUpon>
+    <Compile Include="Month\AddClass.designer.vb">
+      <DependentUpon>AddClass.vb</DependentUpon>
     </Compile>
-    <Compile Include="Month\AddCluss.vb">
+    <Compile Include="Month\AddClass.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Month\Month2Day.Designer.vb">
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="ChildDBView.resx">
       <DependentUpon>ChildDBView.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Month\AddCluss.resx">
-      <DependentUpon>AddCluss.vb</DependentUpon>
+    <EmbeddedResource Include="Month\AddClass.resx">
+      <DependentUpon>AddClass.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month2Day.resx">
       <DependentUpon>Month2Day.vb</DependentUpon>
