@@ -104,6 +104,18 @@
     <Compile Include="Month\AddClass.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Month\Month1Age.designer.vb">
+      <DependentUpon>Month1Age.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Month\Month1Age.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Month\Month2Age.designer.vb">
+      <DependentUpon>Month2Age.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Month\Month2Age.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Month\Month2Day.Designer.vb">
       <DependentUpon>Month2Day.vb</DependentUpon>
     </Compile>
@@ -157,6 +169,18 @@
     <Compile Include="AdministratorForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Week\Week01.designer.vb">
+      <DependentUpon>Week01.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Week\Week01.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Week\Week25.designer.vb">
+      <DependentUpon>Week25.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Week\Week25.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BaseForm.resx">
@@ -167,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Month\AddClass.resx">
       <DependentUpon>AddClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month\Month1Age.resx">
+      <DependentUpon>Month1Age.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month\Month2Age.resx">
+      <DependentUpon>Month2Age.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month2Day.resx">
       <DependentUpon>Month2Day.vb</DependentUpon>
@@ -192,6 +222,12 @@
     <EmbeddedResource Include="AdministratorForm.resx">
       <DependentUpon>AdministratorForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Week\Week01.resx">
+      <DependentUpon>Week01.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Week\Week25.resx">
+      <DependentUpon>Week25.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -209,9 +245,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Week\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

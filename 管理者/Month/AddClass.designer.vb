@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class AddCluss
+Partial Class AddClass
     Inherits System.Windows.Forms.Form
 
     'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
@@ -186,7 +186,7 @@ Partial Class AddCluss
         Me.ErrerMessage4.Text = "そのクラス名は存在します"
         Me.ErrerMessage4.Visible = False
         '
-        'AddCluss
+        'AddClass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -207,8 +207,8 @@ Partial Class AddCluss
         Me.Controls.Add(Me.Man)
         Me.Controls.Add(Me.TextCluss)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "AddCluss"
-        Me.Text = "AddCluss"
+        Me.Name = "AddClass"
+        Me.Text = "AddClass"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

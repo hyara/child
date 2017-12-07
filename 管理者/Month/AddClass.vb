@@ -2,8 +2,8 @@
     Dim sql As New SQLConnectClass
 
     Private Sub AddCluss_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Sql.DBConnect("SELECT COUNT(userName) FROM test_id")
-        Dim count As String = Sql.DBResult(0, 0)
+        sql.DBConnect("SELECT COUNT(userName) FROM test_id")
+        Dim count As String = sql.DBResult(0, 0)
         Dim i As Integer
         For i = 0 To Integer.Parse(count) - 1 Step 1
             Sql.DBConnect("SELECT userName FROM test_id")
@@ -15,7 +15,7 @@
         Dim mainID, Errflg
         Errflg = 0
         mainID = 0
-        Dim sqltext = "SELECT COUNT(ClassName) FROM `test_cluss` WHERE `ClassName` LIKE '" & TextClass.Text & "'"
+        Dim sqltext = "SELECT COUNT(ClassName) FROM `test_cluss` WHERE `ClassName` LIKE '" & TextCluss.Text & "'"
         sql.DBConnect(sqltext)
         MsgBox(sqltext)
         Dim className = sql.DBResult(0, 0)
@@ -46,7 +46,7 @@
 
         End If
 
-        If Me.TextClass.Text = "" Then
+        If Me.TextCluss.Text = "" Then
             ErrerMessage1.Visible = True
             Errflg = 1
         End If
@@ -65,7 +65,7 @@
         If Errflg <> 1 Then
             Dim atai, atai2, atai3, atai4, sqlStr
 
-            atai = Me.TextClass.Text
+            atai = Me.TextCluss.Text
             atai2 = Me.Man.Text
             atai3 = Me.Girl.Text
             atai4 = Me.ComboBox1.Text
