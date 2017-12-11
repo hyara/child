@@ -241,4 +241,8 @@ Public Class Month2Day
             xlApp.Quit()
         End If
     End Sub
+
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+
+    End Sub
 End Class

@@ -121,7 +121,7 @@
   <data name="Panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB2kAAAaZCAYAAABm+zSaAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAA/7JJREFUeF7s3cu140p2buHbV+tYcPpqZut4kCYcC9IDeZAtOSAHZEAZoI5cKBvK
+        vAAADrwBlbxySQAA/7JJREFUeF7s3cu140p2buHbV+tYcPpqZut4kCYcC9IDeZAtOSAHZEAZoI5cKBvK
         g3Sg7pjJ/KtWhQLvAEiQ8xtjDXKTQOAVQARjEdz/7++SJEmSJEmSJEmSpMuYpJUkSZIkSZIkSZKkC5mk
         lSRJkiRJkiRJkqQLmaSVJEmSJEmSJEmSpAuZpJUkSZIkSZIkSZKkC5mklSRJkiRJkiRJkqQLmaSVJEmS
         JEmSJEmSpAuZpJUkSZIkSZIkSZKkC5mklSRJkiRJkiRJkqQLmaSVJEmSJEmSJEmSpAuZpJUkSZIkSZIk
@@ -2471,6 +2471,9 @@
         55FHHlFAQcEfb9KY8X1x0bcAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="BunifuDragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>137, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>26</value>
   </metadata>

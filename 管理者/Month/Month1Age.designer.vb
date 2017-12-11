@@ -22,6 +22,7 @@ Partial Class Month1Age
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Month1Age))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
@@ -95,6 +96,7 @@ Partial Class Month1Age
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -800,6 +802,13 @@ Partial Class Month1Age
         Me.BunifuImageButton1.TabStop = False
         Me.BunifuImageButton1.Zoom = 10
         '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.header
+        Me.BunifuDragControl1.Vertical = True
+        '
         'Month1Age
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -909,5 +918,6 @@ Partial Class Month1Age
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 
 End Class

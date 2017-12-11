@@ -22,6 +22,7 @@ Partial Class MonthHigh
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MonthHigh))
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
@@ -61,14 +62,15 @@ Partial Class MonthHigh
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBoxBoysNumber = New System.Windows.Forms.TextBox()
-        Me.TextBoxGirlsNumber = New System.Windows.Forms.TextBox()
         Me.LabelSum = New System.Windows.Forms.Label()
+        Me.TextBoxGirlsNumber = New System.Windows.Forms.TextBox()
+        Me.TextBoxBoysNumber = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -420,26 +422,16 @@ Partial Class MonthHigh
         Me.Panel2.Size = New System.Drawing.Size(180, 23)
         Me.Panel2.TabIndex = 77
         '
-        'Label1
+        'LabelSum
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(7, 7)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(166, 13)
-        Me.Label1.TabIndex = 17
-        Me.Label1.Text = "    　人(男：　　人 , 女：　　人)"
-        '
-        'TextBoxBoysNumber
-        '
-        Me.TextBoxBoysNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!)
-        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(65, 2)
-        Me.TextBoxBoysNumber.MaxLength = 3
-        Me.TextBoxBoysNumber.Name = "TextBoxBoysNumber"
-        Me.TextBoxBoysNumber.Size = New System.Drawing.Size(22, 19)
-        Me.TextBoxBoysNumber.TabIndex = 15
-        Me.TextBoxBoysNumber.Text = "0"
-        Me.TextBoxBoysNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.LabelSum.AutoSize = True
+        Me.LabelSum.BackColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LabelSum.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.LabelSum.Location = New System.Drawing.Point(7, 4)
+        Me.LabelSum.Name = "LabelSum"
+        Me.LabelSum.Size = New System.Drawing.Size(0, 16)
+        Me.LabelSum.TabIndex = 18
+        Me.LabelSum.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'TextBoxGirlsNumber
         '
@@ -452,16 +444,26 @@ Partial Class MonthHigh
         Me.TextBoxGirlsNumber.Text = "0"
         Me.TextBoxGirlsNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'LabelSum
+        'TextBoxBoysNumber
         '
-        Me.LabelSum.AutoSize = True
-        Me.LabelSum.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.LabelSum.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.LabelSum.Location = New System.Drawing.Point(7, 4)
-        Me.LabelSum.Name = "LabelSum"
-        Me.LabelSum.Size = New System.Drawing.Size(0, 16)
-        Me.LabelSum.TabIndex = 18
-        Me.LabelSum.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBoxBoysNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!)
+        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(65, 2)
+        Me.TextBoxBoysNumber.MaxLength = 3
+        Me.TextBoxBoysNumber.Name = "TextBoxBoysNumber"
+        Me.TextBoxBoysNumber.Size = New System.Drawing.Size(22, 19)
+        Me.TextBoxBoysNumber.TabIndex = 15
+        Me.TextBoxBoysNumber.Text = "0"
+        Me.TextBoxBoysNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label1.Location = New System.Drawing.Point(7, 7)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(166, 13)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "    　人(男：　　人 , 女：　　人)"
         '
         'PictureBox1
         '
@@ -533,6 +535,13 @@ Partial Class MonthHigh
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(829, 643)
         Me.Panel1.TabIndex = 0
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.header
+        Me.BunifuDragControl1.Vertical = True
         '
         'MonthHigh
         '
@@ -608,4 +617,5 @@ Partial Class MonthHigh
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 End Class

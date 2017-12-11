@@ -23,6 +23,7 @@ Partial Class AdministratorForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdministratorForm))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -53,13 +54,13 @@ Partial Class AdministratorForm
         Me.BunifuThinButton22 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton23 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton24 = New Bunifu.Framework.UI.BunifuThinButton2()
-        Me.BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.BunifuCustomDataGrid1 = New Bunifu.Framework.UI.BunifuCustomDataGrid()
         Me.タイトル = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.作成者 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.更新日時 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.再提出 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,6 +73,32 @@ Partial Class AdministratorForm
         Me.Panel1.SuspendLayout()
         CType(Me.BunifuCustomDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'BunifuThinButton21
+        '
+        BunifuThinButton21.ActiveBorderThickness = 1
+        BunifuThinButton21.ActiveCornerRadius = 20
+        BunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen
+        BunifuThinButton21.ActiveForecolor = System.Drawing.Color.Transparent
+        BunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen
+        BunifuThinButton21.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange
+        BunifuThinButton21.BackColor = System.Drawing.Color.Transparent
+        BunifuThinButton21.BackgroundImage = CType(resources.GetObject("BunifuThinButton21.BackgroundImage"), System.Drawing.Image)
+        BunifuThinButton21.ButtonText = "全て"
+        BunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand
+        BunifuThinButton21.Font = New System.Drawing.Font("美咲ゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        BunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen
+        BunifuThinButton21.IdleBorderThickness = 1
+        BunifuThinButton21.IdleCornerRadius = 20
+        BunifuThinButton21.IdleFillColor = System.Drawing.Color.White
+        BunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen
+        BunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen
+        BunifuThinButton21.Location = New System.Drawing.Point(9, 15)
+        BunifuThinButton21.Margin = New System.Windows.Forms.Padding(5)
+        BunifuThinButton21.Name = "BunifuThinButton21"
+        BunifuThinButton21.Size = New System.Drawing.Size(180, 70)
+        BunifuThinButton21.TabIndex = 0
+        BunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button2
         '
@@ -426,11 +453,11 @@ Partial Class AdministratorForm
         '
         Me.BunifuCustomLabel1.AutoSize = True
         Me.BunifuCustomLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("HGP創英ﾌﾟﾚｾﾞﾝｽEB", 13.0!)
+        Me.BunifuCustomLabel1.Font = New System.Drawing.Font("HGP創英ﾌﾟﾚｾﾞﾝｽEB", 13.0!, System.Drawing.FontStyle.Strikeout, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BunifuCustomLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BunifuCustomLabel1.Location = New System.Drawing.Point(35, 8)
         Me.BunifuCustomLabel1.Name = "BunifuCustomLabel1"
-        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(116, 18)
+        Me.BunifuCustomLabel1.Size = New System.Drawing.Size(112, 21)
         Me.BunifuCustomLabel1.TabIndex = 8
         Me.BunifuCustomLabel1.Text = "表示書類選択"
         '
@@ -484,7 +511,7 @@ Partial Class AdministratorForm
         Me.Panel1.Controls.Add(Me.BunifuThinButton22)
         Me.Panel1.Controls.Add(Me.BunifuThinButton23)
         Me.Panel1.Controls.Add(Me.BunifuThinButton24)
-        Me.Panel1.Controls.Add(Me.BunifuThinButton21)
+        Me.Panel1.Controls.Add(BunifuThinButton21)
         Me.Panel1.Location = New System.Drawing.Point(-1, 16)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
@@ -565,31 +592,6 @@ Partial Class AdministratorForm
         Me.BunifuThinButton24.Size = New System.Drawing.Size(180, 50)
         Me.BunifuThinButton24.TabIndex = 3
         Me.BunifuThinButton24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'BunifuThinButton21
-        '
-        Me.BunifuThinButton21.ActiveBorderThickness = 1
-        Me.BunifuThinButton21.ActiveCornerRadius = 20
-        Me.BunifuThinButton21.ActiveFillColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.ActiveForecolor = System.Drawing.Color.Transparent
-        Me.BunifuThinButton21.ActiveLineColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuThinButton21.BackgroundImage = CType(resources.GetObject("BunifuThinButton21.BackgroundImage"), System.Drawing.Image)
-        Me.BunifuThinButton21.ButtonText = "全て"
-        Me.BunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuThinButton21.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.IdleBorderThickness = 1
-        Me.BunifuThinButton21.IdleCornerRadius = 20
-        Me.BunifuThinButton21.IdleFillColor = System.Drawing.Color.White
-        Me.BunifuThinButton21.IdleForecolor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.IdleLineColor = System.Drawing.Color.SeaGreen
-        Me.BunifuThinButton21.Location = New System.Drawing.Point(9, 15)
-        Me.BunifuThinButton21.Margin = New System.Windows.Forms.Padding(5)
-        Me.BunifuThinButton21.Name = "BunifuThinButton21"
-        Me.BunifuThinButton21.Size = New System.Drawing.Size(180, 70)
-        Me.BunifuThinButton21.TabIndex = 0
-        Me.BunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'ImageList1
         '
@@ -694,7 +696,6 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuThinButton24 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton23 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents BunifuThinButton22 As Bunifu.Framework.UI.BunifuThinButton2
-    Friend WithEvents BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents BunifuCustomLabel1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents PictureBox4 As PictureBox

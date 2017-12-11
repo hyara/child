@@ -22,6 +22,7 @@ Partial Class Month2Age
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Month2Age))
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -91,6 +92,7 @@ Partial Class Month2Age
         Me.ChildAim4 = New System.Windows.Forms.RichTextBox()
         Me.ChildAim1 = New System.Windows.Forms.RichTextBox()
         Me.StateMonth = New System.Windows.Forms.RichTextBox()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -748,6 +750,13 @@ Partial Class Month2Age
         Me.StateMonth.TabIndex = 0
         Me.StateMonth.Text = ""
         '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.header
+        Me.BunifuDragControl1.Vertical = True
+        '
         'Month2Age
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -847,4 +856,5 @@ Partial Class Month2Age
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 End Class
