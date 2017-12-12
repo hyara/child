@@ -1,7 +1,5 @@
 ﻿Public Class Month1Age
-
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
-    Dim ht_eventbox As Hashtable = New Hashtable()
 
     Private Sub MonthLow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddEventHandler()
@@ -72,16 +70,14 @@
     End Sub
 
 
-    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 名前を付けて保存ToolStripMenuItem.Click
-
+    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
         Dim sqlString As String = Input_month_main_low()
         Dim sqlConnect As New SQLConnectClass
 
         If sqlConnect.DBConnect(sqlString) = False Then
             MsgBox(sqlConnect.ErrorMessage)
         Else
-            hashTableAdd()
-            sqlConnect.DBConnect("SELECT MAX(month_main_0to1_id) FROM child_monthplan_main_low;")
+            sqlConnect.DBConnect("SELECT MAX(month_main_low_id) FROM child_monthplan_main_low;")
             Dim ds As DataSet = sqlConnect.DBResult()
             Dim dt As DataTable = ds.Tables.Item(0)
             Dim mainID As String = dt.Rows(0).Item(0)
@@ -91,23 +87,6 @@
             Next
         End If
         MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
-    End Sub
-
-    Private Sub hashTableAdd()
-        ht_eventbox.Add("ClassName", ComboBox_ClassName.Text)
-        ht_eventbox.Add("BoysNumber", TextBoxBoysNumber.Text)
-        ht_eventbox.Add("GirlsNumber", TextBoxGirlsNumber.Text)
-        ht_eventbox.Add("TargetYear", ComboBoxTargetYear.Text)
-        ht_eventbox.Add("TargetMonth", ComboBoxTargetMonth.Text)
-        ht_eventbox.Add("LeaderName", ComboBoxLeaderName.Text)
-        ht_eventbox.Add("StateMonth", RichTextBoxStateMonth.Text)
-        ht_eventbox.Add("AimNursing", RichTextBoxAimNursing.Text)
-        ht_eventbox.Add("AimEducation", RichTextBoxAimEducation.Text)
-        ht_eventbox.Add("Event", RichTextBoxEvent.Text)
-        ht_eventbox.Add("Contents", RichTextBoxContents.Text)
-        ht_eventbox.Add("HealthSafety", RichTextBoxHealthSafety.Text)
-        ht_eventbox.Add("EnvironmentalComposition", RichTextBoxEnvironmentalComposition.Text)
-        ht_eventbox.Add("NextPoint", RichTextBoxNextPoint.Text)
     End Sub
 
     '読解性上昇のために作成した関数
@@ -125,7 +104,7 @@
                             & "`EnvironmentalComposition`, `NextPoint`, `UpdateDate`" _
                         & ")" _
                     & "VALUES (" _
-                        & "'" & CType(ht_eventbox("ClassName"), String) & "'" _
+                        & "'" & ComboBox_ClassName.Text & "'" _
                         & ", " & "'" & TextBoxBoysNumber.Text & "'" _
                         & ", " & "'" & TextBoxGirlsNumber.Text & "'" _
                         & ", NOW()" _
@@ -143,9 +122,6 @@
                         & ", NOW()" _
                     & ");"
         Return sqlString
-    End Function
-    Private Function Input_out_week() As String
-
     End Function
 
     Private Function Input_month_table_low(i As Integer, main_id As String) As String
@@ -206,6 +182,5 @@
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
         Me.Close()
     End Sub
-
 End Class
 

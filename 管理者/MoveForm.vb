@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub MoveMonthHigh()
-        Dim f As New MonthHigh
+        Dim f As New Month35Age
         myOwner.Enabled = False
         f.Show(myOwner)
     End Sub

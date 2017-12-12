@@ -1,9 +1,11 @@
-﻿Public Class MonthHigh
+﻿Public Class Month35Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
 
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
+
+        Me.Height = Screen.PrimaryScreen.WorkingArea.Height
     End Sub
     Private Sub AddEventHandler()
         'イベントハンドラ受け入れ先作成
@@ -186,8 +188,9 @@
         Me.Dispose()
     End Sub
 
- 
+
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
         Me.Close()
     End Sub
+
 End Class

@@ -223,7 +223,6 @@ Partial Class Month2Day
         'Panel2
         '
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Panel2.Controls.Add(Me.RichTextBox_Event)
         Me.Panel2.Controls.Add(Me.ChildAge3)
         Me.Panel2.Controls.Add(Me.ChildAge4)
