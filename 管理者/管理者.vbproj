@@ -169,6 +169,12 @@
     <Compile Include="AdministratorForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TestClass\ProgressStatesForm.Designer.vb">
+      <DependentUpon>ProgressStatesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestClass\ProgressStatesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Week\Week01.designer.vb">
       <DependentUpon>Week01.vb</DependentUpon>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdministratorForm.resx">
       <DependentUpon>AdministratorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestClass\ProgressStatesForm.resx">
+      <DependentUpon>ProgressStatesForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Week\Week01.resx">
       <DependentUpon>Week01.vb</DependentUpon>

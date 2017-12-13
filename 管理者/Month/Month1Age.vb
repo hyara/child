@@ -1,5 +1,6 @@
 ﻿Public Class Month1Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
+    Dim ht_eventbox As Hashtable = New Hashtable
 
     Private Sub MonthLow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddEventHandler()
@@ -70,24 +71,69 @@
     End Sub
 
 
-    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
+    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+        Dim prgsForm As New ProgressStatesForm
+        prgsForm.Show()
+        prgsForm.ProgressStatesMaxSet(100)
+        prgsForm.ProgressStatesLabelUpdate(1)
+        prgsForm.ProcessContentsSet("SQL接続確認中...")
+        hashTableAdd()
+
         Dim sqlString As String = Input_month_main_low()
         Dim sqlConnect As New SQLConnectClass
+
+        prgsForm.ProgressStatesLabelUpdate(20)
+        prgsForm.ProcessContentsSet("SQL接続確認終了")
 
         If sqlConnect.DBConnect(sqlString) = False Then
             MsgBox(sqlConnect.ErrorMessage)
         Else
-            sqlConnect.DBConnect("SELECT MAX(month_main_low_id) FROM child_monthplan_main_low;")
-            Dim ds As DataSet = sqlConnect.DBResult()
-            Dim dt As DataTable = ds.Tables.Item(0)
-            Dim mainID As String = dt.Rows(0).Item(0)
+            sqlConnect.DBConnect("SELECT MAX(month_main_0to1_id) FROM child_monthplan_main_0to1;")
+            prgsForm.ProgressStatesLabelUpdate(10)
+            prgsForm.ProcessContentsSet("メインデータ保存終了")
+
+            Dim mainID As String = sqlConnect.DBResult(0)
+
             For i = 0 To 5
                 Dim s As String = Input_month_table_low(i, mainID)
                 sqlConnect.DBConnect(s)
+                prgsForm.ProgressStatesLabelUpdate(10)
+                prgsForm.ProcessContentsSet("サブデータ[ " & (i + 1) & " ]保存中")
             Next
         End If
+
+        Dim msg As MsgBoxResult = MsgBox("今回の内容を週案に反映させますか？", MsgBoxStyle.YesNoCancel, "反映確認")
+
+        If msg = vbYes Then
+            If sqlConnect.DBConnect(Input_out_nextmonth()) = False Then
+                MsgBox(sqlConnect.ErrorMessage)
+            End If
+        End If
+        prgsForm.ProgressStatesLabelUpdate(100)
+        prgsForm.ProcessContentsSet("終了")
+        prgsForm.ProgressStatesEnd()
         MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
+
+    Private Sub hashTableAdd()
+        ht_eventbox.Clear()
+        ht_eventbox.Add("ClassName", ComboBox_ClassName.Text)
+        ht_eventbox.Add("BoysNumber", TextBoxBoysNumber.Text)
+        ht_eventbox.Add("GirlsNumber", TextBoxGirlsNumber.Text)
+        ht_eventbox.Add("TargetYear", ComboBoxTargetYear.Text)
+        ht_eventbox.Add("TargetMonth", ComboBoxTargetMonth.Text)
+        ht_eventbox.Add("LeaderName", ComboBoxLeaderName.Text)
+        ht_eventbox.Add("StateMonth", RichTextBoxStateMonth.Text)
+        ht_eventbox.Add("AimNursing", RichTextBoxAimNursing.Text)
+        ht_eventbox.Add("AimEducation", RichTextBoxAimEducation.Text)
+        ht_eventbox.Add("Event", RichTextBoxEvent.Text)
+        ht_eventbox.Add("Contents", RichTextBoxContents.Text)
+        ht_eventbox.Add("HealthSafety", RichTextBoxHealthSafety.Text)
+        ht_eventbox.Add("EnvironmentalComposition", RichTextBoxEnvironmentalComposition.Text)
+        ht_eventbox.Add("NextPoint", RichTextBoxNextPoint.Text)
+    End Sub
+
 
     '読解性上昇のために作成した関数
     Private Function Input_month_main_low() As String
@@ -104,25 +150,63 @@
                             & "`EnvironmentalComposition`, `NextPoint`, `UpdateDate`" _
                         & ")" _
                     & "VALUES (" _
-                        & "'" & ComboBox_ClassName.Text & "'" _
-                        & ", " & "'" & TextBoxBoysNumber.Text & "'" _
-                        & ", " & "'" & TextBoxGirlsNumber.Text & "'" _
+                        & "'" & CStr(ht_eventbox("ClassName")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("BoysNumber")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("GirlsNumber")) & "'" _
                         & ", NOW()" _
-                        & ", " & "'" & ComboBoxTargetYear.Text & "'" _
-                        & ", " & "'" & ComboBoxTargetMonth.Text & "'" _
-                        & ", " & "'" & ComboBoxLeaderName.Text & "'" _
-                        & ", " & "'" & RichTextBoxStateMonth.Text & "'" _
-                        & ", " & "'" & RichTextBoxAimNursing.Text & "'" _
-                        & ", " & "'" & RichTextBoxAimEducation.Text & "'" _
-                        & ", " & "'" & RichTextBoxEvent.Text & "'" _
-                        & ", " & "'" & RichTextBoxContents.Text & "'" _
-                        & ", " & "'" & RichTextBoxHealthSafety.Text & "'" _
-                        & ", " & "'" & RichTextBoxEnvironmentalComposition.Text & "'" _
-                        & ", " & "'" & RichTextBoxNextPoint.Text & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("TargetYear")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("TargetMonth")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("LeaderName")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("StateMonth")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("AimNursing")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("AimEducation")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("Event")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("Contents")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("HealthSafety")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("EnvironmentalComposition")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("NextPoint")) & "'" _
                         & ", NOW()" _
                     & ");"
         Return sqlString
     End Function
+
+    Private Function Input_out_nextmonth() As String
+
+        'クラス名・人数・作成日・対象年月
+        '指導者名・更新日をつけつつ、
+        '"内容"を前月の様子にいれる
+
+        Dim TargetYear As Integer = Integer.Parse(CStr(ht_eventbox("TargetYear")))
+        Dim TargetMonth As Integer = Integer.Parse(CStr(ht_eventbox("TargetMonth")))
+        Dim dt As DateTime = DateTime.Parse(TargetYear & "/" & TargetMonth & "/1")
+
+        dt = dt.AddMonths(1)
+
+        TargetYear = dt.Year
+        TargetMonth = dt.Month
+
+        Dim sqlString As String = "INSERT INTO " _
+                    & "`child_monthplan_main_0to1`" _
+                        & "(" _
+                            & "`ClassName`, `BoysNumber`, `GirlsNumber`," _
+                            & "`CreatedDate`, `TargetYear`, `TargetMonth`," _
+                            & "`LeaderName`, `StateMonth`, `UpdateDate`" _
+                        & ")" _
+                    & "VALUES (" _
+                        & "'" & CStr(ht_eventbox("ClassName")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("BoysNumber")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("GirlsNumber")) & "'" _
+                        & ", NOW()" _
+                        & ", " & "'" & TargetYear.ToString & "'" _
+                        & ", " & "'" & TargetMonth.ToString & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("LeaderName")) & "'" _
+                        & ", " & "'" & CStr(ht_eventbox("Contents")) & "'" _
+                        & ", NOW()" _
+                    & ");"
+
+        Return sqlString
+    End Function
+
 
     Private Function Input_month_table_low(i As Integer, main_id As String) As String
         Dim sqlString As String
