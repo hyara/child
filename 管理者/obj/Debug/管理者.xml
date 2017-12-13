@@ -6,36 +6,7 @@
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
-	<summary>
- 進行状況を設定する
- </summary>
-	<param name="i">設定値</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32)">
-	<summary>
- 進行状況を更新する
- </summary>
-	<param name="i">指定数値だけ加算する</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate">
-	<summary>
- 進行状況を更新する
- </summary>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesMaxSet(System.Int32)">
-	<summary>
- 最大値を設定する
- </summary>
-	<param name="m">最大値</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProcessContentsSet(System.String)">
-	<summary>
- 進行内容を記録する
- </summary>
-	<param name="s">進行内容</param>
-	<remarks></remarks>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+<member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
 	<summary>
   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
 </summary>
@@ -101,6 +72,35 @@
 	<summary>
  version 2.0
  </summary>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
+	<summary>
+ 進行状況を設定する
+ </summary>
+	<param name="i">設定値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32)">
+	<summary>
+ 進行状況を更新する
+ </summary>
+	<param name="i">指定数値だけ加算する</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate">
+	<summary>
+ 進行状況を更新する
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesMaxSet(System.Int32)">
+	<summary>
+ 最大値を設定する
+ </summary>
+	<param name="m">最大値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProcessContentsSet(System.String)">
+	<summary>
+ 進行内容を記録する
+ </summary>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
 </member>
 </members>
 </doc>

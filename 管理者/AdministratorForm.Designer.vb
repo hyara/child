@@ -25,8 +25,6 @@ Partial Class AdministratorForm
         Me.components = New System.ComponentModel.Container()
         Dim BunifuThinButton21 As Bunifu.Framework.UI.BunifuThinButton2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdministratorForm))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -55,11 +53,12 @@ Partial Class AdministratorForm
         Me.BunifuThinButton23 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.BunifuThinButton24 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.BunifuCustomDataGrid1 = New Bunifu.Framework.UI.BunifuCustomDataGrid()
-        Me.タイトル = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.作成者 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.更新日時 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.再提出 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridView = New System.Windows.Forms.DataGridView()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClassName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LeaderName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CreatedDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UpdateDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,7 +70,7 @@ Partial Class AdministratorForm
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.BunifuCustomDataGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BunifuThinButton21
@@ -599,62 +598,55 @@ Partial Class AdministratorForm
         Me.ImageList1.ImageSize = New System.Drawing.Size(16, 16)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         '
-        'BunifuCustomDataGrid1
+        'DataGridView
         '
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.BunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.BunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gray
-        Me.BunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.BunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("MS UI Gothic", 12.0!)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.BunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.BunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BunifuCustomDataGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.タイトル, Me.作成者, Me.更新日時, Me.再提出})
-        Me.BunifuCustomDataGrid1.DoubleBuffered = True
-        Me.BunifuCustomDataGrid1.EnableHeadersVisualStyles = False
-        Me.BunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen
-        Me.BunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen
-        Me.BunifuCustomDataGrid1.Location = New System.Drawing.Point(193, 50)
-        Me.BunifuCustomDataGrid1.Name = "BunifuCustomDataGrid1"
-        Me.BunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.BunifuCustomDataGrid1.RowTemplate.Height = 21
-        Me.BunifuCustomDataGrid1.Size = New System.Drawing.Size(1196, 691)
-        Me.BunifuCustomDataGrid1.TabIndex = 32
+        Me.DataGridView.AllowUserToAddRows = False
+        Me.DataGridView.AllowUserToDeleteRows = False
+        Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.ClassName, Me.LeaderName, Me.CreatedDate, Me.UpdateDate})
+        Me.DataGridView.Location = New System.Drawing.Point(193, 50)
+        Me.DataGridView.Name = "DataGridView"
+        Me.DataGridView.ReadOnly = True
+        Me.DataGridView.RowTemplate.Height = 21
+        Me.DataGridView.Size = New System.Drawing.Size(1161, 688)
+        Me.DataGridView.TabIndex = 32
         '
-        'タイトル
+        'id
         '
-        Me.タイトル.HeaderText = "テキスト"
-        Me.タイトル.Name = "タイトル"
-        Me.タイトル.ToolTipText = "あ"
+        Me.id.HeaderText = "書類番号"
+        Me.id.Name = "id"
+        Me.id.ReadOnly = True
         '
-        '作成者
+        'ClassName
         '
-        Me.作成者.HeaderText = "作成者"
-        Me.作成者.Name = "作成者"
-        Me.作成者.ToolTipText = "作成者"
+        Me.ClassName.HeaderText = "クラス名"
+        Me.ClassName.Name = "ClassName"
+        Me.ClassName.ReadOnly = True
         '
-        '更新日時
+        'LeaderName
         '
-        Me.更新日時.HeaderText = "更新日時"
-        Me.更新日時.Name = "更新日時"
+        Me.LeaderName.HeaderText = "指導者名"
+        Me.LeaderName.Name = "LeaderName"
+        Me.LeaderName.ReadOnly = True
         '
-        '再提出
+        'CreatedDate
         '
-        Me.再提出.HeaderText = "再提出"
-        Me.再提出.Name = "再提出"
+        Me.CreatedDate.HeaderText = "作成日"
+        Me.CreatedDate.Name = "CreatedDate"
+        Me.CreatedDate.ReadOnly = True
+        '
+        'UpdateDate
+        '
+        Me.UpdateDate.HeaderText = "更新日"
+        Me.UpdateDate.Name = "UpdateDate"
+        Me.UpdateDate.ReadOnly = True
         '
         'AdministratorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1354, 733)
-        Me.Controls.Add(Me.BunifuCustomDataGrid1)
+        Me.Controls.Add(Me.DataGridView)
         Me.Controls.Add(Me.BunifuGradientPanel2)
         Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.Button3)
@@ -678,7 +670,7 @@ Partial Class AdministratorForm
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
-        CType(Me.BunifuCustomDataGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -710,9 +702,10 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuCustomLabel2 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents BunifuCustomLabel3 As Bunifu.Framework.UI.BunifuCustomLabel
-    Friend WithEvents BunifuCustomDataGrid1 As Bunifu.Framework.UI.BunifuCustomDataGrid
-    Friend WithEvents タイトル As DataGridViewTextBoxColumn
-    Friend WithEvents 作成者 As DataGridViewTextBoxColumn
-    Friend WithEvents 更新日時 As DataGridViewTextBoxColumn
-    Friend WithEvents 再提出 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ClassName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents LeaderName As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CreatedDate As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UpdateDate As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

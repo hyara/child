@@ -175,6 +175,12 @@
     <Compile Include="TestClass\ProgressStatesForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TestClass\Watch.Designer.vb">
+      <DependentUpon>Watch.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestClass\Watch.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Week\Week01.designer.vb">
       <DependentUpon>Week01.vb</DependentUpon>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestClass\ProgressStatesForm.resx">
       <DependentUpon>ProgressStatesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestClass\Watch.resx">
+      <DependentUpon>Watch.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Week\Week01.resx">
       <DependentUpon>Week01.vb</DependentUpon>

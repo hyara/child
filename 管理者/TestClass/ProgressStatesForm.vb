@@ -8,6 +8,7 @@
         ProcessContentsRTB.Clear()
         ProgressStatesMaxSet(100)
         ProgressStatesLabelSet(0)
+        Me.Refresh()
     End Sub
 
     ''' <summary>
@@ -35,6 +36,7 @@
         End If
         ProgressBar.Value = processNum
         ProgressStatesLabel.Text = "( " & processNum & " / " & max & " )"
+        Me.Refresh()
     End Sub
 
     ''' <summary>
@@ -53,6 +55,7 @@
     Public Sub ProgressStatesMaxSet(m As Integer)
         max = m
         ProgressBar.Maximum = m
+        Me.Refresh()
     End Sub
 
     ''' <summary>

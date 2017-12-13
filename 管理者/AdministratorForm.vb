@@ -72,4 +72,47 @@
     'ここまで追加ボタン
 
 
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
+        Dim pF As New ProgressStatesForm
+        pF.Show()
+        pF.ProgressStatesMaxSet(2)
+        Dim sql As New SQLConnectClass
+
+        pF.ProgressStatesLabelUpdate()
+        pF.ProcessContentsSet("SQL接続完了")
+
+        sql.DBConnect(Month_0to1_show_sql())
+
+        pF.ProgressStatesLabelUpdate()
+        pF.ProcessContentsSet("DB一覧取得完了")
+
+        Dim ds As DataSet = sql.DBResult
+
+        'DataGridView.DataSource = ds.Tables(0).Rows
+
+        For Each row As DataRow In ds.Tables(0).Rows
+
+            DataGridView.Rows.Add(row.ItemArray)
+        Next row
+
+        pF.ProgressStatesEnd()
+    End Sub
+
+    Private Function Month_0to1_show_sql() As String
+        Dim sqlString As String
+        sqlString = _
+            "SELECT " _
+                & "month_main_0to1_id AS 書類番号, " _
+                & "ClassName AS クラス名, " _
+                & "LeaderName AS 指導者名, " _
+                & "UpdateDate AS 更新日, " _
+                & "CreatedDate AS 作成日 " _
+            & "FROM `child_monthplan_main_0to1`;"
+        Return sqlString
+    End Function
+
 End Class

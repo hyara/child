@@ -337,3 +337,4 @@ C:\Users\15110029\Source\Repos\child4\管理者\obj\Debug\WindowsApplication1.Pr
 C:\Users\15110029\Source\Repos\child4\管理者\obj\Debug\WindowsApplication1.Week01.resources
 C:\Users\15110029\Source\Repos\child4\管理者\obj\Debug\WindowsApplication1.Week25.resources
 C:\Users\15110029\Source\Repos\child4\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110029\Source\Repos\child4\管理者\obj\Debug\WindowsApplication1.Watch.resources
