@@ -9,11 +9,11 @@
     'ボタン押下の動作
     Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
 
-        Dim form1 As New AdministratorForm '遷移先
-        Owner.Enabled = True
+        If IsNothing(Owner) = False Then
+            Owner.Enabled = True
+            Me.Dispose()
+        End If
 
-        'メモリ開放も行う方の閉じる()a
-        Me.Dispose()
     End Sub
 
 

@@ -54,11 +54,12 @@ Partial Class AdministratorForm
         Me.BunifuThinButton24 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ClassName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LeaderName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CreatedDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UpdateDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         BunifuThinButton21 = New Bunifu.Framework.UI.BunifuThinButton2()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,7 +86,7 @@ Partial Class AdministratorForm
         BunifuThinButton21.BackgroundImage = CType(resources.GetObject("BunifuThinButton21.BackgroundImage"), System.Drawing.Image)
         BunifuThinButton21.ButtonText = "全て"
         BunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand
-        BunifuThinButton21.Font = New System.Drawing.Font("美咲ゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        BunifuThinButton21.Font = New System.Drawing.Font("Century Gothic", 12.0!)
         BunifuThinButton21.ForeColor = System.Drawing.Color.SeaGreen
         BunifuThinButton21.IdleBorderThickness = 1
         BunifuThinButton21.IdleCornerRadius = 20
@@ -603,7 +604,7 @@ Partial Class AdministratorForm
         Me.DataGridView.AllowUserToAddRows = False
         Me.DataGridView.AllowUserToDeleteRows = False
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.ClassName, Me.LeaderName, Me.CreatedDate, Me.UpdateDate})
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.ClassName, Me.LeaderName, Me.CreatedDate, Me.UpdateDate, Me.Column1})
         Me.DataGridView.Location = New System.Drawing.Point(193, 50)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.ReadOnly = True
@@ -616,30 +617,43 @@ Partial Class AdministratorForm
         Me.id.HeaderText = "書類番号"
         Me.id.Name = "id"
         Me.id.ReadOnly = True
+        Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
         'ClassName
         '
         Me.ClassName.HeaderText = "クラス名"
         Me.ClassName.Name = "ClassName"
         Me.ClassName.ReadOnly = True
+        Me.ClassName.Width = 200
         '
         'LeaderName
         '
         Me.LeaderName.HeaderText = "指導者名"
         Me.LeaderName.Name = "LeaderName"
         Me.LeaderName.ReadOnly = True
+        Me.LeaderName.Width = 200
         '
         'CreatedDate
         '
         Me.CreatedDate.HeaderText = "作成日"
         Me.CreatedDate.Name = "CreatedDate"
         Me.CreatedDate.ReadOnly = True
+        Me.CreatedDate.Width = 250
         '
         'UpdateDate
         '
         Me.UpdateDate.HeaderText = "更新日"
         Me.UpdateDate.Name = "UpdateDate"
         Me.UpdateDate.ReadOnly = True
+        Me.UpdateDate.Width = 250
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Width = 118
         '
         'AdministratorForm
         '
@@ -703,9 +717,10 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuSeparator1 As Bunifu.Framework.UI.BunifuSeparator
     Friend WithEvents BunifuCustomLabel3 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents DataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents ClassName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents LeaderName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CreatedDate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UpdateDate As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

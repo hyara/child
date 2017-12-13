@@ -86,6 +86,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministratorForm.designer.vb">
+      <DependentUpon>AdministratorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdministratorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BaseForm.Designer.vb">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </Compile>
@@ -108,6 +114,12 @@
       <DependentUpon>Month1Age.vb</DependentUpon>
     </Compile>
     <Compile Include="Month\Month1Age.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Month\Month1AgeShownDummy.designer.vb">
+      <DependentUpon>Month1AgeShownDummy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Month\Month1AgeShownDummy.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Month\Month2Age.designer.vb">
@@ -163,12 +175,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SQLConnectClass.vb" />
-    <Compile Include="AdministratorForm.Designer.vb">
-      <DependentUpon>AdministratorForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AdministratorForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="TestClass\ProgressStatesForm.Designer.vb">
       <DependentUpon>ProgressStatesForm.vb</DependentUpon>
     </Compile>
@@ -195,6 +201,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AdministratorForm.resx">
+      <DependentUpon>AdministratorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month1Age.resx">
       <DependentUpon>Month1Age.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Month\Month1AgeShownDummy.resx">
+      <DependentUpon>Month1AgeShownDummy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month2Age.resx">
       <DependentUpon>Month2Age.vb</DependentUpon>
@@ -230,9 +242,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdministratorForm.resx">
-      <DependentUpon>AdministratorForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestClass\ProgressStatesForm.resx">
       <DependentUpon>ProgressStatesForm.vb</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿Public Class AdministratorForm
 
     Public move_info As String
+    Dim sql As New SQLConnectClass
 
     Private Sub ButtonAdd_Click(sender As Object, e As EventArgs)
         Dim TargetForm As New SelectAddDocument '遷移先
@@ -69,6 +70,7 @@
         Me.Enabled = False
         f.Show(Me)
     End Sub
+
     'ここまで追加ボタン
 
 
@@ -80,7 +82,6 @@
         Dim pF As New ProgressStatesForm
         pF.Show()
         pF.ProgressStatesMaxSet(2)
-        Dim sql As New SQLConnectClass
 
         pF.ProgressStatesLabelUpdate()
         pF.ProcessContentsSet("SQL接続完了")
@@ -115,4 +116,43 @@
         Return sqlString
     End Function
 
+    Private Sub DataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView.CellContentClick
+
+        ' クリックされたボタンからidを取得
+        Dim id As String = GetClickCellButtonContent(sender, e)
+
+        ' 準備済みの閲覧用ダミーフォームに月案情報を送り込む
+
+        '関数に引数がつけれないため一時退避
+        Dim f As New Month1AgeShownDummy
+        Me.Enabled = False
+        f.Show(Me)
+        f.SetID(id, sql)
+        '関数おわり
+
+    End Sub
+
+    ''' <summary>
+    ''' 必要物が全てハードコーティング済みのDataGridViewから、
+    ''' クリックされたボタンの内容を取得する。
+    ''' </summary>
+    ''' <param name="sender">senderそのまま代入</param>
+    ''' <param name="e">eventそのまま代入</param>
+    ''' <returns>クリックされたボタンの内容</returns>
+    ''' <remarks></remarks>
+    Private Function GetClickCellButtonContent(sender As Object, e As DataGridViewCellEventArgs) As String
+        Dim dgv As DataGridView = CType(sender, DataGridView)
+        '"id"列ならば、ボタンがクリックされた
+        If dgv.Columns(e.ColumnIndex).Name = "id" Then
+            Dim num As Integer
+            If Integer.TryParse(e.RowIndex.ToString(), num) = False Then
+                num = -1
+            End If
+            If -1 < num Then
+                '現在指定しているセルの内容を取得する
+                Return DataGridView.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString()
+            End If
+        End If
+        Return ""
+    End Function
 End Class
