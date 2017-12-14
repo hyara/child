@@ -367,3 +367,7 @@ C:\Users\Owner\Source\Repos\child2\管理者\obj\Debug\WindowsApplication1.Week0
 C:\Users\Owner\Source\Repos\child2\管理者\obj\Debug\WindowsApplication1.Week25.resources
 C:\Users\Owner\Source\Repos\child2\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
 C:\Users\Owner\Source\Repos\child2\管理者\obj\Debug\WindowsApplication1.Month1AgeShownDummy.resources
+C:\Users\15110007\Source\Repos\child3\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110007\Source\Repos\child3\管理者\obj\Debug\管理者.exe
+C:\Users\15110007\Source\Repos\child3\管理者\obj\Debug\管理者.xml
+C:\Users\15110007\Source\Repos\child3\管理者\obj\Debug\管理者.pdb
