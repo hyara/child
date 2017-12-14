@@ -1,7 +1,11 @@
 ﻿Public Class Month2Age
 
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
+    Dim sqlConnect As SQLConnectClass
 
+    Public Sub SetID(s As SQLConnectClass)
+        sqlConnect = s
+    End Sub
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
@@ -72,7 +76,6 @@
     Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 名前を付けて保存ToolStripMenuItem.Click
 
         Dim sqlString As String = Input_month_main_high()
-        Dim sqlConnect As New SQLConnectClass
 
         If sqlConnect.DBConnect(sqlString) = False Then
             MsgBox(sqlConnect.ErrorMessage)

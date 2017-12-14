@@ -1,7 +1,11 @@
 ﻿Public Class Month1Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
     Dim ht_eventbox As Hashtable = New Hashtable
+    Dim sqlConnect As SQLConnectClass
 
+    Public Sub SetID(s As SQLConnectClass)
+        sqlConnect = s
+    End Sub
     Private Sub MonthLow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddEventHandler()
     End Sub

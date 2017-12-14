@@ -19,6 +19,10 @@
         Return Me.move_info
     End Function
 
+    Public Function SQLConnectGetter() As SQLConnectClass
+        Return sql
+    End Function
+
     Public Sub MoveForm()
 
         Select Case MoveInfoGetter()
@@ -45,12 +49,14 @@
         Dim f As New Month35Age
         Me.Enabled = False
         f.Show(Me)
+        f.SetID(sql)
     End Sub
 
     Private Sub MoveMonthLow()
         Dim f As New Month1Age
         Me.Enabled = False
         f.Show(Me)
+        f.SetID(sql)
     End Sub
 
     Private Sub MoveWeekLow()
@@ -94,7 +100,7 @@
         Dim ds As DataSet = sql.DBResult
 
         'DataGridView.DataSource = ds.Tables(0).Rows
-
+        DataGridView.Rows.Clear()
         For Each row As DataRow In ds.Tables(0).Rows
 
             DataGridView.Rows.Add(row.ItemArray)
@@ -122,14 +128,14 @@
         Dim id As String = GetClickCellButtonContent(sender, e)
 
         ' 準備済みの閲覧用ダミーフォームに月案情報を送り込む
-
-        '関数に引数がつけれないため一時退避
-        Dim f As New Month1AgeShownDummy
-        Me.Enabled = False
-        f.Show(Me)
-        f.SetID(id, sql)
-        '関数おわり
-
+        If id <> "" Then
+            '関数に引数がつけれないため一時退避
+            Dim f As New Month1AgeShownDummy
+            Me.Enabled = False
+            f.Show(Me)
+            f.SetID(id, sql)
+            '関数おわり
+        End If
     End Sub
 
     ''' <summary>
