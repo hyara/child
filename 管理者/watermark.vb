@@ -6,6 +6,7 @@ Public Class Watermark
     Dim WaterColor As Color
     Dim WaterFont As Font
     Dim WaterBrush As SolidBrush
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Dim WaterContainer As Panel
     Public Sub New()
         MyBase.New()
@@ -87,4 +88,18 @@ Public Class Watermark
             Me.Invalidate()
         End Set
     End Property
+
+    Private Sub InitializeComponent()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SuspendLayout()
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(0, 0)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 19)
+        Me.TextBox1.TabIndex = 0
+        Me.ResumeLayout(False)
+
+    End Sub
 End Class

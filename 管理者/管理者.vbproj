@@ -246,6 +246,9 @@
     <EmbeddedResource Include="TestClass\Watch.resx">
       <DependentUpon>Watch.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="watermark.resx">
+      <DependentUpon>watermark.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Week\week05.resx">
       <DependentUpon>week05.vb</DependentUpon>
     </EmbeddedResource>
@@ -266,7 +269,6 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

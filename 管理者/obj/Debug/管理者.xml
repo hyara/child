@@ -19,15 +19,6 @@
 	<summary>
   ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
 </summary>
-</member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
-	<summary>
- 必要物が全てハードコーティング済みのDataGridViewから、
- クリックされたボタンの内容を取得する。
- </summary>
-	<param name="sender">senderそのまま代入</param>
-	<param name="e">eventそのまま代入</param>
-	<returns>クリックされたボタンの内容</returns>
-	<remarks></remarks>
 </member><member name="M:WindowsApplication1.SQLConnectClass.DBConnect(System.String)">
 	<summary>
  指定されたSQLを実行します。
@@ -75,6 +66,12 @@
 	<summary>
  version 2.0
  </summary>
+</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+	<summary>
+ 画面を遷移する
+ </summary>
+	<param name="TransitionOriginal">遷移元</param>
+	<param name="TransitionTarget">遷移先</param>
 </member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
 	<summary>
  進行状況を設定する
@@ -104,12 +101,15 @@
  </summary>
 	<param name="s">進行内容</param>
 	<remarks></remarks>
-</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+</member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
 	<summary>
- 画面を遷移する
+ 必要物が全てハードコーティング済みのDataGridViewから、
+ クリックされたボタンの内容を取得する。
  </summary>
-	<param name="TransitionOriginal">遷移元</param>
-	<param name="TransitionTarget">遷移先</param>
+	<param name="sender">senderそのまま代入</param>
+	<param name="e">eventそのまま代入</param>
+	<returns>クリックされたボタンの内容</returns>
+	<remarks></remarks>
 </member>
 </members>
 </doc>
