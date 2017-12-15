@@ -32,10 +32,7 @@
                 MoveMonthHigh()
             Case "MonthLow"
                 MoveMonthLow()
-            Case "WeekHigh"
-                MoveWeekHigh()
-            Case "WeekLow"
-                MoveWeekLow()
+
 
         End Select
 
@@ -49,27 +46,17 @@
         Dim f As New Month35Age
         Me.Enabled = False
         f.Show(Me)
-        f.SetID(sql)
+        'f.SetID(sql)
     End Sub
 
     Private Sub MoveMonthLow()
         Dim f As New Month1Age
         Me.Enabled = False
         f.Show(Me)
-        f.SetID(sql)
+        'f.SetID(sql)
     End Sub
 
-    Private Sub MoveWeekLow()
-        Dim f As New Week01
-        Me.Enabled = False
-        f.Show(Me)
-    End Sub
 
-    Private Sub MoveWeekHigh()
-        Dim f As New Week25
-        Me.Enabled = False
-        f.Show(Me)
-    End Sub
 
     Private Sub MoveSelectAddDocument()
         Dim f As New SelectAddDocument
@@ -80,9 +67,7 @@
     'ここまで追加ボタン
 
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
-        Me.Close()
-    End Sub
+
 
     Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
         Dim pF As New ProgressStatesForm
@@ -161,4 +146,13 @@
         End If
         Return ""
     End Function
+
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub BunifuImageButton6_Click(sender As Object, e As EventArgs)
+        Me.Close()
+
+    End Sub
 End Class

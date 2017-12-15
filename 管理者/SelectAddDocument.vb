@@ -7,13 +7,13 @@
     End Sub
     '--------------------------------------------------------------------------------
     'ボタン押下の動作
-    Private Sub ButtonClose_Click(sender As Object, e As EventArgs) Handles ButtonClose.Click
+    Private Sub ButtonClose_Click(sender As Object, e As EventArgs)
 
-        If IsNothing(Owner) = False Then
-            Owner.Enabled = True
-            Me.Dispose()
-        End If
+        Dim form1 As New AdministratorForm '遷移先
+        Owner.Enabled = True
 
+        'メモリ開放も行う方の閉じる()
+        Me.Dispose()
     End Sub
 
 
@@ -24,14 +24,14 @@
     'ここから移動用
     '------------------------------------------------------------
 
-    Private Sub ButtonMonthHigh_Click(sender As Object, e As EventArgs) Handles ButtonMonthHigh.Click
+    Private Sub ButtonMonthHigh_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("MonthHigh")
         f.MoveForm()
         Me.Dispose()
     End Sub
-    Private Sub ButtonMonthLow_Click(sender As Object, e As EventArgs) Handles ButtonMonthLow.Click
+    Private Sub ButtonMonthLow_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("MonthLow")
@@ -77,4 +77,31 @@
     Private Sub BunifuFlatButton3_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton3.Click
 
     End Sub
+
+    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton5.Click
+        Dim f As AdministratorForm
+        f = Owner
+        f.MoveInfoSetter("MonthHigh")
+        f.MoveForm()
+        Me.Dispose()
+    End Sub
+
+    Private Sub BunifuFlatButton6_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton6.Click
+        Dim f As AdministratorForm
+        f = Owner
+        f.MoveInfoSetter("MonthLow")
+        f.MoveForm()
+        Me.Dispose()
+    End Sub
+
+
+    Private Sub BunifuFlatButton7_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton7.Click
+
+    End Sub
+
+    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+
+    End Sub
+
 End Class
+
