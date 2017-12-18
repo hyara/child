@@ -58,14 +58,6 @@
     '---------------------------------------------------------------------
 
 
-
-
-
-
-    Private Sub BunifuFlatButton2_Click(sender As Object, e As EventArgs)
-        TabControl1.SelectTab(1)
-    End Sub
-
     Private Sub BunifuFlatButton9_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton9.Click
         TabControl1.SelectTab(1)
     End Sub
@@ -78,7 +70,7 @@
 
     End Sub
 
-    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton5.Click
+    Private Sub BnfFlatButtonMonth3to5_Click(sender As Object, e As EventArgs) Handles BnfFlatButtonMonth3to5.Click
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("MonthHigh")
@@ -86,7 +78,7 @@
         Me.Dispose()
     End Sub
 
-    Private Sub BunifuFlatButton6_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton6.Click
+    Private Sub BnfFlatButtonMonth0to1_Click(sender As Object, e As EventArgs) Handles BnfFlatButtonMonth0to1.Click
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("MonthLow")
@@ -95,7 +87,7 @@
     End Sub
 
 
-    Private Sub BunifuFlatButton7_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton7.Click
+    Private Sub BnfFlatButtonMonth2_Click(sender As Object, e As EventArgs) Handles BnfFlatButtonMonth2.Click
 
     End Sub
 

@@ -28,8 +28,9 @@ Partial Class SelectAddDocument
         Me.ButtonWeekLow = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.BunifuFlatButton6 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton5 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatButtonMonth2 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatButtonMonth0to1 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatButtonMonth3to5 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton9 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton10 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -38,18 +39,17 @@ Partial Class SelectAddDocument
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.BunifuFlatButton7 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        Me.header.SuspendLayout()
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.header.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonWeekHigh
@@ -93,9 +93,9 @@ Partial Class SelectAddDocument
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage1.Controls.Add(Me.BunifuFlatButton7)
-        Me.TabPage1.Controls.Add(Me.BunifuFlatButton6)
-        Me.TabPage1.Controls.Add(Me.BunifuFlatButton5)
+        Me.TabPage1.Controls.Add(Me.BnfFlatButtonMonth2)
+        Me.TabPage1.Controls.Add(Me.BnfFlatButtonMonth0to1)
+        Me.TabPage1.Controls.Add(Me.BnfFlatButtonMonth3to5)
         Me.TabPage1.Controls.Add(Me.BunifuFlatButton9)
         Me.TabPage1.Controls.Add(Me.BunifuFlatButton10)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
@@ -104,73 +104,107 @@ Partial Class SelectAddDocument
         Me.TabPage1.Size = New System.Drawing.Size(594, 319)
         Me.TabPage1.TabIndex = 0
         '
-        'BunifuFlatButton6
+        'BnfFlatButtonMonth2
         '
-        Me.BunifuFlatButton6.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton6.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton6.BorderRadius = 0
-        Me.BunifuFlatButton6.ButtonText = "0~1歳"
-        Me.BunifuFlatButton6.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton6.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton6.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton6.Iconimage = CType(resources.GetObject("BunifuFlatButton6.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton6.Iconimage_right = Nothing
-        Me.BunifuFlatButton6.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton6.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton6.IconMarginLeft = 0
-        Me.BunifuFlatButton6.IconMarginRight = 0
-        Me.BunifuFlatButton6.IconRightVisible = False
-        Me.BunifuFlatButton6.IconRightZoom = 0.0R
-        Me.BunifuFlatButton6.IconVisible = False
-        Me.BunifuFlatButton6.IconZoom = 90.0R
-        Me.BunifuFlatButton6.IsTab = False
-        Me.BunifuFlatButton6.Location = New System.Drawing.Point(290, 162)
-        Me.BunifuFlatButton6.Name = "BunifuFlatButton6"
-        Me.BunifuFlatButton6.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton6.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.BunifuFlatButton6.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton6.selected = False
-        Me.BunifuFlatButton6.Size = New System.Drawing.Size(171, 44)
-        Me.BunifuFlatButton6.TabIndex = 66
-        Me.BunifuFlatButton6.Text = "0~1歳"
-        Me.BunifuFlatButton6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton6.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton6.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BnfFlatButtonMonth2.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth2.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatButtonMonth2.BorderRadius = 0
+        Me.BnfFlatButtonMonth2.ButtonText = "2歳"
+        Me.BnfFlatButtonMonth2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatButtonMonth2.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatButtonMonth2.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatButtonMonth2.Iconimage = CType(resources.GetObject("BnfFlatButtonMonth2.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatButtonMonth2.Iconimage_right = Nothing
+        Me.BnfFlatButtonMonth2.Iconimage_right_Selected = Nothing
+        Me.BnfFlatButtonMonth2.Iconimage_Selected = Nothing
+        Me.BnfFlatButtonMonth2.IconMarginLeft = 0
+        Me.BnfFlatButtonMonth2.IconMarginRight = 0
+        Me.BnfFlatButtonMonth2.IconRightVisible = False
+        Me.BnfFlatButtonMonth2.IconRightZoom = 0.0R
+        Me.BnfFlatButtonMonth2.IconVisible = False
+        Me.BnfFlatButtonMonth2.IconZoom = 90.0R
+        Me.BnfFlatButtonMonth2.IsTab = False
+        Me.BnfFlatButtonMonth2.Location = New System.Drawing.Point(290, 104)
+        Me.BnfFlatButtonMonth2.Name = "BnfFlatButtonMonth2"
+        Me.BnfFlatButtonMonth2.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth2.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.BnfFlatButtonMonth2.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatButtonMonth2.selected = False
+        Me.BnfFlatButtonMonth2.Size = New System.Drawing.Size(171, 44)
+        Me.BnfFlatButtonMonth2.TabIndex = 67
+        Me.BnfFlatButtonMonth2.Text = "2歳"
+        Me.BnfFlatButtonMonth2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatButtonMonth2.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatButtonMonth2.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
-        'BunifuFlatButton5
+        'BnfFlatButtonMonth0to1
         '
-        Me.BunifuFlatButton5.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton5.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton5.BorderRadius = 0
-        Me.BunifuFlatButton5.ButtonText = "3~5歳"
-        Me.BunifuFlatButton5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton5.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton5.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton5.Iconimage = CType(resources.GetObject("BunifuFlatButton5.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton5.Iconimage_right = Nothing
-        Me.BunifuFlatButton5.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton5.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton5.IconMarginLeft = 0
-        Me.BunifuFlatButton5.IconMarginRight = 0
-        Me.BunifuFlatButton5.IconRightVisible = False
-        Me.BunifuFlatButton5.IconRightZoom = 0.0R
-        Me.BunifuFlatButton5.IconVisible = False
-        Me.BunifuFlatButton5.IconZoom = 90.0R
-        Me.BunifuFlatButton5.IsTab = False
-        Me.BunifuFlatButton5.Location = New System.Drawing.Point(290, 44)
-        Me.BunifuFlatButton5.Name = "BunifuFlatButton5"
-        Me.BunifuFlatButton5.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton5.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.BunifuFlatButton5.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton5.selected = False
-        Me.BunifuFlatButton5.Size = New System.Drawing.Size(171, 44)
-        Me.BunifuFlatButton5.TabIndex = 65
-        Me.BunifuFlatButton5.Text = "3~5歳"
-        Me.BunifuFlatButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton5.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton5.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BnfFlatButtonMonth0to1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth0to1.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth0to1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatButtonMonth0to1.BorderRadius = 0
+        Me.BnfFlatButtonMonth0to1.ButtonText = "0~1歳"
+        Me.BnfFlatButtonMonth0to1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatButtonMonth0to1.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatButtonMonth0to1.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatButtonMonth0to1.Iconimage = CType(resources.GetObject("BnfFlatButtonMonth0to1.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatButtonMonth0to1.Iconimage_right = Nothing
+        Me.BnfFlatButtonMonth0to1.Iconimage_right_Selected = Nothing
+        Me.BnfFlatButtonMonth0to1.Iconimage_Selected = Nothing
+        Me.BnfFlatButtonMonth0to1.IconMarginLeft = 0
+        Me.BnfFlatButtonMonth0to1.IconMarginRight = 0
+        Me.BnfFlatButtonMonth0to1.IconRightVisible = False
+        Me.BnfFlatButtonMonth0to1.IconRightZoom = 0.0R
+        Me.BnfFlatButtonMonth0to1.IconVisible = False
+        Me.BnfFlatButtonMonth0to1.IconZoom = 90.0R
+        Me.BnfFlatButtonMonth0to1.IsTab = False
+        Me.BnfFlatButtonMonth0to1.Location = New System.Drawing.Point(290, 162)
+        Me.BnfFlatButtonMonth0to1.Name = "BnfFlatButtonMonth0to1"
+        Me.BnfFlatButtonMonth0to1.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth0to1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.BnfFlatButtonMonth0to1.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatButtonMonth0to1.selected = False
+        Me.BnfFlatButtonMonth0to1.Size = New System.Drawing.Size(171, 44)
+        Me.BnfFlatButtonMonth0to1.TabIndex = 66
+        Me.BnfFlatButtonMonth0to1.Text = "0~1歳"
+        Me.BnfFlatButtonMonth0to1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatButtonMonth0to1.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatButtonMonth0to1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BnfFlatButtonMonth3to5
+        '
+        Me.BnfFlatButtonMonth3to5.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth3to5.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth3to5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatButtonMonth3to5.BorderRadius = 0
+        Me.BnfFlatButtonMonth3to5.ButtonText = "3~5歳"
+        Me.BnfFlatButtonMonth3to5.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatButtonMonth3to5.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatButtonMonth3to5.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatButtonMonth3to5.Iconimage = CType(resources.GetObject("BnfFlatButtonMonth3to5.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatButtonMonth3to5.Iconimage_right = Nothing
+        Me.BnfFlatButtonMonth3to5.Iconimage_right_Selected = Nothing
+        Me.BnfFlatButtonMonth3to5.Iconimage_Selected = Nothing
+        Me.BnfFlatButtonMonth3to5.IconMarginLeft = 0
+        Me.BnfFlatButtonMonth3to5.IconMarginRight = 0
+        Me.BnfFlatButtonMonth3to5.IconRightVisible = False
+        Me.BnfFlatButtonMonth3to5.IconRightZoom = 0.0R
+        Me.BnfFlatButtonMonth3to5.IconVisible = False
+        Me.BnfFlatButtonMonth3to5.IconZoom = 90.0R
+        Me.BnfFlatButtonMonth3to5.IsTab = False
+        Me.BnfFlatButtonMonth3to5.Location = New System.Drawing.Point(290, 44)
+        Me.BnfFlatButtonMonth3to5.Name = "BnfFlatButtonMonth3to5"
+        Me.BnfFlatButtonMonth3to5.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatButtonMonth3to5.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
+        Me.BnfFlatButtonMonth3to5.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatButtonMonth3to5.selected = False
+        Me.BnfFlatButtonMonth3to5.Size = New System.Drawing.Size(171, 44)
+        Me.BnfFlatButtonMonth3to5.TabIndex = 65
+        Me.BnfFlatButtonMonth3to5.Text = "3~5歳"
+        Me.BnfFlatButtonMonth3to5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatButtonMonth3to5.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatButtonMonth3to5.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'BunifuFlatButton9
         '
@@ -403,6 +437,46 @@ Partial Class SelectAddDocument
         Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'Label1
+        '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("HGP創英ﾌﾟﾚｾﾞﾝｽEB", 17.0!)
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(13, 12)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(487, 31)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "なんたらかんたら　電子書類システム"
+        '
+        'BunifuImageButton2
+        '
+        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
+        Me.BunifuImageButton2.ImageActive = Nothing
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(583, 4)
+        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton2.Name = "BunifuImageButton2"
+        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton2.TabIndex = 11
+        Me.BunifuImageButton2.TabStop = False
+        Me.BunifuImageButton2.Zoom = 10
+        '
+        'BunifuImageButton3
+        '
+        Me.BunifuImageButton3.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton3.Image = CType(resources.GetObject("BunifuImageButton3.Image"), System.Drawing.Image)
+        Me.BunifuImageButton3.ImageActive = Nothing
+        Me.BunifuImageButton3.Location = New System.Drawing.Point(522, 4)
+        Me.BunifuImageButton3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton3.Name = "BunifuImageButton3"
+        Me.BunifuImageButton3.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton3.TabIndex = 12
+        Me.BunifuImageButton3.TabStop = False
+        Me.BunifuImageButton3.Zoom = 10
+        '
         'header
         '
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
@@ -422,80 +496,6 @@ Partial Class SelectAddDocument
         Me.header.Size = New System.Drawing.Size(626, 50)
         Me.header.TabIndex = 57
         '
-        'BunifuImageButton3
-        '
-        Me.BunifuImageButton3.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton3.Image = CType(resources.GetObject("BunifuImageButton3.Image"), System.Drawing.Image)
-        Me.BunifuImageButton3.ImageActive = Nothing
-        Me.BunifuImageButton3.Location = New System.Drawing.Point(522, 4)
-        Me.BunifuImageButton3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton3.Name = "BunifuImageButton3"
-        Me.BunifuImageButton3.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton3.TabIndex = 12
-        Me.BunifuImageButton3.TabStop = False
-        Me.BunifuImageButton3.Zoom = 10
-        '
-        'BunifuImageButton2
-        '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(583, 4)
-        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 11
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("HGP創英ﾌﾟﾚｾﾞﾝｽEB", 17.0!)
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(13, 12)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(487, 31)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "なんたらかんたら　電子書類システム"
-        '
-        'BunifuFlatButton7
-        '
-        Me.BunifuFlatButton7.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton7.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton7.BorderRadius = 0
-        Me.BunifuFlatButton7.ButtonText = "2歳"
-        Me.BunifuFlatButton7.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton7.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton7.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton7.Iconimage = CType(resources.GetObject("BunifuFlatButton7.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton7.Iconimage_right = Nothing
-        Me.BunifuFlatButton7.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton7.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton7.IconMarginLeft = 0
-        Me.BunifuFlatButton7.IconMarginRight = 0
-        Me.BunifuFlatButton7.IconRightVisible = False
-        Me.BunifuFlatButton7.IconRightZoom = 0.0R
-        Me.BunifuFlatButton7.IconVisible = False
-        Me.BunifuFlatButton7.IconZoom = 90.0R
-        Me.BunifuFlatButton7.IsTab = False
-        Me.BunifuFlatButton7.Location = New System.Drawing.Point(290, 104)
-        Me.BunifuFlatButton7.Name = "BunifuFlatButton7"
-        Me.BunifuFlatButton7.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton7.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(129, Byte), Integer), CType(CType(77, Byte), Integer))
-        Me.BunifuFlatButton7.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton7.selected = False
-        Me.BunifuFlatButton7.Size = New System.Drawing.Size(171, 44)
-        Me.BunifuFlatButton7.TabIndex = 67
-        Me.BunifuFlatButton7.Text = "2歳"
-        Me.BunifuFlatButton7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton7.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton7.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
         'SelectAddDocument
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -514,9 +514,9 @@ Partial Class SelectAddDocument
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
-        Me.header.ResumeLayout(False)
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.header.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -527,17 +527,17 @@ Partial Class SelectAddDocument
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuImageButton3 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents BunifuFlatButton9 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton10 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton4 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton3 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton6 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton5 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton7 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatButtonMonth0to1 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatButtonMonth3to5 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatButtonMonth2 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuImageButton3 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
 End Class
