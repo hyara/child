@@ -6,6 +6,7 @@
     Public Sub SetID(s As SQLConnectClass)
         sqlConnect = s
     End Sub
+
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()

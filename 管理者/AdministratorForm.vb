@@ -1,7 +1,21 @@
 ﻿Public Class AdministratorForm
 
     Public move_info As String
-    Dim sql As New SQLConnectClass
+    Dim sql As SQLConnectClass
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <returns></returns>
+    ''' <remarks></remarks>
+    Public Shared Function sqlClassGetter(ByRef s As SQLConnectClass) As Boolean
+
+    End Function
+
+    Private Sub AdministratorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'SQL接続を開始する
+        BackgroundWorkerSQLConnect.RunWorkerAsync()
+    End Sub
 
     Private Sub ButtonAdd_Click(sender As Object, e As EventArgs)
         Dim TargetForm As New SelectAddDocument '遷移先
@@ -69,28 +83,25 @@
 
 
 
-    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
-        Dim pF As New ProgressStatesForm
-        pF.Show()
-        pF.ProgressStatesMaxSet(2)
+    Private Sub BnfImgBtnLoad_Click(sender As Object, e As EventArgs) Handles BnfImgBtnLoad.Click
 
-        pF.ProgressStatesLabelUpdate()
-        pF.ProcessContentsSet("SQL接続完了")
+        ' プログレスバーを出現させる
+        Dim pF As New ProgressStatesForm
+        pF.Show() : pF.ProgressStatesMaxSet(2)
+        pF.ProgressStatesLabelUpdate("SQL接続完了")
 
         sql.DBConnect(Month_0to1_show_sql())
+        pF.ProgressStatesLabelUpdate("DB一覧取得完了")
 
-        pF.ProgressStatesLabelUpdate()
-        pF.ProcessContentsSet("DB一覧取得完了")
 
+        ' DBからの情報をDataGridViewに上書き反映させる
         Dim ds As DataSet = sql.DBResult
-
-        'DataGridView.DataSource = ds.Tables(0).Rows
         DataGridView.Rows.Clear()
         For Each row As DataRow In ds.Tables(0).Rows
-
             DataGridView.Rows.Add(row.ItemArray)
         Next row
 
+        'プログレスバーを閉じる
         pF.ProgressStatesEnd()
     End Sub
 
@@ -147,12 +158,17 @@
         Return ""
     End Function
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BnfImgBtnClose_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         Me.Close()
     End Sub
 
-    Private Sub BunifuImageButton6_Click(sender As Object, e As EventArgs)
-        Me.Close()
+    Private Sub BackgroundWorkerSQLConnect_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerSQLConnect.DoWork
+        Me.sql = New SQLConnectClass
+    End Sub
 
+    Private Sub BackgroundWorkerSQLConnect_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerSQLConnect.RunWorkerCompleted
+        LabelSQLStatus.Text = "SQL接続完了!!"
+        System.Threading.Thread.Sleep(200)
+        LabelSQLStatus.Text = ""
     End Sub
 End Class

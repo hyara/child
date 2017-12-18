@@ -276,7 +276,7 @@
         g7weSWoXSZ3m2EmSA/BLRtLy94CWnSJuJ0f7emIW0x6h0D+tbBTWzdBBFwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BunifuImageButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BnfImgBtnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAm1JREFUaEPd
         mr9qFGEUxbexUUhAEBWEkNiJTbCzsPIVlv0PW80biHkBE6zFSnwM20QI0U5BSCCkUUFFCxvBwkI9d3Jm
@@ -292,7 +292,7 @@
         C76VBzXIV1DjxrNW6y8d46wDdGSCJgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="BunifuImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BnfImgBtnLoad.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAA9BJREFUaEPt
         mclrFFEQxuOGoqCoUaJGEe9u5BI1Qg5ectCDOGSPESRi1IsYUEJw8Ka4RQ/e9KIiqLgQ/wnRiwkYFU3I
@@ -552,5 +552,8 @@
   </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="BackgroundWorkerSQLConnect.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>177, 15</value>
   </metadata>
 </root>

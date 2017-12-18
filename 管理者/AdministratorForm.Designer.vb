@@ -31,9 +31,10 @@ Partial Class AdministratorForm
         Me.BunifuFlatButton3 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.LabelSQLStatus = New System.Windows.Forms.Label()
         Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
@@ -69,11 +70,12 @@ Partial Class AdministratorForm
         Me.CreatedDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UpdateDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BackgroundWorkerSQLConnect = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox3.SuspendLayout()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
@@ -277,9 +279,10 @@ Partial Class AdministratorForm
         '
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.header.Controls.Add(Me.LabelSQLStatus)
         Me.header.Controls.Add(Me.BunifuImageButton3)
-        Me.header.Controls.Add(Me.BunifuImageButton2)
-        Me.header.Controls.Add(Me.BunifuImageButton1)
+        Me.header.Controls.Add(Me.BnfImgBtnClose)
+        Me.header.Controls.Add(Me.BnfImgBtnLoad)
         Me.header.Controls.Add(Me.Label1)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
         Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
@@ -292,6 +295,17 @@ Partial Class AdministratorForm
         Me.header.Quality = 10
         Me.header.Size = New System.Drawing.Size(1362, 50)
         Me.header.TabIndex = 65
+        '
+        'LabelSQLStatus
+        '
+        Me.LabelSQLStatus.AutoSize = True
+        Me.LabelSQLStatus.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSQLStatus.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelSQLStatus.Location = New System.Drawing.Point(1005, 27)
+        Me.LabelSQLStatus.Name = "LabelSQLStatus"
+        Me.LabelSQLStatus.Size = New System.Drawing.Size(104, 16)
+        Me.LabelSQLStatus.TabIndex = 13
+        Me.LabelSQLStatus.Text = "SQL接続中..."
         '
         'BunifuImageButton3
         '
@@ -307,33 +321,33 @@ Partial Class AdministratorForm
         Me.BunifuImageButton3.TabStop = False
         Me.BunifuImageButton3.Zoom = 10
         '
-        'BunifuImageButton2
+        'BnfImgBtnClose
         '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(1310, 4)
-        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 11
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
+        Me.BnfImgBtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnClose.Image = CType(resources.GetObject("BnfImgBtnClose.Image"), System.Drawing.Image)
+        Me.BnfImgBtnClose.ImageActive = Nothing
+        Me.BnfImgBtnClose.Location = New System.Drawing.Point(1310, 4)
+        Me.BnfImgBtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnClose.Name = "BnfImgBtnClose"
+        Me.BnfImgBtnClose.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnClose.TabIndex = 11
+        Me.BnfImgBtnClose.TabStop = False
+        Me.BnfImgBtnClose.Zoom = 10
         '
-        'BunifuImageButton1
+        'BnfImgBtnLoad
         '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(1126, 4)
-        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton1.TabIndex = 10
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
+        Me.BnfImgBtnLoad.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnLoad.Image = CType(resources.GetObject("BnfImgBtnLoad.Image"), System.Drawing.Image)
+        Me.BnfImgBtnLoad.ImageActive = Nothing
+        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(1126, 4)
+        Me.BnfImgBtnLoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnLoad.Name = "BnfImgBtnLoad"
+        Me.BnfImgBtnLoad.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnLoad.TabIndex = 10
+        Me.BnfImgBtnLoad.TabStop = False
+        Me.BnfImgBtnLoad.Zoom = 10
         '
         'Label1
         '
@@ -553,7 +567,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
@@ -570,7 +584,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(420, 18)
+        Me.CheckBox3.Location = New System.Drawing.Point(413, 18)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox3.TabIndex = 3
@@ -580,7 +594,7 @@ Partial Class AdministratorForm
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(10, 11)
+        Me.Label3.Location = New System.Drawing.Point(4, 11)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(164, 28)
         Me.Label3.TabIndex = 0
@@ -590,7 +604,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(200, 18)
+        Me.CheckBox4.Location = New System.Drawing.Point(187, 18)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox4.TabIndex = 1
@@ -600,7 +614,7 @@ Partial Class AdministratorForm
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(239, 11)
+        Me.Label5.Location = New System.Drawing.Point(225, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
         Me.Label5.TabIndex = 2
@@ -681,7 +695,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 668.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 675.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 1, 0)
@@ -702,7 +716,7 @@ Partial Class AdministratorForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(40, 12)
+        Me.Label2.Location = New System.Drawing.Point(37, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 28)
         Me.Label2.TabIndex = 0
@@ -714,7 +728,7 @@ Partial Class AdministratorForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(31, 64)
+        Me.Label4.Location = New System.Drawing.Point(27, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1
@@ -724,7 +738,7 @@ Partial Class AdministratorForm
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(154, 7)
+        Me.TextBox1.Location = New System.Drawing.Point(151, 7)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(659, 39)
         Me.TextBox1.TabIndex = 2
@@ -733,7 +747,7 @@ Partial Class AdministratorForm
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(154, 59)
+        Me.TextBox2.Location = New System.Drawing.Point(151, 59)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(659, 39)
         Me.TextBox2.TabIndex = 3
@@ -824,6 +838,9 @@ Partial Class AdministratorForm
         Me.Column1.ReadOnly = True
         Me.Column1.Width = 118
         '
+        'BackgroundWorkerSQLConnect
+        '
+        '
         'AdministratorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
@@ -847,9 +864,10 @@ Partial Class AdministratorForm
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox3.ResumeLayout(False)
         Me.header.ResumeLayout(False)
+        Me.header.PerformLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -875,8 +893,8 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents BunifuImageButton3 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
@@ -912,4 +930,6 @@ Partial Class AdministratorForm
     Friend WithEvents CreatedDate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UpdateDate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BackgroundWorkerSQLConnect As System.ComponentModel.BackgroundWorker
+    Friend WithEvents LabelSQLStatus As System.Windows.Forms.Label
 End Class
