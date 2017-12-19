@@ -2,6 +2,7 @@
 
     Public move_info As String
     Dim sql As New SQLConnectClass
+    Dim sqlConnect As SQLConnectClass
 
     Private Sub ButtonAdd_Click(sender As Object, e As EventArgs)
         Dim TargetForm As New SelectAddDocument '遷移先
@@ -28,25 +29,23 @@
         Select Case MoveInfoGetter()
             Case "SelectAddDocument"
                 MoveSelectAddDocument()
-            Case "MonthHigh"
+            Case "Month35Age"
                 MoveMonthHigh()
-            Case "MonthLow"
+            Case "Month1Age"
                 MoveMonthLow()
+            Case "Month2Age"
+                MoveMonth2Age()
 
 
         End Select
 
-    End Sub
-    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton5.Click
-        MoveInfoSetter("SelectAddDocument")
-        MoveForm()
     End Sub
 
     Private Sub MoveMonthHigh()
         Dim f As New Month35Age
         Me.Enabled = False
         f.Show(Me)
-        'f.SetID(sql)
+        f.SetID(sql)
     End Sub
 
     Private Sub MoveMonthLow()
@@ -56,7 +55,12 @@
         'f.SetID(sql)
     End Sub
 
-
+    Private Sub MoveMonth2Age()
+        Dim f As New Month2Age
+        Me.Enabled = False
+        f.Show(Me)
+        f.SetID(sql)
+    End Sub
 
     Private Sub MoveSelectAddDocument()
         Dim f As New SelectAddDocument
@@ -155,4 +159,12 @@
         Me.Close()
 
     End Sub
+
+    Private Sub BunifuImageButton4_Click(sender As Object, e As EventArgs) Handles BunifuImageButton4.Click
+        Dim TargetForm As New SelectAddDocument '遷移先
+        MoveInfoSetter("SelectAddDocument")
+        MoveForm()
+    End Sub
+
+   
 End Class

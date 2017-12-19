@@ -20,10 +20,12 @@
         Select Case MoveInfoGetter()
             Case "SelectAddDocument"
                 MoveSelectAddDocument()
-            Case "MonthHigh"
+            Case "Month35Age"
                 MoveMonthHigh()
-            Case "MonthLow"
+            Case "Month1Age"
                 MoveMonthLow()
+            Case "Month2Age"
+                MoveMonth2Age()
 
         End Select
 
@@ -36,7 +38,14 @@
     End Sub
 
     Private Sub MoveMonthLow()
-        Dim f As New MonthLow
+        Dim f As New Month1Age
+        myOwner.Enabled = False
+        f.Show(myOwner)
+    End Sub
+
+
+    Private Sub MoveMonth2Age()
+        Dim f As New Month2Age
         myOwner.Enabled = False
         f.Show(myOwner)
     End Sub

@@ -49,7 +49,7 @@
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Mvvm">
       <HintPath>..\packages\DevExpressMvvm.17.1.6.0\lib\net40-client\DevExpress.Mvvm.dll</HintPath>
@@ -110,6 +110,7 @@
     <Compile Include="Month\AddClass.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Month\ClassSum.vb" />
     <Compile Include="Month\Month1Age.designer.vb">
       <DependentUpon>Month1Age.vb</DependentUpon>
     </Compile>
