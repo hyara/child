@@ -47,7 +47,7 @@
         End Select
     End Sub
 
-    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton5.Click
+    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
         MoveInfoSetter("SelectAddDocument")
         MoveForm()
     End Sub

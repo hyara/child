@@ -31,9 +31,9 @@ Partial Class Month2Age
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfuImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.MonthLabel6 = New System.Windows.Forms.Label()
@@ -95,9 +95,9 @@ Partial Class Month2Age
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.header.SuspendLayout()
-        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfuImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.ChildAge3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,10 +155,10 @@ Partial Class Month2Age
         Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.header.Controls.Add(Me.BunifuImageButton4)
-        Me.header.Controls.Add(Me.BunifuImageButton2)
+        Me.header.Controls.Add(Me.BnfImgBtnHelp)
+        Me.header.Controls.Add(Me.BnfuImgBtnClose)
         Me.header.Controls.Add(Me.MenuStrip1)
-        Me.header.Controls.Add(Me.BunifuImageButton1)
+        Me.header.Controls.Add(Me.BnfImgBtnLoad)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
         Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
@@ -171,47 +171,47 @@ Partial Class Month2Age
         Me.header.Size = New System.Drawing.Size(773, 50)
         Me.header.TabIndex = 1
         '
-        'BunifuImageButton4
+        'BnfImgBtnHelp
         '
-        Me.BunifuImageButton4.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton4.Image = CType(resources.GetObject("BunifuImageButton4.Image"), System.Drawing.Image)
-        Me.BunifuImageButton4.ImageActive = Nothing
-        Me.BunifuImageButton4.Location = New System.Drawing.Point(530, 5)
-        Me.BunifuImageButton4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton4.Name = "BunifuImageButton4"
-        Me.BunifuImageButton4.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton4.TabIndex = 13
-        Me.BunifuImageButton4.TabStop = False
-        Me.BunifuImageButton4.Zoom = 10
+        Me.BnfImgBtnHelp.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnHelp.Image = CType(resources.GetObject("BnfImgBtnHelp.Image"), System.Drawing.Image)
+        Me.BnfImgBtnHelp.ImageActive = Nothing
+        Me.BnfImgBtnHelp.Location = New System.Drawing.Point(624, 5)
+        Me.BnfImgBtnHelp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnHelp.Name = "BnfImgBtnHelp"
+        Me.BnfImgBtnHelp.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnHelp.TabIndex = 13
+        Me.BnfImgBtnHelp.TabStop = False
+        Me.BnfImgBtnHelp.Zoom = 10
         '
-        'BunifuImageButton2
+        'BnfuImgBtnClose
         '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(716, 5)
-        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 11
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
+        Me.BnfuImgBtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BnfuImgBtnClose.Image = CType(resources.GetObject("BnfuImgBtnClose.Image"), System.Drawing.Image)
+        Me.BnfuImgBtnClose.ImageActive = Nothing
+        Me.BnfuImgBtnClose.Location = New System.Drawing.Point(716, 5)
+        Me.BnfuImgBtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfuImgBtnClose.Name = "BnfuImgBtnClose"
+        Me.BnfuImgBtnClose.Size = New System.Drawing.Size(40, 39)
+        Me.BnfuImgBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfuImgBtnClose.TabIndex = 11
+        Me.BnfuImgBtnClose.TabStop = False
+        Me.BnfuImgBtnClose.Zoom = 10
         '
-        'BunifuImageButton1
+        'BnfImgBtnLoad
         '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(624, 5)
-        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton1.TabIndex = 10
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
+        Me.BnfImgBtnLoad.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnLoad.Image = CType(resources.GetObject("BnfImgBtnLoad.Image"), System.Drawing.Image)
+        Me.BnfImgBtnLoad.ImageActive = Nothing
+        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(530, 5)
+        Me.BnfImgBtnLoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnLoad.Name = "BnfImgBtnLoad"
+        Me.BnfImgBtnLoad.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnLoad.TabIndex = 10
+        Me.BnfImgBtnLoad.TabStop = False
+        Me.BnfImgBtnLoad.Zoom = 10
         '
         'Panel1
         '
@@ -774,9 +774,9 @@ Partial Class Month2Age
         Me.MenuStrip1.PerformLayout()
         Me.header.ResumeLayout(False)
         Me.header.PerformLayout()
-        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfuImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
@@ -796,9 +796,9 @@ Partial Class Month2Age
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfuImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents RichTextBox_Event As System.Windows.Forms.RichTextBox

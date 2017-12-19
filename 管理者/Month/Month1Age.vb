@@ -352,9 +352,12 @@
     End Sub
 
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         Me.Close()
     End Sub
 
+    Private Sub ファイルFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ファイルFToolStripMenuItem.Click
+
+    End Sub
 End Class
 

@@ -39,7 +39,7 @@
         Me.Dispose()
     End Sub
 
-    Private Sub ButtonWeekLow_Click(sender As Object, e As EventArgs) Handles ButtonWeekLow.Click
+    Private Sub ButtonWeekLow_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("WeekLow")
@@ -47,7 +47,7 @@
         Me.Dispose()
     End Sub
 
-    Private Sub ButtonWeekHigh_Click(sender As Object, e As EventArgs) Handles ButtonWeekHigh.Click
+    Private Sub ButtonWeekHigh_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("WeekHigh")
@@ -56,19 +56,6 @@
     End Sub
     'ここまで移動用
     '---------------------------------------------------------------------
-
-
-    Private Sub BunifuFlatButton9_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton9.Click
-        TabControl1.SelectTab(1)
-    End Sub
-
-    Private Sub BunifuFlatButton10_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton10.Click
-        TabControl1.SelectTab(2)
-    End Sub
-
-    Private Sub BunifuFlatButton3_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton3.Click
-
-    End Sub
 
     Private Sub BnfFlatButtonMonth3to5_Click(sender As Object, e As EventArgs) Handles BnfFlatButtonMonth3to5.Click
         Dim f As AdministratorForm
@@ -86,16 +73,7 @@
         Me.Dispose()
     End Sub
 
-
-    Private Sub BnfFlatButtonMonth2_Click(sender As Object, e As EventArgs) Handles BnfFlatButtonMonth2.Click
-
-    End Sub
-
-    Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
-
-    End Sub
-
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BnfImgBtnClose_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         Me.Close()
     End Sub
 End Class
