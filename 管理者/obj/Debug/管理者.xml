@@ -6,7 +6,13 @@
 </name>
 </assembly>
 <members>
-<member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+<member name="M:WindowsApplication1.Month1Age.MonthDBDraw(System.Int32)">
+	<summary>
+ 月案をDBから反映させる
+ </summary>
+	<param name="id">メイン主キーの値</param>
+	<remarks></remarks>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
 	<summary>
   このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
 </summary>
@@ -84,6 +90,19 @@
  </summary>
 	<param name="i">指定数値だけ加算する</param>
 	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.String)">
+	<summary>
+ 進行状況を更新し、進行内容を記録する
+ </summary>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32,System.String)">
+	<summary>
+ 進行状況を更新し、進行内容を記録する
+ </summary>
+	<param name="i">指定数値だけ加算する</param>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
 </member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate">
 	<summary>
  進行状況を更新する
@@ -100,6 +119,12 @@
  進行内容を記録する
  </summary>
 	<param name="s">進行内容</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.AdministratorForm.sqlConnectChecker">
+	<summary>
+ SQL接続の可否を取得します。
+ </summary>
+	<returns>True: 接続完了 False: 未接続</returns>
 	<remarks></remarks>
 </member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
 	<summary>

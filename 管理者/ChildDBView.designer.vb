@@ -26,24 +26,24 @@ Partial Class ChildDBView
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChildDBView))
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
-        Me.BunifuFlatButton4 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton3 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton2 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatBtnLogout = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatBtnHelp = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BnfFlatBtnToppage = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnNewCreate = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.BunifuImageButton5 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnDelete = New Bunifu.Framework.UI.BunifuImageButton()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.BunifuFlatButton7 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton6 = New Bunifu.Framework.UI.BunifuFlatButton()
@@ -62,15 +62,15 @@ Partial Class ChildDBView
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.header.SuspendLayout()
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.BunifuGradientPanel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnNewCreate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
-        CType(Me.BunifuImageButton5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnDelete, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
@@ -88,9 +88,9 @@ Partial Class ChildDBView
         '
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.header.Controls.Add(Me.BunifuImageButton3)
-        Me.header.Controls.Add(Me.BunifuImageButton2)
-        Me.header.Controls.Add(Me.BunifuImageButton1)
+        Me.header.Controls.Add(Me.BnfImgBtnHelp)
+        Me.header.Controls.Add(Me.BnfImgBtnClose)
+        Me.header.Controls.Add(Me.BnfImgBtnLoad)
         Me.header.Controls.Add(Me.Label1)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
         Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
@@ -104,47 +104,47 @@ Partial Class ChildDBView
         Me.header.Size = New System.Drawing.Size(1362, 50)
         Me.header.TabIndex = 73
         '
-        'BunifuImageButton3
+        'BnfImgBtnHelp
         '
-        Me.BunifuImageButton3.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton3.Image = CType(resources.GetObject("BunifuImageButton3.Image"), System.Drawing.Image)
-        Me.BunifuImageButton3.ImageActive = Nothing
-        Me.BunifuImageButton3.Location = New System.Drawing.Point(1218, 4)
-        Me.BunifuImageButton3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton3.Name = "BunifuImageButton3"
-        Me.BunifuImageButton3.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton3.TabIndex = 12
-        Me.BunifuImageButton3.TabStop = False
-        Me.BunifuImageButton3.Zoom = 10
+        Me.BnfImgBtnHelp.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnHelp.Image = CType(resources.GetObject("BnfImgBtnHelp.Image"), System.Drawing.Image)
+        Me.BnfImgBtnHelp.ImageActive = Nothing
+        Me.BnfImgBtnHelp.Location = New System.Drawing.Point(1218, 4)
+        Me.BnfImgBtnHelp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnHelp.Name = "BnfImgBtnHelp"
+        Me.BnfImgBtnHelp.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnHelp.TabIndex = 12
+        Me.BnfImgBtnHelp.TabStop = False
+        Me.BnfImgBtnHelp.Zoom = 10
         '
-        'BunifuImageButton2
+        'BnfImgBtnClose
         '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(1310, 4)
-        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 11
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
+        Me.BnfImgBtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnClose.Image = CType(resources.GetObject("BnfImgBtnClose.Image"), System.Drawing.Image)
+        Me.BnfImgBtnClose.ImageActive = Nothing
+        Me.BnfImgBtnClose.Location = New System.Drawing.Point(1310, 4)
+        Me.BnfImgBtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnClose.Name = "BnfImgBtnClose"
+        Me.BnfImgBtnClose.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnClose.TabIndex = 11
+        Me.BnfImgBtnClose.TabStop = False
+        Me.BnfImgBtnClose.Zoom = 10
         '
-        'BunifuImageButton1
+        'BnfImgBtnLoad
         '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(1126, 4)
-        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton1.TabIndex = 10
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
+        Me.BnfImgBtnLoad.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnLoad.Image = CType(resources.GetObject("BnfImgBtnLoad.Image"), System.Drawing.Image)
+        Me.BnfImgBtnLoad.ImageActive = Nothing
+        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(1126, 4)
+        Me.BnfImgBtnLoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnLoad.Name = "BnfImgBtnLoad"
+        Me.BnfImgBtnLoad.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnLoad.TabIndex = 10
+        Me.BnfImgBtnLoad.TabStop = False
+        Me.BnfImgBtnLoad.Zoom = 10
         '
         'Label1
         '
@@ -156,7 +156,7 @@ Partial Class ChildDBView
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(597, 31)
         Me.Label1.TabIndex = 5
-        Me.Label1.Text = "なんたらかんたら　電子書類システム"
+        Me.Label1.Text = "電子書類簡易入力システム"
         '
         'Button3
         '
@@ -201,9 +201,9 @@ Partial Class ChildDBView
         '
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuGradientPanel1.Controls.Add(Me.BunifuFlatButton4)
-        Me.BunifuGradientPanel1.Controls.Add(Me.BunifuFlatButton3)
-        Me.BunifuGradientPanel1.Controls.Add(Me.BunifuFlatButton2)
+        Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnLogout)
+        Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnHelp)
+        Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnToppage)
         Me.BunifuGradientPanel1.Controls.Add(Me.Panel2)
         Me.BunifuGradientPanel1.Controls.Add(Me.Panel3)
         Me.BunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
@@ -216,130 +216,130 @@ Partial Class ChildDBView
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(219, 700)
         Me.BunifuGradientPanel1.TabIndex = 74
         '
-        'BunifuFlatButton4
+        'BnfFlatBtnLogout
         '
-        Me.BunifuFlatButton4.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
-        Me.BunifuFlatButton4.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton4.BorderRadius = 0
-        Me.BunifuFlatButton4.ButtonText = "　ログアウト"
-        Me.BunifuFlatButton4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton4.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton4.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton4.Iconimage = CType(resources.GetObject("BunifuFlatButton4.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton4.Iconimage_right = Nothing
-        Me.BunifuFlatButton4.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton4.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton4.IconMarginLeft = 0
-        Me.BunifuFlatButton4.IconMarginRight = 0
-        Me.BunifuFlatButton4.IconRightVisible = True
-        Me.BunifuFlatButton4.IconRightZoom = 0.0R
-        Me.BunifuFlatButton4.IconVisible = True
-        Me.BunifuFlatButton4.IconZoom = 70.0R
-        Me.BunifuFlatButton4.IsTab = False
-        Me.BunifuFlatButton4.Location = New System.Drawing.Point(10, 162)
-        Me.BunifuFlatButton4.Name = "BunifuFlatButton4"
-        Me.BunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.BunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton4.selected = False
-        Me.BunifuFlatButton4.Size = New System.Drawing.Size(195, 70)
-        Me.BunifuFlatButton4.TabIndex = 46
-        Me.BunifuFlatButton4.Text = "　ログアウト"
-        Me.BunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton4.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton4.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BnfFlatBtnLogout.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatBtnLogout.BackColor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatBtnLogout.BorderRadius = 0
+        Me.BnfFlatBtnLogout.ButtonText = "　ログアウト"
+        Me.BnfFlatBtnLogout.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatBtnLogout.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatBtnLogout.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnLogout.Iconimage = CType(resources.GetObject("BnfFlatBtnLogout.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatBtnLogout.Iconimage_right = Nothing
+        Me.BnfFlatBtnLogout.Iconimage_right_Selected = Nothing
+        Me.BnfFlatBtnLogout.Iconimage_Selected = Nothing
+        Me.BnfFlatBtnLogout.IconMarginLeft = 0
+        Me.BnfFlatBtnLogout.IconMarginRight = 0
+        Me.BnfFlatBtnLogout.IconRightVisible = True
+        Me.BnfFlatBtnLogout.IconRightZoom = 0.0R
+        Me.BnfFlatBtnLogout.IconVisible = True
+        Me.BnfFlatBtnLogout.IconZoom = 70.0R
+        Me.BnfFlatBtnLogout.IsTab = False
+        Me.BnfFlatBtnLogout.Location = New System.Drawing.Point(10, 162)
+        Me.BnfFlatBtnLogout.Name = "BnfFlatBtnLogout"
+        Me.BnfFlatBtnLogout.Normalcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnLogout.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.BnfFlatBtnLogout.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatBtnLogout.selected = False
+        Me.BnfFlatBtnLogout.Size = New System.Drawing.Size(195, 70)
+        Me.BnfFlatBtnLogout.TabIndex = 46
+        Me.BnfFlatBtnLogout.Text = "　ログアウト"
+        Me.BnfFlatBtnLogout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatBtnLogout.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatBtnLogout.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
         '
-        'BunifuFlatButton3
+        'BnfFlatBtnHelp
         '
-        Me.BunifuFlatButton3.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.BunifuFlatButton3.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton3.BorderRadius = 0
-        Me.BunifuFlatButton3.ButtonText = "　ヘルプ"
-        Me.BunifuFlatButton3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton3.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton3.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton3.Iconimage = CType(resources.GetObject("BunifuFlatButton3.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton3.Iconimage_right = Nothing
-        Me.BunifuFlatButton3.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton3.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton3.IconMarginLeft = 0
-        Me.BunifuFlatButton3.IconMarginRight = 0
-        Me.BunifuFlatButton3.IconRightVisible = True
-        Me.BunifuFlatButton3.IconRightZoom = 0.0R
-        Me.BunifuFlatButton3.IconVisible = True
-        Me.BunifuFlatButton3.IconZoom = 70.0R
-        Me.BunifuFlatButton3.IsTab = False
-        Me.BunifuFlatButton3.Location = New System.Drawing.Point(10, 86)
-        Me.BunifuFlatButton3.Name = "BunifuFlatButton3"
-        Me.BunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton3.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.BunifuFlatButton3.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton3.selected = False
-        Me.BunifuFlatButton3.Size = New System.Drawing.Size(195, 70)
-        Me.BunifuFlatButton3.TabIndex = 45
-        Me.BunifuFlatButton3.Text = "　ヘルプ"
-        Me.BunifuFlatButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton3.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton3.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BnfFlatBtnHelp.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BnfFlatBtnHelp.BackColor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatBtnHelp.BorderRadius = 0
+        Me.BnfFlatBtnHelp.ButtonText = "　ヘルプ"
+        Me.BnfFlatBtnHelp.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatBtnHelp.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatBtnHelp.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnHelp.Iconimage = CType(resources.GetObject("BnfFlatBtnHelp.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatBtnHelp.Iconimage_right = Nothing
+        Me.BnfFlatBtnHelp.Iconimage_right_Selected = Nothing
+        Me.BnfFlatBtnHelp.Iconimage_Selected = Nothing
+        Me.BnfFlatBtnHelp.IconMarginLeft = 0
+        Me.BnfFlatBtnHelp.IconMarginRight = 0
+        Me.BnfFlatBtnHelp.IconRightVisible = True
+        Me.BnfFlatBtnHelp.IconRightZoom = 0.0R
+        Me.BnfFlatBtnHelp.IconVisible = True
+        Me.BnfFlatBtnHelp.IconZoom = 70.0R
+        Me.BnfFlatBtnHelp.IsTab = False
+        Me.BnfFlatBtnHelp.Location = New System.Drawing.Point(10, 86)
+        Me.BnfFlatBtnHelp.Name = "BnfFlatBtnHelp"
+        Me.BnfFlatBtnHelp.Normalcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnHelp.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.BnfFlatBtnHelp.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatBtnHelp.selected = False
+        Me.BnfFlatBtnHelp.Size = New System.Drawing.Size(195, 70)
+        Me.BnfFlatBtnHelp.TabIndex = 45
+        Me.BnfFlatBtnHelp.Text = "　ヘルプ"
+        Me.BnfFlatBtnHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatBtnHelp.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatBtnHelp.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
         '
-        'BunifuFlatButton2
+        'BnfFlatBtnToppage
         '
-        Me.BunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.BunifuFlatButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton2.BorderRadius = 0
-        Me.BunifuFlatButton2.ButtonText = "　トップページ"
-        Me.BunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.Iconimage = CType(resources.GetObject("BunifuFlatButton2.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton2.Iconimage_right = Nothing
-        Me.BunifuFlatButton2.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton2.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton2.IconMarginLeft = 0
-        Me.BunifuFlatButton2.IconMarginRight = 0
-        Me.BunifuFlatButton2.IconRightVisible = True
-        Me.BunifuFlatButton2.IconRightZoom = 0.0R
-        Me.BunifuFlatButton2.IconVisible = True
-        Me.BunifuFlatButton2.IconZoom = 70.0R
-        Me.BunifuFlatButton2.IsTab = False
-        Me.BunifuFlatButton2.Location = New System.Drawing.Point(10, 8)
-        Me.BunifuFlatButton2.Name = "BunifuFlatButton2"
-        Me.BunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
-        Me.BunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton2.selected = False
-        Me.BunifuFlatButton2.Size = New System.Drawing.Size(195, 70)
-        Me.BunifuFlatButton2.TabIndex = 44
-        Me.BunifuFlatButton2.Text = "　トップページ"
-        Me.BunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton2.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
-        Me.BunifuFlatButton2.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.BnfFlatBtnToppage.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BnfFlatBtnToppage.BackColor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnToppage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatBtnToppage.BorderRadius = 0
+        Me.BnfFlatBtnToppage.ButtonText = "　トップページ"
+        Me.BnfFlatBtnToppage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatBtnToppage.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatBtnToppage.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnToppage.Iconimage = CType(resources.GetObject("BnfFlatBtnToppage.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatBtnToppage.Iconimage_right = Nothing
+        Me.BnfFlatBtnToppage.Iconimage_right_Selected = Nothing
+        Me.BnfFlatBtnToppage.Iconimage_Selected = Nothing
+        Me.BnfFlatBtnToppage.IconMarginLeft = 0
+        Me.BnfFlatBtnToppage.IconMarginRight = 0
+        Me.BnfFlatBtnToppage.IconRightVisible = True
+        Me.BnfFlatBtnToppage.IconRightZoom = 0.0R
+        Me.BnfFlatBtnToppage.IconVisible = True
+        Me.BnfFlatBtnToppage.IconZoom = 70.0R
+        Me.BnfFlatBtnToppage.IsTab = False
+        Me.BnfFlatBtnToppage.Location = New System.Drawing.Point(10, 8)
+        Me.BnfFlatBtnToppage.Name = "BnfFlatBtnToppage"
+        Me.BnfFlatBtnToppage.Normalcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnToppage.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.BnfFlatBtnToppage.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatBtnToppage.selected = False
+        Me.BnfFlatBtnToppage.Size = New System.Drawing.Size(195, 70)
+        Me.BnfFlatBtnToppage.TabIndex = 44
+        Me.BnfFlatBtnToppage.Text = "　トップページ"
+        Me.BnfFlatBtnToppage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatBtnToppage.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatBtnToppage.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Transparent
-        Me.Panel2.Controls.Add(Me.BunifuImageButton4)
+        Me.Panel2.Controls.Add(Me.BnfImgBtnNewCreate)
         Me.Panel2.Controls.Add(Me.Label6)
         Me.Panel2.Location = New System.Drawing.Point(7, 562)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(105, 118)
         Me.Panel2.TabIndex = 47
         '
-        'BunifuImageButton4
+        'BnfImgBtnNewCreate
         '
-        Me.BunifuImageButton4.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton4.Image = CType(resources.GetObject("BunifuImageButton4.Image"), System.Drawing.Image)
-        Me.BunifuImageButton4.ImageActive = Nothing
-        Me.BunifuImageButton4.Location = New System.Drawing.Point(24, 20)
-        Me.BunifuImageButton4.Name = "BunifuImageButton4"
-        Me.BunifuImageButton4.Size = New System.Drawing.Size(60, 65)
-        Me.BunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BunifuImageButton4.TabIndex = 40
-        Me.BunifuImageButton4.TabStop = False
-        Me.BunifuImageButton4.Zoom = 5
+        Me.BnfImgBtnNewCreate.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnNewCreate.Image = CType(resources.GetObject("BnfImgBtnNewCreate.Image"), System.Drawing.Image)
+        Me.BnfImgBtnNewCreate.ImageActive = Nothing
+        Me.BnfImgBtnNewCreate.Location = New System.Drawing.Point(24, 20)
+        Me.BnfImgBtnNewCreate.Name = "BnfImgBtnNewCreate"
+        Me.BnfImgBtnNewCreate.Size = New System.Drawing.Size(60, 65)
+        Me.BnfImgBtnNewCreate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BnfImgBtnNewCreate.TabIndex = 40
+        Me.BnfImgBtnNewCreate.TabStop = False
+        Me.BnfImgBtnNewCreate.Zoom = 5
         '
         'Label6
         '
@@ -357,7 +357,7 @@ Partial Class ChildDBView
         '
         Me.Panel3.BackColor = System.Drawing.Color.Transparent
         Me.Panel3.Controls.Add(Me.Label7)
-        Me.Panel3.Controls.Add(Me.BunifuImageButton5)
+        Me.Panel3.Controls.Add(Me.BnfImgBtnDelete)
         Me.Panel3.Location = New System.Drawing.Point(106, 562)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(105, 118)
@@ -375,19 +375,19 @@ Partial Class ChildDBView
         Me.Label7.TabIndex = 45
         Me.Label7.Text = "削除"
         '
-        'BunifuImageButton5
+        'BnfImgBtnDelete
         '
-        Me.BunifuImageButton5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BunifuImageButton5.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton5.Image = CType(resources.GetObject("BunifuImageButton5.Image"), System.Drawing.Image)
-        Me.BunifuImageButton5.ImageActive = Nothing
-        Me.BunifuImageButton5.Location = New System.Drawing.Point(24, 20)
-        Me.BunifuImageButton5.Name = "BunifuImageButton5"
-        Me.BunifuImageButton5.Size = New System.Drawing.Size(60, 65)
-        Me.BunifuImageButton5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.BunifuImageButton5.TabIndex = 41
-        Me.BunifuImageButton5.TabStop = False
-        Me.BunifuImageButton5.Zoom = 10
+        Me.BnfImgBtnDelete.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BnfImgBtnDelete.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnDelete.Image = CType(resources.GetObject("BnfImgBtnDelete.Image"), System.Drawing.Image)
+        Me.BnfImgBtnDelete.ImageActive = Nothing
+        Me.BnfImgBtnDelete.Location = New System.Drawing.Point(24, 20)
+        Me.BnfImgBtnDelete.Name = "BnfImgBtnDelete"
+        Me.BnfImgBtnDelete.Size = New System.Drawing.Size(60, 65)
+        Me.BnfImgBtnDelete.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.BnfImgBtnDelete.TabIndex = 41
+        Me.BnfImgBtnDelete.TabStop = False
+        Me.BnfImgBtnDelete.Zoom = 10
         '
         'GroupBox3
         '
@@ -533,7 +533,7 @@ Partial Class ChildDBView
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
@@ -550,7 +550,7 @@ Partial Class ChildDBView
         '
         Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(423, 18)
+        Me.CheckBox3.Location = New System.Drawing.Point(421, 18)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox3.TabIndex = 3
@@ -560,7 +560,7 @@ Partial Class ChildDBView
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 11)
+        Me.Label3.Location = New System.Drawing.Point(11, 11)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(164, 28)
         Me.Label3.TabIndex = 0
@@ -570,7 +570,7 @@ Partial Class ChildDBView
         '
         Me.CheckBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(205, 18)
+        Me.CheckBox4.Location = New System.Drawing.Point(202, 18)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox4.TabIndex = 1
@@ -580,7 +580,7 @@ Partial Class ChildDBView
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(245, 11)
+        Me.Label5.Location = New System.Drawing.Point(241, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
         Me.Label5.TabIndex = 2
@@ -661,7 +661,7 @@ Partial Class ChildDBView
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 665.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 667.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 1, 0)
@@ -682,7 +682,7 @@ Partial Class ChildDBView
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(42, 12)
+        Me.Label2.Location = New System.Drawing.Point(41, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 28)
         Me.Label2.TabIndex = 0
@@ -694,7 +694,7 @@ Partial Class ChildDBView
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(32, 64)
+        Me.Label4.Location = New System.Drawing.Point(31, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1
@@ -704,7 +704,7 @@ Partial Class ChildDBView
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(156, 7)
+        Me.TextBox1.Location = New System.Drawing.Point(155, 7)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(659, 39)
         Me.TextBox1.TabIndex = 2
@@ -713,7 +713,7 @@ Partial Class ChildDBView
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(156, 59)
+        Me.TextBox2.Location = New System.Drawing.Point(155, 59)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(659, 39)
         Me.TextBox2.TabIndex = 3
@@ -736,17 +736,17 @@ Partial Class ChildDBView
         Me.Name = "ChildDBView"
         Me.Text = "x"
         Me.header.ResumeLayout(False)
-        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.BunifuGradientPanel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnNewCreate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        CType(Me.BunifuImageButton5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnDelete, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
@@ -758,24 +758,24 @@ Partial Class ChildDBView
     End Sub
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuImageButton3 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BunifuFlatButton4 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton3 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents BunifuFlatButton2 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatBtnLogout As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatBtnHelp As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BnfFlatBtnToppage As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnNewCreate As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents BunifuImageButton5 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnDelete As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents BunifuFlatButton7 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton6 As Bunifu.Framework.UI.BunifuFlatButton

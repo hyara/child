@@ -6,6 +6,7 @@
     Public Sub SetID(s As SQLConnectClass)
         sqlConnect = s
     End Sub
+
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
@@ -210,7 +211,7 @@
 
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
         Me.Close()
     End Sub
 End Class

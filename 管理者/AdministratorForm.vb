@@ -1,7 +1,24 @@
 ﻿Public Class AdministratorForm
 
     Public move_info As String
-    Dim sql As New SQLConnectClass
+    Private sqlConnect As SQLConnectClass
+
+    ''' <summary>
+    ''' SQL接続の可否を取得します。
+    ''' </summary>
+    ''' <returns>True: 接続完了 False: 未接続</returns>
+    ''' <remarks></remarks>
+    Public Function sqlConnectChecker() As Boolean
+        If BackgroundWorkerSQLConnect.IsBusy = False Then
+            Return True
+        End If
+        Return False
+    End Function
+
+    Private Sub AdministratorForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'SQL接続を開始する
+        BackgroundWorkerSQLConnect.RunWorkerAsync()
+    End Sub
 
     Private Sub ButtonAdd_Click(sender As Object, e As EventArgs)
         Dim TargetForm As New SelectAddDocument '遷移先
@@ -19,12 +36,7 @@
         Return Me.move_info
     End Function
 
-    Public Function SQLConnectGetter() As SQLConnectClass
-        Return sql
-    End Function
-
     Public Sub MoveForm()
-
         Select Case MoveInfoGetter()
             Case "SelectAddDocument"
                 MoveSelectAddDocument()
@@ -32,12 +44,10 @@
                 MoveMonthHigh()
             Case "MonthLow"
                 MoveMonthLow()
-
-
         End Select
-
     End Sub
-    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton5.Click
+
+    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
         MoveInfoSetter("SelectAddDocument")
         MoveForm()
     End Sub
@@ -46,14 +56,14 @@
         Dim f As New Month35Age
         Me.Enabled = False
         f.Show(Me)
-        'f.SetID(sql)
+        'f.SetID(sqlConnect)
     End Sub
 
     Private Sub MoveMonthLow()
         Dim f As New Month1Age
         Me.Enabled = False
         f.Show(Me)
-        'f.SetID(sql)
+        'f.SetID(sqlConnect)
     End Sub
 
 
@@ -69,28 +79,30 @@
 
 
 
-    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs) Handles BunifuImageButton1.Click
+    Private Sub BnfImgBtnLoad_Click(sender As Object, e As EventArgs) Handles BnfImgBtnLoad.Click
+
+        If sqlConnectChecker() = False Then
+            MessageBox.Show("SQL接続中です。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return  ' sql接続不可により終了
+        End If
+
+        ' プログレスバーを出現させる
         Dim pF As New ProgressStatesForm
-        pF.Show()
-        pF.ProgressStatesMaxSet(2)
+        pF.Show() : pF.ProgressStatesMaxSet(2)
+        pF.ProgressStatesLabelUpdate("SQL接続完了")
 
-        pF.ProgressStatesLabelUpdate()
-        pF.ProcessContentsSet("SQL接続完了")
+        sqlConnect.DBConnect(Month_0to1_show_sql())
+        pF.ProgressStatesLabelUpdate("DB一覧取得完了")
 
-        sql.DBConnect(Month_0to1_show_sql())
 
-        pF.ProgressStatesLabelUpdate()
-        pF.ProcessContentsSet("DB一覧取得完了")
-
-        Dim ds As DataSet = sql.DBResult
-
-        'DataGridView.DataSource = ds.Tables(0).Rows
+        ' DBからの情報をDataGridViewに上書き反映させる
+        Dim ds As DataSet = sqlConnect.DBResult
         DataGridView.Rows.Clear()
         For Each row As DataRow In ds.Tables(0).Rows
-
             DataGridView.Rows.Add(row.ItemArray)
         Next row
 
+        'プログレスバーを閉じる
         pF.ProgressStatesEnd()
     End Sub
 
@@ -118,7 +130,7 @@
             Dim f As New Month1AgeShownDummy
             Me.Enabled = False
             f.Show(Me)
-            f.SetID(id, sql)
+            f.SetID(id, sqlConnect)
             '関数おわり
         End If
     End Sub
@@ -147,12 +159,18 @@
         Return ""
     End Function
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BnfImgBtnClose_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         Me.Close()
     End Sub
 
-    Private Sub BunifuImageButton6_Click(sender As Object, e As EventArgs)
-        Me.Close()
-
+    Private Sub BackgroundWorkerSQLConnect_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BackgroundWorkerSQLConnect.DoWork
+        Me.sqlConnect = New SQLConnectClass
     End Sub
+
+    Private Sub BackgroundWorkerSQLConnect_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerSQLConnect.RunWorkerCompleted
+        LabelSQLStatus.Text = "SQL接続完了!!"
+        System.Threading.Thread.Sleep(200)
+        LabelSQLStatus.Text = ""
+    End Sub
+
 End Class
