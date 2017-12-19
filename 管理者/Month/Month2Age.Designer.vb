@@ -152,6 +152,7 @@ Partial Class Month2Age
         '
         'header
         '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.header.Controls.Add(Me.BunifuImageButton4)

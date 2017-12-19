@@ -80,6 +80,7 @@ Partial Class Month35Age
         '
         'header
         '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.header.Controls.Add(Me.BunifuImageButton4)
@@ -133,7 +134,7 @@ Partial Class Month35Age
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(75, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(93, 26)
         Me.MenuStrip2.TabIndex = 2
         Me.MenuStrip2.Text = "MenuStrip2"
         '
@@ -142,30 +143,30 @@ Partial Class Month35Age
         Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.ToolStripSeparator1, Me.閉じるToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
         '上書き保存ToolStripMenuItem
         '
         Me.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem"
-        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.上書き保存ToolStripMenuItem.Text = "上書き保存(&S)"
         '
         '名前を付けて保存ToolStripMenuItem
         '
         Me.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem"
-        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(174, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(187, 6)
         '
         '閉じるToolStripMenuItem
         '
         Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
-        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
         '
         'BunifuImageButton1

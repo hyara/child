@@ -277,6 +277,7 @@ Partial Class AdministratorForm
         '
         'header
         '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(120, Byte), Integer))
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.header.Controls.Add(Me.LabelSQLStatus)
@@ -476,6 +477,7 @@ Partial Class AdministratorForm
         '
         'BunifuGradientPanel1
         '
+        Me.BunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(123, Byte), Integer))
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BunifuGradientPanel1.Controls.Add(Me.BunifuCustomLabel1)
@@ -569,9 +571,9 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 2, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(8, 154)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
@@ -594,11 +596,11 @@ Partial Class AdministratorForm
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 1)
+        Me.Label3.Location = New System.Drawing.Point(12, 11)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(145, 48)
+        Me.Label3.Size = New System.Drawing.Size(145, 28)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "退職フラグを含む"
+        Me.Label3.Text = "退職済みを含む"
         '
         'CheckBox4
         '
@@ -860,7 +862,7 @@ Partial Class AdministratorForm
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "AdministratorForm"
         Me.RightToLeftLayout = True
-        Me.Text = "￥３１。ぉ９０hjb０"
+        Me.Text = "AdministratorForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox3.ResumeLayout(False)
         Me.header.ResumeLayout(False)

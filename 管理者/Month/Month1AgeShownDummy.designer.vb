@@ -700,6 +700,7 @@ Partial Class Month1AgeShownDummy
         '
         'header
         '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(137, Byte), Integer))
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.header.Controls.Add(Me.BunifuImageButton4)
@@ -809,7 +810,7 @@ Partial Class Month1AgeShownDummy
         Me.BunifuDragControl1.TargetControl = Me.header
         Me.BunifuDragControl1.Vertical = True
         '
-        'Month1Age
+        'Month1AgeShownDummy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -818,7 +819,7 @@ Partial Class Month1AgeShownDummy
         Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Month1Age"
+        Me.Name = "Month1AgeShownDummy"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
