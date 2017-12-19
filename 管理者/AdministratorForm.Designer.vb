@@ -567,7 +567,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
@@ -584,7 +584,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(413, 18)
+        Me.CheckBox3.Location = New System.Drawing.Point(411, 18)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox3.TabIndex = 3
@@ -594,9 +594,9 @@ Partial Class AdministratorForm
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 11)
+        Me.Label3.Location = New System.Drawing.Point(12, 1)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(164, 28)
+        Me.Label3.Size = New System.Drawing.Size(145, 48)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "退職フラグを含む"
         '
@@ -604,7 +604,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(187, 18)
+        Me.CheckBox4.Location = New System.Drawing.Point(184, 18)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox4.TabIndex = 1
@@ -614,7 +614,7 @@ Partial Class AdministratorForm
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(225, 11)
+        Me.Label5.Location = New System.Drawing.Point(221, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
         Me.Label5.TabIndex = 2
@@ -695,7 +695,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 675.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 677.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 1, 0)
@@ -716,7 +716,7 @@ Partial Class AdministratorForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(37, 12)
+        Me.Label2.Location = New System.Drawing.Point(36, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 28)
         Me.Label2.TabIndex = 0
@@ -728,7 +728,7 @@ Partial Class AdministratorForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(27, 64)
+        Me.Label4.Location = New System.Drawing.Point(26, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1
@@ -738,7 +738,7 @@ Partial Class AdministratorForm
         '
         Me.TextBox1.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox1.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox1.Location = New System.Drawing.Point(151, 7)
+        Me.TextBox1.Location = New System.Drawing.Point(150, 7)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(659, 39)
         Me.TextBox1.TabIndex = 2
@@ -747,7 +747,7 @@ Partial Class AdministratorForm
         '
         Me.TextBox2.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBox2.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBox2.Location = New System.Drawing.Point(151, 59)
+        Me.TextBox2.Location = New System.Drawing.Point(150, 59)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(659, 39)
         Me.TextBox2.TabIndex = 3
