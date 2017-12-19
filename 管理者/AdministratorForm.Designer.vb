@@ -403,14 +403,14 @@ Partial Class AdministratorForm
         Me.BunifuFlatButton4.IconVisible = True
         Me.BunifuFlatButton4.IconZoom = 70.0R
         Me.BunifuFlatButton4.IsTab = False
-        Me.BunifuFlatButton4.Location = New System.Drawing.Point(10, 280)
+        Me.BunifuFlatButton4.Location = New System.Drawing.Point(17, 280)
         Me.BunifuFlatButton4.Margin = New System.Windows.Forms.Padding(4)
         Me.BunifuFlatButton4.Name = "BunifuFlatButton4"
         Me.BunifuFlatButton4.Normalcolor = System.Drawing.Color.Transparent
         Me.BunifuFlatButton4.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.BunifuFlatButton4.OnHoverTextColor = System.Drawing.Color.White
         Me.BunifuFlatButton4.selected = False
-        Me.BunifuFlatButton4.Size = New System.Drawing.Size(195, 70)
+        Me.BunifuFlatButton4.Size = New System.Drawing.Size(188, 70)
         Me.BunifuFlatButton4.TabIndex = 46
         Me.BunifuFlatButton4.Text = "　児童日誌"
         Me.BunifuFlatButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -553,7 +553,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
@@ -570,7 +570,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(420, 18)
+        Me.CheckBox3.Location = New System.Drawing.Point(419, 18)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox3.TabIndex = 3
@@ -580,7 +580,7 @@ Partial Class AdministratorForm
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(10, 11)
+        Me.Label3.Location = New System.Drawing.Point(9, 11)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(164, 28)
         Me.Label3.TabIndex = 0
@@ -590,7 +590,7 @@ Partial Class AdministratorForm
         '
         Me.CheckBox4.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(200, 18)
+        Me.CheckBox4.Location = New System.Drawing.Point(198, 18)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox4.TabIndex = 1
@@ -600,7 +600,7 @@ Partial Class AdministratorForm
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(239, 11)
+        Me.Label5.Location = New System.Drawing.Point(237, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
         Me.Label5.TabIndex = 2
@@ -681,7 +681,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 668.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 669.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox1, 1, 0)
@@ -714,7 +714,7 @@ Partial Class AdministratorForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(31, 64)
+        Me.Label4.Location = New System.Drawing.Point(30, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1

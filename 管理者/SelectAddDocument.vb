@@ -25,21 +25,21 @@
     '------------------------------------------------------------
 
     Private Sub ButtonMonthHigh_Click(sender As Object, e As EventArgs)
-        Dim f As AdministratorForm
-        f = Owner
-        f.MoveInfoSetter("MonthHigh")
-        f.MoveForm()
+        Dim a As AdministratorForm
+        a = Owner
+        a.MoveInfoSetter("MonthHigh")
+        a.MoveForm()
         Me.Dispose()
     End Sub
     Private Sub ButtonMonthLow_Click(sender As Object, e As EventArgs)
-        Dim f As AdministratorForm
-        f = Owner
-        f.MoveInfoSetter("MonthLow")
-        f.MoveForm()
+        Dim b As AdministratorForm
+        b = Owner
+        b.MoveInfoSetter("MonthLow")
+        b.MoveForm()
         Me.Dispose()
     End Sub
 
-    Private Sub ButtonWeekLow_Click(sender As Object, e As EventArgs) Handles ButtonWeekLow.Click
+    Private Sub ButtonWeekLow_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("WeekLow")
@@ -47,7 +47,7 @@
         Me.Dispose()
     End Sub
 
-    Private Sub ButtonWeekHigh_Click(sender As Object, e As EventArgs) Handles ButtonWeekHigh.Click
+    Private Sub ButtonWeekHigh_Click(sender As Object, e As EventArgs)
         Dim f As AdministratorForm
         f = Owner
         f.MoveInfoSetter("WeekHigh")
@@ -74,7 +74,7 @@
         TabControl1.SelectTab(2)
     End Sub
 
-    Private Sub BunifuFlatButton3_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton3.Click
+    Private Sub BunifuFlatButton3_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -96,12 +96,47 @@
 
 
     Private Sub BunifuFlatButton7_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton7.Click
-
     End Sub
 
     Private Sub TabPage3_Click(sender As Object, e As EventArgs) Handles TabPage3.Click
+    End Sub
+
+    Private Sub BunifuImageButton1_Click(sender As Object, e As EventArgs)
+        Dim f As AdministratorForm
+        f = Owner
+        f.MoveInfoSetter("MonthLow")
+        f.MoveForm()
+        Me.Dispose()
+    End Sub
+
+    Private Sub BunifuGradientPanel2_Paint(sender As Object, e As PaintEventArgs)
 
     End Sub
+
+    Private Sub BunifuGradientPanel1_Paint(sender As Object, e As PaintEventArgs) Handles BunifuGradientPanel1.Paint
+
+    End Sub
+
+    Private Sub BunifuFlatButton4_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BunifuThinButton21_Click(sender As Object, e As EventArgs) Handles BunifuThinButton21.Click
+        Dim f As AdministratorForm
+        f = Owner
+        f.MoveInfoSetter("WeekLow")
+        f.MoveForm()
+        Me.Dispose()
+    End Sub
+
+    Private Sub BunifuThinButton22_Click(sender As Object, e As EventArgs) Handles BunifuThinButton22.Click
+        Dim f As AdministratorForm
+        f = Owner
+        f.MoveInfoSetter("WeekHigh")
+        f.MoveForm()
+        Me.Dispose()
+    End Sub
+
 
 End Class
 

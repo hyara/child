@@ -22,6 +22,7 @@ Partial Class AddClass
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddClass))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextCluss = New System.Windows.Forms.TextBox()
         Me.Man = New System.Windows.Forms.TextBox()
@@ -38,11 +39,17 @@ Partial Class AddClass
         Me.ErrerMessage2 = New System.Windows.Forms.Label()
         Me.ErrerMessage3 = New System.Windows.Forms.Label()
         Me.ErrerMessage4 = New System.Windows.Forms.Label()
+        Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BunifuImageButton3 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.header.SuspendLayout()
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(117, 185)
+        Me.Button1.Location = New System.Drawing.Point(112, 329)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 23)
         Me.Button1.TabIndex = 0
@@ -51,21 +58,21 @@ Partial Class AddClass
         '
         'TextCluss
         '
-        Me.TextCluss.Location = New System.Drawing.Point(117, 42)
+        Me.TextCluss.Location = New System.Drawing.Point(110, 91)
         Me.TextCluss.Name = "TextCluss"
         Me.TextCluss.Size = New System.Drawing.Size(100, 19)
         Me.TextCluss.TabIndex = 1
         '
         'Man
         '
-        Me.Man.Location = New System.Drawing.Point(126, 92)
+        Me.Man.Location = New System.Drawing.Point(133, 144)
         Me.Man.Name = "Man"
         Me.Man.Size = New System.Drawing.Size(31, 19)
         Me.Man.TabIndex = 2
         '
         'Girl
         '
-        Me.Girl.Location = New System.Drawing.Point(218, 92)
+        Me.Girl.Location = New System.Drawing.Point(133, 171)
         Me.Girl.Name = "Girl"
         Me.Girl.Size = New System.Drawing.Size(31, 19)
         Me.Girl.TabIndex = 3
@@ -74,7 +81,7 @@ Partial Class AddClass
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(117, 139)
+        Me.ComboBox1.Location = New System.Drawing.Point(110, 231)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(100, 20)
         Me.ComboBox1.TabIndex = 4
@@ -82,7 +89,7 @@ Partial Class AddClass
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(27, 49)
+        Me.Label1.Location = New System.Drawing.Point(44, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(42, 12)
         Me.Label1.TabIndex = 5
@@ -91,7 +98,7 @@ Partial Class AddClass
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(27, 95)
+        Me.Label2.Location = New System.Drawing.Point(41, 147)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(54, 12)
         Me.Label2.TabIndex = 6
@@ -100,7 +107,7 @@ Partial Class AddClass
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(103, 95)
+        Me.Label3.Location = New System.Drawing.Point(110, 147)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(17, 12)
         Me.Label3.TabIndex = 7
@@ -109,7 +116,7 @@ Partial Class AddClass
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(27, 147)
+        Me.Label4.Location = New System.Drawing.Point(44, 231)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(29, 12)
         Me.Label4.TabIndex = 8
@@ -118,7 +125,7 @@ Partial Class AddClass
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(195, 95)
+        Me.Label5.Location = New System.Drawing.Point(110, 174)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(17, 12)
         Me.Label5.TabIndex = 9
@@ -127,7 +134,7 @@ Partial Class AddClass
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(163, 95)
+        Me.Label8.Location = New System.Drawing.Point(170, 147)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(17, 12)
         Me.Label8.TabIndex = 11
@@ -136,7 +143,7 @@ Partial Class AddClass
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(255, 95)
+        Me.Label9.Location = New System.Drawing.Point(170, 174)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(17, 12)
         Me.Label9.TabIndex = 12
@@ -146,7 +153,7 @@ Partial Class AddClass
         '
         Me.ErrerMessage1.AutoSize = True
         Me.ErrerMessage1.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage1.Location = New System.Drawing.Point(87, 64)
+        Me.ErrerMessage1.Location = New System.Drawing.Point(108, 116)
         Me.ErrerMessage1.Name = "ErrerMessage1"
         Me.ErrerMessage1.Size = New System.Drawing.Size(126, 12)
         Me.ErrerMessage1.TabIndex = 16
@@ -157,18 +164,18 @@ Partial Class AddClass
         '
         Me.ErrerMessage2.AutoSize = True
         Me.ErrerMessage2.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage2.Location = New System.Drawing.Point(41, 114)
+        Me.ErrerMessage2.Location = New System.Drawing.Point(108, 193)
         Me.ErrerMessage2.Name = "ErrerMessage2"
-        Me.ErrerMessage2.Size = New System.Drawing.Size(254, 12)
+        Me.ErrerMessage2.Size = New System.Drawing.Size(231, 12)
         Me.ErrerMessage2.TabIndex = 17
-        Me.ErrerMessage2.Text = "男女の合計が1以上になるように数字を入れてください"
+        Me.ErrerMessage2.Text = "男女の合計が1以上になるように入力してください"
         Me.ErrerMessage2.Visible = False
         '
         'ErrerMessage3
         '
         Me.ErrerMessage3.AutoSize = True
         Me.ErrerMessage3.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage3.Location = New System.Drawing.Point(87, 162)
+        Me.ErrerMessage3.Location = New System.Drawing.Point(108, 254)
         Me.ErrerMessage3.Name = "ErrerMessage3"
         Me.ErrerMessage3.Size = New System.Drawing.Size(149, 12)
         Me.ErrerMessage3.TabIndex = 18
@@ -179,18 +186,65 @@ Partial Class AddClass
         '
         Me.ErrerMessage4.AutoSize = True
         Me.ErrerMessage4.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage4.Location = New System.Drawing.Point(87, 64)
+        Me.ErrerMessage4.Location = New System.Drawing.Point(108, 116)
         Me.ErrerMessage4.Name = "ErrerMessage4"
         Me.ErrerMessage4.Size = New System.Drawing.Size(123, 12)
         Me.ErrerMessage4.TabIndex = 19
         Me.ErrerMessage4.Text = "そのクラス名は存在します"
         Me.ErrerMessage4.Visible = False
         '
+        'header
+        '
+        Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
+        Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.header.Controls.Add(Me.BunifuImageButton3)
+        Me.header.Controls.Add(Me.BunifuImageButton2)
+        Me.header.Dock = System.Windows.Forms.DockStyle.Top
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.header.Location = New System.Drawing.Point(0, 0)
+        Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.header.Name = "header"
+        Me.header.Quality = 10
+        Me.header.Size = New System.Drawing.Size(341, 50)
+        Me.header.TabIndex = 58
+        '
+        'BunifuImageButton3
+        '
+        Me.BunifuImageButton3.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton3.Image = CType(resources.GetObject("BunifuImageButton3.Image"), System.Drawing.Image)
+        Me.BunifuImageButton3.ImageActive = Nothing
+        Me.BunifuImageButton3.Location = New System.Drawing.Point(237, 5)
+        Me.BunifuImageButton3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton3.Name = "BunifuImageButton3"
+        Me.BunifuImageButton3.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton3.TabIndex = 12
+        Me.BunifuImageButton3.TabStop = False
+        Me.BunifuImageButton3.Zoom = 10
+        '
+        'BunifuImageButton2
+        '
+        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
+        Me.BunifuImageButton2.ImageActive = Nothing
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(297, 5)
+        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton2.Name = "BunifuImageButton2"
+        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton2.TabIndex = 11
+        Me.BunifuImageButton2.TabStop = False
+        Me.BunifuImageButton2.Zoom = 10
+        '
         'AddClass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(337, 229)
+        Me.ClientSize = New System.Drawing.Size(341, 384)
+        Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.ErrerMessage4)
         Me.Controls.Add(Me.ErrerMessage3)
         Me.Controls.Add(Me.ErrerMessage2)
@@ -207,8 +261,12 @@ Partial Class AddClass
         Me.Controls.Add(Me.Man)
         Me.Controls.Add(Me.TextCluss)
         Me.Controls.Add(Me.Button1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AddClass"
         Me.Text = "AddClass"
+        Me.header.ResumeLayout(False)
+        CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -229,4 +287,7 @@ Partial Class AddClass
     Friend WithEvents ErrerMessage2 As System.Windows.Forms.Label
     Friend WithEvents ErrerMessage3 As System.Windows.Forms.Label
     Friend WithEvents ErrerMessage4 As System.Windows.Forms.Label
+    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents BunifuImageButton3 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
 End Class
