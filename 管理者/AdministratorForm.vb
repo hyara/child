@@ -40,10 +40,14 @@
         Select Case MoveInfoGetter()
             Case "SelectAddDocument"
                 MoveSelectAddDocument()
-            Case "MonthHigh"
+            Case "Month35Age"
                 MoveMonthHigh()
-            Case "MonthLow"
+            Case "Month1Age"
                 MoveMonthLow()
+            Case "Month2Age"
+                MoveMonth2Age()
+
+
         End Select
     End Sub
 
@@ -66,7 +70,12 @@
         'f.SetID(sqlConnect)
     End Sub
 
-
+    Private Sub MoveMonth2Age()
+        Dim f As New Month2Age
+        Me.Enabled = False
+        f.Show(Me)
+        f.SetID(sql)
+    End Sub
 
     Private Sub MoveSelectAddDocument()
         Dim f As New SelectAddDocument

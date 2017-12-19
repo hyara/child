@@ -18,7 +18,7 @@ Partial Class SelectAddDocument
     Private components As System.ComponentModel.IContainer
 
     'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
-    'Windows フォーム デザイナーを使用して変更できます。  
+    'Windows フォーム デザイナーを使用して変更できます。
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
