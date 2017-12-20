@@ -988,14 +988,14 @@ Partial Class Month2Age
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
+    ' Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    '  Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    '  Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PastToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    '  Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    '  Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
