@@ -543,7 +543,7 @@ Partial Class ChildInfoAdd
         Me.txt_Temperature.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txt_Temperature.ImeMode = System.Windows.Forms.ImeMode.Disable
         Me.txt_Temperature.Location = New System.Drawing.Point(635, 201)
-        Me.txt_Temperature.MaxLength = 5
+        Me.txt_Temperature.MaxLength = 4
         Me.txt_Temperature.Name = "txt_Temperature"
         Me.txt_Temperature.Size = New System.Drawing.Size(87, 23)
         Me.txt_Temperature.TabIndex = 13
