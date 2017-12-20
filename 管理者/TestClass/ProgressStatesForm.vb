@@ -5,6 +5,7 @@
 
     Private Sub ProgressStatesForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ProgressBar.Value = 0
+        BunifuCircleProgressbar1.Value = 0
         ProcessContentsRTB.Clear()
         ProgressStatesMaxSet(100)
         ProgressStatesLabelSet(0)
@@ -23,7 +24,6 @@
         processNum = i
         ProgressStatesLabel.Text = "( " & processNum & " / " & max & " )"
     End Sub
-
     ''' <summary>
     ''' 進行状況を更新する
     ''' </summary>
@@ -35,6 +35,7 @@
             processNum = max
         End If
         ProgressBar.Value = processNum
+        BunifuCircleProgressbar1.Value = processNum
         ProgressStatesLabel.Text = "( " & processNum & " / " & max & " )"
         Me.Refresh()
     End Sub

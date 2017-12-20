@@ -55,12 +55,12 @@ Partial Class ChildDBView
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.BunifuFlatButton8 = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BunifuFlatButton9 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,8 +73,8 @@ Partial Class ChildDBView
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.TableLayoutPanel3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BunifuDragControl1
@@ -640,72 +640,9 @@ Partial Class ChildDBView
         Me.BunifuFlatButton9.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BunifuFlatButton9.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
         '
-        'TableLayoutPanel3
-        '
-        Me.TableLayoutPanel3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel3.ColumnCount = 4
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 3, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.CheckBox4, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 2, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(8, 154)
-        Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 1
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(463, 50)
-        Me.TableLayoutPanel3.TabIndex = 53
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(421, 18)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox3.TabIndex = 3
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 11)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(164, 28)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "退職フラグを含む"
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(202, 18)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
-        Me.CheckBox4.TabIndex = 1
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(241, 11)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(145, 28)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "削除済みを含む"
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TableLayoutPanel3)
+        Me.GroupBox1.Controls.Add(Me.TableLayoutPanel2)
         Me.GroupBox1.Controls.Add(Me.BunifuFlatButton9)
         Me.GroupBox1.Controls.Add(Me.BunifuFlatButton8)
         Me.GroupBox1.Controls.Add(Me.TableLayoutPanel1)
@@ -717,6 +654,69 @@ Partial Class ChildDBView
         Me.GroupBox1.TabIndex = 76
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "検索項目"
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
+        Me.TableLayoutPanel2.ColumnCount = 4
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 87.21461!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.78539!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 212.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.CheckBox1, 3, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label8, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.CheckBox2, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label9, 2, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(8, 154)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 1
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(463, 50)
+        Me.TableLayoutPanel2.TabIndex = 54
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(441, 18)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
+        Me.CheckBox1.TabIndex = 3
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(5, 11)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(183, 28)
+        Me.Label8.TabIndex = 0
+        Me.Label8.Text = "卒園した児童を表示"
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(199, 18)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(15, 14)
+        Me.CheckBox2.TabIndex = 1
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(227, 11)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(202, 28)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "卒園した児童を非表示"
         '
         'ChildDBView
         '
@@ -750,9 +750,9 @@ Partial Class ChildDBView
         Me.GroupBox3.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
-        Me.TableLayoutPanel3.ResumeLayout(False)
-        Me.TableLayoutPanel3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -787,11 +787,11 @@ Partial Class ChildDBView
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents BunifuFlatButton8 As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton9 As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents TableLayoutPanel2 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 
 End Class
