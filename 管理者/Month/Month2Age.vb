@@ -1,15 +1,12 @@
 ﻿Imports Microsoft.Office.Interop.Excel
 
-
-
 Public Class Month2Age
+
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
-    ''' <summary>
-    '''
-    ''' </summary>
-    ''' <param name="sqlConnect"></param>
-    ''' <remarks></remarks>
-    Public Sub SetID(sqlConnect As SQLConnectClass)
+    Dim sqlConnect As SQLConnectClass
+
+    Public Sub SetID(sql As SQLConnectClass)
+        sqlConnect = sql
         'クラス名を反映
         If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
             MsgBox(sqlConnect.ErrorMessage())
@@ -64,7 +61,7 @@ Public Class Month2Age
             ByVal e As KeyPressEventArgs)
         ' テキストの長さ上限値
         Dim textLength = 2
-        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
 
         '押されたキーが「0～9でない場合」かつ「BackSpaceでない場合」イベントをキャンセルする
         If (e.KeyChar < "0"c Or e.KeyChar > "9"c) And e.KeyChar <> vbBack Then
@@ -77,7 +74,7 @@ Public Class Month2Age
         'フォーム上のものからとってくる
         Dim strX As String = TextBoxBoysNumber.Text
         Dim strY As String = TextBoxGirlsNumber.Text
-
+        Dim result As Label = LabelSum
 
         '計算に使う変数
         Dim x As Integer = 0
@@ -88,25 +85,26 @@ Public Class Month2Age
         If strY <> "" Then y = Integer.Parse(strY)
 
         If x = 0 And y = 0 Then
-            LabelSum.Text = ""
+            result.Text = ""
         Else
-            LabelSum.Text = x + y
+            result.Text = x + y
         End If
     End Sub
     Private Sub AutoText_Enter(sender As Object, e As EventArgs)
-        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "0" Then
             tBox.Clear()
         End If
     End Sub
     Private Sub AutoText_Leave(sender As Object, e As EventArgs)
-        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "" Then
             tBox.Text = "0"
         End If
     End Sub
 
-    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PastToolStripMenuItem.Click
+
         Dim fileName As String
         fileName = "保育指導月案（2歳用）" & _
                         ClassName.Text & TargetMonth.Text & "月.xlsm"
@@ -147,12 +145,29 @@ Public Class Month2Age
         MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
 
 
+        'hyara
+        Dim sqlString As String = Input_month_main_high()
 
+        'If sqlConnect.DBConnect(sqlString) = False Then
+        'MsgBox(sqlConnect.ErrorMessage)
+        'Else
+
+        'sqlConnect.DBConnect("SELECT MAX(month_main_2to2_id) FROM child_monthplan_main_2to2;")
+        'Dim ds As DataSet = sqlConnect.DBResult()
+        'Dim dt As DataTable = ds.Tables.Item(0)
+        'Dim mainID As String = dt.Rows(0).Item(0)
+        'For i = 0 To 5
+        '    Dim s As String = Input_month_table_high(i, mainID)
+        '    If sqlConnect.DBConnect(s) = False Then
+        '        MsgBox(sqlConnect.ErrorMessage)
+        '    End If
+        'Next
+        'End If
+        'MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
 
     '読解性上昇のために作成した関数
     Private Function Input_month_main_high() As String
-
         Dim sqlString As String
 
         sqlString = "INSERT INTO " _
@@ -254,23 +269,6 @@ Public Class Month2Age
         Return sqlString
     End Function
 
-
-    Private Sub MonthHigh_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        If IsNothing(Owner) = False Then
-            Owner.Enabled = True
-            Me.Dispose()
-        End If
-    End Sub
-
-    Private Sub BunifuVTrackbar2_ValueChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
-        closecheck()
-    End Sub
-
-
     Public Function addData() As String(,)
         '印刷用の紐づけ
         Dim arrayData(,) As String = {{StateMonth.Text, "C4"}, _
@@ -364,26 +362,24 @@ Public Class Month2Age
         Else
             MsgBox("保存をしてください")
         End If
-            'Dim j = 0
-            ''入力されているものをexselへ置き換える
-            'For i = 0 To 42
+        'Dim j = 0
+        ''入力されているものをexselへ置き換える
+        'For i = 0 To 42
 
-            '    aRange = xlApp.Range(arrayData(i, 1))
-            '    If aRange IsNot Nothing Then
-            '        Console.WriteLine(aRange.Value2)
-            '        aRange.Value2 = arrayData(j, 0)
-            '        Console.WriteLine(aRange.Value2)
-            '    End If
-            '    j = j + 1
-            'Next
-            'プレビュー画面を呼び出す
+        '    aRange = xlApp.Range(arrayData(i, 1))
+        '    If aRange IsNot Nothing Then
+        '        Console.WriteLine(aRange.Value2)
+        '        aRange.Value2 = arrayData(j, 0)
+        '        Console.WriteLine(aRange.Value2)
+        '    End If
+        '    j = j + 1
+        'Next
+        'プレビュー画面を呼び出す
 
     End Sub
 
-
     Private Sub 閉じるToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 閉じるToolStripMenuItem.Click
         closecheck()
-
     End Sub
 
     Public Sub closecheck()
@@ -441,5 +437,20 @@ Public Class Month2Age
             End If
         End If
 
+    End Sub
+
+    Private Sub MonthHigh_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsNothing(Owner) = False Then
+            Owner.Enabled = True
+            Me.Dispose()
+        End If
+    End Sub
+
+    Private Sub BunifuVTrackbar2_ValueChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
+        Me.Close()
     End Sub
 End Class

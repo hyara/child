@@ -14,15 +14,17 @@
 	<remarks></remarks>
 </member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
 	<summary>
- 画面を遷移する
- </summary>
-	<param name="TransitionOriginal">遷移元</param>
-	<param name="TransitionTarget">遷移先</param>
-</member><member name="M:WindowsApplication1.Month2Age.SetID(WindowsApplication1.SQLConnectClass)">
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
 	<summary>
-	</summary>
-	<param name="sqlConnect"></param>
-	<remarks></remarks>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
 </member><member name="M:WindowsApplication1.SQLConnectClass.DBConnect(System.String)">
 	<summary>
  指定されたSQLを実行します。
@@ -70,28 +72,12 @@
 	<summary>
  version 2.0
  </summary>
-</member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
 	<summary>
- 必要物が全てハードコーティング済みのDataGridViewから、
- クリックされたボタンの内容を取得する。
+ 画面を遷移する
  </summary>
-	<param name="sender">senderそのまま代入</param>
-	<param name="e">eventそのまま代入</param>
-	<returns>クリックされたボタンの内容</returns>
-	<remarks></remarks>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-	<summary>
-  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-	<summary>
-  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
-  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
-</summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
-	<summary>
-  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
-</summary>
+	<param name="TransitionOriginal">遷移元</param>
+	<param name="TransitionTarget">遷移先</param>
 </member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
 	<summary>
  進行状況を設定する

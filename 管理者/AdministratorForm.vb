@@ -41,40 +41,53 @@
             Case "SelectAddDocument"
                 MoveSelectAddDocument()
             Case "Month35Age"
-                MoveMonthHigh()
+                MoveMonth3to5Age()
             Case "Month1Age"
-                MoveMonthLow()
+                MoveMonth0to1Age()
             Case "Month2Age"
                 MoveMonth2Age()
-
-
         End Select
     End Sub
 
-    Private Sub BunifuFlatButton5_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
+    Private Sub BnfImgBtnNewCreate_Click(sender As Object, e As EventArgs) Handles BnfImgBtnNewCreate.Click
         MoveInfoSetter("SelectAddDocument")
         MoveForm()
     End Sub
 
-    Private Sub MoveMonthHigh()
-        Dim f As New Month35Age
-        Me.Enabled = False
-        f.Show(Me)
-        'f.SetID(sqlConnect)
+    Private Sub MoveMonth3to5Age()
+        If sqlConnectChecker() = False Then
+            MessageBox.Show("SQL接続中です。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return  ' sql接続不可により終了
+        Else
+            Dim f As New Month35Age
+            Me.Enabled = False
+            f.Show(Me)
+            f.SetID(sqlConnect)
+        End If
     End Sub
 
-    Private Sub MoveMonthLow()
-        Dim f As New Month1Age
-        Me.Enabled = False
-        f.Show(Me)
-        'f.SetID(sqlConnect)
+    Private Sub MoveMonth0to1Age()
+        If sqlConnectChecker() = False Then
+            MessageBox.Show("SQL接続中です。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return  ' sql接続不可により終了
+        Else
+            Dim f As New Month1Age
+            Me.Enabled = False
+            f.Show(Me)
+            'f.SetID(sql)
+        End If
     End Sub
 
     Private Sub MoveMonth2Age()
-        Dim f As New Month2Age
-        Me.Enabled = False
-        f.Show(Me)
-        f.SetID(sql)
+        If sqlConnectChecker() = False Then
+            MessageBox.Show("SQL接続中です。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return  ' sql接続不可により終了
+        Else
+            Dim f As New Month2Age
+            Me.Enabled = False
+            f.Show(Me)
+            f.SetID(sqlConnect)
+        End If
     End Sub
 
     Private Sub MoveSelectAddDocument()
@@ -181,5 +194,6 @@
         System.Threading.Thread.Sleep(200)
         LabelSQLStatus.Text = ""
     End Sub
+
 
 End Class

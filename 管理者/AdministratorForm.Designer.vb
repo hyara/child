@@ -50,9 +50,9 @@ Partial Class AdministratorForm
         Me.GroupBoxSearch = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.ChkBoxDelete = New System.Windows.Forms.CheckBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.ChkBoxRetireFlg = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.BnfFlatBtnSearchClear = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BnfFlatBtnSearch = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -569,7 +569,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxDelete, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxRetireFlg, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 2, 0)
@@ -586,11 +586,31 @@ Partial Class AdministratorForm
         '
         Me.ChkBoxDelete.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ChkBoxDelete.AutoSize = True
-        Me.ChkBoxDelete.Location = New System.Drawing.Point(411, 18)
+        Me.ChkBoxDelete.Location = New System.Drawing.Point(410, 18)
         Me.ChkBoxDelete.Name = "ChkBoxDelete"
         Me.ChkBoxDelete.Size = New System.Drawing.Size(15, 14)
         Me.ChkBoxDelete.TabIndex = 3
         Me.ChkBoxDelete.UseVisualStyleBackColor = True
+        '
+        'ChkBoxRetireFlg
+        '
+        Me.ChkBoxRetireFlg.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.ChkBoxRetireFlg.AutoSize = True
+        Me.ChkBoxRetireFlg.Location = New System.Drawing.Point(182, 18)
+        Me.ChkBoxRetireFlg.Name = "ChkBoxRetireFlg"
+        Me.ChkBoxRetireFlg.Size = New System.Drawing.Size(15, 14)
+        Me.ChkBoxRetireFlg.TabIndex = 1
+        Me.ChkBoxRetireFlg.UseVisualStyleBackColor = True
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(219, 11)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(145, 28)
+        Me.Label5.TabIndex = 2
+        Me.Label5.Text = "削除済みを含む"
         '
         'Label3
         '
@@ -601,26 +621,6 @@ Partial Class AdministratorForm
         Me.Label3.Size = New System.Drawing.Size(145, 28)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "退職済みを含む"
-        '
-        'ChkBoxRetireFlg
-        '
-        Me.ChkBoxRetireFlg.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.ChkBoxRetireFlg.AutoSize = True
-        Me.ChkBoxRetireFlg.Location = New System.Drawing.Point(184, 18)
-        Me.ChkBoxRetireFlg.Name = "ChkBoxRetireFlg"
-        Me.ChkBoxRetireFlg.Size = New System.Drawing.Size(15, 14)
-        Me.ChkBoxRetireFlg.TabIndex = 1
-        Me.ChkBoxRetireFlg.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(221, 11)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(145, 28)
-        Me.Label5.TabIndex = 2
-        Me.Label5.Text = "削除済みを含む"
         '
         'BnfFlatBtnSearchClear
         '
@@ -697,7 +697,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 677.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 678.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBoxSearchAny, 1, 0)
@@ -718,7 +718,7 @@ Partial Class AdministratorForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(36, 12)
+        Me.Label2.Location = New System.Drawing.Point(35, 12)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(69, 28)
         Me.Label2.TabIndex = 0
@@ -740,7 +740,7 @@ Partial Class AdministratorForm
         '
         Me.TextBoxSearchAny.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxSearchAny.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBoxSearchAny.Location = New System.Drawing.Point(150, 7)
+        Me.TextBoxSearchAny.Location = New System.Drawing.Point(149, 7)
         Me.TextBoxSearchAny.Name = "TextBoxSearchAny"
         Me.TextBoxSearchAny.Size = New System.Drawing.Size(659, 39)
         Me.TextBoxSearchAny.TabIndex = 2
@@ -749,7 +749,7 @@ Partial Class AdministratorForm
         '
         Me.TextBoxSearchTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxSearchTitle.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBoxSearchTitle.Location = New System.Drawing.Point(150, 59)
+        Me.TextBoxSearchTitle.Location = New System.Drawing.Point(149, 59)
         Me.TextBoxSearchTitle.Name = "TextBoxSearchTitle"
         Me.TextBoxSearchTitle.Size = New System.Drawing.Size(659, 39)
         Me.TextBoxSearchTitle.TabIndex = 3

@@ -104,7 +104,7 @@ Partial Class Month35Age
         Me.BnfImgBtnHelp.BackColor = System.Drawing.Color.Transparent
         Me.BnfImgBtnHelp.Image = CType(resources.GetObject("BnfImgBtnHelp.Image"), System.Drawing.Image)
         Me.BnfImgBtnHelp.ImageActive = Nothing
-        Me.BnfImgBtnHelp.Location = New System.Drawing.Point(686, 5)
+        Me.BnfImgBtnHelp.Location = New System.Drawing.Point(797, 5)
         Me.BnfImgBtnHelp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BnfImgBtnHelp.Name = "BnfImgBtnHelp"
         Me.BnfImgBtnHelp.Size = New System.Drawing.Size(40, 39)
@@ -118,7 +118,7 @@ Partial Class Month35Age
         Me.BnfImgBtn.BackColor = System.Drawing.Color.Transparent
         Me.BnfImgBtn.Image = CType(resources.GetObject("BnfImgBtn.Image"), System.Drawing.Image)
         Me.BnfImgBtn.ImageActive = Nothing
-        Me.BnfImgBtn.Location = New System.Drawing.Point(780, 5)
+        Me.BnfImgBtn.Location = New System.Drawing.Point(905, 5)
         Me.BnfImgBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BnfImgBtn.Name = "BnfImgBtn"
         Me.BnfImgBtn.Size = New System.Drawing.Size(40, 39)
@@ -174,7 +174,7 @@ Partial Class Month35Age
         Me.BnfImgBtnLoad.BackColor = System.Drawing.Color.Transparent
         Me.BnfImgBtnLoad.Image = CType(resources.GetObject("BnfImgBtnLoad.Image"), System.Drawing.Image)
         Me.BnfImgBtnLoad.ImageActive = Nothing
-        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(594, 5)
+        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(686, 5)
         Me.BnfImgBtnLoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BnfImgBtnLoad.Name = "BnfImgBtnLoad"
         Me.BnfImgBtnLoad.Size = New System.Drawing.Size(40, 39)
