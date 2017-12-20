@@ -71,7 +71,7 @@ Public Class Month2Day
         End If
     End Sub
 
-    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 名前を付けて保存ToolStripMenuItem.Click
+    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
         Dim sqlString As String = Input_month_main_high()
         Dim sqlConnect As New SQLConnectClass
@@ -209,7 +209,7 @@ Public Class Month2Day
 
     End Sub
 
-    Private Sub 印刷ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 印刷ToolStripMenuItem.Click
+    Private Sub 印刷ToolStripMenuItem_Click(sender As Object, e As EventArgs)
         Dim fileName As String = "C:\test\test.xlsm"
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
@@ -242,7 +242,7 @@ Public Class Month2Day
         End If
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class

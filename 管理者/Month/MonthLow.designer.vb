@@ -705,16 +705,16 @@ Partial Class MonthLow
         Me.header.Controls.Add(Me.MenuStrip1)
         Me.header.Controls.Add(Me.BunifuImageButton1)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
-        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
-        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.header.Location = New System.Drawing.Point(0, 0)
         Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.header.Name = "header"
         Me.header.Quality = 10
         Me.header.Size = New System.Drawing.Size(790, 50)
-        Me.header.TabIndex = 2
+        Me.header.TabIndex = 3
         '
         'BunifuImageButton4
         '

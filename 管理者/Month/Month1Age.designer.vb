@@ -396,7 +396,7 @@ Partial Class Month1Age
         '
         Me.DateTimePickerCreatedDate.Location = New System.Drawing.Point(666, 11)
         Me.DateTimePickerCreatedDate.Name = "DateTimePickerCreatedDate"
-        Me.DateTimePickerCreatedDate.Size = New System.Drawing.Size(111, 19)
+        Me.DateTimePickerCreatedDate.Size = New System.Drawing.Size(113, 19)
         Me.DateTimePickerCreatedDate.TabIndex = 75
         '
         'RichTextBoxNextPoint
@@ -709,10 +709,10 @@ Partial Class Month1Age
         Me.header.Controls.Add(Me.MenuStrip1)
         Me.header.Controls.Add(Me.BunifuImageButton1)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
-        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
-        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.header.Location = New System.Drawing.Point(0, 0)
         Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.header.Name = "header"
@@ -755,7 +755,7 @@ Partial Class Month1Age
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(78, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(93, 26)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -764,30 +764,30 @@ Partial Class Month1Age
         Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
         '上書き保存ToolStripMenuItem
         '
         Me.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem"
-        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.上書き保存ToolStripMenuItem.Text = "上書き保存(&S)"
         '
         '名前を付けて保存ToolStripMenuItem
         '
         Me.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem"
-        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(187, 6)
         '
         '閉じるToolStripMenuItem
         '
         Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
-        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
         '
         'BunifuImageButton1

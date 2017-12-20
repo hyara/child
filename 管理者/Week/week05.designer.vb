@@ -23,12 +23,6 @@ Partial Class week05
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(week05))
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SSave = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ASave = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.XEnd = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelDate1 = New System.Windows.Forms.Label()
         Me.LabelDate3 = New System.Windows.Forms.Label()
         Me.LabelDate2 = New System.Windows.Forms.Label()
@@ -81,52 +75,23 @@ Partial Class week05
         Me.RichSelfEvaluation = New System.Windows.Forms.RichTextBox()
         Me.RichChildEvaluation = New System.Windows.Forms.RichTextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1.SuspendLayout()
+        Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.上書き保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.名前を付けて保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.Panel1.SuspendLayout()
+        Me.header.SuspendLayout()
+        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.AutoSize = False
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.Control
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 2)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1135, 24)
-        Me.MenuStrip1.TabIndex = 52
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'ファイルFToolStripMenuItem
-        '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSave, Me.ASave, Me.ToolStripMenuItem1, Me.XEnd})
-        Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
-        Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
-        '
-        'SSave
-        '
-        Me.SSave.Name = "SSave"
-        Me.SSave.Size = New System.Drawing.Size(177, 22)
-        Me.SSave.Text = "上書き保存(&S)"
-        '
-        'ASave
-        '
-        Me.ASave.Name = "ASave"
-        Me.ASave.Size = New System.Drawing.Size(177, 22)
-        Me.ASave.Text = "名前を付けて保存(&A)"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 6)
-        '
-        'XEnd
-        '
-        Me.XEnd.Name = "XEnd"
-        Me.XEnd.Size = New System.Drawing.Size(177, 22)
-        Me.XEnd.Text = "終了(&X)"
         '
         'LabelDate1
         '
@@ -634,10 +599,114 @@ Partial Class week05
         Me.Panel1.Controls.Add(Me.LabelDate2)
         Me.Panel1.Controls.Add(Me.LabelDate3)
         Me.Panel1.Controls.Add(Me.LabelDate1)
-        Me.Panel1.Location = New System.Drawing.Point(0, 27)
+        Me.Panel1.Location = New System.Drawing.Point(0, 29)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1135, 1362)
+        Me.Panel1.Size = New System.Drawing.Size(1114, 1362)
         Me.Panel1.TabIndex = 0
+        '
+        'header
+        '
+        Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
+        Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.header.Controls.Add(Me.BunifuImageButton4)
+        Me.header.Controls.Add(Me.BunifuImageButton2)
+        Me.header.Controls.Add(Me.MenuStrip1)
+        Me.header.Controls.Add(Me.BunifuImageButton1)
+        Me.header.Dock = System.Windows.Forms.DockStyle.Top
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.header.Location = New System.Drawing.Point(0, 0)
+        Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.header.Name = "header"
+        Me.header.Quality = 10
+        Me.header.Size = New System.Drawing.Size(1115, 50)
+        Me.header.TabIndex = 4
+        '
+        'BunifuImageButton4
+        '
+        Me.BunifuImageButton4.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton4.Image = CType(resources.GetObject("BunifuImageButton4.Image"), System.Drawing.Image)
+        Me.BunifuImageButton4.ImageActive = Nothing
+        Me.BunifuImageButton4.Location = New System.Drawing.Point(877, 2)
+        Me.BunifuImageButton4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton4.Name = "BunifuImageButton4"
+        Me.BunifuImageButton4.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton4.TabIndex = 13
+        Me.BunifuImageButton4.TabStop = False
+        Me.BunifuImageButton4.Zoom = 10
+        '
+        'BunifuImageButton2
+        '
+        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
+        Me.BunifuImageButton2.ImageActive = Nothing
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(1063, 2)
+        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton2.Name = "BunifuImageButton2"
+        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton2.TabIndex = 11
+        Me.BunifuImageButton2.TabStop = False
+        Me.BunifuImageButton2.Zoom = 10
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(93, 26)
+        Me.MenuStrip1.TabIndex = 2
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ファイルFToolStripMenuItem
+        '
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
+        Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
+        Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
+        Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
+        '
+        '上書き保存ToolStripMenuItem
+        '
+        Me.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem"
+        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.上書き保存ToolStripMenuItem.Text = "上書き保存(&S)"
+        '
+        '名前を付けて保存ToolStripMenuItem
+        '
+        Me.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem"
+        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(187, 6)
+        '
+        '閉じるToolStripMenuItem
+        '
+        Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
+        Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
+        '
+        'BunifuImageButton1
+        '
+        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
+        Me.BunifuImageButton1.ImageActive = Nothing
+        Me.BunifuImageButton1.Location = New System.Drawing.Point(971, 2)
+        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton1.Name = "BunifuImageButton1"
+        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton1.TabIndex = 10
+        Me.BunifuImageButton1.TabStop = False
+        Me.BunifuImageButton1.Zoom = 10
         '
         'week05
         '
@@ -645,25 +714,25 @@ Partial Class week05
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(1139, 733)
-        Me.Controls.Add(Me.MenuStrip1)
+        Me.ClientSize = New System.Drawing.Size(1132, 716)
+        Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.Panel1)
         Me.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "week05"
         Me.Text = "week05"
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        Me.header.ResumeLayout(False)
+        Me.header.PerformLayout()
+        CType(Me.BunifuImageButton4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SSave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ASave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents XEnd As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelDate1 As System.Windows.Forms.Label
     Friend WithEvents LabelDate3 As System.Windows.Forms.Label
     Friend WithEvents LabelDate2 As System.Windows.Forms.Label
@@ -716,4 +785,14 @@ Partial Class week05
     Friend WithEvents RichSelfEvaluation As System.Windows.Forms.RichTextBox
     Friend WithEvents RichChildEvaluation As System.Windows.Forms.RichTextBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 上書き保存ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 名前を付けて保存ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
 End Class

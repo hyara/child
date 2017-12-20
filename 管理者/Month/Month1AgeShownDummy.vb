@@ -352,7 +352,7 @@
     End Sub
 
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
 End Class

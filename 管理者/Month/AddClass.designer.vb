@@ -49,30 +49,31 @@ Partial Class AddClass
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(112, 329)
+        Me.Button1.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Button1.Location = New System.Drawing.Point(124, 329)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(100, 23)
+        Me.Button1.Size = New System.Drawing.Size(122, 23)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "神がかりなボタン"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextCluss
         '
-        Me.TextCluss.Location = New System.Drawing.Point(110, 91)
+        Me.TextCluss.Location = New System.Drawing.Point(125, 79)
         Me.TextCluss.Name = "TextCluss"
         Me.TextCluss.Size = New System.Drawing.Size(100, 19)
         Me.TextCluss.TabIndex = 1
         '
         'Man
         '
-        Me.Man.Location = New System.Drawing.Point(133, 144)
+        Me.Man.Location = New System.Drawing.Point(151, 137)
         Me.Man.Name = "Man"
         Me.Man.Size = New System.Drawing.Size(31, 19)
         Me.Man.TabIndex = 2
         '
         'Girl
         '
-        Me.Girl.Location = New System.Drawing.Point(133, 171)
+        Me.Girl.Location = New System.Drawing.Point(151, 164)
         Me.Girl.Name = "Girl"
         Me.Girl.Size = New System.Drawing.Size(31, 19)
         Me.Girl.TabIndex = 3
@@ -81,7 +82,7 @@ Partial Class AddClass
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(110, 231)
+        Me.ComboBox1.Location = New System.Drawing.Point(125, 236)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(100, 20)
         Me.ComboBox1.TabIndex = 4
@@ -89,63 +90,70 @@ Partial Class AddClass
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(44, 94)
+        Me.Label1.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label1.Location = New System.Drawing.Point(59, 80)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 12)
+        Me.Label1.Size = New System.Drawing.Size(56, 18)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "クラス名"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(41, 147)
+        Me.Label2.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label2.Location = New System.Drawing.Point(59, 140)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(54, 12)
+        Me.Label2.Size = New System.Drawing.Size(68, 18)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "クラス人数"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(110, 147)
+        Me.Label3.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label3.Location = New System.Drawing.Point(128, 140)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(17, 12)
+        Me.Label3.Size = New System.Drawing.Size(20, 18)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "男"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(44, 231)
+        Me.Label4.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label4.Location = New System.Drawing.Point(59, 238)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(29, 12)
+        Me.Label4.Size = New System.Drawing.Size(32, 18)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "担当"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(110, 174)
+        Me.Label5.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label5.Location = New System.Drawing.Point(128, 167)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(17, 12)
+        Me.Label5.Size = New System.Drawing.Size(20, 18)
         Me.Label5.TabIndex = 9
         Me.Label5.Text = "女"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(170, 147)
+        Me.Label8.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label8.Location = New System.Drawing.Point(188, 140)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(17, 12)
+        Me.Label8.Size = New System.Drawing.Size(20, 18)
         Me.Label8.TabIndex = 11
         Me.Label8.Text = "人"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(170, 174)
+        Me.Label9.Font = New System.Drawing.Font("メイリオ", 9.0!)
+        Me.Label9.Location = New System.Drawing.Point(188, 167)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(17, 12)
+        Me.Label9.Size = New System.Drawing.Size(20, 18)
         Me.Label9.TabIndex = 12
         Me.Label9.Text = "人"
         '
@@ -153,7 +161,7 @@ Partial Class AddClass
         '
         Me.ErrerMessage1.AutoSize = True
         Me.ErrerMessage1.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage1.Location = New System.Drawing.Point(108, 116)
+        Me.ErrerMessage1.Location = New System.Drawing.Point(122, 110)
         Me.ErrerMessage1.Name = "ErrerMessage1"
         Me.ErrerMessage1.Size = New System.Drawing.Size(126, 12)
         Me.ErrerMessage1.TabIndex = 16
@@ -163,10 +171,11 @@ Partial Class AddClass
         'ErrerMessage2
         '
         Me.ErrerMessage2.AutoSize = True
+        Me.ErrerMessage2.Font = New System.Drawing.Font("メイリオ", 9.0!)
         Me.ErrerMessage2.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage2.Location = New System.Drawing.Point(108, 193)
+        Me.ErrerMessage2.Location = New System.Drawing.Point(59, 186)
         Me.ErrerMessage2.Name = "ErrerMessage2"
-        Me.ErrerMessage2.Size = New System.Drawing.Size(231, 12)
+        Me.ErrerMessage2.Size = New System.Drawing.Size(279, 18)
         Me.ErrerMessage2.TabIndex = 17
         Me.ErrerMessage2.Text = "男女の合計が1以上になるように入力してください"
         Me.ErrerMessage2.Visible = False
@@ -174,10 +183,11 @@ Partial Class AddClass
         'ErrerMessage3
         '
         Me.ErrerMessage3.AutoSize = True
+        Me.ErrerMessage3.Font = New System.Drawing.Font("メイリオ", 9.0!)
         Me.ErrerMessage3.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage3.Location = New System.Drawing.Point(108, 254)
+        Me.ErrerMessage3.Location = New System.Drawing.Point(121, 269)
         Me.ErrerMessage3.Name = "ErrerMessage3"
-        Me.ErrerMessage3.Size = New System.Drawing.Size(149, 12)
+        Me.ErrerMessage3.Size = New System.Drawing.Size(176, 18)
         Me.ErrerMessage3.TabIndex = 18
         Me.ErrerMessage3.Text = "担当保育士を選択してください"
         Me.ErrerMessage3.Visible = False
@@ -185,10 +195,11 @@ Partial Class AddClass
         'ErrerMessage4
         '
         Me.ErrerMessage4.AutoSize = True
+        Me.ErrerMessage4.Font = New System.Drawing.Font("メイリオ", 9.0!)
         Me.ErrerMessage4.ForeColor = System.Drawing.Color.Red
-        Me.ErrerMessage4.Location = New System.Drawing.Point(108, 116)
+        Me.ErrerMessage4.Location = New System.Drawing.Point(121, 107)
         Me.ErrerMessage4.Name = "ErrerMessage4"
-        Me.ErrerMessage4.Size = New System.Drawing.Size(123, 12)
+        Me.ErrerMessage4.Size = New System.Drawing.Size(152, 18)
         Me.ErrerMessage4.TabIndex = 19
         Me.ErrerMessage4.Text = "そのクラス名は存在します"
         Me.ErrerMessage4.Visible = False
@@ -208,7 +219,7 @@ Partial Class AddClass
         Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.header.Name = "header"
         Me.header.Quality = 10
-        Me.header.Size = New System.Drawing.Size(341, 50)
+        Me.header.Size = New System.Drawing.Size(364, 50)
         Me.header.TabIndex = 58
         '
         'BunifuImageButton3
@@ -216,7 +227,7 @@ Partial Class AddClass
         Me.BunifuImageButton3.BackColor = System.Drawing.Color.Transparent
         Me.BunifuImageButton3.Image = CType(resources.GetObject("BunifuImageButton3.Image"), System.Drawing.Image)
         Me.BunifuImageButton3.ImageActive = Nothing
-        Me.BunifuImageButton3.Location = New System.Drawing.Point(237, 5)
+        Me.BunifuImageButton3.Location = New System.Drawing.Point(218, 9)
         Me.BunifuImageButton3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BunifuImageButton3.Name = "BunifuImageButton3"
         Me.BunifuImageButton3.Size = New System.Drawing.Size(40, 39)
@@ -230,7 +241,7 @@ Partial Class AddClass
         Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
         Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
         Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(297, 5)
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(312, 9)
         Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BunifuImageButton2.Name = "BunifuImageButton2"
         Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
@@ -243,7 +254,8 @@ Partial Class AddClass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(341, 384)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(220, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(364, 384)
         Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.ErrerMessage4)
         Me.Controls.Add(Me.ErrerMessage3)

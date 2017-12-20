@@ -272,5 +272,8 @@
         Me.Close()
     End Sub
 
+    Private Sub RichTextBoxAimNursing_TextChanged(sender As Object, e As EventArgs) Handles RichTextBoxAimNursing.TextChanged
+
+    End Sub
 End Class
 

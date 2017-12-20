@@ -101,4 +101,14 @@
 
 
 
+    Private Sub ErrerMessage3_Click(sender As Object, e As EventArgs) Handles ErrerMessage3.Click
+
+    End Sub
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub ErrerMessage4_Click(sender As Object, e As EventArgs) Handles ErrerMessage4.Click
+
+    End Sub
 End Class

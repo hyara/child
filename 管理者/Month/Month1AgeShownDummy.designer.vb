@@ -86,6 +86,7 @@ Partial Class Month1AgeShownDummy
         Me.TextBoxGirlsNumber = New System.Windows.Forms.TextBox()
         Me.TextBoxBoysNumber = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BunifuImageButton4 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
@@ -96,7 +97,6 @@ Partial Class Month1AgeShownDummy
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -698,6 +698,12 @@ Partial Class Month1AgeShownDummy
         Me.Label1.TabIndex = 12
         Me.Label1.Text = "    　人(男：　　人 , 女：　　人)"
         '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.Vertical = True
+        '
         'header
         '
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
@@ -707,16 +713,16 @@ Partial Class Month1AgeShownDummy
         Me.header.Controls.Add(Me.MenuStrip1)
         Me.header.Controls.Add(Me.BunifuImageButton1)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
-        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
-        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(162, Byte), Integer))
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
         Me.header.Location = New System.Drawing.Point(0, 0)
         Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.header.Name = "header"
         Me.header.Quality = 10
         Me.header.Size = New System.Drawing.Size(790, 50)
-        Me.header.TabIndex = 2
+        Me.header.TabIndex = 3
         '
         'BunifuImageButton4
         '
@@ -802,14 +808,7 @@ Partial Class Month1AgeShownDummy
         Me.BunifuImageButton1.TabStop = False
         Me.BunifuImageButton1.Zoom = 10
         '
-        'BunifuDragControl1
-        '
-        Me.BunifuDragControl1.Fixed = True
-        Me.BunifuDragControl1.Horizontal = True
-        Me.BunifuDragControl1.TargetControl = Me.header
-        Me.BunifuDragControl1.Vertical = True
-        '
-        'Month1Age
+        'Month1AgeShownDummy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -818,7 +817,7 @@ Partial Class Month1AgeShownDummy
         Me.Controls.Add(Me.header)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Month1Age"
+        Me.Name = "Month1AgeShownDummy"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -908,6 +907,7 @@ Partial Class Month1AgeShownDummy
     Friend WithEvents RichTextBox4 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox5 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBox6 As System.Windows.Forms.RichTextBox
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents BunifuImageButton4 As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents BunifuImageButton2 As Bunifu.Framework.UI.BunifuImageButton
@@ -918,6 +918,5 @@ Partial Class Month1AgeShownDummy
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 
 End Class

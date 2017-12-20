@@ -188,7 +188,7 @@
         Next i
     End Sub
 
-    Private Sub ASave_Click(sender As Object, e As EventArgs) Handles ASave.Click
+    Private Sub ASave_Click(sender As Object, e As EventArgs)
 
         Dim sqlString As String = Input_main_sql()
         Dim sqlConnect As New SQLConnectClass
@@ -300,5 +300,6 @@
 
         Return sqlString
     End Function
+
 
 End Class
