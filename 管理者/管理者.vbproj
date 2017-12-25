@@ -104,6 +104,7 @@
     <Compile Include="ChildDBView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Hash.vb" />
     <Compile Include="Month\AddClass.designer.vb">
       <DependentUpon>AddClass.vb</DependentUpon>
     </Compile>
@@ -196,6 +197,12 @@
     <Compile Include="Week\week05.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TeacherEdit.Designer.vb">
+      <DependentUpon>TeacherEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AdministratorForm.resx">
@@ -252,6 +259,9 @@
     <EmbeddedResource Include="Week\week05.resx">
       <DependentUpon>week05.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherEdit.resx">
+      <DependentUpon>TeacherEdit.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -265,10 +275,12 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="KEN_ALL.CSV" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
