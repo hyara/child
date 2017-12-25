@@ -38,6 +38,9 @@ Partial Class ChildInfoAdd
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.btn_PostalCodeSearch = New System.Windows.Forms.Button()
         Me.lbl_AgeMonth = New System.Windows.Forms.Label()
         Me.lbl_Age = New System.Windows.Forms.Label()
         Me.cmb_BirthDay = New System.Windows.Forms.ComboBox()
@@ -57,6 +60,7 @@ Partial Class ChildInfoAdd
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_Temperature = New System.Windows.Forms.TextBox()
         Me.txt_DoctorName = New System.Windows.Forms.TextBox()
+        Me.txt_BuildingName = New System.Windows.Forms.TextBox()
         Me.txt_Address = New System.Windows.Forms.TextBox()
         Me.txt_ChildName = New System.Windows.Forms.TextBox()
         Me.txt_NickName = New System.Windows.Forms.TextBox()
@@ -112,14 +116,14 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyName3 = New System.Windows.Forms.TextBox()
         Me.txt_FamilyName2 = New System.Windows.Forms.TextBox()
         Me.txt_FamilyName1 = New System.Windows.Forms.TextBox()
-        Me.txt_WorkPlace9 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace8 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace7 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace6 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace5 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace4 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace3 = New System.Windows.Forms.RichTextBox()
-        Me.txt_WorkPlace2 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace9 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace8 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace7 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace6 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace5 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace4 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace3 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace2 = New System.Windows.Forms.RichTextBox()
         Me.txt_FamilyAge9 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily9 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily8 = New System.Windows.Forms.TextBox()
@@ -128,7 +132,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyAge7 = New System.Windows.Forms.TextBox()
         Me.txt_FamilyAge6 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily6 = New System.Windows.Forms.TextBox()
-        Me.txt_WorkPlace1 = New System.Windows.Forms.RichTextBox()
+        Me.rtb_WorkPlace1 = New System.Windows.Forms.RichTextBox()
         Me.txt_EmergencyTEL2_3 = New System.Windows.Forms.TextBox()
         Me.txt_EmergencyTEL1_3 = New System.Windows.Forms.TextBox()
         Me.txt_EmergencyTEL2_2 = New System.Windows.Forms.TextBox()
@@ -327,6 +331,9 @@ Partial Class ChildInfoAdd
         '
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel2.Controls.Add(Me.Label37)
+        Me.Panel2.Controls.Add(Me.Label36)
+        Me.Panel2.Controls.Add(Me.btn_PostalCodeSearch)
         Me.Panel2.Controls.Add(Me.lbl_AgeMonth)
         Me.Panel2.Controls.Add(Me.lbl_Age)
         Me.Panel2.Controls.Add(Me.cmb_BirthDay)
@@ -346,6 +353,7 @@ Partial Class ChildInfoAdd
         Me.Panel2.Controls.Add(Me.Label3)
         Me.Panel2.Controls.Add(Me.txt_Temperature)
         Me.Panel2.Controls.Add(Me.txt_DoctorName)
+        Me.Panel2.Controls.Add(Me.txt_BuildingName)
         Me.Panel2.Controls.Add(Me.txt_Address)
         Me.Panel2.Controls.Add(Me.txt_ChildName)
         Me.Panel2.Controls.Add(Me.txt_NickName)
@@ -364,6 +372,33 @@ Partial Class ChildInfoAdd
         Me.Panel2.Size = New System.Drawing.Size(778, 392)
         Me.Panel2.TabIndex = 0
         '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(152, 266)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(41, 12)
+        Me.Label37.TabIndex = 48
+        Me.Label37.Text = "建物名"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(152, 237)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(29, 12)
+        Me.Label36.TabIndex = 48
+        Me.Label36.Text = "住所"
+        '
+        'btn_PostalCodeSearch
+        '
+        Me.btn_PostalCodeSearch.Location = New System.Drawing.Point(290, 201)
+        Me.btn_PostalCodeSearch.Name = "btn_PostalCodeSearch"
+        Me.btn_PostalCodeSearch.Size = New System.Drawing.Size(87, 23)
+        Me.btn_PostalCodeSearch.TabIndex = 47
+        Me.btn_PostalCodeSearch.Text = "住所自動入力"
+        Me.btn_PostalCodeSearch.UseVisualStyleBackColor = True
+        '
         'lbl_AgeMonth
         '
         Me.lbl_AgeMonth.AutoSize = True
@@ -371,7 +406,7 @@ Partial Class ChildInfoAdd
         Me.lbl_AgeMonth.Location = New System.Drawing.Point(480, 157)
         Me.lbl_AgeMonth.Name = "lbl_AgeMonth"
         Me.lbl_AgeMonth.Size = New System.Drawing.Size(0, 16)
-        Me.lbl_AgeMonth.TabIndex = 46
+        Me.lbl_AgeMonth.TabIndex = 9
         '
         'lbl_Age
         '
@@ -380,7 +415,7 @@ Partial Class ChildInfoAdd
         Me.lbl_Age.Location = New System.Drawing.Point(410, 157)
         Me.lbl_Age.Name = "lbl_Age"
         Me.lbl_Age.Size = New System.Drawing.Size(0, 16)
-        Me.lbl_Age.TabIndex = 45
+        Me.lbl_Age.TabIndex = 7
         '
         'cmb_BirthDay
         '
@@ -393,7 +428,7 @@ Partial Class ChildInfoAdd
         Me.cmb_BirthDay.MaxLength = 2
         Me.cmb_BirthDay.Name = "cmb_BirthDay"
         Me.cmb_BirthDay.Size = New System.Drawing.Size(40, 24)
-        Me.cmb_BirthDay.TabIndex = 44
+        Me.cmb_BirthDay.TabIndex = 6
         '
         'cmb_BirthYear
         '
@@ -404,7 +439,7 @@ Partial Class ChildInfoAdd
         Me.cmb_BirthYear.MaxLength = 4
         Me.cmb_BirthYear.Name = "cmb_BirthYear"
         Me.cmb_BirthYear.Size = New System.Drawing.Size(54, 24)
-        Me.cmb_BirthYear.TabIndex = 44
+        Me.cmb_BirthYear.TabIndex = 4
         '
         'cmb_BirthMonth
         '
@@ -416,7 +451,7 @@ Partial Class ChildInfoAdd
         Me.cmb_BirthMonth.MaxLength = 2
         Me.cmb_BirthMonth.Name = "cmb_BirthMonth"
         Me.cmb_BirthMonth.Size = New System.Drawing.Size(40, 24)
-        Me.cmb_BirthMonth.TabIndex = 44
+        Me.cmb_BirthMonth.TabIndex = 5
         '
         'PictureBox1
         '
@@ -455,7 +490,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL3.MaxLength = 4
         Me.txt_DoctorTEL3.Name = "txt_DoctorTEL3"
         Me.txt_DoctorTEL3.Size = New System.Drawing.Size(40, 23)
-        Me.txt_DoctorTEL3.TabIndex = 22
+        Me.txt_DoctorTEL3.TabIndex = 20
         '
         'txt_ChildTEL3
         '
@@ -465,7 +500,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL3.MaxLength = 4
         Me.txt_ChildTEL3.Name = "txt_ChildTEL3"
         Me.txt_ChildTEL3.Size = New System.Drawing.Size(40, 23)
-        Me.txt_ChildTEL3.TabIndex = 16
+        Me.txt_ChildTEL3.TabIndex = 14
         '
         'txt_DoctorTEL2
         '
@@ -475,7 +510,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL2.MaxLength = 4
         Me.txt_DoctorTEL2.Name = "txt_DoctorTEL2"
         Me.txt_DoctorTEL2.Size = New System.Drawing.Size(40, 23)
-        Me.txt_DoctorTEL2.TabIndex = 21
+        Me.txt_DoctorTEL2.TabIndex = 19
         '
         'txt_DoctorTEL1
         '
@@ -485,7 +520,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL1.MaxLength = 4
         Me.txt_DoctorTEL1.Name = "txt_DoctorTEL1"
         Me.txt_DoctorTEL1.Size = New System.Drawing.Size(40, 23)
-        Me.txt_DoctorTEL1.TabIndex = 20
+        Me.txt_DoctorTEL1.TabIndex = 18
         '
         'txt_ChildTEL2
         '
@@ -495,7 +530,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL2.MaxLength = 4
         Me.txt_ChildTEL2.Name = "txt_ChildTEL2"
         Me.txt_ChildTEL2.Size = New System.Drawing.Size(40, 23)
-        Me.txt_ChildTEL2.TabIndex = 15
+        Me.txt_ChildTEL2.TabIndex = 13
         '
         'txt_PostalCode2
         '
@@ -505,7 +540,7 @@ Partial Class ChildInfoAdd
         Me.txt_PostalCode2.MaxLength = 4
         Me.txt_PostalCode2.Name = "txt_PostalCode2"
         Me.txt_PostalCode2.Size = New System.Drawing.Size(40, 23)
-        Me.txt_PostalCode2.TabIndex = 11
+        Me.txt_PostalCode2.TabIndex = 8
         '
         'txt_PostalCode1
         '
@@ -515,7 +550,7 @@ Partial Class ChildInfoAdd
         Me.txt_PostalCode1.MaxLength = 3
         Me.txt_PostalCode1.Name = "txt_PostalCode1"
         Me.txt_PostalCode1.Size = New System.Drawing.Size(40, 23)
-        Me.txt_PostalCode1.TabIndex = 10
+        Me.txt_PostalCode1.TabIndex = 7
         '
         'txt_ChildTEL1
         '
@@ -525,7 +560,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL1.MaxLength = 4
         Me.txt_ChildTEL1.Name = "txt_ChildTEL1"
         Me.txt_ChildTEL1.Size = New System.Drawing.Size(40, 23)
-        Me.txt_ChildTEL1.TabIndex = 14
+        Me.txt_ChildTEL1.TabIndex = 12
         '
         'Label3
         '
@@ -546,7 +581,7 @@ Partial Class ChildInfoAdd
         Me.txt_Temperature.MaxLength = 4
         Me.txt_Temperature.Name = "txt_Temperature"
         Me.txt_Temperature.Size = New System.Drawing.Size(87, 23)
-        Me.txt_Temperature.TabIndex = 13
+        Me.txt_Temperature.TabIndex = 11
         '
         'txt_DoctorName
         '
@@ -554,15 +589,23 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorName.Location = New System.Drawing.Point(154, 336)
         Me.txt_DoctorName.Name = "txt_DoctorName"
         Me.txt_DoctorName.Size = New System.Drawing.Size(398, 34)
-        Me.txt_DoctorName.TabIndex = 19
+        Me.txt_DoctorName.TabIndex = 17
+        '
+        'txt_BuildingName
+        '
+        Me.txt_BuildingName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txt_BuildingName.Location = New System.Drawing.Point(199, 259)
+        Me.txt_BuildingName.Name = "txt_BuildingName"
+        Me.txt_BuildingName.Size = New System.Drawing.Size(353, 23)
+        Me.txt_BuildingName.TabIndex = 10
         '
         'txt_Address
         '
-        Me.txt_Address.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.txt_Address.Location = New System.Drawing.Point(154, 242)
+        Me.txt_Address.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txt_Address.Location = New System.Drawing.Point(199, 230)
         Me.txt_Address.Name = "txt_Address"
-        Me.txt_Address.Size = New System.Drawing.Size(398, 34)
-        Me.txt_Address.TabIndex = 12
+        Me.txt_Address.Size = New System.Drawing.Size(353, 23)
+        Me.txt_Address.TabIndex = 9
         '
         'txt_ChildName
         '
@@ -579,7 +622,7 @@ Partial Class ChildInfoAdd
         Me.txt_NickName.MaxLength = 7
         Me.txt_NickName.Name = "txt_NickName"
         Me.txt_NickName.Size = New System.Drawing.Size(88, 34)
-        Me.txt_NickName.TabIndex = 3
+        Me.txt_NickName.TabIndex = 2
         '
         'Label13
         '
@@ -654,7 +697,7 @@ Partial Class ChildInfoAdd
         Me.txt_MailDomain.Location = New System.Drawing.Point(586, 295)
         Me.txt_MailDomain.Name = "txt_MailDomain"
         Me.txt_MailDomain.Size = New System.Drawing.Size(173, 23)
-        Me.txt_MailDomain.TabIndex = 18
+        Me.txt_MailDomain.TabIndex = 16
         '
         'txt_MailLocal
         '
@@ -663,7 +706,7 @@ Partial Class ChildInfoAdd
         Me.txt_MailLocal.Location = New System.Drawing.Point(154, 295)
         Me.txt_MailLocal.Name = "txt_MailLocal"
         Me.txt_MailLocal.Size = New System.Drawing.Size(398, 23)
-        Me.txt_MailLocal.TabIndex = 17
+        Me.txt_MailLocal.TabIndex = 15
         '
         'txt_ChildNameKana
         '
@@ -672,7 +715,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildNameKana.Location = New System.Drawing.Point(154, 46)
         Me.txt_ChildNameKana.Name = "txt_ChildNameKana"
         Me.txt_ChildNameKana.Size = New System.Drawing.Size(262, 23)
-        Me.txt_ChildNameKana.TabIndex = 2
+        Me.txt_ChildNameKana.TabIndex = 0
         '
         'dtp_EntranceDay
         '
@@ -681,7 +724,7 @@ Partial Class ChildInfoAdd
         Me.dtp_EntranceDay.Location = New System.Drawing.Point(617, 77)
         Me.dtp_EntranceDay.Name = "dtp_EntranceDay"
         Me.dtp_EntranceDay.Size = New System.Drawing.Size(142, 21)
-        Me.dtp_EntranceDay.TabIndex = 4
+        Me.dtp_EntranceDay.TabIndex = 3
         '
         'TabPage2
         '
@@ -738,14 +781,14 @@ Partial Class ChildInfoAdd
         Me.Panel3.Controls.Add(Me.txt_FamilyName3)
         Me.Panel3.Controls.Add(Me.txt_FamilyName2)
         Me.Panel3.Controls.Add(Me.txt_FamilyName1)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace9)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace8)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace7)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace6)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace5)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace4)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace3)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace2)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace9)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace8)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace7)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace6)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace5)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace4)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace3)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace2)
         Me.Panel3.Controls.Add(Me.txt_FamilyAge9)
         Me.Panel3.Controls.Add(Me.txt_RelationFamily9)
         Me.Panel3.Controls.Add(Me.txt_RelationFamily8)
@@ -754,7 +797,7 @@ Partial Class ChildInfoAdd
         Me.Panel3.Controls.Add(Me.txt_FamilyAge7)
         Me.Panel3.Controls.Add(Me.txt_FamilyAge6)
         Me.Panel3.Controls.Add(Me.txt_RelationFamily6)
-        Me.Panel3.Controls.Add(Me.txt_WorkPlace1)
+        Me.Panel3.Controls.Add(Me.rtb_WorkPlace1)
         Me.Panel3.Controls.Add(Me.txt_EmergencyTEL2_3)
         Me.Panel3.Controls.Add(Me.txt_EmergencyTEL1_3)
         Me.Panel3.Controls.Add(Me.txt_EmergencyTEL2_2)
@@ -1173,69 +1216,69 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyName1.Size = New System.Drawing.Size(119, 19)
         Me.txt_FamilyName1.TabIndex = 0
         '
-        'txt_WorkPlace9
+        'rtb_WorkPlace9
         '
-        Me.txt_WorkPlace9.Location = New System.Drawing.Point(317, 510)
-        Me.txt_WorkPlace9.Name = "txt_WorkPlace9"
-        Me.txt_WorkPlace9.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace9.TabIndex = 59
-        Me.txt_WorkPlace9.Text = ""
+        Me.rtb_WorkPlace9.Location = New System.Drawing.Point(317, 510)
+        Me.rtb_WorkPlace9.Name = "rtb_WorkPlace9"
+        Me.rtb_WorkPlace9.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace9.TabIndex = 59
+        Me.rtb_WorkPlace9.Text = ""
         '
-        'txt_WorkPlace8
+        'rtb_WorkPlace8
         '
-        Me.txt_WorkPlace8.Location = New System.Drawing.Point(317, 457)
-        Me.txt_WorkPlace8.Name = "txt_WorkPlace8"
-        Me.txt_WorkPlace8.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace8.TabIndex = 52
-        Me.txt_WorkPlace8.Text = ""
+        Me.rtb_WorkPlace8.Location = New System.Drawing.Point(317, 457)
+        Me.rtb_WorkPlace8.Name = "rtb_WorkPlace8"
+        Me.rtb_WorkPlace8.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace8.TabIndex = 52
+        Me.rtb_WorkPlace8.Text = ""
         '
-        'txt_WorkPlace7
+        'rtb_WorkPlace7
         '
-        Me.txt_WorkPlace7.Location = New System.Drawing.Point(317, 403)
-        Me.txt_WorkPlace7.Name = "txt_WorkPlace7"
-        Me.txt_WorkPlace7.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace7.TabIndex = 45
-        Me.txt_WorkPlace7.Text = ""
+        Me.rtb_WorkPlace7.Location = New System.Drawing.Point(317, 403)
+        Me.rtb_WorkPlace7.Name = "rtb_WorkPlace7"
+        Me.rtb_WorkPlace7.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace7.TabIndex = 45
+        Me.rtb_WorkPlace7.Text = ""
         '
-        'txt_WorkPlace6
+        'rtb_WorkPlace6
         '
-        Me.txt_WorkPlace6.Location = New System.Drawing.Point(317, 345)
-        Me.txt_WorkPlace6.Name = "txt_WorkPlace6"
-        Me.txt_WorkPlace6.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace6.TabIndex = 38
-        Me.txt_WorkPlace6.Text = ""
+        Me.rtb_WorkPlace6.Location = New System.Drawing.Point(317, 345)
+        Me.rtb_WorkPlace6.Name = "rtb_WorkPlace6"
+        Me.rtb_WorkPlace6.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace6.TabIndex = 38
+        Me.rtb_WorkPlace6.Text = ""
         '
-        'txt_WorkPlace5
+        'rtb_WorkPlace5
         '
-        Me.txt_WorkPlace5.Location = New System.Drawing.Point(317, 290)
-        Me.txt_WorkPlace5.Name = "txt_WorkPlace5"
-        Me.txt_WorkPlace5.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace5.TabIndex = 31
-        Me.txt_WorkPlace5.Text = ""
+        Me.rtb_WorkPlace5.Location = New System.Drawing.Point(317, 290)
+        Me.rtb_WorkPlace5.Name = "rtb_WorkPlace5"
+        Me.rtb_WorkPlace5.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace5.TabIndex = 31
+        Me.rtb_WorkPlace5.Text = ""
         '
-        'txt_WorkPlace4
+        'rtb_WorkPlace4
         '
-        Me.txt_WorkPlace4.Location = New System.Drawing.Point(317, 234)
-        Me.txt_WorkPlace4.Name = "txt_WorkPlace4"
-        Me.txt_WorkPlace4.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace4.TabIndex = 24
-        Me.txt_WorkPlace4.Text = ""
+        Me.rtb_WorkPlace4.Location = New System.Drawing.Point(317, 234)
+        Me.rtb_WorkPlace4.Name = "rtb_WorkPlace4"
+        Me.rtb_WorkPlace4.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace4.TabIndex = 24
+        Me.rtb_WorkPlace4.Text = ""
         '
-        'txt_WorkPlace3
+        'rtb_WorkPlace3
         '
-        Me.txt_WorkPlace3.Location = New System.Drawing.Point(317, 177)
-        Me.txt_WorkPlace3.Name = "txt_WorkPlace3"
-        Me.txt_WorkPlace3.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace3.TabIndex = 17
-        Me.txt_WorkPlace3.Text = ""
+        Me.rtb_WorkPlace3.Location = New System.Drawing.Point(317, 177)
+        Me.rtb_WorkPlace3.Name = "rtb_WorkPlace3"
+        Me.rtb_WorkPlace3.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace3.TabIndex = 17
+        Me.rtb_WorkPlace3.Text = ""
         '
-        'txt_WorkPlace2
+        'rtb_WorkPlace2
         '
-        Me.txt_WorkPlace2.Location = New System.Drawing.Point(317, 120)
-        Me.txt_WorkPlace2.Name = "txt_WorkPlace2"
-        Me.txt_WorkPlace2.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace2.TabIndex = 10
-        Me.txt_WorkPlace2.Text = ""
+        Me.rtb_WorkPlace2.Location = New System.Drawing.Point(317, 120)
+        Me.rtb_WorkPlace2.Name = "rtb_WorkPlace2"
+        Me.rtb_WorkPlace2.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace2.TabIndex = 10
+        Me.rtb_WorkPlace2.Text = ""
         '
         'txt_FamilyAge9
         '
@@ -1309,13 +1352,13 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily6.Size = New System.Drawing.Size(48, 34)
         Me.txt_RelationFamily6.TabIndex = 36
         '
-        'txt_WorkPlace1
+        'rtb_WorkPlace1
         '
-        Me.txt_WorkPlace1.Location = New System.Drawing.Point(317, 63)
-        Me.txt_WorkPlace1.Name = "txt_WorkPlace1"
-        Me.txt_WorkPlace1.Size = New System.Drawing.Size(183, 51)
-        Me.txt_WorkPlace1.TabIndex = 3
-        Me.txt_WorkPlace1.Text = ""
+        Me.rtb_WorkPlace1.Location = New System.Drawing.Point(317, 63)
+        Me.rtb_WorkPlace1.Name = "rtb_WorkPlace1"
+        Me.rtb_WorkPlace1.Size = New System.Drawing.Size(183, 51)
+        Me.rtb_WorkPlace1.TabIndex = 3
+        Me.rtb_WorkPlace1.Text = ""
         '
         'txt_EmergencyTEL2_3
         '
@@ -1778,7 +1821,7 @@ Partial Class ChildInfoAdd
         Me.rtb_AnxietyAndAttention.Location = New System.Drawing.Point(12, 319)
         Me.rtb_AnxietyAndAttention.Name = "rtb_AnxietyAndAttention"
         Me.rtb_AnxietyAndAttention.Size = New System.Drawing.Size(674, 50)
-        Me.rtb_AnxietyAndAttention.TabIndex = 16
+        Me.rtb_AnxietyAndAttention.TabIndex = 4
         Me.rtb_AnxietyAndAttention.Text = ""
         '
         'chb_IllnessEtc
@@ -1796,7 +1839,7 @@ Partial Class ChildInfoAdd
         Me.txt_IllnessEtc.Location = New System.Drawing.Point(599, 83)
         Me.txt_IllnessEtc.Name = "txt_IllnessEtc"
         Me.txt_IllnessEtc.Size = New System.Drawing.Size(86, 21)
-        Me.txt_IllnessEtc.TabIndex = 8
+        Me.txt_IllnessEtc.TabIndex = 1
         '
         'txt_AllergyDetails
         '
@@ -1804,7 +1847,7 @@ Partial Class ChildInfoAdd
         Me.txt_AllergyDetails.Location = New System.Drawing.Point(507, 41)
         Me.txt_AllergyDetails.Name = "txt_AllergyDetails"
         Me.txt_AllergyDetails.Size = New System.Drawing.Size(179, 21)
-        Me.txt_AllergyDetails.TabIndex = 2
+        Me.txt_AllergyDetails.TabIndex = 0
         '
         'txt_SusceptibleIllness
         '
@@ -1812,7 +1855,7 @@ Partial Class ChildInfoAdd
         Me.txt_SusceptibleIllness.Location = New System.Drawing.Point(261, 242)
         Me.txt_SusceptibleIllness.Name = "txt_SusceptibleIllness"
         Me.txt_SusceptibleIllness.Size = New System.Drawing.Size(424, 39)
-        Me.txt_SusceptibleIllness.TabIndex = 15
+        Me.txt_SusceptibleIllness.TabIndex = 3
         '
         'txt_Operation
         '
@@ -1820,7 +1863,7 @@ Partial Class ChildInfoAdd
         Me.txt_Operation.Location = New System.Drawing.Point(140, 130)
         Me.txt_Operation.Name = "txt_Operation"
         Me.txt_Operation.Size = New System.Drawing.Size(544, 39)
-        Me.txt_Operation.TabIndex = 9
+        Me.txt_Operation.TabIndex = 2
         '
         'chb_VaccinationEncephalitis
         '
@@ -2034,14 +2077,14 @@ Partial Class ChildInfoAdd
     Friend WithEvents txt_FamilyName3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_FamilyName2 As System.Windows.Forms.TextBox
     Friend WithEvents txt_FamilyName1 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_WorkPlace9 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace8 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace7 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace6 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace5 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace4 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace3 As System.Windows.Forms.RichTextBox
-    Friend WithEvents txt_WorkPlace2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace9 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace8 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace7 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace6 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace5 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace4 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace3 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace2 As System.Windows.Forms.RichTextBox
     Friend WithEvents txt_FamilyAge9 As System.Windows.Forms.TextBox
     Friend WithEvents txt_RelationFamily9 As System.Windows.Forms.TextBox
     Friend WithEvents txt_RelationFamily8 As System.Windows.Forms.TextBox
@@ -2050,7 +2093,7 @@ Partial Class ChildInfoAdd
     Friend WithEvents txt_FamilyAge7 As System.Windows.Forms.TextBox
     Friend WithEvents txt_FamilyAge6 As System.Windows.Forms.TextBox
     Friend WithEvents txt_RelationFamily6 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_WorkPlace1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents rtb_WorkPlace1 As System.Windows.Forms.RichTextBox
     Friend WithEvents txt_FamilyTEL1_1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_FamilyAge5 As System.Windows.Forms.TextBox
     Friend WithEvents txt_FamilyAge4 As System.Windows.Forms.TextBox
@@ -2139,4 +2182,8 @@ Partial Class ChildInfoAdd
     Friend WithEvents cmb_BirthYear As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_AgeMonth As System.Windows.Forms.Label
     Friend WithEvents lbl_Age As System.Windows.Forms.Label
+    Friend WithEvents btn_PostalCodeSearch As System.Windows.Forms.Button
+    Friend WithEvents txt_BuildingName As System.Windows.Forms.TextBox
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
 End Class
