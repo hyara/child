@@ -3,7 +3,7 @@
     Public move_info As String
     Private sqlConnect As SQLConnectClass
 
-    ''' <summary>
+    ''' <summary> 
     ''' SQL接続の可否を取得します。
     ''' </summary>
     ''' <returns>True: 接続完了 False: 未接続</returns>
