@@ -40,6 +40,27 @@
     End Sub
 
     ''' <summary>
+    ''' 進行状況を更新し、進行内容を記録する
+    ''' </summary>
+    ''' <param name="s">進行内容</param>
+    ''' <remarks></remarks>
+    Public Sub ProgressStatesLabelUpdate(s As String)
+        ProcessContentsSet(s)
+        ProgressStatesLabelUpdate(1)
+    End Sub
+
+    ''' <summary>
+    ''' 進行状況を更新し、進行内容を記録する
+    ''' </summary>
+    ''' <param name="i">指定数値だけ加算する</param>
+    ''' <param name="s">進行内容</param>
+    ''' <remarks></remarks>
+    Public Sub ProgressStatesLabelUpdate(i As Integer, s As String)
+        ProcessContentsSet(s)
+        ProgressStatesLabelUpdate(1)
+    End Sub
+
+    ''' <summary>
     ''' 進行状況を更新する
     ''' </summary>
     ''' <remarks></remarks>

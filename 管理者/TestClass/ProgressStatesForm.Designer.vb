@@ -35,7 +35,6 @@ Partial Class ProgressStatesForm
         Me.ProgressBar.Name = "ProgressBar"
         Me.ProgressBar.Size = New System.Drawing.Size(233, 18)
         Me.ProgressBar.TabIndex = 4
-        Me.ProgressBar.Value = 50
         '
         'Label1
         '
@@ -51,9 +50,9 @@ Partial Class ProgressStatesForm
         Me.ProgressStatesLabel.AutoSize = True
         Me.ProgressStatesLabel.Location = New System.Drawing.Point(93, 13)
         Me.ProgressStatesLabel.Name = "ProgressStatesLabel"
-        Me.ProgressStatesLabel.Size = New System.Drawing.Size(63, 12)
+        Me.ProgressStatesLabel.Size = New System.Drawing.Size(39, 12)
         Me.ProgressStatesLabel.TabIndex = 6
-        Me.ProgressStatesLabel.Text = "( 100/100 )"
+        Me.ProgressStatesLabel.Text = "( 0/0 )"
         '
         'ProcessContentsRTB
         '

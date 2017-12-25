@@ -6,6 +6,87 @@
     Public Sub SetID(s As SQLConnectClass)
         sqlConnect = s
     End Sub
+
+    ''' <summary>
+    ''' 月案をDBから反映させる
+    ''' </summary>
+    ''' <param name="id">メイン主キーの値</param>
+    ''' <remarks></remarks>
+    Public Sub MonthDBDraw(id As Integer)
+        If sqlConnect.DBConnect("SELECT * FROM child_monthplan_main_0to1 WHERE month_main_0to1_id = '" & id & "'") = False Then
+            MsgBox(sqlConnect.ErrorMessage)
+        Else
+
+            '反映させる
+            Draw_main(sqlConnect.DBResult().Tables.Item(0))
+
+            '表への反映確認
+            Dim sqlString As String = "SELECT COUNT(*) " _
+            & "FROM `child_monthplan_table_0to1` " _
+            & "WHERE " & id & " = month_main_0to1_id;"
+            sqlConnect.DBConnect(sqlString)
+
+            If sqlConnect.DBResult(0) = 5 Then
+                '表への反映
+                sqlString = "SELECT * " _
+                            & "FROM `child_monthplan_table_0to1` " _
+                            & "WHERE " & id & " = month_main_0to1_id;"
+                sqlConnect.DBConnect(sqlString)
+
+                Draw_table(sqlConnect.DBResult().Tables.Item(0))
+            End If
+        End If
+        MsgBox("反映完了!!", MsgBoxStyle.OkOnly, "確認画面")
+    End Sub
+    Private Sub Draw_table(dt As DataTable)
+        Dim 児童名 = New ComboBox() {
+               ComboBoxChildName1, ComboBoxChildName2, ComboBoxChildName3, _
+               ComboBoxChildName4, ComboBoxChildName5, ComboBoxChildName6 _
+            }
+        Dim 児童年齢 = New NumericUpDown() {
+                NumericUpDownChildAge1, NumericUpDownChildAge2, _
+                NumericUpDownChildAge3, NumericUpDownChildAge4, _
+                NumericUpDownChildAge5, NumericUpDownChildAge6
+            }
+        Dim 予想子ども = New RichTextBox() {
+                RichTextBoxExpectesChild1, RichTextBoxChildActivities2, _
+                RichTextBoxChildActivities3, RichTextBoxChildActivities4, _
+                RichTextBoxChildActivities5, RichTextBoxChildActivities6
+            }
+        Dim 保育士 = New RichTextBox() {
+                RichTextBoxNurseryTeachers1, RichTextBoxNurseryTeachers2, _
+                RichTextBoxNurseryTeachers3, RichTextBoxNurseryTeachers4, _
+                RichTextBoxNurseryTeachers5, RichTextBoxNurseryTeachers6
+            }
+        Dim 連絡 = New RichTextBox() {
+            RichTextBox6, RichTextBox5, RichTextBox4, _
+            RichTextBox3, RichTextBox2, RichTextBox1 _
+        }
+        For i = 0 To 5
+            児童名(i).Text = dt.Rows(i).Item("ChildName").ToString
+            児童年齢(i).Text = dt.Rows(i).Item("ChildAge").ToString
+            予想子ども(i).Text = dt.Rows(i).Item("ChildActivities").ToString
+            保育士(i).Text = dt.Rows(i).Item("NurseryTeachers").ToString
+            連絡(i).Text = dt.Rows(i).Item("Contact").ToString
+        Next
+    End Sub
+
+    Private Sub Draw_main(dt As DataTable)
+        ComboBox_ClassName.Text = dt.Rows(0).Item("ClassName").ToString
+        TextBoxBoysNumber.Text = dt.Rows(0).Item("BoysNumber").ToString
+        TextBoxGirlsNumber.Text = dt.Rows(0).Item("GirlsNumber").ToString
+        ComboBoxTargetYear.Text = dt.Rows(0).Item("TargetYear").ToString
+        ComboBoxTargetMonth.Text = dt.Rows(0).Item("TargetMonth").ToString
+        ComboBoxLeaderName.Text = dt.Rows(0).Item("LeaderName").ToString
+        RichTextBoxStateMonth.Text = dt.Rows(0).Item("StateMonth").ToString
+        RichTextBoxAimNursing.Text = dt.Rows(0).Item("AimNursing").ToString
+        RichTextBoxAimEducation.Text = dt.Rows(0).Item("AimEducation").ToString
+        RichTextBoxEvent.Text = dt.Rows(0).Item("Event").ToString
+        RichTextBoxContents.Text = dt.Rows(0).Item("Contents").ToString
+        RichTextBoxEnvironmentalComposition.Text = dt.Rows(0).Item("EnvironmentalComposition").ToString
+        RichTextBoxHealthSafety.Text = dt.Rows(0).Item("HealthSafety").ToString
+    End Sub
+
     Private Sub MonthLow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AddEventHandler()
     End Sub
@@ -27,6 +108,9 @@
                 AddressOf Me.AutoText_Leave
         Next i
     End Sub
+
+
+
 
     Private Sub Num_KeyPress(ByVal sender As Object, _
             ByVal e As KeyPressEventArgs)
@@ -268,9 +352,12 @@
     End Sub
 
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
+    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         Me.Close()
     End Sub
 
+    Private Sub ファイルFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ファイルFToolStripMenuItem.Click
+
+    End Sub
 End Class
 
