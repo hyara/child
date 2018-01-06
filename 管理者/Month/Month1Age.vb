@@ -359,5 +359,9 @@
     Private Sub ファイルFToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ファイルFToolStripMenuItem.Click
 
     End Sub
+
+    Private Sub 上書き保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 上書き保存ToolStripMenuItem.Click
+
+    End Sub
 End Class
 

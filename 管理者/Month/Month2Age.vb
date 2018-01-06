@@ -453,4 +453,8 @@ Public Class Month2Age
     Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
         Me.Close()
     End Sub
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+
+    End Sub
 End Class
