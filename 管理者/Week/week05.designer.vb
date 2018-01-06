@@ -26,7 +26,7 @@ Partial Class week05
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SSave = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ASave = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Copy = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.XEnd = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelDate1 = New System.Windows.Forms.Label()
@@ -99,7 +99,7 @@ Partial Class week05
         '
         'ファイルFToolStripMenuItem
         '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSave, Me.ASave, Me.ToolStripMenuItem1, Me.XEnd})
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SSave, Me.Copy, Me.ToolStripMenuItem1, Me.XEnd})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
         Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
@@ -108,24 +108,24 @@ Partial Class week05
         'SSave
         '
         Me.SSave.Name = "SSave"
-        Me.SSave.Size = New System.Drawing.Size(177, 22)
-        Me.SSave.Text = "上書き保存(&S)"
+        Me.SSave.Size = New System.Drawing.Size(152, 22)
+        Me.SSave.Text = "保存(&S)"
         '
-        'ASave
+        'Copy
         '
-        Me.ASave.Name = "ASave"
-        Me.ASave.Size = New System.Drawing.Size(177, 22)
-        Me.ASave.Text = "名前を付けて保存(&A)"
+        Me.Copy.Name = "Copy"
+        Me.Copy.Size = New System.Drawing.Size(152, 22)
+        Me.Copy.Text = "印刷(&P)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
         '
         'XEnd
         '
         Me.XEnd.Name = "XEnd"
-        Me.XEnd.Size = New System.Drawing.Size(177, 22)
+        Me.XEnd.Size = New System.Drawing.Size(152, 22)
         Me.XEnd.Text = "終了(&X)"
         '
         'LabelDate1
@@ -661,7 +661,7 @@ Partial Class week05
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SSave As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ASave As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Copy As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents XEnd As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelDate1 As System.Windows.Forms.Label

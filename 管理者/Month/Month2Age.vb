@@ -1,12 +1,11 @@
 ﻿Imports Microsoft.Office.Interop.Excel
 
-Public Class Month2Age
 
+Public Class Month2Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
     Dim sqlConnect As SQLConnectClass
 
-    Public Sub SetID(sql As SQLConnectClass)
-        sqlConnect = sql
+    Public Sub SetID(sqlConnect As SQLConnectClass)
         'クラス名を反映
         If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
             MsgBox(sqlConnect.ErrorMessage())
@@ -39,6 +38,8 @@ Public Class Month2Age
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
+
+        Me.Height = Screen.PrimaryScreen.WorkingArea.Height
     End Sub
     Private Sub AddEventHandler()
         'イベントハンドラ受け入れ先作成
@@ -61,7 +62,7 @@ Public Class Month2Age
             ByVal e As KeyPressEventArgs)
         ' テキストの長さ上限値
         Dim textLength = 2
-        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
 
         '押されたキーが「0～9でない場合」かつ「BackSpaceでない場合」イベントをキャンセルする
         If (e.KeyChar < "0"c Or e.KeyChar > "9"c) And e.KeyChar <> vbBack Then
@@ -74,7 +75,7 @@ Public Class Month2Age
         'フォーム上のものからとってくる
         Dim strX As String = TextBoxBoysNumber.Text
         Dim strY As String = TextBoxGirlsNumber.Text
-        Dim result As Label = LabelSum
+
 
         '計算に使う変数
         Dim x As Integer = 0
@@ -85,9 +86,9 @@ Public Class Month2Age
         If strY <> "" Then y = Integer.Parse(strY)
 
         If x = 0 And y = 0 Then
-            result.Text = ""
+            LabelSum.Text = ""
         Else
-            result.Text = x + y
+            LabelSum.Text = x + y
         End If
     End Sub
     Private Sub AutoText_Enter(sender As Object, e As EventArgs)
@@ -103,71 +104,29 @@ Public Class Month2Age
         End If
     End Sub
 
-    Private Sub 名前を付けて保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PastToolStripMenuItem.Click
+    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
 
-        Dim fileName As String
-        fileName = "保育指導月案（2歳用）" & _
-                        ClassName.Text & TargetMonth.Text & "月.xlsm"
-        'Dim result As DialogResult = MessageBox.Show(fileName.ToString & "を上書きしますか？", _
-        '                                       "質問", _
-        '                                       MessageBoxButtons.YesNo, _
-        '                                       MessageBoxIcon.Exclamation, _
-        '                                       MessageBoxDefaultButton.Button2)
 
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) = False Then
-            System.IO.File.Copy("C:\test\templ\2agetempl.xlsm", "C:\test\month2age\" & fileName.ToString)
-        End If
-        Dim xlApp As New Application()
-        If xlApp IsNot Nothing Then
-            xlApp.Visible = False
-            xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
-            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
-            Dim arrayData As String(,)
-            Dim aRange As Range
+        Dim sqlString As String = Input_month_main_2()
+        Dim sqlConnect As New SQLConnectClass
 
-            arrayData = addData()
-            Dim j = 0
-            '入力されているものをexcelへ置き換える
-            For i = 0 To 42
+        If sqlConnect.DBConnect(sqlString) = False Then
+            MsgBox(sqlConnect.ErrorMessage)
+        Else
 
-                aRange = xlApp.Range(arrayData(i, 1))
-                If aRange IsNot Nothing Then
-                    Console.WriteLine(aRange.Value2)
-                    aRange.Value2 = arrayData(j, 0)
-                    Console.WriteLine(aRange.Value2)
-                End If
-                j = j + 1
+            sqlConnect.DBConnect("SELECT MAX(month_main_high_id) FROM child_monthplan_main_high;")
+            Dim ds As DataSet = sqlConnect.DBResult()
+            Dim dt As DataTable = ds.Tables.Item(0)
+            Dim mainID As String = dt.Rows(0).Item(0)
+            For i = 0 To 2
+                Dim s As String = Input_month_table_high(i, mainID)
+                sqlConnect.DBConnect(s)
             Next
-            xlApp.ActiveWorkbook.Close()
-            xlApp.Quit()
         End If
-        ' DBSave()
         MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
-
-
-        'hyara
-        Dim sqlString As String = Input_month_main_high()
-
-        'If sqlConnect.DBConnect(sqlString) = False Then
-        'MsgBox(sqlConnect.ErrorMessage)
-        'Else
-
-        'sqlConnect.DBConnect("SELECT MAX(month_main_2to2_id) FROM child_monthplan_main_2to2;")
-        'Dim ds As DataSet = sqlConnect.DBResult()
-        'Dim dt As DataTable = ds.Tables.Item(0)
-        'Dim mainID As String = dt.Rows(0).Item(0)
-        'For i = 0 To 5
-        '    Dim s As String = Input_month_table_high(i, mainID)
-        '    If sqlConnect.DBConnect(s) = False Then
-        '        MsgBox(sqlConnect.ErrorMessage)
-        '    End If
-        'Next
-        'End If
-        'MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
-
     '読解性上昇のために作成した関数
-    Private Function Input_month_main_high() As String
+    Private Function Input_month_main_2() As String
         Dim sqlString As String
 
         sqlString = "INSERT INTO " _
@@ -204,7 +163,8 @@ Public Class Month2Age
         Return sqlString
     End Function
 
-    Private Function Input_month_table_high(i As Integer, main_id As String) As String
+
+   Private Function Input_month_table_high(i As Integer, main_id As String) As String
         '確実に六回のみ呼び出してください
         Dim sqlString As String
         Dim ChildName = New ComboBox() {
@@ -269,117 +229,17 @@ Public Class Month2Age
         Return sqlString
     End Function
 
-    Public Function addData() As String(,)
-        '印刷用の紐づけ
-        Dim arrayData(,) As String = {{StateMonth.Text, "C4"}, _
-                                    {AimNursing.Text, "K4"}, _
-                                   {AimEducation.Text, "K6"}, _
-                                    {RichTextBox_Event.Text, "Q4"}, _
-                                    {Contents.Text, "B9"}, _
-                                   {ChildName1.Text, "F9"}, _
-                                   {ChildName2.Text, "F11"}, _
-                                   {ChildName3.Text, "F13"}, _
-                                    {ChildName4.Text, "F15"}, _
-                                    {ChildName5.Text, "F17"}, _
-                                    {ChildName6.Text, "F19"}, _
-                                    {Integer.Parse(ChildAge1.Value) & "ヵ月", "F10"}, _
-                                    {Integer.Parse(ChildAge2.Value) & "ヵ月", "F12"}, _
-                                   {Integer.Parse(ChildAge3.Value) & "ヵ月", "F14"}, _
-                                   {Integer.Parse(ChildAge4.Value) & "ヵ月", "F16"}, _
-                                   {Integer.Parse(ChildAge5.Value) & "ヵ月", "F18"}, _
-                                   {Integer.Parse(ChildAge6.Value) & "ヵ月", "F20"}, _
-                                   {ChildAim1.Text, "I9"}, _
-                                   {ChildAim2.Text, "I11"}, _
-                                   {ChildAim3.Text, "I13"}, _
-                                   {ChildAim4.Text, "I15"}, _
-                                   {ChildAim5.Text, "I17"}, _
-                                    {ChildAim6.Text, "I19"}, _
-                                   {NurseryTeachers1.Text, "N9"}, _
-                                   {NurseryTeachers2.Text, "N11"}, _
-                                   {NurseryTeachers3.Text, "N13"}, _
-                                   {NurseryTeachers4.Text, "N15"}, _
-                                   {NurseryTeachers5.Text, "N17"}, _
-                                   {NurseryTeachers6.Text, "N19"}, _
-                                   {Contact1.Text, "R9"}, _
-                                   {Contact2.Text, "R11"}, _
-                                   {Contact3.Text, "R13"}, _
-                                   {Contact4.Text, "R15"}, _
-                                   {Contact5.Text, "R17"}, _
-                                   {Contact6.Text, "R19"}, _
-                                   {HealthSafety.Text, "C21"}, _
-                                   {EnvironmentalComposition.Text, "M21"}, _
-                                   {NextPoint.Text, "Q23"}, _
-                                   {ClassName.Text, "L2"}, _
-                                   {LabelSum.Text & "人(男" & TextBoxBoysNumber.Text & "人,女" & TextBoxGirlsNumber.Text & "人)", "L3"}, _
-                                   {TargetYear.Text & "年" & TargetMonth.Text & "月", "R2"}, _
-                                   {LeaderName.Text, "R3"}, _
-                                   {Eat.Text, "C23"}, _
-                                   {EvaluationReflection.Text, "J23"}}
 
-        Return arrayData
-    End Function
-
-    Public Function DBSave() As String
-        Dim sqlString As String = Input_month_main_high()
-        Dim sqlConnect As New SQLConnectClass
-
-        If sqlConnect.DBConnect(sqlString) = False Then
-            MsgBox(sqlConnect.ErrorMessage)
-        Else
-
-            sqlConnect.DBConnect("SELECT MAX(month_main_2to2_id) FROM child_monthplan_main_2to2;")
-
-            Dim mainID As String = sqlConnect.DBResult(0)
-            For i = 0 To 5
-                Dim s As String = Input_month_table_high(i, mainID)
-                If sqlConnect.DBConnect(s) = False Then
-                    MsgBox(sqlConnect.ErrorMessage)
-                End If
-            Next
+    Private Sub MonthHigh_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsNothing(Owner) = False Then
+            Owner.Enabled = True
+            Me.Dispose()
         End If
-        Return 0
-    End Function
-
-    Private Sub PastToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PastToolStripMenuItem.Click
-        '印刷するファイルの参照
-        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
-                        ClassName.Text & TargetMonth.Text & "月.xlsm"
-
-        'ファイルがあるか確認
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
-            Dim xlApp As New Application()
-            If xlApp IsNot Nothing Then
-                xlApp.Visible = False
-                xlApp.Workbooks.Open(fileName)
-                CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
-                Dim arrayData As String(,)
-
-                arrayData = addData()
-                xlApp.Worksheets.PrintPreview(fileName)
-                xlApp.ActiveWorkbook.Close()
-                xlApp.Quit()
-            End If
-        Else
-            MsgBox("保存をしてください")
-        End If
-        'Dim j = 0
-        ''入力されているものをexselへ置き換える
-        'For i = 0 To 42
-
-        '    aRange = xlApp.Range(arrayData(i, 1))
-        '    If aRange IsNot Nothing Then
-        '        Console.WriteLine(aRange.Value2)
-        '        aRange.Value2 = arrayData(j, 0)
-        '        Console.WriteLine(aRange.Value2)
-        '    End If
-        '    j = j + 1
-        'Next
-        'プレビュー画面を呼び出す
-
     End Sub
 
-    Private Sub 閉じるToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 閉じるToolStripMenuItem.Click
-        closecheck()
+    Private Sub Xend_Click(sender As Object, e As EventArgs)
+        Owner.Enabled = True
+        Me.Dispose()
     End Sub
 
     Public Sub closecheck()
@@ -439,22 +299,135 @@ Public Class Month2Age
 
     End Sub
 
-    Private Sub MonthHigh_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        If IsNothing(Owner) = False Then
-            Owner.Enabled = True
-            Me.Dispose()
+    Private Sub 上書き保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        Dim fileName As String
+        fileName = "保育指導月案（2歳用）" & _
+                       ClassName.Text & LeaderName.Text & "月.xlsm"
+        'Dim result As DialogResult = MessageBox.Show(fileName.ToString & "を上書きしますか？", _
+        '                                       "質問", _
+        '                                       MessageBoxButtons.YesNo, _
+        '                                       MessageBoxIcon.Exclamation, _
+        '                                       MessageBoxDefaultButton.Button2)
+
+        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) = False Then
+            System.IO.File.Copy("C:\test\templ\2agetempl.xlsm", "C:\test\month2age\" & fileName.ToString)
         End If
+        Dim xlApp As New Application()
+        If xlApp IsNot Nothing Then
+            xlApp.Visible = False
+            xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
+            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+            Dim arrayData As String(,)
+            Dim aRange As Range
+
+            arrayData = addData()
+            Dim j = 0
+            '入力されているものをexcelへ置き換える
+            For i = 0 To 42
+
+                aRange = xlApp.Range(arrayData(i, 1))
+                If aRange IsNot Nothing Then
+                    Console.WriteLine(aRange.Value2)
+                    aRange.Value2 = arrayData(j, 0)
+                    Console.WriteLine(aRange.Value2)
+                End If
+                j = j + 1
+            Next
+            xlApp.ActiveWorkbook.Close()
+            xlApp.Quit()
+        End If
+        ' DBSave()
+        MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
 
-    Private Sub BunifuVTrackbar2_ValueChanged(sender As Object, e As EventArgs)
+    Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
+        '印刷するファイルの参照
+        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
+                        ClassName.Text & TargetMonth.Text & "月.xlsm"
 
+        'ファイルがあるか確認
+        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
+            Dim xlApp As New Application()
+            If xlApp IsNot Nothing Then
+                xlApp.Visible = False
+                xlApp.Workbooks.Open(fileName)
+                CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+                Dim arrayData As String(,)
+
+                arrayData = addData()
+                xlApp.Worksheets.PrintPreview(fileName)
+                xlApp.ActiveWorkbook.Close()
+                xlApp.Quit()
+            End If
+        Else
+            MsgBox("保存をしてください")
+        End If
+        'Dim j = 0
+        ''入力されているものをexselへ置き換える
+        'For i = 0 To 42
+
+        '    aRange = xlApp.Range(arrayData(i, 1))
+        '    If aRange IsNot Nothing Then
+        '        Console.WriteLine(aRange.Value2)
+        '        aRange.Value2 = arrayData(j, 0)
+        '        Console.WriteLine(aRange.Value2)
+        '    End If
+        '    j = j + 1
+        'Next
+        'プレビュー画面を呼び出す
     End Sub
 
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
-        Me.Close()
-    End Sub
+    Public Function addData() As String(,)
+        Dim arrayData(,) = {{StateMonth.Text, "C4"}, _
+                                    {AimNursing.Text, "K4"}, _
+                                   {AimEducation.Text, "K6"}, _
+                                    {RichTextBox_Event.Text, "Q4"}, _
+                                    {Contents.Text, "B9"}, _
+                                   {ChildName1.Text, "F9"}, _
+                                   {ChildName2.Text, "F11"}, _
+                                   {ChildName3.Text, "F13"}, _
+                                    {ChildName4.Text, "F15"}, _
+                                    {ChildName5.Text, "F17"}, _
+                                    {ChildName6.Text, "F19"}, _
+                                    {ChildAge1.TextAlign, "F10"}, _
+                                    {ChildAge2.TextAlign, "F12"}, _
+                                   {ChildAge3.TextAlign, "F14"}, _
+                                   {ChildAge4.TextAlign, "F16"}, _
+                                   {ChildAge5.TextAlign, "F18"}, _
+                                   {ChildAge6.TextAlign, "F20"}, _
+                                   {ChildAim1.Text & "ヵ月", "I9"}, _
+                                   {ChildAim2.Text & "ヵ月", "I11"}, _
+                                   {ChildAim3.Text & "ヵ月", "I13"}, _
+                                   {ChildAim4.Text & "ヵ月", "I15"}, _
+                                   {ChildAim5.Text & "ヵ月", "I17"}, _
+                                    {ChildAim6.Text & "ヵ月", "I19"}, _
+                                   {NurseryTeachers1.Text, "N9"}, _
+                                   {NurseryTeachers2.Text, "N11"}, _
+                                   {NurseryTeachers3.Text, "N13"}, _
+                                   {NurseryTeachers4.Text, "N15"}, _
+                                   {NurseryTeachers5.Text, "N17"}, _
+                                   {NurseryTeachers6.Text, "N19"}, _
+                                   {Contact1.Text, "R9"}, _
+                                   {Contact2.Text, "R11"}, _
+                                   {Contact3.Text, "R13"}, _
+                                   {Contact4.Text, "R15"}, _
+                                   {Contact5.Text, "R17"}, _
+                                   {Contact6.Text, "R19"}, _
+                                   {HealthSafety.Text, "C21"}, _
+                                   {EnvironmentalComposition.Text, "M21"}, _
+                                   {NextPoint.Text, "Q23"}, _
+                                   {ClassName.Text, "L2"}, _
+                                   {LabelSum.Text & "人(男" & TextBoxBoysNumber.Text & "人,女" & TextBoxGirlsNumber.Text & "人)", "L3"}, _
+                                   {TargetYear.Text & "年" & TargetMonth.Text & "月", "R2"}, _
+                                   {LeaderName.Text, "R3"}, _
+                                   {Eat.Text, "C23"}, _
+                                   {EvaluationReflection.Text, "J23"}}
 
-    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        Return arrayData
+    End Function
 
+    Private Sub BnfImgBtn_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
+        closecheck()
     End Sub
-End Class
+End Class 
+

@@ -1,4 +1,6 @@
-﻿Public Class week05
+﻿Imports Microsoft.Office.Interop.Excel
+
+Public Class week05
 
     Private _LabelMonth As New List(Of Label)
     Private _LabelDates As New List(Of Label)
@@ -8,10 +10,43 @@
     Private _RichConsideration As List(Of RichTextBox)
 
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
+    Dim sqlConnect As SQLConnectClass
+
+    Public Sub SetID(sqlConnect As SQLConnectClass)
+        'クラス名を反映
+        If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+
+        Dim count As String = sqlConnect.DBResult(0, 0)
+
+        Dim j As Integer
+        If sqlConnect.DBConnect("SELECT ClassName FROM test_cluss") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            ComboClass.Items.Add(sqlConnect.DBResult(j, 0))
+        Next
+        '教員名を反映
+        If sqlConnect.DBConnect("SELECT COUNT(userName) FROM test_id") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+        count = sqlConnect.DBResult(0, 0)
+
+        If sqlConnect.DBConnect("SELECT userName FROM test_id") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            ComboTeacher.Items.Add(sqlConnect.DBResult(j, 0))
+        Next
+
+    End Sub
 
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
+
+        Me.Height = Screen.PrimaryScreen.WorkingArea.Height
     End Sub
 
     Private Sub AddEventHandler()
@@ -188,25 +223,42 @@
         Next i
     End Sub
 
-    Private Sub ASave_Click(sender As Object, e As EventArgs) Handles ASave.Click
+    Private Sub ASave_Click(sender As Object, e As EventArgs) Handles Copy.Click
 
-        Dim sqlString As String = Input_main_sql()
-        Dim sqlConnect As New SQLConnectClass
+        '印刷するファイルの参照
+        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
+                        ClassName.Text & TargetMonth.Text & "月.xlsm"
 
-        If sqlConnect.DBConnect(sqlString) = False Then
-            MsgBox(sqlConnect.ErrorMessage)
+        'ファイルがあるか確認
+        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
+            Dim xlApp As New Application()
+            If xlApp IsNot Nothing Then
+                xlApp.Visible = False
+                xlApp.Workbooks.Open(fileName)
+                CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+                Dim arrayData As String(,)
+
+                arrayData = addData()
+                xlApp.Worksheets.PrintPreview(fileName)
+                xlApp.ActiveWorkbook.Close()
+                xlApp.Quit()
+            End If
         Else
-
-            sqlConnect.DBConnect("SELECT MAX(week_main_0to5_id) FROM child_weekplan_main_0to5;")
-            Dim ds As DataSet = sqlConnect.DBResult()
-            Dim dt As DataTable = ds.Tables.Item(0)
-            Dim mainID As String = dt.Rows(0).Item(0)
-            For i = 0 To 5
-                Dim s As String = Input_table_sql(i, mainID)
-                sqlConnect.DBConnect(s)
-            Next
+            MsgBox("保存をしてください")
         End If
-        MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
+        'Dim j = 0
+        ''入力されているものをexselへ置き換える
+        'For i = 0 To 42
+
+        '    aRange = xlApp.Range(arrayData(i, 1))
+        '    If aRange IsNot Nothing Then
+        '        Console.WriteLine(aRange.Value2)
+        '        aRange.Value2 = arrayData(j, 0)
+        '        Console.WriteLine(aRange.Value2)
+        '    End If
+        '    j = j + 1
+        'Next
+        'プレビュー画面を呼び出す
     End Sub
 
     '読解性上昇のために作成した関数
@@ -301,4 +353,77 @@
         Return sqlString
     End Function
 
+    Private Sub SSave_Click(sender As Object, e As EventArgs) Handles SSave.Click
+        Dim fileName As String
+        fileName = "保育指導月案（2歳用）" & _
+                       ComboClass.Text & ComboTeacher.Text & "月.xlsm"
+        'Dim result As DialogResult = MessageBox.Show(fileName.ToString & "を上書きしますか？", _
+        '                                       "質問", _
+        '                                       MessageBoxButtons.YesNo, _
+        '                                       MessageBoxIcon.Exclamation, _
+        '                                       MessageBoxDefaultButton.Button2)
+
+        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) = False Then
+            System.IO.File.Copy("C:\test\templ\2agetempl.xlsm", "C:\test\month2age\" & fileName.ToString)
+        End If
+        Dim xlApp As New Application()
+        If xlApp IsNot Nothing Then
+            xlApp.Visible = False
+            xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
+            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+            Dim arrayData As String(,)
+            Dim aRange As Range
+
+            arrayData = addData()
+            Dim j = 0
+            '入力されているものをexcelへ置き換える
+            For i = 0 To 42
+
+                aRange = xlApp.Range(arrayData(i, 1))
+                If aRange IsNot Nothing Then
+                    Console.WriteLine(aRange.Value2)
+                    aRange.Value2 = arrayData(j, 0)
+                    Console.WriteLine(aRange.Value2)
+                End If
+                j = j + 1
+            Next
+            xlApp.ActiveWorkbook.Close()
+            xlApp.Quit()
+        End If
+        ' DBSave()
+        MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
+    End Sub
+
+    Public Function addData() As String(,)
+        Dim arrayData(,) = {{DateTimePicker1.Text, "M2"}, _
+                            {ComboClass.Text, "I3"}, _
+                            {DTP1.Text & "～" & DTP2.Text, "M3"}, _
+                            {LabelSum.Text & "人(男" & TextMen.Text & "人,女" & TextWomen.Text & "人)", "I4"}, _
+                            {ComboTeacher.Text, "M4"}, _
+                            {RichPurpose.Text, "C5"}, _
+                            {RichFamily.Text, "K5"}, _
+                            {RichLastWeek.Text, "B8"}, _
+                            {RichNextWeek.Text, "I8"}, _
+                            {RichEnvironment1.Text, "C11"}, _
+                            {RichEnvironment2.Text, "C15"}, _
+                            {RichEnvironment3.Text, "C19"}, _
+                            {RichEnvironment4.Text, "C23"}, _
+                            {RichEnvironment5.Text, "C27"}, _
+                            {RichEnvironment6.Text, "C31"}, _
+                            {RichAction1.Text, "H11"}, _
+                            {RichAction2.Text, "H15"}, _
+                            {RichAction3.Text, "H19"}, _
+                            {RichAction4.Text, "H23"}, _
+                            {RichAction5.Text, "H27"}, _
+                            {RichAction6.Text, "H31"},
+                            {RichConsideration1.Text, "L11"}, _
+                            {RichConsideration2.Text, "L15"}, _
+                            {RichConsideration3.Text, "L19"}, _
+                            {RichConsideration4.Text, "L23"}, _
+                            {RichConsideration5.Text, "L27"}, _
+                            {RichConsideration6.Text, "L31"}, _
+                            {RichSelfEvaluation.Text, "C35"}, _
+                            {RichChildEvaluation.Text, "J35"}}
+        Return arrayData
+    End Function
 End Class

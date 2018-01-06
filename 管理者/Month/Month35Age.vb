@@ -1,4 +1,5 @@
-﻿soft.Office.Interop.Excel
+﻿Imports Microsoft.Office.Interop.Excel
+
 
 Public Class Month35Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
@@ -221,11 +222,6 @@ Public Class Month35Age
         Me.Dispose()
     End Sub
 
-
-    Private Sub BunifuImageButton2_Click(sender As Object, e As EventArgs) Handles BunifuImageButton2.Click
-        closecheck()
-    End Sub
-
     Public Sub closecheck()
         Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
               ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
@@ -390,4 +386,8 @@ Public Class Month35Age
 
         Return arrayData
     End Function
+
+    Private Sub BnfImgBtn_Click(sender As Object, e As EventArgs) Handles BnfImgBtn.Click
+        closecheck()
+    End Sub
 End Class

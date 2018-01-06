@@ -134,7 +134,7 @@ Partial Class Month35Age
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PastToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(167, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(75, 24)
         Me.MenuStrip2.TabIndex = 2
         Me.MenuStrip2.Text = "MenuStrip2"
         '
