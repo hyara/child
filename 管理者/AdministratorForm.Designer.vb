@@ -569,7 +569,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxDelete, 3, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxRetireFlg, 1, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Label5, 2, 0)
@@ -586,7 +586,7 @@ Partial Class AdministratorForm
         '
         Me.ChkBoxDelete.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ChkBoxDelete.AutoSize = True
-        Me.ChkBoxDelete.Location = New System.Drawing.Point(410, 18)
+        Me.ChkBoxDelete.Location = New System.Drawing.Point(409, 18)
         Me.ChkBoxDelete.Name = "ChkBoxDelete"
         Me.ChkBoxDelete.Size = New System.Drawing.Size(15, 14)
         Me.ChkBoxDelete.TabIndex = 3
@@ -596,7 +596,7 @@ Partial Class AdministratorForm
         '
         Me.ChkBoxRetireFlg.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ChkBoxRetireFlg.AutoSize = True
-        Me.ChkBoxRetireFlg.Location = New System.Drawing.Point(182, 18)
+        Me.ChkBoxRetireFlg.Location = New System.Drawing.Point(180, 18)
         Me.ChkBoxRetireFlg.Name = "ChkBoxRetireFlg"
         Me.ChkBoxRetireFlg.Size = New System.Drawing.Size(15, 14)
         Me.ChkBoxRetireFlg.TabIndex = 1
@@ -606,7 +606,7 @@ Partial Class AdministratorForm
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(219, 11)
+        Me.Label5.Location = New System.Drawing.Point(217, 11)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
         Me.Label5.TabIndex = 2
@@ -616,7 +616,7 @@ Partial Class AdministratorForm
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 11)
+        Me.Label3.Location = New System.Drawing.Point(11, 11)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(145, 28)
         Me.Label3.TabIndex = 0
@@ -697,7 +697,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 678.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 679.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBoxSearchAny, 1, 0)
@@ -730,7 +730,7 @@ Partial Class AdministratorForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(26, 64)
+        Me.Label4.Location = New System.Drawing.Point(25, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1

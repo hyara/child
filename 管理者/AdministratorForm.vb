@@ -195,5 +195,11 @@
         LabelSQLStatus.Text = ""
     End Sub
 
+    ''' <summary>
+    ''' 検索対象の児童日誌を選択する
+    ''' </summary>
+    ''' <remarks>児童日誌: 月案・週案など</remarks>
+    Private Sub BnfFlatBtnSimpleSortAny_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
 
+    End Sub
 End Class

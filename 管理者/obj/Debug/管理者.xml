@@ -6,7 +6,19 @@
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.Hash.GetSaltedPassword(System.String,System.String)">
+<member name="M:WindowsApplication1.Month1Age.MonthDBDraw(System.Int32)">
+	<summary>
+ 月案をDBから反映させる
+ </summary>
+	<param name="id">メイン主キーの値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+	<summary>
+ 画面を遷移する
+ </summary>
+	<param name="TransitionOriginal">遷移元</param>
+	<param name="TransitionTarget">遷移先</param>
+</member><member name="M:WindowsApplication1.Hash.GetSaltedPassword(System.String,System.String)">
 	<summary>'
  salt ＋ハッシュ化したパスワードを取得'
  </summary>'
@@ -21,6 +33,19 @@
  文字列から SHA256 のハッシュ値を取得'
  </summary>'
 
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
 </member><member name="M:WindowsApplication1.TeacherEdit.InputErrorCheck">
 	<summary>
  入力値のエラーチェックとエラーメッセージの表示をする。
@@ -31,21 +56,6 @@
 	<summary>
  エラーメッセージ全てを隠す
  </summary>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.AdministratorForm.sqlConnectChecker">
-	<summary>
- SQL接続の可否を取得します。
- </summary>
-	<returns>True: 接続完了 False: 未接続</returns>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
-	<summary>
- 必要物が全てハードコーティング済みのDataGridViewから、
- クリックされたボタンの内容を取得する。
- </summary>
-	<param name="sender">senderそのまま代入</param>
-	<param name="e">eventそのまま代入</param>
-	<returns>クリックされたボタンの内容</returns>
 	<remarks></remarks>
 </member><member name="M:WindowsApplication1.SQLConnectClass.DBConnect(System.String)">
 	<summary>
@@ -136,31 +146,26 @@
  </summary>
 	<param name="s">進行内容</param>
 	<remarks></remarks>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-	<summary>
-  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-	<summary>
-  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
-  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
-</summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
-	<summary>
-  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
-</summary>
-</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
-	<summary>
- 画面を遷移する
+</member><member name="M:WindowsApplication1.AdministratorForm.sqlConnectChecker">
+	<summary> 
+ SQL接続の可否を取得します。
  </summary>
-	<param name="TransitionOriginal">遷移元</param>
-	<param name="TransitionTarget">遷移先</param>
-</member><member name="M:WindowsApplication1.Month1Age.MonthDBDraw(System.Int32)">
-	<summary>
- 月案をDBから反映させる
- </summary>
-	<param name="id">メイン主キーの値</param>
+	<returns>True: 接続完了 False: 未接続</returns>
 	<remarks></remarks>
+</member><member name="M:WindowsApplication1.AdministratorForm.GetClickCellButtonContent(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+	<summary>
+ 必要物が全てハードコーティング済みのDataGridViewから、
+ クリックされたボタンの内容を取得する。
+ </summary>
+	<param name="sender">senderそのまま代入</param>
+	<param name="e">eventそのまま代入</param>
+	<returns>クリックされたボタンの内容</returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.AdministratorForm.BnfFlatBtnSimpleSortAny_Click(System.Object,System.EventArgs)">
+	<summary>
+ 検索対象の児童日誌を選択する
+ </summary>
+	<remarks>児童日誌: 月案・週案など</remarks>
 </member>
 </members>
 </doc>
