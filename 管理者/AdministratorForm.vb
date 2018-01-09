@@ -102,7 +102,10 @@
 
 
     Private Sub BnfImgBtnLoad_Click(sender As Object, e As EventArgs) Handles BnfImgBtnLoad.Click
+        sqlConnecting()
+    End Sub
 
+    Private Sub sqlConnecting()
         If sqlConnectChecker() = False Then
             MessageBox.Show("SQL接続中です。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Return  ' sql接続不可により終了
@@ -146,15 +149,31 @@
         ' クリックされたボタンからidを取得
         Dim id As String = GetClickCellButtonContent(sender, e)
 
-        ' 準備済みの閲覧用ダミーフォームに月案情報を送り込む
-        If id <> "" Then
-            '関数に引数がつけれないため一時退避
-            Dim f As New Month1AgeShownDummy
-            Me.Enabled = False
-            f.Show(Me)
-            f.SetID(id, sqlConnect)
-            '関数おわり
-        End If
+        Dim fChk As New SavedFileProcessCheck
+        Me.Enabled = False
+        fChk.SetName(id)
+        fChk.ShowDialog(Me)
+
+        Select Case fChk.Result()
+            Case DialogResult.OK
+                ' 準備済みの閲覧用ダミーフォームに月案情報を送り込む
+                If id <> "" Then
+                    '関数に引数がつけれないため一時退避
+                    Dim f As New Month1AgeShownDummy
+                    Me.Enabled = False
+                    f.Show(Me)
+                    f.SetID(id, sqlConnect)
+                    '関数おわり
+                End If
+            Case DialogResult.Yes
+                Dim sqlString As String
+                sqlString = "DELETE FROM `child_monthplan_main_0to1` WHERE month_main_0to1_id = " & id & ";"
+                sqlConnect.DBConnect(sqlString)
+                sqlConnecting()
+            Case DialogResult.Cancel
+        End Select
+
+
     End Sub
 
     ''' <summary>
@@ -200,6 +219,7 @@
     ''' </summary>
     ''' <remarks>児童日誌: 月案・週案など</remarks>
     Private Sub BnfFlatBtnSimpleSortAny_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
-
+        MoveInfoSetter("DiarySelect")
+        MoveForm()
     End Sub
 End Class

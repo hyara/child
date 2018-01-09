@@ -25,13 +25,13 @@ Partial Class DiarySelect
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DiarySelect))
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.LabelSQLStatus = New System.Windows.Forms.Label()
         Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
         Me.LabelHeaderTitle = New System.Windows.Forms.Label()
-        Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BunifuImageButton2 = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BnfChkboxMonth0to1 = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.BnfChkboxMonth2 = New Bunifu.Framework.UI.BunifuCheckbox()
         Me.BnfChkboxMonth3to5 = New Bunifu.Framework.UI.BunifuCheckbox()
@@ -42,12 +42,14 @@ Partial Class DiarySelect
         Me.BtnWeek0to5 = New System.Windows.Forms.Button()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.header.SuspendLayout()
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'header
@@ -73,6 +75,34 @@ Partial Class DiarySelect
         Me.header.Quality = 10
         Me.header.Size = New System.Drawing.Size(570, 50)
         Me.header.TabIndex = 66
+        '
+        'BunifuImageButton1
+        '
+        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
+        Me.BunifuImageButton1.ImageActive = Nothing
+        Me.BunifuImageButton1.Location = New System.Drawing.Point(437, 4)
+        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton1.Name = "BunifuImageButton1"
+        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton1.TabIndex = 16
+        Me.BunifuImageButton1.TabStop = False
+        Me.BunifuImageButton1.Zoom = 10
+        '
+        'BunifuImageButton2
+        '
+        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
+        Me.BunifuImageButton2.ImageActive = Nothing
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(521, 4)
+        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BunifuImageButton2.Name = "BunifuImageButton2"
+        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
+        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BunifuImageButton2.TabIndex = 15
+        Me.BunifuImageButton2.TabStop = False
+        Me.BunifuImageButton2.Zoom = 10
         '
         'LabelSQLStatus
         '
@@ -139,43 +169,15 @@ Partial Class DiarySelect
         Me.LabelHeaderTitle.TabIndex = 5
         Me.LabelHeaderTitle.Text = "電子書類簡易入力システム"
         '
-        'BunifuImageButton1
-        '
-        Me.BunifuImageButton1.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton1.Image = CType(resources.GetObject("BunifuImageButton1.Image"), System.Drawing.Image)
-        Me.BunifuImageButton1.ImageActive = Nothing
-        Me.BunifuImageButton1.Location = New System.Drawing.Point(437, 4)
-        Me.BunifuImageButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton1.Name = "BunifuImageButton1"
-        Me.BunifuImageButton1.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton1.TabIndex = 16
-        Me.BunifuImageButton1.TabStop = False
-        Me.BunifuImageButton1.Zoom = 10
-        '
-        'BunifuImageButton2
-        '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Transparent
-        Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
-        Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(521, 4)
-        Me.BunifuImageButton2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BunifuImageButton2.Name = "BunifuImageButton2"
-        Me.BunifuImageButton2.Size = New System.Drawing.Size(40, 39)
-        Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BunifuImageButton2.TabIndex = 15
-        Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 10
-        '
         'BnfChkboxMonth0to1
         '
-        Me.BnfChkboxMonth0to1.BackColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.BnfChkboxMonth0to1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth0to1.ChechedOffColor = System.Drawing.Color.FromArgb(CType(CType(162, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.BnfChkboxMonth0to1.Checked = False
+        Me.BnfChkboxMonth0to1.Checked = True
         Me.BnfChkboxMonth0to1.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth0to1.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth0to1.Location = New System.Drawing.Point(47, 84)
-        Me.BnfChkboxMonth0to1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BnfChkboxMonth0to1.Location = New System.Drawing.Point(47, 94)
+        Me.BnfChkboxMonth0to1.Margin = New System.Windows.Forms.Padding(4)
         Me.BnfChkboxMonth0to1.Name = "BnfChkboxMonth0to1"
         Me.BnfChkboxMonth0to1.Size = New System.Drawing.Size(20, 20)
         Me.BnfChkboxMonth0to1.TabIndex = 67
@@ -187,7 +189,7 @@ Partial Class DiarySelect
         Me.BnfChkboxMonth2.Checked = True
         Me.BnfChkboxMonth2.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth2.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth2.Location = New System.Drawing.Point(47, 142)
+        Me.BnfChkboxMonth2.Location = New System.Drawing.Point(47, 162)
         Me.BnfChkboxMonth2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.BnfChkboxMonth2.Name = "BnfChkboxMonth2"
         Me.BnfChkboxMonth2.Size = New System.Drawing.Size(20, 20)
@@ -200,7 +202,7 @@ Partial Class DiarySelect
         Me.BnfChkboxMonth3to5.Checked = True
         Me.BnfChkboxMonth3to5.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth3to5.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth3to5.Location = New System.Drawing.Point(47, 199)
+        Me.BnfChkboxMonth3to5.Location = New System.Drawing.Point(47, 229)
         Me.BnfChkboxMonth3to5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.BnfChkboxMonth3to5.Name = "BnfChkboxMonth3to5"
         Me.BnfChkboxMonth3to5.Size = New System.Drawing.Size(20, 20)
@@ -213,7 +215,7 @@ Partial Class DiarySelect
         Me.BnfChkboxWeek0to5.Checked = True
         Me.BnfChkboxWeek0to5.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxWeek0to5.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxWeek0to5.Location = New System.Drawing.Point(332, 84)
+        Me.BnfChkboxWeek0to5.Location = New System.Drawing.Point(332, 94)
         Me.BnfChkboxWeek0to5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
         Me.BnfChkboxWeek0to5.Name = "BnfChkboxWeek0to5"
         Me.BnfChkboxWeek0to5.Size = New System.Drawing.Size(20, 20)
@@ -224,7 +226,7 @@ Partial Class DiarySelect
         Me.BtnMonth0to1.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth0to1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMonth0to1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMonth0to1.Location = New System.Drawing.Point(38, 67)
+        Me.BtnMonth0to1.Location = New System.Drawing.Point(38, 77)
         Me.BtnMonth0to1.Name = "BtnMonth0to1"
         Me.BtnMonth0to1.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth0to1.TabIndex = 72
@@ -236,7 +238,7 @@ Partial Class DiarySelect
         '
         Me.BtnMonth2.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMonth2.Location = New System.Drawing.Point(38, 125)
+        Me.BtnMonth2.Location = New System.Drawing.Point(38, 145)
         Me.BtnMonth2.Name = "BtnMonth2"
         Me.BtnMonth2.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth2.TabIndex = 73
@@ -249,7 +251,7 @@ Partial Class DiarySelect
         Me.BtnMonth3to5.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth3to5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMonth3to5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMonth3to5.Location = New System.Drawing.Point(38, 183)
+        Me.BtnMonth3to5.Location = New System.Drawing.Point(38, 213)
         Me.BtnMonth3to5.Name = "BtnMonth3to5"
         Me.BtnMonth3to5.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth3to5.TabIndex = 74
@@ -262,7 +264,7 @@ Partial Class DiarySelect
         Me.BtnWeek0to5.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnWeek0to5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnWeek0to5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnWeek0to5.Location = New System.Drawing.Point(323, 67)
+        Me.BtnWeek0to5.Location = New System.Drawing.Point(323, 77)
         Me.BtnWeek0to5.Name = "BtnWeek0to5"
         Me.BtnWeek0to5.Size = New System.Drawing.Size(154, 52)
         Me.BtnWeek0to5.TabIndex = 75
@@ -284,12 +286,34 @@ Partial Class DiarySelect
         Me.BunifuDragControl2.TargetControl = Me.LabelHeaderTitle
         Me.BunifuDragControl2.Vertical = True
         '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button2.Location = New System.Drawing.Point(437, 278)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(110, 50)
+        Me.Button2.TabIndex = 77
+        Me.Button2.Text = "キャンセル"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
+        Me.Button1.Location = New System.Drawing.Point(309, 278)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(110, 50)
+        Me.Button1.TabIndex = 78
+        Me.Button1.Text = "OK"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'DiarySelect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(570, 349)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.BnfChkboxWeek0to5)
         Me.Controls.Add(Me.BnfChkboxMonth3to5)
         Me.Controls.Add(Me.BnfChkboxMonth2)
@@ -301,16 +325,16 @@ Partial Class DiarySelect
         Me.Controls.Add(Me.BtnMonth0to1)
         Me.Font = New System.Drawing.Font("MS UI Gothic", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "DiarySelect"
         Me.Text = "DiarySelect"
         Me.header.ResumeLayout(False)
         Me.header.PerformLayout()
+        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -332,4 +356,6 @@ Partial Class DiarySelect
     Friend WithEvents BtnWeek0to5 As System.Windows.Forms.Button
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents BunifuDragControl2 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

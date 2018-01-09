@@ -149,6 +149,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MoveForm.vb" />
+    <Compile Include="SavedFileProcessCheck.Designer.vb">
+      <DependentUpon>SavedFileProcessCheck.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SavedFileProcessCheck.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TeacherDBView.designer.vb">
       <DependentUpon>TeacherDBView.vb</DependentUpon>
     </Compile>
@@ -241,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month35Age.resx">
       <DependentUpon>Month35Age.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SavedFileProcessCheck.resx">
+      <DependentUpon>SavedFileProcessCheck.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherDBView.resx">
       <DependentUpon>TeacherDBView.vb</DependentUpon>

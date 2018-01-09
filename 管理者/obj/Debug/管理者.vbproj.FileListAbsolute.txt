@@ -519,3 +519,4 @@ C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\WindowsApplication1.W
 C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\WindowsApplication1.week05.resources
 C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\WindowsApplication1.TeacherEdit.resources
 C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\WindowsApplication1.SavedFileProcessCheck.resources

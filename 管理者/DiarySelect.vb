@@ -42,4 +42,8 @@
             BnfChkboxWeek0to5.Checked = True
         End If
     End Sub
+
+    Private Sub DiarySelect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
