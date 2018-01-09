@@ -32,7 +32,7 @@ Partial Class ChildInfoAdd
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.上書き保存SToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.名前を付けて保存AToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_SaveAsFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.終了XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -196,6 +196,8 @@ Partial Class ChildInfoAdd
         Me.rdb_AllergyWithout = New System.Windows.Forms.RadioButton()
         Me.rdb_AllergyExist = New System.Windows.Forms.RadioButton()
         Me.cmb_Author = New System.Windows.Forms.ComboBox()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.cmb_ClassName = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -277,7 +279,7 @@ Partial Class ChildInfoAdd
         '
         'ファイルFToolStripMenuItem
         '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存SToolStripMenuItem, Me.名前を付けて保存AToolStripMenuItem, Me.ToolStripMenuItem1, Me.終了XToolStripMenuItem})
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存SToolStripMenuItem, Me.btn_SaveAsFile, Me.ToolStripMenuItem1, Me.終了XToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
@@ -288,11 +290,11 @@ Partial Class ChildInfoAdd
         Me.上書き保存SToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
         Me.上書き保存SToolStripMenuItem.Text = "上書き保存(&S)"
         '
-        '名前を付けて保存AToolStripMenuItem
+        'btn_SaveAsFile
         '
-        Me.名前を付けて保存AToolStripMenuItem.Name = "名前を付けて保存AToolStripMenuItem"
-        Me.名前を付けて保存AToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.名前を付けて保存AToolStripMenuItem.Text = "名前を付けて保存(&A)"
+        Me.btn_SaveAsFile.Name = "btn_SaveAsFile"
+        Me.btn_SaveAsFile.Size = New System.Drawing.Size(190, 22)
+        Me.btn_SaveAsFile.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem1
         '
@@ -331,6 +333,8 @@ Partial Class ChildInfoAdd
         '
         Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel2.Controls.Add(Me.cmb_ClassName)
+        Me.Panel2.Controls.Add(Me.Label38)
         Me.Panel2.Controls.Add(Me.Label37)
         Me.Panel2.Controls.Add(Me.Label36)
         Me.Panel2.Controls.Add(Me.btn_PostalCodeSearch)
@@ -1975,6 +1979,26 @@ Partial Class ChildInfoAdd
         Me.cmb_Author.Size = New System.Drawing.Size(121, 21)
         Me.cmb_Author.TabIndex = 0
         '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label38.Location = New System.Drawing.Point(559, 12)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(51, 16)
+        Me.Label38.TabIndex = 49
+        Me.Label38.Text = "クラス"
+        '
+        'cmb_ClassName
+        '
+        Me.cmb_ClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_ClassName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmb_ClassName.FormattingEnabled = True
+        Me.cmb_ClassName.Location = New System.Drawing.Point(617, 9)
+        Me.cmb_ClassName.Name = "cmb_ClassName"
+        Me.cmb_ClassName.Size = New System.Drawing.Size(142, 24)
+        Me.cmb_ClassName.TabIndex = 50
+        '
         'ChildInfoAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -2025,7 +2049,7 @@ Partial Class ChildInfoAdd
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents 上書き保存SToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 名前を付けて保存AToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btn_SaveAsFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 終了XToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
@@ -2186,4 +2210,6 @@ Partial Class ChildInfoAdd
     Friend WithEvents txt_BuildingName As System.Windows.Forms.TextBox
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents cmb_ClassName As System.Windows.Forms.ComboBox
+    Friend WithEvents Label38 As System.Windows.Forms.Label
 End Class
