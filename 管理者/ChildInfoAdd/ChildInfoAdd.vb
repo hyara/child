@@ -10,6 +10,13 @@ Public Class ChildInfoAdd
     Private daysInMonth As Integer
     Private calculateAgeAct As Boolean = False
 
+    Private _txt_ As New List(Of Label)
+    Private _LabelDates As New List(Of Label)
+    Private _LabelDays As New List(Of Label)
+    Private _RichEnvironment As List(Of RichTextBox)
+    Private _RichAction As List(Of RichTextBox)
+    Private _RichConsideration As List(Of RichTextBox)
+
     ' 年月日が正しい形式であることを確認。
     Private Sub DateDecision()
         If cmb_BirthYear.Text <> "" And cmb_BirthMonth.Text <> "" Then
@@ -363,6 +370,117 @@ Public Class ChildInfoAdd
             e.Handled = True
         End If
     End Sub
+
+    Private Function childrenInsertSQLStringGetter(mainID As String) As String
+        ' お子様情報登録
+        Dim sql_Sex As String = 0
+        Dim sql_ChildName, sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
+
+        sql_ChildName = Me.txt_ChildName.Text
+        sql_ChildNameKana = Me.txt_ChildNameKana.Text
+
+        sql_Nickname = Me.txt_NickName.Text
+
+        sql_EntranceDay = Date.Parse(Me.dtp_EntranceDay.Value.Year & "/" & Me.dtp_EntranceDay.Value.Month & "/" & Me.dtp_EntranceDay.Value.Day)
+
+        sql_Birthday = Date.Parse(Me.cmb_BirthYear.Text & "/" & Me.cmb_BirthMonth.Text & "/" & Me.cmb_BirthDay.Text)
+
+        If rdb_man.Checked = True Then
+            sql_Sex = "男"
+        ElseIf rdb_woman.Checked = True Then
+            sql_Sex = "女"
+        End If
+
+        sql_PostalCode = Integer.Parse(Me.txt_PostalCode1.Text + txt_PostalCode2.Text)
+        sql_Address = Me.txt_Address.Text + Me.txt_BuildingName.Text
+        sql_ChildTEL = Me.txt_ChildTEL1.Text + Me.txt_ChildTEL2.Text + Me.txt_ChildTEL3.Text
+
+        sql_Temperature = Me.txt_Temperature.Text
+
+        sql_Mail = Me.txt_MailLocal.Text & "@" & Me.txt_MailDomain.Text
+
+        sql_DoctorName = txt_DoctorName.Text
+        sql_DoctorTEL = txt_DoctorTEL1.Text + txt_DoctorTEL2.Text + txt_DoctorTEL3.Text
+
+        ' test_clussテーブルと関連付け
+        If Sql.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        Dim count As String = Sql.DBResult(0, 0)
+
+        Dim j As Integer
+        If Sql.DBConnect("SELECT main_id, ClassName FROM test_cluss") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            If (cmb_ClassName.Text = Sql.DBResult(j, 1)) Then
+                mainID = Sql.DBResult(j, 0)
+                Exit For
+            End If
+        Next
+
+        ' SQLを返す。
+        Return "INSERT INTO children(class_table_id, children_name, children_katakana, children_nickname, children_sex, birthday, admission_day, postal_code, address, average_temperature, contact, mail_address, primary_doctor_name, primary_doctor_contact)" _
+                          & "VALUES (" & mainID & ",'" & sql_ChildName & "','" & sql_ChildNameKana & "','" & sql_Nickname & "','" & sql_Sex & "','" & sql_Birthday & "','" & sql_EntranceDay & "','" & sql_PostalCode & "','" & sql_Address & "','" & sql_Temperature & "'," & sql_ChildTEL & ",'" & sql_Mail & "','" & sql_DoctorName & "','" & sql_DoctorTEL & "')"
+    End Function
+
+    Private Function familyTableInsertSQLStringGetter(mainID As String) As String
+        ' 家族構成タブの同居家族を情報登録
+        Dim sql_Sex As String = 0
+        Dim sql_FamilyName1, sql_FamilyName2, sql_FamilyName3, sql_FamilyName4, sql_FamilyName5, sql_FamilyName6, sql_FamilyName7, sql_FamilyName8, sql_FamilyName9
+        Dim sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
+
+        sql_ChildName = Me.txt_ChildName.Text
+        sql_ChildNameKana = Me.txt_ChildNameKana.Text
+
+        sql_Nickname = Me.txt_NickName.Text
+
+        sql_EntranceDay = Date.Parse(Me.dtp_EntranceDay.Value.Year & "/" & Me.dtp_EntranceDay.Value.Month & "/" & Me.dtp_EntranceDay.Value.Day)
+
+        sql_Birthday = Date.Parse(Me.cmb_BirthYear.Text & "/" & Me.cmb_BirthMonth.Text & "/" & Me.cmb_BirthDay.Text)
+
+        If rdb_man.Checked = True Then
+            sql_Sex = "男"
+        ElseIf rdb_woman.Checked = True Then
+            sql_Sex = "女"
+        End If
+
+        sql_PostalCode = Integer.Parse(Me.txt_PostalCode1.Text + txt_PostalCode2.Text)
+        sql_Address = Me.txt_Address.Text + Me.txt_BuildingName.Text
+        sql_ChildTEL = Me.txt_ChildTEL1.Text + Me.txt_ChildTEL2.Text + Me.txt_ChildTEL3.Text
+
+        sql_Temperature = Me.txt_Temperature.Text
+
+        sql_Mail = Me.txt_MailLocal.Text & "@" & Me.txt_MailDomain.Text
+
+        sql_DoctorName = txt_DoctorName.Text
+        sql_DoctorTEL = txt_DoctorTEL1.Text + txt_DoctorTEL2.Text + txt_DoctorTEL3.Text
+
+        ' test_clussテーブルと関連付け
+        If Sql.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        Dim count As String = Sql.DBResult(0, 0)
+
+        Dim j As Integer
+        If Sql.DBConnect("SELECT main_id, ClassName FROM test_cluss") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            If (cmb_ClassName.Text = Sql.DBResult(j, 1)) Then
+                mainID = Sql.DBResult(j, 0)
+                Exit For
+            End If
+        Next
+
+        ' SQLを返す。
+        Return "INSERT INTO children(class_table_id, children_name, children_katakana, children_nickname, children_sex, birthday, admission_day, postal_code, address, average_temperature, contact, mail_address, primary_doctor_name, primary_doctor_contact)" _
+                          & "VALUES (" & mainID & ",'" & sql_ChildName & "','" & sql_ChildNameKana & "','" & sql_Nickname & "','" & sql_Sex & "','" & sql_Birthday & "','" & sql_EntranceDay & "','" & sql_PostalCode & "','" & sql_Address & "','" & sql_Temperature & "'," & sql_ChildTEL & ",'" & sql_Mail & "','" & sql_DoctorName & "','" & sql_DoctorTEL & "')"
+    End Function
 
     Private Sub txt_Address_TextChanged(sender As Object, e As EventArgs) Handles txt_Address.TextChanged
         EmInput_AddressExcept(txt_Address)
@@ -766,67 +884,22 @@ Public Class ChildInfoAdd
     End Sub
 
     Private Sub btn_SaveAsFile_Click(sender As Object, e As EventArgs) Handles btn_SaveAsFile.Click
-        Dim sqlUserInsert As String
-        Dim sqlWorkerInsert As String
-        Dim mainID As Integer = 0
         Dim maxMainID As String
-        Dim sql_Sex As String = 0
-        Dim sql_ChildName, sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
-
+        Dim sqlChildrenInsert As String
+        Dim sqlFamilyTableInsert As String
+        Dim sqlFamilyMainInsert As String
+        
         ' お子様情報登録
-        sql_ChildName = Me.txt_ChildName.Text
-        sql_ChildNameKana = Me.txt_ChildNameKana.Text
+        ' mainIDを取得してchildrenテーブルにInsertするSQL文の取得・送信
+        maxMainID = Sql.DBResult(0, 0)
+        sqlChildrenInsert = childrenInsertSQLStringGetter(maxMainID)
+        If Sql.DBConnect(sqlChildrenInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
 
-        sql_Nickname = Me.txt_NickName.Text
-
-        sql_EntranceDay = Date.Parse(Me.dtp_EntranceDay.Value.Year & "/" & Me.dtp_EntranceDay.Value.Month & "/" & Me.dtp_EntranceDay.Value.Day)
-
-        sql_Birthday = Date.Parse(Me.cmb_BirthYear.Text & "/" & Me.cmb_BirthMonth.Text & "/" & Me.cmb_BirthDay.Text)
-
-        If rdb_man.Checked = True Then
-            sql_Sex = "男"
-        ElseIf rdb_woman.Checked = True Then
-            sql_Sex = "女"
-        End If
-
-        sql_PostalCode = Integer.Parse(Me.txt_PostalCode1.Text + txt_PostalCode2.Text)
-        sql_Address = Me.txt_Address.Text + Me.txt_BuildingName.Text
-        sql_ChildTEL = Me.txt_ChildTEL1.Text + Me.txt_ChildTEL2.Text + Me.txt_ChildTEL3.Text
-
-        sql_Temperature = Me.txt_Temperature.Text
-
-        sql_Mail = Me.txt_MailLocal.Text & "@" & Me.txt_MailDomain.Text
-
-        sql_DoctorName = txt_DoctorName.Text
-        sql_DoctorTEL = txt_DoctorTEL1.Text + txt_DoctorTEL2.Text + txt_DoctorTEL3.Text
-
-        ' クラス名を反映
-        If Sql.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        Dim count As String = Sql.DBResult(0, 0)
-
-        Dim j As Integer
-        If Sql.DBConnect("SELECT main_id, ClassName FROM test_cluss") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        For j = 0 To Integer.Parse(count) - 1 Step 1
-            If (cmb_ClassName.Text = Sql.DBResult(j, 1)) Then
-                mainID = Sql.DBResult(j, 0)
-                Exit For
-            End If
-        Next
-
-        Sql.DBConnect("INSERT INTO children(class_table_id, children_name, children_katakana, children_nickname, children_sex, birthday, admission_day, postal_code, address, average_temperature, contact, mail_address, primary_doctor_name, primary_doctor_contact)" _
-                          & "VALUES (" & mainID & ",'" & sql_ChildName & "','" & sql_ChildNameKana & "','" & sql_Nickname & "','" & sql_Sex & "','" & sql_Birthday & "','" & sql_EntranceDay & "','" & sql_PostalCode & "','" & sql_Address & "','" & sql_Temperature & "'," & sql_ChildTEL & ",'" & sql_Mail & "','" & sql_DoctorName & "','" & sql_DoctorTEL & "')")
+        ' 家族構成情報登録
+        ' mainIDを取得してchildren_family_tableテーブルにInsertするSQL文の取得・送信
 
 
         MsgBox("登録が完了しました。")
-        'Else
-        'MsgBox("登録出来ませんでした。")
-        'End If
     End Sub
 
 End Class
