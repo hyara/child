@@ -21,12 +21,12 @@ Public Class Month35Age
             ComboBoxClassName.Items.Add(sqlConnect.DBResult(j, 0))
         Next
         '教員名を反映
-        If sqlConnect.DBConnect("SELECT COUNT(userName) FROM test_id") = False Then
+        If sqlConnect.DBConnect("SELECT COUNT(`worker_main_id`) FROM worker") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         count = sqlConnect.DBResult(0, 0)
 
-        If sqlConnect.DBConnect("SELECT userName FROM test_id") = False Then
+        If sqlConnect.DBConnect("SELECT worker_name FROM worker") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         For j = 0 To Integer.Parse(count) - 1 Step 1
@@ -222,10 +222,11 @@ Public Class Month35Age
         Me.Dispose()
     End Sub
 
+  
     Public Sub closecheck()
-        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
+        Dim fileName As String = "C:\test\month35age\保育指導月案（3～5歳用）" & _
               ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
+        If System.IO.File.Exists(fileName.ToString) Then
             Dim xlApp As New Application()
             If xlApp IsNot Nothing Then
                 xlApp.Visible = False
@@ -235,16 +236,19 @@ Public Class Month35Age
                 Dim aRange As Range
 
                 arrayData = addData()
-                Dim j = 0, errflg = 0
+                Dim j = 0, errflg = 0, nulltype = ""
 
 
 
                 '入力されているものと差異があるかどうか確認する
-                For i = 0 To 42
+                For i = 0 To 24
 
                     aRange = xlApp.Range(arrayData(i, 1))
-
-                    If aRange.Value2 <> arrayData(j, 0) Then
+                    If aRange.Value2 Is Nothing = True Then
+                        If nulltype <> arrayData(j, 0) Then
+                            errflg = 1
+                        End If
+                    ElseIf aRange.Text <> arrayData(j, 0) Then
                         errflg = 1
                     End If
                     j = j + 1
@@ -281,21 +285,21 @@ Public Class Month35Age
 
     Private Sub 上書き保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
         Dim fileName As String
-        fileName = "保育指導月案（2歳用）" & _
-                       ComboBoxClassName.Text & ComboBoxLeaderName.Text & "月.xlsm"
+        fileName = "保育指導月案（3～5歳用）" & _
+                       ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
         'Dim result As DialogResult = MessageBox.Show(fileName.ToString & "を上書きしますか？", _
         '                                       "質問", _
         '                                       MessageBoxButtons.YesNo, _
         '                                       MessageBoxIcon.Exclamation, _
         '                                       MessageBoxDefaultButton.Button2)
 
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) = False Then
-            System.IO.File.Copy("C:\test\templ\2agetempl.xlsm", "C:\test\month2age\" & fileName.ToString)
+        If System.IO.File.Exists("C:\test\month35age\" & fileName.ToString) = False Then
+            System.IO.File.Copy("C:\test\templ\35agetempl.xlsm", "C:\test\month35age\" & fileName.ToString)
         End If
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
-            xlApp.Visible = False
-            xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
+            xlApp.Visible = True
+            xlApp.Workbooks.Open("C:\test\month35age\" & fileName)
             CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
             Dim arrayData As String(,)
             Dim aRange As Range
@@ -303,7 +307,7 @@ Public Class Month35Age
             arrayData = addData()
             Dim j = 0
             '入力されているものをexcelへ置き換える
-            For i = 0 To 42
+            For i = 0 To 24
 
                 aRange = xlApp.Range(arrayData(i, 1))
                 If aRange IsNot Nothing Then
@@ -317,19 +321,19 @@ Public Class Month35Age
             xlApp.Quit()
         End If
         ' DBSave()
-        MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
+        'MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
 
     Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
         '印刷するファイルの参照
-        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
+        Dim fileName As String = "C:\test\month35age\保育指導月案（3～5歳用）" & _
                         ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
 
         'ファイルがあるか確認
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
+        If System.IO.File.Exists(fileName.ToString) Then
             Dim xlApp As New Application()
             If xlApp IsNot Nothing Then
-                xlApp.Visible = False
+                xlApp.Visible = True
                 xlApp.Workbooks.Open(fileName)
                 CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
                 Dim arrayData As String(,)
@@ -390,4 +394,6 @@ Public Class Month35Age
     Private Sub BnfImgBtn_Click(sender As Object, e As EventArgs) Handles BnfImgBtn.Click
         closecheck()
     End Sub
+
+
 End Class

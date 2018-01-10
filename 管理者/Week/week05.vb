@@ -227,7 +227,7 @@ Public Class week05
 
         '印刷するファイルの参照
         Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
-                        ClassName.Text & TargetMonth.Text & "月.xlsm"
+                        ComboClass.Text & ComboClass.Text & "月.xlsm"
 
         'ファイルがあるか確認
         If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then

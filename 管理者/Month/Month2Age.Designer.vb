@@ -444,6 +444,7 @@ Partial Class Month2Age
         Me.LeaderName.Name = "LeaderName"
         Me.LeaderName.Size = New System.Drawing.Size(146, 27)
         Me.LeaderName.TabIndex = 62
+        Me.LeaderName.Text = "テスト"
         '
         'LabelSum
         '
@@ -514,6 +515,7 @@ Partial Class Month2Age
         Me.TargetMonth.Name = "TargetMonth"
         Me.TargetMonth.Size = New System.Drawing.Size(38, 17)
         Me.TargetMonth.TabIndex = 55
+        Me.TargetMonth.Text = "1"
         '
         'TargetYear
         '
@@ -523,6 +525,7 @@ Partial Class Month2Age
         Me.TargetYear.Name = "TargetYear"
         Me.TargetYear.Size = New System.Drawing.Size(62, 17)
         Me.TargetYear.TabIndex = 54
+        Me.TargetYear.Text = "018"
         '
         'ClassName
         '
@@ -532,6 +535,7 @@ Partial Class Month2Age
         Me.ClassName.Name = "ClassName"
         Me.ClassName.Size = New System.Drawing.Size(159, 27)
         Me.ClassName.TabIndex = 49
+        Me.ClassName.Text = "テスト"
         '
         'NextPoint
         '

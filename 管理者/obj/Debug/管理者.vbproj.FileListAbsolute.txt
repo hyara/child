@@ -518,3 +518,4 @@ C:\Users\15110023\Source\Repos\child6\管理者\obj\Debug\WindowsApplication1.Wa
 C:\Users\15110023\Source\Repos\child6\管理者\obj\Debug\WindowsApplication1.week05.resources
 C:\Users\15110023\Source\Repos\child6\管理者\obj\Debug\WindowsApplication1.TeacherEdit.resources
 C:\Users\15110023\Source\Repos\child6\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110023\Source\Repos\child6\管理者\obj\Debug\WindowsApplication1.TopPagevb.resources

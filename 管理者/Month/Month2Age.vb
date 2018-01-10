@@ -245,7 +245,7 @@ Public Class Month2Age
     Public Sub closecheck()
         Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
               ClassName.Text & TargetMonth.Text & "月.xlsm"
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
+        If System.IO.File.Exists(fileName.ToString) Then
             Dim xlApp As New Application()
             If xlApp IsNot Nothing Then
                 xlApp.Visible = False
@@ -255,16 +255,19 @@ Public Class Month2Age
                 Dim aRange As Range
 
                 arrayData = addData()
-                Dim j = 0, errflg = 0
+                Dim j = 0, errflg = 0, nulltype = ""
 
 
 
                 '入力されているものと差異があるかどうか確認する
-                For i = 0 To 42
+                For i = 0 To 24
 
                     aRange = xlApp.Range(arrayData(i, 1))
-
-                    If aRange.Value2 <> arrayData(j, 0) Then
+                    If aRange.Value2 Is Nothing = True Then
+                        If nulltype <> arrayData(j, 0) Then
+                            errflg = 1
+                        End If
+                    ElseIf aRange.Text <> arrayData(j, 0) Then
                         errflg = 1
                     End If
                     j = j + 1
@@ -323,7 +326,7 @@ Public Class Month2Age
             arrayData = addData()
             Dim j = 0
             '入力されているものをexcelへ置き換える
-            For i = 0 To 42
+            For i = 0 To 43
 
                 aRange = xlApp.Range(arrayData(i, 1))
                 If aRange IsNot Nothing Then
@@ -333,11 +336,12 @@ Public Class Month2Age
                 End If
                 j = j + 1
             Next
+
             xlApp.ActiveWorkbook.Close()
             xlApp.Quit()
         End If
         ' DBSave()
-        MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
+        ' MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
     End Sub
 
     Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
@@ -379,49 +383,49 @@ Public Class Month2Age
 
     Public Function addData() As String(,)
         Dim arrayData(,) = {{StateMonth.Text, "C4"}, _
-                                    {AimNursing.Text, "K4"}, _
-                                   {AimEducation.Text, "K6"}, _
-                                    {RichTextBox_Event.Text, "Q4"}, _
-                                    {Contents.Text, "B9"}, _
-                                   {ChildName1.Text, "F9"}, _
-                                   {ChildName2.Text, "F11"}, _
-                                   {ChildName3.Text, "F13"}, _
-                                    {ChildName4.Text, "F15"}, _
-                                    {ChildName5.Text, "F17"}, _
-                                    {ChildName6.Text, "F19"}, _
-                                    {ChildAge1.TextAlign, "F10"}, _
-                                    {ChildAge2.TextAlign, "F12"}, _
-                                   {ChildAge3.TextAlign, "F14"}, _
-                                   {ChildAge4.TextAlign, "F16"}, _
-                                   {ChildAge5.TextAlign, "F18"}, _
-                                   {ChildAge6.TextAlign, "F20"}, _
-                                   {ChildAim1.Text & "ヵ月", "I9"}, _
-                                   {ChildAim2.Text & "ヵ月", "I11"}, _
-                                   {ChildAim3.Text & "ヵ月", "I13"}, _
-                                   {ChildAim4.Text & "ヵ月", "I15"}, _
-                                   {ChildAim5.Text & "ヵ月", "I17"}, _
-                                    {ChildAim6.Text & "ヵ月", "I19"}, _
-                                   {NurseryTeachers1.Text, "N9"}, _
-                                   {NurseryTeachers2.Text, "N11"}, _
-                                   {NurseryTeachers3.Text, "N13"}, _
-                                   {NurseryTeachers4.Text, "N15"}, _
-                                   {NurseryTeachers5.Text, "N17"}, _
-                                   {NurseryTeachers6.Text, "N19"}, _
-                                   {Contact1.Text, "R9"}, _
-                                   {Contact2.Text, "R11"}, _
-                                   {Contact3.Text, "R13"}, _
-                                   {Contact4.Text, "R15"}, _
-                                   {Contact5.Text, "R17"}, _
-                                   {Contact6.Text, "R19"}, _
-                                   {HealthSafety.Text, "C21"}, _
-                                   {EnvironmentalComposition.Text, "M21"}, _
-                                   {NextPoint.Text, "Q23"}, _
-                                   {ClassName.Text, "L2"}, _
-                                   {LabelSum.Text & "人(男" & TextBoxBoysNumber.Text & "人,女" & TextBoxGirlsNumber.Text & "人)", "L3"}, _
-                                   {TargetYear.Text & "年" & TargetMonth.Text & "月", "R2"}, _
-                                   {LeaderName.Text, "R3"}, _
-                                   {Eat.Text, "C23"}, _
-                                   {EvaluationReflection.Text, "J23"}}
+                            {AimNursing.Text, "K4"}, _
+                            {AimEducation.Text, "K6"}, _
+                            {RichTextBox_Event.Text, "Q4"}, _
+                            {Contents.Text, "B9"}, _
+                            {ChildName1.Text, "F9"}, _
+                            {ChildName2.Text, "F11"}, _
+                            {ChildName3.Text, "F13"}, _
+                            {ChildName4.Text, "F15"}, _
+                            {ChildName5.Text, "F17"}, _
+                            {ChildName6.Text, "F19"}, _
+                            {ChildAge1.Value & "ヵ月", "F10"}, _
+                            {ChildAge2.Value & "ヵ月", "F12"}, _
+                            {ChildAge3.Value & "ヵ月", "F14"}, _
+                            {ChildAge4.Value & "ヵ月", "F16"}, _
+                            {ChildAge5.Value & "ヵ月", "F18"}, _
+                            {ChildAge6.Value & "ヵ月", "F20"}, _
+                            {ChildAim1.Text, "I9"}, _
+                            {ChildAim2.Text, "I11"}, _
+                            {ChildAim3.Text, "I13"}, _
+                            {ChildAim4.Text, "I15"}, _
+                            {ChildAim5.Text, "I17"}, _
+                            {ChildAim6.Text, "I19"}, _
+                            {NurseryTeachers1.Text, "N9"}, _
+                            {NurseryTeachers2.Text, "N11"}, _
+                            {NurseryTeachers3.Text, "N13"}, _
+                            {NurseryTeachers4.Text, "N15"}, _
+                            {NurseryTeachers5.Text, "N17"}, _
+                            {NurseryTeachers6.Text, "N19"}, _
+                            {Contact1.Text, "R9"}, _
+                            {Contact2.Text, "R11"}, _
+                            {Contact3.Text, "R13"}, _
+                            {Contact4.Text, "R15"}, _
+                            {Contact5.Text, "R17"}, _
+                            {Contact6.Text, "R19"}, _
+                            {HealthSafety.Text, "C21"}, _
+                            {EnvironmentalComposition.Text, "M21"}, _
+                            {NextPoint.Text, "Q23"}, _
+                            {ClassName.Text, "L2"}, _
+                            {LabelSum.Text & "人(男" & TextBoxBoysNumber.Text & "人,女" & TextBoxGirlsNumber.Text & "人)", "L3"}, _
+                            {TargetYear.Text & "年" & TargetMonth.Text & "月", "R2"}, _
+                            {LeaderName.Text, "R3"}, _
+                            {Eat.Text, "C23"}, _
+                            {EvaluationReflection.Text, "J23"}}
 
         Return arrayData
     End Function

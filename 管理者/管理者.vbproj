@@ -188,6 +188,12 @@
     <Compile Include="TestClass\Watch.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TopPagevb.Designer.vb">
+      <DependentUpon>TopPagevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TopPagevb.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="watermark.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TestClass\Watch.resx">
       <DependentUpon>Watch.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopPagevb.resx">
+      <DependentUpon>TopPagevb.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="watermark.resx">
       <DependentUpon>watermark.vb</DependentUpon>
