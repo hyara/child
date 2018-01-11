@@ -488,3 +488,7 @@ C:\Users\15110007\Downloads\child-master\管理者\obj\Debug\WindowsApplication1
 C:\Users\15110007\Downloads\child-master\管理者\obj\Debug\WindowsApplication1.week05.resources
 C:\Users\15110007\Downloads\child-master\管理者\obj\Debug\WindowsApplication1.TeacherEdit.resources
 C:\Users\15110007\Downloads\child-master\管理者\obj\Debug\管理者.vbproj.GenerateResource.Cache
+C:\Users\15110029\Source\Repos\child10\管理者\bin\Debug\管理者.exe.config
+C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\管理者.exe
+C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\管理者.xml
+C:\Users\15110029\Source\Repos\child10\管理者\obj\Debug\管理者.pdb
