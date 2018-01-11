@@ -317,7 +317,7 @@ Public Class Month2Age
         End If
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
-            xlApp.Visible = False
+            xlApp.Visible = True
             xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
             CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
             Dim arrayData As String(,)

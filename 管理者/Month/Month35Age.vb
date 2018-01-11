@@ -7,14 +7,14 @@ Public Class Month35Age
 
     Public Sub SetID(sqlConnect As SQLConnectClass)
         'クラス名を反映
-        If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
+        If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
 
         Dim count As String = sqlConnect.DBResult(0, 0)
 
         Dim j As Integer
-        If sqlConnect.DBConnect("SELECT ClassName FROM test_cluss") = False Then
+        If sqlConnect.DBConnect("SELECT ClassName FROM class") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         For j = 0 To Integer.Parse(count) - 1 Step 1
@@ -38,8 +38,6 @@ Public Class Month35Age
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
         AddEventHandler()
-
-        Me.Height = Screen.PrimaryScreen.WorkingArea.Height
     End Sub
     Private Sub AddEventHandler()
         'イベントハンドラ受け入れ先作成
@@ -257,7 +255,7 @@ Public Class Month35Age
                 xlApp.Quit()
 
                 If errflg = 1 Then
-                    Dim result As DialogResult = MessageBox.Show("保存していない変更箇所があります。ページを閉じれば保存されませんが本当にこのページを閉じますか？",
+                    Dim result As DialogResult = MessageBox.Show("保存されtていない変更箇所は保存されません。このページを閉じますか？",
                                                   "質問",
                                                   MessageBoxButtons.YesNoCancel,
                                                   MessageBoxIcon.Exclamation,
@@ -298,7 +296,7 @@ Public Class Month35Age
         End If
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
-            xlApp.Visible = True
+            xlApp.Visible = False
             xlApp.Workbooks.Open("C:\test\month35age\" & fileName)
             CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
             Dim arrayData As String(,)
@@ -317,8 +315,10 @@ Public Class Month35Age
                 End If
                 j = j + 1
             Next
+            xlApp.ActiveWorkbook.Save()
             xlApp.ActiveWorkbook.Close()
             xlApp.Quit()
+            MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
         End If
         ' DBSave()
         'MsgBox("保存完了!!", MsgBoxStyle.OkOnly, "確認画面")
