@@ -43,7 +43,17 @@
         End If
     End Sub
 
-    Private Sub DiarySelect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub ButtonOK_Click(sender As Object, e As EventArgs) Handles ButtonOK.Click
+        Shared_AdminSearch.Month0to1 = BnfChkboxMonth0to1.Checked
+        Shared_AdminSearch.Month2 = BnfChkboxMonth2.Checked
+        Shared_AdminSearch.Month3to5 = BnfChkboxMonth3to5.Checked
+        Shared_AdminSearch.Week0to5 = BnfChkboxWeek0to5.Checked
+
+        Me.Close()
+    End Sub
+
+    Private Sub ButtonCancel_Click(sender As Object, e As EventArgs) Handles ButtonCancel.Click
+        Me.Close()
     End Sub
 End Class

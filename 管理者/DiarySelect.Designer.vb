@@ -42,14 +42,16 @@ Partial Class DiarySelect
         Me.BtnWeek0to5 = New System.Windows.Forms.Button()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuDragControl2 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonCancel = New System.Windows.Forms.Button()
+        Me.ButtonOK = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.header.SuspendLayout()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BunifuImageButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'header
@@ -176,8 +178,8 @@ Partial Class DiarySelect
         Me.BnfChkboxMonth0to1.Checked = True
         Me.BnfChkboxMonth0to1.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth0to1.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth0to1.Location = New System.Drawing.Point(47, 94)
-        Me.BnfChkboxMonth0to1.Margin = New System.Windows.Forms.Padding(4)
+        Me.BnfChkboxMonth0to1.Location = New System.Drawing.Point(50, 69)
+        Me.BnfChkboxMonth0to1.Margin = New System.Windows.Forms.Padding(7)
         Me.BnfChkboxMonth0to1.Name = "BnfChkboxMonth0to1"
         Me.BnfChkboxMonth0to1.Size = New System.Drawing.Size(20, 20)
         Me.BnfChkboxMonth0to1.TabIndex = 67
@@ -189,8 +191,8 @@ Partial Class DiarySelect
         Me.BnfChkboxMonth2.Checked = True
         Me.BnfChkboxMonth2.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth2.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth2.Location = New System.Drawing.Point(47, 162)
-        Me.BnfChkboxMonth2.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.BnfChkboxMonth2.Location = New System.Drawing.Point(50, 137)
+        Me.BnfChkboxMonth2.Margin = New System.Windows.Forms.Padding(9)
         Me.BnfChkboxMonth2.Name = "BnfChkboxMonth2"
         Me.BnfChkboxMonth2.Size = New System.Drawing.Size(20, 20)
         Me.BnfChkboxMonth2.TabIndex = 68
@@ -202,8 +204,8 @@ Partial Class DiarySelect
         Me.BnfChkboxMonth3to5.Checked = True
         Me.BnfChkboxMonth3to5.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxMonth3to5.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxMonth3to5.Location = New System.Drawing.Point(47, 229)
-        Me.BnfChkboxMonth3to5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.BnfChkboxMonth3to5.Location = New System.Drawing.Point(50, 204)
+        Me.BnfChkboxMonth3to5.Margin = New System.Windows.Forms.Padding(9)
         Me.BnfChkboxMonth3to5.Name = "BnfChkboxMonth3to5"
         Me.BnfChkboxMonth3to5.Size = New System.Drawing.Size(20, 20)
         Me.BnfChkboxMonth3to5.TabIndex = 69
@@ -215,8 +217,8 @@ Partial Class DiarySelect
         Me.BnfChkboxWeek0to5.Checked = True
         Me.BnfChkboxWeek0to5.CheckedOnColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.BnfChkboxWeek0to5.ForeColor = System.Drawing.Color.White
-        Me.BnfChkboxWeek0to5.Location = New System.Drawing.Point(332, 94)
-        Me.BnfChkboxWeek0to5.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.BnfChkboxWeek0to5.Location = New System.Drawing.Point(353, 67)
+        Me.BnfChkboxWeek0to5.Margin = New System.Windows.Forms.Padding(9)
         Me.BnfChkboxWeek0to5.Name = "BnfChkboxWeek0to5"
         Me.BnfChkboxWeek0to5.Size = New System.Drawing.Size(20, 20)
         Me.BnfChkboxWeek0to5.TabIndex = 71
@@ -225,12 +227,13 @@ Partial Class DiarySelect
         '
         Me.BtnMonth0to1.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth0to1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMonth0to1.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.BtnMonth0to1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMonth0to1.Location = New System.Drawing.Point(38, 77)
+        Me.BtnMonth0to1.Location = New System.Drawing.Point(42, 52)
         Me.BtnMonth0to1.Name = "BtnMonth0to1"
         Me.BtnMonth0to1.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth0to1.TabIndex = 72
-        Me.BtnMonth0to1.Text = "　　　月案 0 ～ 1 歳"
+        Me.BtnMonth0to1.Text = "　 月案0～1歳"
         Me.BtnMonth0to1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnMonth0to1.UseVisualStyleBackColor = False
         '
@@ -238,11 +241,12 @@ Partial Class DiarySelect
         '
         Me.BtnMonth2.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnMonth2.Location = New System.Drawing.Point(38, 145)
+        Me.BtnMonth2.Font = New System.Drawing.Font("メイリオ", 14.0!)
+        Me.BtnMonth2.Location = New System.Drawing.Point(42, 120)
         Me.BtnMonth2.Name = "BtnMonth2"
         Me.BtnMonth2.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth2.TabIndex = 73
-        Me.BtnMonth2.Text = "　　　月案 2 歳"
+        Me.BtnMonth2.Text = "　 月案2歳"
         Me.BtnMonth2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnMonth2.UseVisualStyleBackColor = False
         '
@@ -250,12 +254,13 @@ Partial Class DiarySelect
         '
         Me.BtnMonth3to5.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnMonth3to5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMonth3to5.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.BtnMonth3to5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMonth3to5.Location = New System.Drawing.Point(38, 213)
+        Me.BtnMonth3to5.Location = New System.Drawing.Point(42, 188)
         Me.BtnMonth3to5.Name = "BtnMonth3to5"
         Me.BtnMonth3to5.Size = New System.Drawing.Size(154, 52)
         Me.BtnMonth3to5.TabIndex = 74
-        Me.BtnMonth3to5.Text = "　　　月案 3 ～ 5 歳"
+        Me.BtnMonth3to5.Text = "　 月案3～5歳"
         Me.BtnMonth3to5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnMonth3to5.UseVisualStyleBackColor = False
         '
@@ -263,12 +268,13 @@ Partial Class DiarySelect
         '
         Me.BtnWeek0to5.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BtnWeek0to5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnWeek0to5.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.BtnWeek0to5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnWeek0to5.Location = New System.Drawing.Point(323, 77)
+        Me.BtnWeek0to5.Location = New System.Drawing.Point(344, 52)
         Me.BtnWeek0to5.Name = "BtnWeek0to5"
         Me.BtnWeek0to5.Size = New System.Drawing.Size(154, 52)
         Me.BtnWeek0to5.TabIndex = 75
-        Me.BtnWeek0to5.Text = "　　　週案 0 ～ 5 歳"
+        Me.BtnWeek0to5.Text = "　 週案0～5歳"
         Me.BtnWeek0to5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnWeek0to5.UseVisualStyleBackColor = False
         '
@@ -286,25 +292,46 @@ Partial Class DiarySelect
         Me.BunifuDragControl2.TargetControl = Me.LabelHeaderTitle
         Me.BunifuDragControl2.Vertical = True
         '
-        'Button2
+        'ButtonCancel
         '
-        Me.Button2.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button2.Location = New System.Drawing.Point(437, 278)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 50)
-        Me.Button2.TabIndex = 77
-        Me.Button2.Text = "キャンセル"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.ButtonCancel.BackColor = System.Drawing.Color.Gainsboro
+        Me.ButtonCancel.Location = New System.Drawing.Point(410, 226)
+        Me.ButtonCancel.Name = "ButtonCancel"
+        Me.ButtonCancel.Size = New System.Drawing.Size(130, 50)
+        Me.ButtonCancel.TabIndex = 77
+        Me.ButtonCancel.Text = "キャンセル"
+        Me.ButtonCancel.UseVisualStyleBackColor = False
         '
-        'Button1
+        'ButtonOK
         '
-        Me.Button1.BackColor = System.Drawing.Color.Gainsboro
-        Me.Button1.Location = New System.Drawing.Point(309, 278)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 50)
-        Me.Button1.TabIndex = 78
-        Me.Button1.Text = "OK"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.ButtonOK.BackColor = System.Drawing.Color.Gainsboro
+        Me.ButtonOK.Location = New System.Drawing.Point(274, 226)
+        Me.ButtonOK.Name = "ButtonOK"
+        Me.ButtonOK.Size = New System.Drawing.Size(130, 50)
+        Me.ButtonOK.TabIndex = 78
+        Me.ButtonOK.Text = "OK"
+        Me.ButtonOK.UseVisualStyleBackColor = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.BnfChkboxWeek0to5)
+        Me.GroupBox1.Controls.Add(Me.ButtonCancel)
+        Me.GroupBox1.Controls.Add(Me.ButtonOK)
+        Me.GroupBox1.Controls.Add(Me.BtnWeek0to5)
+        Me.GroupBox1.Controls.Add(Me.BnfChkboxMonth3to5)
+        Me.GroupBox1.Controls.Add(Me.BnfChkboxMonth2)
+        Me.GroupBox1.Controls.Add(Me.BnfChkboxMonth0to1)
+        Me.GroupBox1.Controls.Add(Me.BtnMonth2)
+        Me.GroupBox1.Controls.Add(Me.BtnMonth0to1)
+        Me.GroupBox1.Controls.Add(Me.BtnMonth3to5)
+        Me.GroupBox1.Font = New System.Drawing.Font("メイリオ", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.GroupBox1.ForeColor = System.Drawing.SystemColors.GrayText
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 55)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(546, 282)
+        Me.GroupBox1.TabIndex = 80
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "検索したい児童表を選択"
         '
         'DiarySelect
         '
@@ -312,17 +339,8 @@ Partial Class DiarySelect
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(570, 349)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.BnfChkboxWeek0to5)
-        Me.Controls.Add(Me.BnfChkboxMonth3to5)
-        Me.Controls.Add(Me.BnfChkboxMonth2)
-        Me.Controls.Add(Me.BtnWeek0to5)
-        Me.Controls.Add(Me.BtnMonth3to5)
-        Me.Controls.Add(Me.BtnMonth2)
-        Me.Controls.Add(Me.BnfChkboxMonth0to1)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.header)
-        Me.Controls.Add(Me.BtnMonth0to1)
         Me.Font = New System.Drawing.Font("MS UI Gothic", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -335,6 +353,7 @@ Partial Class DiarySelect
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -356,6 +375,7 @@ Partial Class DiarySelect
     Friend WithEvents BtnWeek0to5 As System.Windows.Forms.Button
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents BunifuDragControl2 As Bunifu.Framework.UI.BunifuDragControl
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents ButtonCancel As System.Windows.Forms.Button
+    Friend WithEvents ButtonOK As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
 End Class

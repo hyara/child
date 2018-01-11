@@ -113,4 +113,7 @@ Public Class SQLConnectClass
         Return Me.err
     End Function
 
+    Public Sub Close()
+        connectDim.Close()
+    End Sub
 End Class

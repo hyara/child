@@ -104,6 +104,16 @@
 	<summary>
  version 2.0
  </summary>
+</member><member name="F:WindowsApplication1.Shared_AdminSearch.Month0to1">
+	<summary>検索対象児童表</summary>
+</member><member name="F:WindowsApplication1.Shared_AdminSearch.Month2">
+	<summary>検索対象児童表</summary>
+</member><member name="F:WindowsApplication1.Shared_AdminSearch.Month3to5">
+	<summary>検索対象児童表</summary>
+</member><member name="F:WindowsApplication1.Shared_AdminSearch.Week0to5">
+	<summary>検索対象児童表</summary>
+</member><member name="F:WindowsApplication1.Shared_AdminSearch.SQLConnectString">
+	<summary>実行用のSQL文</summary>
 </member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
 	<summary>
  進行状況を設定する

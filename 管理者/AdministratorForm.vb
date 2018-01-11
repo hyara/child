@@ -46,6 +46,8 @@
                 MoveMonth0to1Age()
             Case "Month2Age"
                 MoveMonth2Age()
+            Case "DiarySelect"
+                MoveDiarySelect()
         End Select
     End Sub
 
@@ -96,6 +98,11 @@
         f.Show(Me)
     End Sub
 
+    Private Sub MoveDiarySelect()
+        Dim f As New DiarySelect
+        Me.Enabled = False
+        f.Show(Me)
+    End Sub
     'ここまで追加ボタン
 
 
@@ -149,29 +156,31 @@
         ' クリックされたボタンからidを取得
         Dim id As String = GetClickCellButtonContent(sender, e)
 
-        Dim fChk As New SavedFileProcessCheck
-        Me.Enabled = False
-        fChk.SetName(id)
-        fChk.ShowDialog(Me)
+        If id <> "" Then
+            Dim fChk As New SavedFileProcessCheck
+            Me.Enabled = False
+            fChk.SetName(id)
+            fChk.ShowDialog(Me)
 
-        Select Case fChk.Result()
-            Case DialogResult.OK
-                ' 準備済みの閲覧用ダミーフォームに月案情報を送り込む
-                If id <> "" Then
-                    '関数に引数がつけれないため一時退避
-                    Dim f As New Month1AgeShownDummy
-                    Me.Enabled = False
-                    f.Show(Me)
-                    f.SetID(id, sqlConnect)
-                    '関数おわり
-                End If
-            Case DialogResult.Yes
-                Dim sqlString As String
-                sqlString = "DELETE FROM `child_monthplan_main_0to1` WHERE month_main_0to1_id = " & id & ";"
-                sqlConnect.DBConnect(sqlString)
-                sqlConnecting()
-            Case DialogResult.Cancel
-        End Select
+            Select Case fChk.Result()
+                Case DialogResult.OK
+                        '関数に引数がつけれないため一時退避
+                        Dim f As New Month1AgeShownDummy
+                        Me.Enabled = False
+                        f.Show(Me)
+                        f.SetID(id, sqlConnect)
+                        '関数おわり
+                Case DialogResult.Yes
+                    Dim sqlString As String
+                    sqlString = "DELETE FROM `child_monthplan_main_0to1` WHERE month_main_0to1_id = " & id & ";"
+                    sqlConnect.DBConnect(sqlString)
+                    sqlConnecting()
+                Case DialogResult.Cancel
+            End Select
+        Else
+            '入力がボタンではない
+        End If
+
 
 
     End Sub
@@ -210,6 +219,7 @@
 
     Private Sub BackgroundWorkerSQLConnect_RunWorkerCompleted(sender As Object, e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles BackgroundWorkerSQLConnect.RunWorkerCompleted
         LabelSQLStatus.Text = "SQL接続完了!!"
+        sqlConnecting()
         System.Threading.Thread.Sleep(200)
         LabelSQLStatus.Text = ""
     End Sub
@@ -221,5 +231,23 @@
     Private Sub BnfFlatBtnSimpleSortAny_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortAny.Click
         MoveInfoSetter("DiarySelect")
         MoveForm()
+    End Sub
+
+    Private Sub BnfFlatBtnSimpleSortCreateDate_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortCreateDate.Click
+        DataGridView.Sort(DataGridView.Columns.Item("CreatedDate"), System.ComponentModel.ListSortDirection.Descending)
+    End Sub
+
+    Private Sub AdministratorForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsNothing(sqlConnect) = False Then
+            sqlConnect.Close()
+        End If
+    End Sub
+
+    Private Sub BnfFlatBtnSimpleSortJapaneseOrder_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSimpleSortJapaneseOrder.Click
+        DataGridView.Sort(DataGridView.Columns.Item("ClassName"), System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub BnfFlatBtnSearch_Click(sender As Object, e As EventArgs) Handles BnfFlatBtnSearch.Click
+
     End Sub
 End Class

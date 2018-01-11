@@ -92,7 +92,7 @@
     <Compile Include="AdministratorForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminSearchClass.vb" />
+    <Compile Include="Shared_AdminSearch.vb" />
     <Compile Include="BaseForm.Designer.vb">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </Compile>
