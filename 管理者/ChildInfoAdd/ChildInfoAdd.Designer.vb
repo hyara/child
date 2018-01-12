@@ -36,7 +36,6 @@ Partial Class ChildInfoAdd
         Me.menu_Finish = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.tab_Child = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_ChildNext = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.cmb_ClassName = New System.Windows.Forms.ComboBox()
@@ -183,7 +182,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily1 = New System.Windows.Forms.TextBox()
         Me.tab_Health = New System.Windows.Forms.TabPage()
         Me.btn_HealthBack = New System.Windows.Forms.Button()
-        Me.btn_SaveAsFile = New System.Windows.Forms.Button()
+        Me.btn_SaveAsFile2 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.rtb_AnxietyAndAttention = New System.Windows.Forms.RichTextBox()
         Me.chb_IllnessEtc = New System.Windows.Forms.CheckBox()
@@ -203,6 +202,8 @@ Partial Class ChildInfoAdd
         Me.rdb_AllergyWithout = New System.Windows.Forms.RadioButton()
         Me.rdb_AllergyExist = New System.Windows.Forms.RadioButton()
         Me.cmb_Author = New System.Windows.Forms.ComboBox()
+        Me.btn_Cancel = New System.Windows.Forms.Button()
+        Me.btn_SaveAsFile1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -319,7 +320,6 @@ Partial Class ChildInfoAdd
         '
         'tab_Child
         '
-        Me.tab_Child.Controls.Add(Me.Button1)
         Me.tab_Child.Controls.Add(Me.btn_ChildNext)
         Me.tab_Child.Controls.Add(Me.Panel2)
         Me.tab_Child.Location = New System.Drawing.Point(4, 22)
@@ -329,16 +329,6 @@ Partial Class ChildInfoAdd
         Me.tab_Child.TabIndex = 0
         Me.tab_Child.Text = "お子様"
         Me.tab_Child.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button1.Location = New System.Drawing.Point(0, 399)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(150, 75)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "キャンセル"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_ChildNext
         '
@@ -514,12 +504,12 @@ Partial Class ChildInfoAdd
         Me.rdb_woman.Name = "rdb_woman"
         Me.rdb_woman.Size = New System.Drawing.Size(14, 13)
         Me.rdb_woman.TabIndex = 16
-        Me.rdb_woman.TabStop = True
         Me.rdb_woman.UseVisualStyleBackColor = True
         '
         'rdb_man
         '
         Me.rdb_man.AutoSize = True
+        Me.rdb_man.Checked = True
         Me.rdb_man.Location = New System.Drawing.Point(655, 159)
         Me.rdb_man.Name = "rdb_man"
         Me.rdb_man.Size = New System.Drawing.Size(14, 13)
@@ -1896,7 +1886,7 @@ Partial Class ChildInfoAdd
         'tab_Health
         '
         Me.tab_Health.Controls.Add(Me.btn_HealthBack)
-        Me.tab_Health.Controls.Add(Me.btn_SaveAsFile)
+        Me.tab_Health.Controls.Add(Me.btn_SaveAsFile2)
         Me.tab_Health.Controls.Add(Me.Panel4)
         Me.tab_Health.Location = New System.Drawing.Point(4, 22)
         Me.tab_Health.Name = "tab_Health"
@@ -1911,20 +1901,20 @@ Partial Class ChildInfoAdd
         Me.btn_HealthBack.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.btn_HealthBack.Location = New System.Drawing.Point(0, 399)
         Me.btn_HealthBack.Name = "btn_HealthBack"
-        Me.btn_HealthBack.Size = New System.Drawing.Size(124, 75)
+        Me.btn_HealthBack.Size = New System.Drawing.Size(150, 75)
         Me.btn_HealthBack.TabIndex = 15
         Me.btn_HealthBack.Text = "前へ"
         Me.btn_HealthBack.UseVisualStyleBackColor = True
         '
-        'btn_SaveAsFile
+        'btn_SaveAsFile2
         '
-        Me.btn_SaveAsFile.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.btn_SaveAsFile.Location = New System.Drawing.Point(661, 399)
-        Me.btn_SaveAsFile.Name = "btn_SaveAsFile"
-        Me.btn_SaveAsFile.Size = New System.Drawing.Size(124, 75)
-        Me.btn_SaveAsFile.TabIndex = 15
-        Me.btn_SaveAsFile.Text = "保存"
-        Me.btn_SaveAsFile.UseVisualStyleBackColor = True
+        Me.btn_SaveAsFile2.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_SaveAsFile2.Location = New System.Drawing.Point(635, 399)
+        Me.btn_SaveAsFile2.Name = "btn_SaveAsFile2"
+        Me.btn_SaveAsFile2.Size = New System.Drawing.Size(150, 75)
+        Me.btn_SaveAsFile2.TabIndex = 15
+        Me.btn_SaveAsFile2.Text = "保存"
+        Me.btn_SaveAsFile2.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -1979,6 +1969,7 @@ Partial Class ChildInfoAdd
         '
         'txt_AllergyDetails
         '
+        Me.txt_AllergyDetails.Enabled = False
         Me.txt_AllergyDetails.Font = New System.Drawing.Font("MS UI Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txt_AllergyDetails.Location = New System.Drawing.Point(507, 41)
         Me.txt_AllergyDetails.Name = "txt_AllergyDetails"
@@ -2088,6 +2079,7 @@ Partial Class ChildInfoAdd
         'rdb_AllergyWithout
         '
         Me.rdb_AllergyWithout.AutoSize = True
+        Me.rdb_AllergyWithout.Checked = True
         Me.rdb_AllergyWithout.Location = New System.Drawing.Point(306, 45)
         Me.rdb_AllergyWithout.Name = "rdb_AllergyWithout"
         Me.rdb_AllergyWithout.Size = New System.Drawing.Size(14, 13)
@@ -2102,7 +2094,6 @@ Partial Class ChildInfoAdd
         Me.rdb_AllergyExist.Name = "rdb_AllergyExist"
         Me.rdb_AllergyExist.Size = New System.Drawing.Size(14, 13)
         Me.rdb_AllergyExist.TabIndex = 0
-        Me.rdb_AllergyExist.TabStop = True
         Me.rdb_AllergyExist.UseVisualStyleBackColor = True
         '
         'cmb_Author
@@ -2115,12 +2106,34 @@ Partial Class ChildInfoAdd
         Me.cmb_Author.TabIndex = 0
         Me.cmb_Author.Text = "あああ"
         '
+        'btn_Cancel
+        '
+        Me.btn_Cancel.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_Cancel.Location = New System.Drawing.Point(656, 93)
+        Me.btn_Cancel.Name = "btn_Cancel"
+        Me.btn_Cancel.Size = New System.Drawing.Size(150, 62)
+        Me.btn_Cancel.TabIndex = 1
+        Me.btn_Cancel.Text = "キャンセル"
+        Me.btn_Cancel.UseVisualStyleBackColor = True
+        '
+        'btn_SaveAsFile1
+        '
+        Me.btn_SaveAsFile1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_SaveAsFile1.Location = New System.Drawing.Point(500, 93)
+        Me.btn_SaveAsFile1.Name = "btn_SaveAsFile1"
+        Me.btn_SaveAsFile1.Size = New System.Drawing.Size(150, 62)
+        Me.btn_SaveAsFile1.TabIndex = 1
+        Me.btn_SaveAsFile1.Text = "保存"
+        Me.btn_SaveAsFile1.UseVisualStyleBackColor = True
+        '
         'ChildInfoAdd
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(818, 649)
+        Me.Controls.Add(Me.btn_SaveAsFile1)
+        Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.cmb_Author)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.DateTimePicker1)
@@ -2329,8 +2342,9 @@ Partial Class ChildInfoAdd
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents btn_ChildNext As System.Windows.Forms.Button
     Friend WithEvents btn_FamilyNext As System.Windows.Forms.Button
-    Friend WithEvents btn_SaveAsFile As System.Windows.Forms.Button
+    Friend WithEvents btn_SaveAsFile2 As System.Windows.Forms.Button
     Friend WithEvents btn_FamilyBack As System.Windows.Forms.Button
     Friend WithEvents btn_HealthBack As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btn_Cancel As System.Windows.Forms.Button
+    Friend WithEvents btn_SaveAsFile1 As System.Windows.Forms.Button
 End Class

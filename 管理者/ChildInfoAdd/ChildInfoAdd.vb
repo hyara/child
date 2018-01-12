@@ -22,6 +22,41 @@ Public Class ChildInfoAdd
     Dim _txt_RelationEmergency(2) As String
     Dim _txt_EmergencyTEL(2) As String
 
+    Private Sub ChildInfoAdd_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        encsjis = System.Text.Encoding.GetEncoding("Shift_JIS")
+
+        Dim year_array(250) As Object
+        Dim i As Integer
+
+        ' クラス名を反映
+        If Sql.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        Dim count As String = Sql.DBResult(0, 0)
+
+        Dim j As Integer
+        If Sql.DBConnect("SELECT main_id, ClassName FROM class") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            cmb_ClassName.Items.Add(Sql.DBResult(j, 1))
+        Next
+
+        ' 生年月日の年に今年を表示。
+        cmb_BirthYear.Text = Today.Year.ToString
+
+        ' 生年月日の年のリストを生成。
+        cmb_BirthYear.Items.Clear()
+
+        For i = 1950 To Today.Year
+            year_array(i - 1950) = i
+        Next i
+
+        cmb_BirthYear.Items.AddRange(year_array)
+
+    End Sub
+
     ' 年月日が正しい形式であることを確認。
     Private Sub DateDecision()
         If cmb_BirthYear.Text <> "" And cmb_BirthMonth.Text <> "" Then
@@ -80,6 +115,10 @@ Public Class ChildInfoAdd
                 Dim ageMonth As Long = DateDiff("m", birthday, today) - (ageYear * 12)
 
                 If (ageMonth < 0) Then
+                    year += 1
+                    month = 14 - month
+                    birthday = Date.Parse(year.ToString + "/" + month.ToString + "/" + day.ToString)
+                    ageYear = DateDiff("yyyy", birthday, today)
                     ageMonth = (ageYear * 12) - DateDiff("m", birthday, today)
                 End If
 
@@ -115,13 +154,381 @@ Public Class ChildInfoAdd
         End If
     End Sub
 
-    Private Sub ChildInfoAdd_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        encsjis = System.Text.Encoding.GetEncoding("Shift_JIS")
+    ' 全角文字しか入力できないように制限。
+    Private Sub EmInput(ByVal Str As Object)
 
-        Dim year_array(250) As Object
-        Dim i As Integer
+        Static Encode_JIS As System.Text.Encoding = System.Text.Encoding.GetEncoding("Shift_JIS")
+        Dim Str_Count As Integer = Str.Text.Length
+        Dim ByteCount = Encode_JIS.GetByteCount(Str.Text)
 
-        ' クラス名を反映
+        If Str_Count * 2 <> ByteCount Then
+            MessageBox.Show("全角文字で入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Str.Text = ""
+            Str.Focus()
+        End If
+
+    End Sub
+
+    ' 数字しか入力できないように制限。
+    Private Sub NumInput(ByRef e As Object)
+
+        If (e.KeyChar < "0"c Or e.KeyChar > "9"c) And e.KeyChar <> vbBack Then
+            e.Handled = True
+        End If
+
+    End Sub
+
+    ''' <summary>
+    ''' 入力値のエラーチェックとエラーメッセージの表示をする。
+    ''' </summary>
+    ''' <returns>True: エラー False: 正常終了</returns>
+    ''' <remarks></remarks>
+    Private Function InputErrorCheck() As Boolean
+        Dim ErrFlg As Boolean = False
+        '共通部分チェック
+        If Me.cmb_Author.Text = "" Then
+            MessageBox.Show("作成者の名前を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        'お子様チェック
+        If Me.cmb_ClassName.Text = "" Then
+            MessageBox.Show("クラス名を選択してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_ChildName.Text = "" Then
+            MessageBox.Show("お子様の名前を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_ChildNameKana.Text = "" Then
+            MessageBox.Show("お子様のフリガナを入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.cmb_BirthYear.Text = "" Then
+            MessageBox.Show("生年月日の年を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.cmb_BirthMonth.Text = "" Then
+            MessageBox.Show("生年月日の月を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.cmb_BirthDay.Text = "" Then
+            MessageBox.Show("生年月日の日を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_PostalCode1.Text = "" Then
+            MessageBox.Show("郵便番号の上3ケタを入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_PostalCode2.Text = "" Then
+            MessageBox.Show("郵便番号の上4ケタを入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_Address.Text = "" Then
+            MessageBox.Show("住所を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_ChildTEL1.Text = "" Then
+            MessageBox.Show("お子様の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_ChildTEL2.Text = "" Then
+            MessageBox.Show("お子様の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_ChildTEL3.Text = "" Then
+            MessageBox.Show("お子様の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_Temperature.Text = "" Then
+            MessageBox.Show("平均体温を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        '家族構成チェック
+        If Me.txt_EmergencyName1.Text = "" Then
+            MessageBox.Show("緊急連絡先の名前を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyName2.Text = "" Then
+            MessageBox.Show("緊急連絡先の名前を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_RelationFamily1.Text = "" Then
+            MessageBox.Show("緊急連絡先の続柄を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_RelationFamily2.Text = "" Then
+            MessageBox.Show("緊急連絡先の続柄を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL1_1.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL1_2.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL1_3.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL2_1.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL2_2.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_EmergencyTEL2_3.Text = "" Then
+            MessageBox.Show("緊急連絡先の電話番号を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.rtb_CommutingMethod.Text = "" Then
+            MessageBox.Show("通園手段を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_CommutingHour.Text = "" Then
+            MessageBox.Show("通園時間を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        If Me.txt_CommutingMin.Text = "" Then
+            MessageBox.Show("通園時間を入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            ErrFlg = True
+            Return ErrFlg
+        End If
+
+        Return ErrFlg
+    End Function
+
+    Private Sub RegistData()
+        If InputErrorCheck() = False Then
+            Dim maxMainID As String = "0"
+            Dim count As Integer
+            Dim sqlChildrenInsert As String
+            Dim sqlFamilyTableInsert As String
+            Dim sqlFamilyEmergencyInsert As String
+            Dim sqlFamilyMainInsert As String
+            Dim sqlHealthInsert As String
+
+            Me._txt_FamilyName.Add(Me.txt_FamilyName1)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName2)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName3)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName4)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName5)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName6)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName7)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName8)
+            Me._txt_FamilyName.Add(Me.txt_FamilyName9)
+
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily1)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily2)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily3)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily4)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily5)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily6)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily7)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily8)
+            Me._txt_RelationFamily.Add(Me.txt_RelationFamily9)
+
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge1)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge2)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge3)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge4)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge5)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge6)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge7)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge8)
+            Me._txt_FamilyAge.Add(Me.txt_FamilyAge9)
+
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL1_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL2_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL3_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL4_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL5_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL6_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL7_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL8_1)
+            Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL9_1)
+
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL1_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL2_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL3_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL4_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL5_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL6_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL7_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL8_2)
+            Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL9_2)
+
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL1_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL2_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL3_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL4_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL5_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL6_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL7_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL8_3)
+            Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL9_3)
+
+            _rtb_WorkPlace(0) = rtb_WorkPlace1.Text
+            _rtb_WorkPlace(1) = rtb_WorkPlace2.Text
+            _rtb_WorkPlace(2) = rtb_WorkPlace3.Text
+            _rtb_WorkPlace(3) = rtb_WorkPlace4.Text
+            _rtb_WorkPlace(4) = rtb_WorkPlace5.Text
+            _rtb_WorkPlace(5) = rtb_WorkPlace6.Text
+            _rtb_WorkPlace(6) = rtb_WorkPlace7.Text
+            _rtb_WorkPlace(7) = rtb_WorkPlace8.Text
+            _rtb_WorkPlace(8) = rtb_WorkPlace9.Text
+
+            ' お子様情報登録
+            ' mainIDを取得してchildrenテーブルにInsertするSQL文の取得・送信
+            sqlChildrenInsert = childrenInsertSQLStringGetter()
+            If Sql.DBConnect(sqlChildrenInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+            ' 家族構成情報登録
+            ' mainIDを取得してchildren_family_tableテーブルにInsertするSQL文の取得・送信
+            If Sql.DBConnect("SELECT MAX(children_main_id) FROM children") = False Then
+                MsgBox(Sql.ErrorMessage())
+            End If
+
+            maxMainID = Sql.DBResult(0)
+
+            Dim i As Integer = 0
+
+            While i < 8
+                If (Me._txt_FamilyName(i).Text = "") Then
+                    count = i - 1
+                    Exit While
+                End If
+                i += 1
+            End While
+
+            i = 0
+
+            While i <= count
+                sqlFamilyTableInsert = familyTableInsertSQLStringGetter(maxMainID, i)
+                If Sql.DBConnect(sqlFamilyTableInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+                i += 1
+            End While
+
+            ' 緊急連絡先情報登録
+            ' mainIDを取得してchildren_family_emergencyテーブルにInsertするSQL文の取得・送信
+            _txt_EmergencyName(0) = txt_EmergencyName1.Text
+            _txt_EmergencyName(1) = txt_EmergencyName2.Text
+            _txt_RelationEmergency(0) = txt_RelationEmergency1.Text
+            _txt_RelationEmergency(1) = txt_RelationEmergency2.Text
+            _txt_EmergencyTEL(0) = txt_EmergencyTEL1_1.Text + txt_EmergencyTEL1_2.Text + txt_EmergencyTEL1_3.Text
+            _txt_EmergencyTEL(1) = txt_EmergencyTEL2_1.Text + txt_EmergencyTEL2_2.Text + txt_EmergencyTEL2_3.Text
+
+            i = 0
+
+            While i <= 1
+                sqlFamilyEmergencyInsert = familyEmergencyInsertSQLStringGetter(maxMainID, i)
+                If Sql.DBConnect(sqlFamilyEmergencyInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+                i += 1
+            End While
+
+            ' 通園情報登録
+            ' mainIDを取得してchildren_family_mainテーブルにInsertするSQL文の取得・送信
+            sqlFamilyMainInsert = familyMainInsertSQLStringGetter(maxMainID)
+            If Sql.DBConnect(sqlFamilyMainInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+            ' 健康情報登録
+            ' mainIDを取得してchildren_healthテーブルにInsertするSQL文の取得・送信
+            sqlHealthInsert = healthInsertSQLStringGetter(maxMainID)
+            If Sql.DBConnect(sqlHealthInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+            MessageBox.Show("登録が完了しました。", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+        End If
+
+    End Sub
+
+    Private Function childrenInsertSQLStringGetter() As String
+        ' お子様情報登録
+        Dim mainID As String = 0
+        Dim sql_Sex As String = 0
+        Dim sql_ChildName, sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
+
+        sql_ChildName = Me.txt_ChildName.Text
+        sql_ChildNameKana = Me.txt_ChildNameKana.Text
+
+        sql_Nickname = Me.txt_NickName.Text
+
+        sql_EntranceDay = Date.Parse(Me.dtp_EntranceDay.Value.Year & "/" & Me.dtp_EntranceDay.Value.Month & "/" & Me.dtp_EntranceDay.Value.Day)
+
+        sql_Birthday = Date.Parse(Me.cmb_BirthYear.Text & "/" & Me.cmb_BirthMonth.Text & "/" & Me.cmb_BirthDay.Text)
+
+        If rdb_man.Checked = True Then
+            sql_Sex = "男"
+        ElseIf rdb_woman.Checked = True Then
+            sql_Sex = "女"
+        End If
+
+        sql_PostalCode = Integer.Parse(Me.txt_PostalCode1.Text + txt_PostalCode2.Text)
+        sql_Address = Me.txt_Address.Text + Me.txt_BuildingName.Text
+        sql_ChildTEL = Me.txt_ChildTEL1.Text + Me.txt_ChildTEL2.Text + Me.txt_ChildTEL3.Text
+
+        sql_Temperature = Me.txt_Temperature.Text
+
+        sql_Mail = Me.txt_MailLocal.Text & "@" & Me.txt_MailDomain.Text
+
+        sql_DoctorName = txt_DoctorName.Text
+        sql_DoctorTEL = txt_DoctorTEL1.Text + txt_DoctorTEL2.Text + txt_DoctorTEL3.Text
+
+        ' classテーブルと関連付け
         If Sql.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
             MsgBox(Sql.ErrorMessage())
         End If
@@ -132,23 +539,131 @@ Public Class ChildInfoAdd
         If Sql.DBConnect("SELECT main_id, ClassName FROM class") = False Then
             MsgBox(Sql.ErrorMessage())
         End If
+
         For j = 0 To Integer.Parse(count) - 1 Step 1
-            cmb_ClassName.Items.Add(Sql.DBResult(j, 1))
+            If (cmb_ClassName.Text = Sql.DBResult(j, 1)) Then
+                mainID = Sql.DBResult(j, 0)
+                Exit For
+            End If
         Next
 
-        ' 生年月日の年に今年を表示。
-        cmb_BirthYear.Text = Today.Year.ToString
+        ' SQLを返す。
+        Return "INSERT INTO children(class_table_id, children_name, children_katakana, children_nickname, children_sex, birthday, admission_day, postal_code, address, average_temperature, contact, mail_address, primary_doctor_name, primary_doctor_contact)" _
+                          & "VALUES (" & mainID & ",'" & sql_ChildName & "','" & sql_ChildNameKana & "','" & sql_Nickname & "','" & sql_Sex & "','" & sql_Birthday & "','" & sql_EntranceDay & "','" & sql_PostalCode & "','" & sql_Address & "','" & sql_Temperature & "'," & sql_ChildTEL & ",'" & sql_Mail & "','" & sql_DoctorName & "','" & sql_DoctorTEL & "')"
+    End Function
 
-        ' 生年月日の年のリストを生成。
-        cmb_BirthYear.Items.Clear()
+    Private Function familyTableInsertSQLStringGetter(ByVal mainID As String, ByVal k As Integer) As String
+        ' 家族構成タブの同居家族を情報登録
+        Dim sql_FamilyName, sql_RelationFamily, sql_FamilyAge, sql_WorkPlace, sql_FamilyTEL
 
-        For i = 1950 To Today.Year
-            year_array(i - 1950) = i
-        Next i
+        sql_FamilyName = _txt_FamilyName(k).Text
+        sql_RelationFamily = _txt_RelationFamily(k).Text
+        sql_FamilyAge = _txt_FamilyAge(k).Text
+        sql_WorkPlace = _rtb_WorkPlace(k)
+        sql_FamilyTEL = _txt_FamilyTEL1(k).Text + _txt_FamilyTEL2(k).Text + _txt_FamilyTEL3(k).Text
 
-        cmb_BirthYear.Items.AddRange(year_array)
+        ' SQLを返す。
+        Return "INSERT INTO children_family_table(children_main_id, name, relationship, age, office, contact)" _
+                          & "VALUES (" & mainID & ",'" & sql_FamilyName & "','" & sql_RelationFamily & "','" & sql_FamilyAge & "','" & sql_WorkPlace & "','" & sql_FamilyTEL & "')"
+    End Function
 
-    End Sub
+    Private Function familyEmergencyInsertSQLStringGetter(ByVal mainID As String, ByVal count As Integer) As String
+        ' 家族構成タブの緊急連絡先を情報登録
+        Dim sql_EmergencyName, sql_RelationEmergency, sql_EmergencyTEL
+
+        sql_EmergencyName = _txt_EmergencyName(count)
+        sql_RelationEmergency = _txt_RelationEmergency(count)
+        sql_EmergencyTEL = _txt_EmergencyTEL(count)
+
+        ' SQLを返す。
+        Return "INSERT INTO children_family_emergency(children_main_id, emergency_name, emergency_relationship, emergency_contact)" _
+                          & "VALUES (" & mainID & ",'" & sql_EmergencyName & "','" & sql_RelationEmergency & "','" & sql_EmergencyTEL & "')"
+    End Function
+
+    Private Function familyMainInsertSQLStringGetter(ByVal mainID As String) As String
+        ' 家族構成タブの通園情報を登録
+        Dim sql_CommutingMethod, sql_CommutingTime
+
+        sql_CommutingMethod = rtb_CommutingMethod.Text
+        sql_CommutingTime = txt_CommutingHour.Text + ":" + txt_CommutingMin.Text
+
+        ' SQLを返す。
+        Return "INSERT INTO children_family_main(children_main_id, transportation, transit_time)" _
+                          & "VALUES (" & mainID & ",'" & sql_CommutingMethod & "','" & sql_CommutingTime & "')"
+    End Function
+
+    Private Function healthInsertSQLStringGetter(ByVal mainID As String) As String
+        ' 家族構成タブの通園情報を登録
+        Dim sql_AllergyDetails, sql_Operation, sql_SusceptibleIllness, sql_AnxietyAndAttention
+        Dim sql_AllergyCheck As String = ""
+        Dim sql_IllnessMeasles As String = ""
+        Dim sql_IllnessMumps As String = ""
+        Dim sql_IllnessChickenPox As String = ""
+        Dim sql_IllnessRubella As String = ""
+        Dim sql_IllnessEtc As String = ""
+        Dim sql_VaccinationBCG As String = ""
+        Dim sql_VaccinationPolio As String = ""
+        Dim sql_VaccinationCombined As String = ""
+        Dim sql_VaccinationMumps As String = ""
+        Dim sql_VaccinationEncephalitis As String = ""
+
+        sql_AllergyDetails = txt_AllergyDetails.Text
+        sql_Operation = txt_Operation.Text
+        sql_SusceptibleIllness = txt_SusceptibleIllness.Text
+        sql_AnxietyAndAttention = rtb_AnxietyAndAttention.Text
+
+        If (rdb_AllergyExist.Checked = True) Then
+            sql_AllergyCheck = "○"
+        End If
+
+        If (chb_IllnessMeasles.Checked = True) Then
+            sql_IllnessMeasles = "○"
+        End If
+
+        If (chb_IllnessMumps.Checked = True) Then
+            sql_IllnessMumps = "○"
+        End If
+
+        If (chb_IllnessChickenPox.Checked = True) Then
+            sql_IllnessChickenPox = "○"
+        End If
+
+        If (chb_IllnessRubella.Checked = True) Then
+            sql_IllnessRubella = "○"
+        End If
+
+        If (chb_IllnessEtc.Checked = True) Then
+            sql_IllnessEtc = txt_IllnessEtc.Text
+        End If
+
+        If (chb_IllnessEtc.Checked = True) Then
+            sql_IllnessEtc = txt_IllnessEtc.Text
+        End If
+
+        If (chb_VaccinationBCG.Checked = True) Then
+            sql_VaccinationBCG = "○"
+        End If
+
+        If (chb_VaccinationPolio.Checked = True) Then
+            sql_VaccinationPolio = "○"
+        End If
+
+        If (chb_CombinedVaccination.Checked = True) Then
+            sql_VaccinationCombined = "○"
+        End If
+
+        If (chb_VaccinationMumps.Checked = True) Then
+            sql_VaccinationMumps = "○"
+        End If
+
+        If (chb_VaccinationEncephalitis.Checked = True) Then
+            sql_VaccinationEncephalitis = "○"
+        End If
+
+        ' SQLを返す。
+        Return "INSERT INTO children_health(children_main_id, allergies_check, allergies_details, sick_measles, sick_mumps, sick_chicken_pox, sick_rubella, sick_etc, surgery, vaccination_bcg, vaccination_polio, vaccination_combined, vaccination_mumps, vaccination_encephalitis, sick_vulnerable, notices)" _
+                          & "VALUES (" & mainID & ",'" & sql_AllergyCheck & "','" & sql_AllergyDetails & "','" & sql_IllnessMeasles & "','" & sql_IllnessMumps & "','" & sql_IllnessChickenPox & "','" & sql_IllnessRubella & "','" & sql_IllnessEtc & "','" & sql_Operation & "','" & sql_VaccinationBCG & "','" & sql_VaccinationPolio & "','" & sql_VaccinationCombined & "','" & sql_VaccinationMumps & "','" & sql_VaccinationEncephalitis & "','" & sql_SusceptibleIllness & "','" & sql_AnxietyAndAttention & "')"
+    End Function
 
     Private Sub cmb_BirthYear_TextChanged(sender As Object, e As EventArgs) Handles cmb_BirthYear.TextChanged
 
@@ -321,345 +836,11 @@ Public Class ChildInfoAdd
         End Try
     End Sub
 
-    ' 全角文字しか入力できないように制限。
-    Private Sub EmInput(ByVal Str As Object)
-
-        Static Encode_JIS As System.Text.Encoding = System.Text.Encoding.GetEncoding("Shift_JIS")
-        Dim Str_Count As Integer = Str.Text.Length
-        Dim ByteCount = Encode_JIS.GetByteCount(Str.Text)
-
-        If Str_Count * 2 <> ByteCount Then
-            MessageBox.Show("全角文字で入力してください。", "", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Str.Text = ""
-            Str.Focus()
-        End If
-
-    End Sub
-
-    ' 数字しか入力できないように制限。
-    Private Sub NumInput(ByRef e As Object)
-
-        If (e.KeyChar < "0"c Or e.KeyChar > "9"c) And e.KeyChar <> vbBack Then
-            e.Handled = True
-        End If
-
-    End Sub
-
     Private Sub txt_Tempereture_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Temperature.KeyPress
         If (e.KeyChar < "0"c Or e.KeyChar > "9"c) And e.KeyChar <> vbBack And e.KeyChar <> "."c Then
             e.Handled = True
         End If
     End Sub
-
-    Private Sub RegistData()
-        Dim maxMainID As String = "0"
-        Dim count As Integer
-        Dim sqlChildrenInsert As String
-        Dim sqlFamilyTableInsert As String
-        Dim sqlFamilyEmergencyInsert As String
-        Dim sqlFamilyMainInsert As String
-        Dim sqlHealthInsert As String
-
-        Me._txt_FamilyName.Add(Me.txt_FamilyName1)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName2)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName3)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName4)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName5)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName6)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName7)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName8)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName9)
-
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily1)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily2)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily3)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily4)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily5)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily6)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily7)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily8)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily9)
-
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge1)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge2)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge3)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge4)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge5)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge6)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge7)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge8)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge9)
-
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL1_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL2_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL3_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL4_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL5_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL6_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL7_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL8_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL9_1)
-
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL1_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL2_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL3_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL4_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL5_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL6_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL7_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL8_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL9_2)
-
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL1_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL2_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL3_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL4_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL5_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL6_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL7_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL8_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL9_3)
-
-        _rtb_WorkPlace(0) = rtb_WorkPlace1.Text
-        _rtb_WorkPlace(1) = rtb_WorkPlace2.Text
-        _rtb_WorkPlace(2) = rtb_WorkPlace3.Text
-        _rtb_WorkPlace(3) = rtb_WorkPlace4.Text
-        _rtb_WorkPlace(4) = rtb_WorkPlace5.Text
-        _rtb_WorkPlace(5) = rtb_WorkPlace6.Text
-        _rtb_WorkPlace(6) = rtb_WorkPlace7.Text
-        _rtb_WorkPlace(7) = rtb_WorkPlace8.Text
-        _rtb_WorkPlace(8) = rtb_WorkPlace9.Text
-
-        ' お子様情報登録
-        ' mainIDを取得してchildrenテーブルにInsertするSQL文の取得・送信
-        sqlChildrenInsert = childrenInsertSQLStringGetter()
-        If Sql.DBConnect(sqlChildrenInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-
-        ' 家族構成情報登録
-        ' mainIDを取得してchildren_family_tableテーブルにInsertするSQL文の取得・送信
-        If Sql.DBConnect("SELECT MAX(children_main_id) FROM children") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        maxMainID = Sql.DBResult(0)
-
-        Dim i As Integer = 0
-
-        While i < 8
-            If (Me._txt_FamilyName(i).Text = "") Then
-                count = i - 1
-                Exit While
-            End If
-            i += 1
-        End While
-
-        i = 0
-
-        While i <= count
-            sqlFamilyTableInsert = familyTableInsertSQLStringGetter(maxMainID, i)
-            If Sql.DBConnect(sqlFamilyTableInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-            i += 1
-        End While
-
-        ' 緊急連絡先情報登録
-        ' mainIDを取得してchildren_family_emergencyテーブルにInsertするSQL文の取得・送信
-        _txt_EmergencyName(0) = txt_EmergencyName1.Text
-        _txt_EmergencyName(1) = txt_EmergencyName2.Text
-        _txt_RelationEmergency(0) = txt_RelationEmergency1.Text
-        _txt_RelationEmergency(1) = txt_RelationEmergency2.Text
-        _txt_EmergencyTEL(0) = txt_EmergencyTEL1_1.Text + txt_EmergencyTEL1_2.Text + txt_EmergencyTEL1_3.Text
-        _txt_EmergencyTEL(1) = txt_EmergencyTEL2_1.Text + txt_EmergencyTEL2_2.Text + txt_EmergencyTEL2_3.Text
-
-        i = 0
-
-        While i <= 1
-            sqlFamilyEmergencyInsert = familyEmergencyInsertSQLStringGetter(maxMainID, i)
-            If Sql.DBConnect(sqlFamilyEmergencyInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-            i += 1
-        End While
-
-        ' 通園情報登録
-        ' mainIDを取得してchildren_family_mainテーブルにInsertするSQL文の取得・送信
-        sqlFamilyMainInsert = familyMainInsertSQLStringGetter(maxMainID)
-        If Sql.DBConnect(sqlFamilyMainInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-
-        ' 健康情報登録
-        ' mainIDを取得してchildren_healthテーブルにInsertするSQL文の取得・送信
-        sqlHealthInsert = healthInsertSQLStringGetter(maxMainID)
-        If Sql.DBConnect(sqlHealthInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-
-        MsgBox("登録が完了しました。")
-    End Sub
-
-    Private Function childrenInsertSQLStringGetter() As String
-        ' お子様情報登録
-        Dim mainID As String = 0
-        Dim sql_Sex As String = 0
-        Dim sql_ChildName, sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
-
-        sql_ChildName = Me.txt_ChildName.Text
-        sql_ChildNameKana = Me.txt_ChildNameKana.Text
-
-        sql_Nickname = Me.txt_NickName.Text
-
-        sql_EntranceDay = Date.Parse(Me.dtp_EntranceDay.Value.Year & "/" & Me.dtp_EntranceDay.Value.Month & "/" & Me.dtp_EntranceDay.Value.Day)
-
-        sql_Birthday = Date.Parse(Me.cmb_BirthYear.Text & "/" & Me.cmb_BirthMonth.Text & "/" & Me.cmb_BirthDay.Text)
-
-        If rdb_man.Checked = True Then
-            sql_Sex = "男"
-        ElseIf rdb_woman.Checked = True Then
-            sql_Sex = "女"
-        End If
-
-        sql_PostalCode = Integer.Parse(Me.txt_PostalCode1.Text + txt_PostalCode2.Text)
-        sql_Address = Me.txt_Address.Text + Me.txt_BuildingName.Text
-        sql_ChildTEL = Me.txt_ChildTEL1.Text + Me.txt_ChildTEL2.Text + Me.txt_ChildTEL3.Text
-
-        sql_Temperature = Me.txt_Temperature.Text
-
-        sql_Mail = Me.txt_MailLocal.Text & "@" & Me.txt_MailDomain.Text
-
-        sql_DoctorName = txt_DoctorName.Text
-        sql_DoctorTEL = txt_DoctorTEL1.Text + txt_DoctorTEL2.Text + txt_DoctorTEL3.Text
-
-        ' classテーブルと関連付け
-        If Sql.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        Dim count As String = Sql.DBResult(0, 0)
-
-        Dim j As Integer
-        If Sql.DBConnect("SELECT main_id, ClassName FROM class") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        For j = 0 To Integer.Parse(count) - 1 Step 1
-            If (cmb_ClassName.Text = Sql.DBResult(j, 1)) Then
-                mainID = Sql.DBResult(j, 0)
-                Exit For
-            End If
-        Next
-
-        ' SQLを返す。
-        Return "INSERT INTO children(class_table_id, children_name, children_katakana, children_nickname, children_sex, birthday, admission_day, postal_code, address, average_temperature, contact, mail_address, primary_doctor_name, primary_doctor_contact)" _
-                          & "VALUES (" & mainID & ",'" & sql_ChildName & "','" & sql_ChildNameKana & "','" & sql_Nickname & "','" & sql_Sex & "','" & sql_Birthday & "','" & sql_EntranceDay & "','" & sql_PostalCode & "','" & sql_Address & "','" & sql_Temperature & "'," & sql_ChildTEL & ",'" & sql_Mail & "','" & sql_DoctorName & "','" & sql_DoctorTEL & "')"
-    End Function
-
-    Private Function familyTableInsertSQLStringGetter(ByVal mainID As String, ByVal k As Integer) As String
-        ' 家族構成タブの同居家族を情報登録
-        Dim sql_FamilyName, sql_RelationFamily, sql_FamilyAge, sql_WorkPlace, sql_FamilyTEL
-
-        sql_FamilyName = _txt_FamilyName(k).Text
-        sql_RelationFamily = _txt_RelationFamily(k).Text
-        sql_FamilyAge = _txt_FamilyAge(k).Text
-        sql_WorkPlace = _rtb_WorkPlace(k)
-        sql_FamilyTEL = _txt_FamilyTEL1(k).Text + _txt_FamilyTEL2(k).Text + _txt_FamilyTEL3(k).Text
-
-        ' SQLを返す。
-        Return "INSERT INTO children_family_table(children_main_id, name, relationship, age, office, contact)" _
-                          & "VALUES (" & mainID & ",'" & sql_FamilyName & "','" & sql_RelationFamily & "','" & sql_FamilyAge & "','" & sql_WorkPlace & "','" & sql_FamilyTEL & "')"
-    End Function
-
-    Private Function familyEmergencyInsertSQLStringGetter(ByVal mainID As String, ByVal count As Integer) As String
-        ' 家族構成タブの緊急連絡先を情報登録
-        Dim sql_EmergencyName, sql_RelationEmergency, sql_EmergencyTEL
-
-        sql_EmergencyName = _txt_EmergencyName(count)
-        sql_RelationEmergency = _txt_RelationEmergency(count)
-        sql_EmergencyTEL = _txt_EmergencyTEL(count)
-
-        ' SQLを返す。
-        Return "INSERT INTO children_family_emergency(children_main_id, emergency_name, emergency_relationship, emergency_contact)" _
-                          & "VALUES (" & mainID & ",'" & sql_EmergencyName & "','" & sql_RelationEmergency & "','" & sql_EmergencyTEL & "')"
-    End Function
-
-    Private Function familyMainInsertSQLStringGetter(ByVal mainID As String) As String
-        ' 家族構成タブの通園情報を登録
-        Dim sql_CommutingMethod, sql_CommutingTime
-
-        sql_CommutingMethod = rtb_CommutingMethod.Text
-        sql_CommutingTime = txt_CommutingHour.Text + ":" + txt_CommutingMin.Text
-
-        ' SQLを返す。
-        Return "INSERT INTO children_family_main(children_main_id, transportation, transit_time)" _
-                          & "VALUES (" & mainID & ",'" & sql_CommutingMethod & "','" & sql_CommutingTime & "')"
-    End Function
-
-    Private Function healthInsertSQLStringGetter(ByVal mainID As String) As String
-        ' 家族構成タブの通園情報を登録
-        Dim sql_AllergyDetails, sql_Operation, sql_SusceptibleIllness, sql_AnxietyAndAttention
-        Dim sql_AllergyCheck As String = ""
-        Dim sql_IllnessMeasles As String = ""
-        Dim sql_IllnessMumps As String = ""
-        Dim sql_IllnessChickenPox As String = ""
-        Dim sql_IllnessRubella As String = ""
-        Dim sql_IllnessEtc As String = ""
-        Dim sql_VaccinationBCG As String = ""
-        Dim sql_VaccinationPolio As String = ""
-        Dim sql_VaccinationCombined As String = ""
-        Dim sql_VaccinationMumps As String = ""
-        Dim sql_VaccinationEncephalitis As String = ""
-
-        sql_AllergyDetails = txt_AllergyDetails.Text
-        sql_Operation = txt_Operation.Text
-        sql_SusceptibleIllness = txt_SusceptibleIllness.Text
-        sql_AnxietyAndAttention = rtb_AnxietyAndAttention.Text
-
-        If (rdb_AllergyExist.Checked = True) Then
-            sql_AllergyCheck = "○"
-        End If
-
-        If (chb_IllnessMeasles.Checked = True) Then
-            sql_IllnessMeasles = "○"
-        End If
-
-        If (chb_IllnessMumps.Checked = True) Then
-            sql_IllnessMumps = "○"
-        End If
-
-        If (chb_IllnessChickenPox.Checked = True) Then
-            sql_IllnessChickenPox = "○"
-        End If
-
-        If (chb_IllnessRubella.Checked = True) Then
-            sql_IllnessRubella = "○"
-        End If
-
-        If (chb_IllnessEtc.Checked = True) Then
-            sql_IllnessEtc = txt_IllnessEtc.Text
-        End If
-
-        If (chb_IllnessEtc.Checked = True) Then
-            sql_IllnessEtc = txt_IllnessEtc.Text
-        End If
-
-        If (chb_VaccinationBCG.Checked = True) Then
-            sql_VaccinationBCG = "○"
-        End If
-
-        If (chb_VaccinationPolio.Checked = True) Then
-            sql_VaccinationPolio = "○"
-        End If
-
-        If (chb_CombinedVaccination.Checked = True) Then
-            sql_VaccinationCombined = "○"
-        End If
-
-        If (chb_VaccinationMumps.Checked = True) Then
-            sql_VaccinationMumps = "○"
-        End If
-
-        If (chb_VaccinationEncephalitis.Checked = True) Then
-            sql_VaccinationEncephalitis = "○"
-        End If
-
-        ' SQLを返す。
-        Return "INSERT INTO children_health(children_main_id, allergies_check, allergies_details, sick_measles, sick_mumps, sick_chicken_pox, sick_rubella, sick_etc, surgery, vaccination_bcg, vaccination_polio, vaccination_combined, vaccination_mumps, vaccination_encephalitis, sick_vulnerable, notices)" _
-                          & "VALUES (" & mainID & ",'" & sql_AllergyCheck & "','" & sql_AllergyDetails & "','" & sql_IllnessMeasles & "','" & sql_IllnessMumps & "','" & sql_IllnessChickenPox & "','" & sql_IllnessRubella & "','" & sql_IllnessEtc & "','" & sql_Operation & "','" & sql_VaccinationBCG & "','" & sql_VaccinationPolio & "','" & sql_VaccinationCombined & "','" & sql_VaccinationMumps & "','" & sql_VaccinationEncephalitis & "','" & sql_SusceptibleIllness & "','" & sql_AnxietyAndAttention & "')"
-    End Function
-
     Private Sub cmb_Author_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmb_Author.LostFocus
         EmInput(cmb_Author)
     End Sub
@@ -1057,11 +1238,16 @@ Public Class ChildInfoAdd
         NumInput(e)
     End Sub
 
-    Private Sub btn_SaveAsFile_Click(sender As Object, e As EventArgs) Handles btn_SaveAsFile.Click
+    Private Sub btn_SaveAsFile1_Click(sender As Object, e As EventArgs) Handles btn_SaveAsFile1.Click
         RegistData()
     End Sub
 
-    Private Sub btn_ChildNext_Click(sender As Object, e As EventArgs) Handles btn_ChildNext.Click, Button1.Click
+
+    Private Sub btn_SaveAsFile2_Click(sender As Object, e As EventArgs) Handles btn_SaveAsFile2.Click
+        RegistData()
+    End Sub
+
+    Private Sub btn_ChildNext_Click(sender As Object, e As EventArgs) Handles btn_ChildNext.Click
         TabControl1.SelectedTab = tab_Family
     End Sub
 
@@ -1085,11 +1271,44 @@ Public Class ChildInfoAdd
         End If
     End Sub
 
+    Private Sub rdb_AllergyExist_CheckedChanged(sender As Object, e As EventArgs) Handles rdb_AllergyExist.CheckedChanged
+        If (rdb_AllergyExist.Checked = True) Then
+            txt_AllergyDetails.Enabled = True
+        Else
+            txt_AllergyDetails.Enabled = False
+        End If
+    End Sub
+
+
     Private Sub menu_SaveAsFile_Click(sender As Object, e As EventArgs) Handles menu_SaveAsFile.Click
         RegistData()
     End Sub
 
     Private Sub menu_Finish_Click(sender As Object, e As EventArgs) Handles menu_Finish.Click
-        Me.Close()
+        Dim result As DialogResult = MessageBox.Show("登録を中断しますか？", _
+                                                     "質問", _
+                                                     MessageBoxButtons.YesNo, _
+                                                     MessageBoxIcon.Warning)
+        '何が選択されたか調べる 
+        If result = DialogResult.Yes Then
+            '「はい」が選択された時 
+            Me.Close()
+        ElseIf result = DialogResult.No Then
+            '「キャンセル」が選択された時 
+        End If
+    End Sub
+
+    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        Dim result As DialogResult = MessageBox.Show("登録を中断しますか？", _
+                                                             "質問", _
+                                                             MessageBoxButtons.YesNo, _
+                                                             MessageBoxIcon.Warning)
+        '何が選択されたか調べる 
+        If result = DialogResult.Yes Then
+            '「はい」が選択された時 
+            Me.Close()
+        ElseIf result = DialogResult.No Then
+            '「キャンセル」が選択された時 
+        End If
     End Sub
 End Class
