@@ -79,6 +79,10 @@ Public Class ChildInfoAdd
                 Dim ageYear As Long = DateDiff("yyyy", birthday, today)
                 Dim ageMonth As Long = DateDiff("m", birthday, today) - (ageYear * 12)
 
+                If (ageMonth < 0) Then
+                    ageMonth = (ageYear * 12) - DateDiff("m", birthday, today)
+                End If
+
                 lbl_Age.Text = ageYear.ToString
                 lbl_AgeMonth.Text = ageMonth.ToString
 
@@ -317,37 +321,8 @@ Public Class ChildInfoAdd
         End Try
     End Sub
 
-    ' 全角文字しか入力できないように制限する関数。（住所のみに適用。）
-    Private Sub EmInput_Address(ByVal txtcontrol As Object)
-        Dim z As String = String.Empty
-        For Each s As String In txtcontrol.Text
-            If encsjis.GetBytes(s).Length = 2 Then
-                z = z & s
-            End If
-        Next
-        txtcontrol.Text = z
-
-        ' 見つけたい文字のパターンを全角の数字・全角の英大文字・全角の英小文字を指定
-        Dim re As New Regex("(?<moji>[０-９Ａ-Ｚａ-ｚ])")
-
-        ' テキストボックス内の文字でパターンに合う文字を取得
-        Dim m As Match = re.Match(txtcontrol.Text)
-
-        ' 見つかった文字を順に取得
-        While m.Success
-
-            ' テキストボックス内の文字を置換
-            ' 置換前の文字は取得した文字
-            ' 置換後の文字は置換前の文字を半角に変換したもの
-            txtcontrol.Text = txtcontrol.Text.Replace(m.Result("${moji}"), StrConv(m.Result("${moji}"), VbStrConv.Narrow))
-
-            ' 次の文字に移動
-            m = m.NextMatch()
-        End While
-    End Sub
-
-    ' 全角文字しか入力できないように制限。（住所以外に適用。）
-    Private Sub EmInput_AddressExcept(ByVal Str As Object)
+    ' 全角文字しか入力できないように制限。
+    Private Sub EmInput(ByVal Str As Object)
 
         Static Encode_JIS As System.Text.Encoding = System.Text.Encoding.GetEncoding("Shift_JIS")
         Dim Str_Count As Integer = Str.Text.Length
@@ -375,16 +350,150 @@ Public Class ChildInfoAdd
             e.Handled = True
         End If
     End Sub
-    '引数indexに番号を受け取って、その番号が付いたTextBoxコントロールを返す
-    Private Function rtb_WorkPlace(ByVal index As Integer) As RichTextBox
 
-        Return DirectCast(Me.Controls("rtb_WorkPlace" & index.ToString), RichTextBox)
+    Private Sub RegistData()
+        Dim maxMainID As String = "0"
+        Dim count As Integer
+        Dim sqlChildrenInsert As String
+        Dim sqlFamilyTableInsert As String
+        Dim sqlFamilyEmergencyInsert As String
+        Dim sqlFamilyMainInsert As String
+        Dim sqlHealthInsert As String
 
-    End Function
+        Me._txt_FamilyName.Add(Me.txt_FamilyName1)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName2)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName3)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName4)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName5)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName6)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName7)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName8)
+        Me._txt_FamilyName.Add(Me.txt_FamilyName9)
+
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily1)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily2)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily3)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily4)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily5)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily6)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily7)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily8)
+        Me._txt_RelationFamily.Add(Me.txt_RelationFamily9)
+
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge1)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge2)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge3)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge4)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge5)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge6)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge7)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge8)
+        Me._txt_FamilyAge.Add(Me.txt_FamilyAge9)
+
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL1_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL2_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL3_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL4_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL5_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL6_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL7_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL8_1)
+        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL9_1)
+
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL1_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL2_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL3_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL4_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL5_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL6_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL7_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL8_2)
+        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL9_2)
+
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL1_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL2_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL3_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL4_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL5_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL6_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL7_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL8_3)
+        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL9_3)
+
+        _rtb_WorkPlace(0) = rtb_WorkPlace1.Text
+        _rtb_WorkPlace(1) = rtb_WorkPlace2.Text
+        _rtb_WorkPlace(2) = rtb_WorkPlace3.Text
+        _rtb_WorkPlace(3) = rtb_WorkPlace4.Text
+        _rtb_WorkPlace(4) = rtb_WorkPlace5.Text
+        _rtb_WorkPlace(5) = rtb_WorkPlace6.Text
+        _rtb_WorkPlace(6) = rtb_WorkPlace7.Text
+        _rtb_WorkPlace(7) = rtb_WorkPlace8.Text
+        _rtb_WorkPlace(8) = rtb_WorkPlace9.Text
+
+        ' お子様情報登録
+        ' mainIDを取得してchildrenテーブルにInsertするSQL文の取得・送信
+        sqlChildrenInsert = childrenInsertSQLStringGetter()
+        If Sql.DBConnect(sqlChildrenInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+        ' 家族構成情報登録
+        ' mainIDを取得してchildren_family_tableテーブルにInsertするSQL文の取得・送信
+        If Sql.DBConnect("SELECT MAX(children_main_id) FROM children") = False Then
+            MsgBox(Sql.ErrorMessage())
+        End If
+
+        maxMainID = Sql.DBResult(0)
+
+        Dim i As Integer = 0
+
+        While i < 8
+            If (Me._txt_FamilyName(i).Text = "") Then
+                count = i - 1
+                Exit While
+            End If
+            i += 1
+        End While
+
+        i = 0
+
+        While i <= count
+            sqlFamilyTableInsert = familyTableInsertSQLStringGetter(maxMainID, i)
+            If Sql.DBConnect(sqlFamilyTableInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+            i += 1
+        End While
+
+        ' 緊急連絡先情報登録
+        ' mainIDを取得してchildren_family_emergencyテーブルにInsertするSQL文の取得・送信
+        _txt_EmergencyName(0) = txt_EmergencyName1.Text
+        _txt_EmergencyName(1) = txt_EmergencyName2.Text
+        _txt_RelationEmergency(0) = txt_RelationEmergency1.Text
+        _txt_RelationEmergency(1) = txt_RelationEmergency2.Text
+        _txt_EmergencyTEL(0) = txt_EmergencyTEL1_1.Text + txt_EmergencyTEL1_2.Text + txt_EmergencyTEL1_3.Text
+        _txt_EmergencyTEL(1) = txt_EmergencyTEL2_1.Text + txt_EmergencyTEL2_2.Text + txt_EmergencyTEL2_3.Text
+
+        i = 0
+
+        While i <= 1
+            sqlFamilyEmergencyInsert = familyEmergencyInsertSQLStringGetter(maxMainID, i)
+            If Sql.DBConnect(sqlFamilyEmergencyInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+            i += 1
+        End While
+
+        ' 通園情報登録
+        ' mainIDを取得してchildren_family_mainテーブルにInsertするSQL文の取得・送信
+        sqlFamilyMainInsert = familyMainInsertSQLStringGetter(maxMainID)
+        If Sql.DBConnect(sqlFamilyMainInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+        ' 健康情報登録
+        ' mainIDを取得してchildren_healthテーブルにInsertするSQL文の取得・送信
+        sqlHealthInsert = healthInsertSQLStringGetter(maxMainID)
+        If Sql.DBConnect(sqlHealthInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
+
+        MsgBox("登録が完了しました。")
+    End Sub
 
     Private Function childrenInsertSQLStringGetter() As String
         ' お子様情報登録
-        Dim mainID As String
+        Dim mainID As String = 0
         Dim sql_Sex As String = 0
         Dim sql_ChildName, sql_ChildNameKana, sql_Nickname, sql_EntranceDay, sql_Birthday, sql_PostalCode, sql_Address, sql_ChildTEL, sql_Temperature, sql_Mail, sql_DoctorName, sql_DoctorTEL
 
@@ -466,25 +575,106 @@ Public Class ChildInfoAdd
                           & "VALUES (" & mainID & ",'" & sql_EmergencyName & "','" & sql_RelationEmergency & "','" & sql_EmergencyTEL & "')"
     End Function
 
-    Private Sub txt_Address_TextChanged(sender As Object, e As EventArgs) Handles txt_Address.TextChanged
-        EmInput_AddressExcept(txt_Address)
-    End Sub
+    Private Function familyMainInsertSQLStringGetter(ByVal mainID As String) As String
+        ' 家族構成タブの通園情報を登録
+        Dim sql_CommutingMethod, sql_CommutingTime
+
+        sql_CommutingMethod = rtb_CommutingMethod.Text
+        sql_CommutingTime = txt_CommutingHour.Text + ":" + txt_CommutingMin.Text
+
+        ' SQLを返す。
+        Return "INSERT INTO children_family_main(children_main_id, transportation, transit_time)" _
+                          & "VALUES (" & mainID & ",'" & sql_CommutingMethod & "','" & sql_CommutingTime & "')"
+    End Function
+
+    Private Function healthInsertSQLStringGetter(ByVal mainID As String) As String
+        ' 家族構成タブの通園情報を登録
+        Dim sql_AllergyDetails, sql_Operation, sql_SusceptibleIllness, sql_AnxietyAndAttention
+        Dim sql_AllergyCheck As String = ""
+        Dim sql_IllnessMeasles As String = ""
+        Dim sql_IllnessMumps As String = ""
+        Dim sql_IllnessChickenPox As String = ""
+        Dim sql_IllnessRubella As String = ""
+        Dim sql_IllnessEtc As String = ""
+        Dim sql_VaccinationBCG As String = ""
+        Dim sql_VaccinationPolio As String = ""
+        Dim sql_VaccinationCombined As String = ""
+        Dim sql_VaccinationMumps As String = ""
+        Dim sql_VaccinationEncephalitis As String = ""
+
+        sql_AllergyDetails = txt_AllergyDetails.Text
+        sql_Operation = txt_Operation.Text
+        sql_SusceptibleIllness = txt_SusceptibleIllness.Text
+        sql_AnxietyAndAttention = rtb_AnxietyAndAttention.Text
+
+        If (rdb_AllergyExist.Checked = True) Then
+            sql_AllergyCheck = "○"
+        End If
+
+        If (chb_IllnessMeasles.Checked = True) Then
+            sql_IllnessMeasles = "○"
+        End If
+
+        If (chb_IllnessMumps.Checked = True) Then
+            sql_IllnessMumps = "○"
+        End If
+
+        If (chb_IllnessChickenPox.Checked = True) Then
+            sql_IllnessChickenPox = "○"
+        End If
+
+        If (chb_IllnessRubella.Checked = True) Then
+            sql_IllnessRubella = "○"
+        End If
+
+        If (chb_IllnessEtc.Checked = True) Then
+            sql_IllnessEtc = txt_IllnessEtc.Text
+        End If
+
+        If (chb_IllnessEtc.Checked = True) Then
+            sql_IllnessEtc = txt_IllnessEtc.Text
+        End If
+
+        If (chb_VaccinationBCG.Checked = True) Then
+            sql_VaccinationBCG = "○"
+        End If
+
+        If (chb_VaccinationPolio.Checked = True) Then
+            sql_VaccinationPolio = "○"
+        End If
+
+        If (chb_CombinedVaccination.Checked = True) Then
+            sql_VaccinationCombined = "○"
+        End If
+
+        If (chb_VaccinationMumps.Checked = True) Then
+            sql_VaccinationMumps = "○"
+        End If
+
+        If (chb_VaccinationEncephalitis.Checked = True) Then
+            sql_VaccinationEncephalitis = "○"
+        End If
+
+        ' SQLを返す。
+        Return "INSERT INTO children_health(children_main_id, allergies_check, allergies_details, sick_measles, sick_mumps, sick_chicken_pox, sick_rubella, sick_etc, surgery, vaccination_bcg, vaccination_polio, vaccination_combined, vaccination_mumps, vaccination_encephalitis, sick_vulnerable, notices)" _
+                          & "VALUES (" & mainID & ",'" & sql_AllergyCheck & "','" & sql_AllergyDetails & "','" & sql_IllnessMeasles & "','" & sql_IllnessMumps & "','" & sql_IllnessChickenPox & "','" & sql_IllnessRubella & "','" & sql_IllnessEtc & "','" & sql_Operation & "','" & sql_VaccinationBCG & "','" & sql_VaccinationPolio & "','" & sql_VaccinationCombined & "','" & sql_VaccinationMumps & "','" & sql_VaccinationEncephalitis & "','" & sql_SusceptibleIllness & "','" & sql_AnxietyAndAttention & "')"
+    End Function
 
     Private Sub cmb_Author_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmb_Author.LostFocus
-        EmInput_AddressExcept(cmb_Author)
+        EmInput(cmb_Author)
     End Sub
 
     Private Sub txt_ChildName_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_ChildName.LostFocus
-        EmInput_AddressExcept(txt_ChildName)
+        EmInput(txt_ChildName)
     End Sub
 
     Private Sub txt_NickName_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_NickName.LostFocus
-        EmInput_AddressExcept(txt_NickName)
+        EmInput(txt_NickName)
     End Sub
 
     Private Sub txt_ChildNameKana_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_ChildNameKana.LostFocus
         txt_ChildNameKana.Text = StrConv(txt_ChildNameKana.Text, VbStrConv.Katakana)
-        EmInput_AddressExcept(txt_ChildNameKana)
+        EmInput(txt_ChildNameKana)
     End Sub
 
     Private Sub txt_Address_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_Address.LostFocus
@@ -496,155 +686,155 @@ Public Class ChildInfoAdd
     End Sub
 
     Private Sub txt_DoctorName_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_DoctorName.LostFocus
-        EmInput_AddressExcept(txt_DoctorName)
+        EmInput(txt_DoctorName)
     End Sub
 
     Private Sub txt_FamilyName1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName1.LostFocus
-        EmInput_AddressExcept(txt_FamilyName1)
+        EmInput(txt_FamilyName1)
     End Sub
 
     Private Sub txt_RelationFamily1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily1.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily1)
+        EmInput(txt_RelationFamily1)
     End Sub
 
     Private Sub rtb_WorkPlace1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace1.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace1)
+        EmInput(rtb_WorkPlace1)
     End Sub
 
     Private Sub txt_FamilyName2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName2.LostFocus
-        EmInput_AddressExcept(txt_FamilyName2)
+        EmInput(txt_FamilyName2)
     End Sub
 
     Private Sub txt_RelationFamily2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily2.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily2)
+        EmInput(txt_RelationFamily2)
     End Sub
 
     Private Sub rtb_WorkPlace2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace2.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace2)
+        EmInput(rtb_WorkPlace2)
     End Sub
 
     Private Sub txt_FamilyName3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName3.LostFocus
-        EmInput_AddressExcept(txt_FamilyName3)
+        EmInput(txt_FamilyName3)
     End Sub
 
     Private Sub txt_RelationFamily3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily3.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily3)
+        EmInput(txt_RelationFamily3)
     End Sub
 
     Private Sub rtb_WorkPlace3_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace3.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace3)
+        EmInput(rtb_WorkPlace3)
     End Sub
 
     Private Sub txt_FamilyName4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName4.LostFocus
-        EmInput_AddressExcept(txt_FamilyName4)
+        EmInput(txt_FamilyName4)
     End Sub
 
     Private Sub txt_RelationFamily4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily4.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily4)
+        EmInput(txt_RelationFamily4)
     End Sub
 
     Private Sub rtb_WorkPlace4_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace4.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace4)
+        EmInput(rtb_WorkPlace4)
     End Sub
 
     Private Sub txt_FamilyName5_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName5.LostFocus
-        EmInput_AddressExcept(txt_FamilyName5)
+        EmInput(txt_FamilyName5)
     End Sub
 
     Private Sub txt_RelationFamily5_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily5.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily5)
+        EmInput(txt_RelationFamily5)
     End Sub
 
     Private Sub rtb_WorkPlace5_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace5.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace5)
+        EmInput(rtb_WorkPlace5)
     End Sub
 
     Private Sub txt_FamilyName6_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName6.LostFocus
-        EmInput_AddressExcept(txt_FamilyName6)
+        EmInput(txt_FamilyName6)
     End Sub
 
     Private Sub txt_RelationFamily6_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily6.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily6)
+        EmInput(txt_RelationFamily6)
     End Sub
 
     Private Sub rtb_WorkPlace6_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace6.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace6)
+        EmInput(rtb_WorkPlace6)
     End Sub
 
     Private Sub txt_FamilyName7_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName7.LostFocus
-        EmInput_AddressExcept(txt_FamilyName7)
+        EmInput(txt_FamilyName7)
     End Sub
 
     Private Sub txt_RelationFamily7_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily7.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily7)
+        EmInput(txt_RelationFamily7)
     End Sub
 
     Private Sub rtb_WorkPlace7_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace7.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace7)
+        EmInput(rtb_WorkPlace7)
     End Sub
 
     Private Sub txt_FamilyName8_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName8.LostFocus
-        EmInput_AddressExcept(txt_FamilyName8)
+        EmInput(txt_FamilyName8)
     End Sub
 
     Private Sub txt_RelationFamily8_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily8.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily8)
+        EmInput(txt_RelationFamily8)
     End Sub
 
     Private Sub rtb_WorkPlace8_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace8.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace8)
+        EmInput(rtb_WorkPlace8)
     End Sub
 
     Private Sub txt_FamilyName9_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_FamilyName9.LostFocus
-        EmInput_AddressExcept(txt_FamilyName9)
+        EmInput(txt_FamilyName9)
     End Sub
 
     Private Sub txt_RelationFamily9_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationFamily9.LostFocus
-        EmInput_AddressExcept(txt_RelationFamily9)
+        EmInput(txt_RelationFamily9)
     End Sub
 
     Private Sub rtb_WorkPlace9_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_WorkPlace9.LostFocus
-        EmInput_AddressExcept(rtb_WorkPlace9)
+        EmInput(rtb_WorkPlace9)
     End Sub
 
     Private Sub txt_EmergencyName1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_EmergencyName1.LostFocus
-        EmInput_AddressExcept(txt_EmergencyName1)
+        EmInput(txt_EmergencyName1)
     End Sub
 
     Private Sub txt_EmergencyName2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_EmergencyName2.LostFocus
-        EmInput_AddressExcept(txt_EmergencyName2)
+        EmInput(txt_EmergencyName2)
     End Sub
 
     Private Sub txt_RelationEmergency1_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationEmergency1.LostFocus
-        EmInput_AddressExcept(txt_RelationEmergency1)
+        EmInput(txt_RelationEmergency1)
     End Sub
 
     Private Sub txt_RelationEmergency2_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_RelationEmergency2.LostFocus
-        EmInput_AddressExcept(txt_RelationEmergency2)
+        EmInput(txt_RelationEmergency2)
     End Sub
 
     Private Sub rtb_CommutingMethod_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_CommutingMethod.LostFocus
-        EmInput_AddressExcept(rtb_CommutingMethod)
+        EmInput(rtb_CommutingMethod)
     End Sub
 
     Private Sub txt_AllergyDetails_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_AllergyDetails.LostFocus
-        EmInput_AddressExcept(txt_AllergyDetails)
+        EmInput(txt_AllergyDetails)
     End Sub
 
     Private Sub txt_IllnessEtc_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_IllnessEtc.LostFocus
-        EmInput_AddressExcept(txt_IllnessEtc)
+        EmInput(txt_IllnessEtc)
     End Sub
 
     Private Sub txt_Operation_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_Operation.LostFocus
-        EmInput_AddressExcept(txt_Operation)
+        EmInput(txt_Operation)
     End Sub
 
     Private Sub txt_SusceptibleIllness_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txt_SusceptibleIllness.LostFocus
-        EmInput_AddressExcept(txt_SusceptibleIllness)
+        EmInput(txt_SusceptibleIllness)
     End Sub
 
     Private Sub rtb_AnxietyAndAttention_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles rtb_AnxietyAndAttention.LostFocus
-        EmInput_AddressExcept(rtb_AnxietyAndAttention)
+        EmInput(rtb_AnxietyAndAttention)
     End Sub
 
     Private Sub cmb_BirthYear_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles cmb_BirthYear.KeyPress
@@ -868,132 +1058,38 @@ Public Class ChildInfoAdd
     End Sub
 
     Private Sub btn_SaveAsFile_Click(sender As Object, e As EventArgs) Handles btn_SaveAsFile.Click
-        Dim maxMainID As String
-        Dim count As Integer
-        Dim sqlChildrenInsert As String
-        Dim sqlFamilyTableInsert As String
-        Dim sqlFamilyEmergencyInsert As String
-        Dim sqlFamilyMainInsert As String
-
-        Me._txt_FamilyName.Add(Me.txt_FamilyName1)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName2)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName3)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName4)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName5)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName6)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName7)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName8)
-        Me._txt_FamilyName.Add(Me.txt_FamilyName9)
-
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily1)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily2)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily3)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily4)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily5)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily6)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily7)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily8)
-        Me._txt_RelationFamily.Add(Me.txt_RelationFamily9)
-
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge1)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge2)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge3)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge4)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge5)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge6)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge7)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge8)
-        Me._txt_FamilyAge.Add(Me.txt_FamilyAge9)
-
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL1_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL2_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL3_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL4_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL5_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL6_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL7_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL8_1)
-        Me._txt_FamilyTEL1.Add(Me.txt_FamilyTEL9_1)
-
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL1_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL2_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL3_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL4_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL5_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL6_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL7_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL8_2)
-        Me._txt_FamilyTEL2.Add(Me.txt_FamilyTEL9_2)
-
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL1_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL2_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL3_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL4_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL5_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL6_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL7_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL8_3)
-        Me._txt_FamilyTEL3.Add(Me.txt_FamilyTEL9_3)
-
-        _rtb_WorkPlace(0) = rtb_WorkPlace1.Text
-        _rtb_WorkPlace(1) = rtb_WorkPlace2.Text
-        _rtb_WorkPlace(2) = rtb_WorkPlace3.Text
-        _rtb_WorkPlace(3) = rtb_WorkPlace4.Text
-        _rtb_WorkPlace(4) = rtb_WorkPlace5.Text
-        _rtb_WorkPlace(5) = rtb_WorkPlace6.Text
-        _rtb_WorkPlace(6) = rtb_WorkPlace7.Text
-        _rtb_WorkPlace(7) = rtb_WorkPlace8.Text
-        _rtb_WorkPlace(8) = rtb_WorkPlace9.Text
-
-        ' お子様情報登録
-        ' mainIDを取得してchildrenテーブルにInsertするSQL文の取得・送信
-        sqlChildrenInsert = childrenInsertSQLStringGetter()
-        If Sql.DBConnect(sqlChildrenInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-
-        ' 家族構成情報登録
-        ' mainIDを取得してchildren_family_tableテーブルにInsertするSQL文の取得・送信
-        If Sql.DBConnect("SELECT MAX(children_main_id) FROM children") = False Then
-            MsgBox(Sql.ErrorMessage())
-        End If
-
-        maxMainID = Sql.DBResult(0)
-
-        Dim i As Integer = 0
-
-        While i < 8
-            If (Me._txt_FamilyName(i).Text = "") Then
-                count = i - 1
-                Exit While
-            End If
-            i += 1
-        End While
-
-        i = 0
-
-        While i <= count
-            sqlFamilyTableInsert = familyTableInsertSQLStringGetter(maxMainID, i)
-            If Sql.DBConnect(sqlFamilyTableInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-            i += 1
-        End While
-
-        ' 緊急連絡先情報登録
-        ' mainIDを取得してchildren_family_emergencyテーブルにInsertするSQL文の取得・送信
-        _txt_EmergencyName(0) = txt_EmergencyName1.Text
-        _txt_EmergencyName(1) = txt_EmergencyName2.Text
-        _txt_RelationEmergency(0) = txt_RelationEmergency1.Text
-        _txt_RelationEmergency(1) = txt_RelationEmergency2.Text
-        _txt_EmergencyTEL(0) = txt_EmergencyTEL1_1.Text + txt_EmergencyTEL1_2.Text + txt_EmergencyTEL1_3.Text
-        _txt_EmergencyTEL(1) = txt_EmergencyTEL2_1.Text + txt_EmergencyTEL2_2.Text + txt_EmergencyTEL2_3.Text
-
-        i = 0
-
-        While i <= 1
-            sqlFamilyEmergencyInsert = familyEmergencyInsertSQLStringGetter(maxMainID, i)
-            If Sql.DBConnect(sqlFamilyEmergencyInsert) = False Then : MsgBox(Sql.ErrorMessage()) : End If 'エラー処理
-            i += 1
-        End While
-
-        MsgBox("登録が完了しました。")
+        RegistData()
     End Sub
 
+    Private Sub btn_ChildNext_Click(sender As Object, e As EventArgs) Handles btn_ChildNext.Click, Button1.Click
+        TabControl1.SelectedTab = tab_Family
+    End Sub
+
+    Private Sub btn_FamilyNext_Click(sender As Object, e As EventArgs) Handles btn_FamilyNext.Click
+        TabControl1.SelectedTab = tab_Health
+    End Sub
+
+    Private Sub btn_FamilyBack_Click(sender As Object, e As EventArgs) Handles btn_FamilyBack.Click
+        TabControl1.SelectedTab = tab_Child
+    End Sub
+
+    Private Sub btn_HealthBack_Click(sender As Object, e As EventArgs) Handles btn_HealthBack.Click
+        TabControl1.SelectedTab = tab_Family
+    End Sub
+
+    Private Sub chb_IllnessEtc_CheckedChanged(sender As Object, e As EventArgs) Handles chb_IllnessEtc.CheckedChanged
+        If (chb_IllnessEtc.Checked = True) Then
+            txt_IllnessEtc.Enabled = True
+        Else
+            txt_IllnessEtc.Enabled = False
+        End If
+    End Sub
+
+    Private Sub menu_SaveAsFile_Click(sender As Object, e As EventArgs) Handles menu_SaveAsFile.Click
+        RegistData()
+    End Sub
+
+    Private Sub menu_Finish_Click(sender As Object, e As EventArgs) Handles menu_Finish.Click
+        Me.Close()
+    End Sub
 End Class

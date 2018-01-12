@@ -31,13 +31,13 @@ Partial Class ChildInfoAdd
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.上書き保存SToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_SaveAsFile = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menu_SaveAsFile = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.終了XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.menu_Finish = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.tab_Child = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_ChildNext = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.cmb_ClassName = New System.Windows.Forms.ComboBox()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -77,8 +77,9 @@ Partial Class ChildInfoAdd
         Me.txt_MailLocal = New System.Windows.Forms.TextBox()
         Me.txt_ChildNameKana = New System.Windows.Forms.TextBox()
         Me.dtp_EntranceDay = New System.Windows.Forms.DateTimePicker()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.tab_Family = New System.Windows.Forms.TabPage()
+        Me.btn_FamilyBack = New System.Windows.Forms.Button()
+        Me.btn_FamilyNext = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -180,8 +181,9 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily3 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily2 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily1 = New System.Windows.Forms.TextBox()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.tab_Health = New System.Windows.Forms.TabPage()
+        Me.btn_HealthBack = New System.Windows.Forms.Button()
+        Me.btn_SaveAsFile = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.rtb_AnxietyAndAttention = New System.Windows.Forms.RichTextBox()
         Me.chb_IllnessEtc = New System.Windows.Forms.CheckBox()
@@ -204,12 +206,12 @@ Partial Class ChildInfoAdd
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
+        Me.tab_Child.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage2.SuspendLayout()
+        Me.tab_Family.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
+        Me.tab_Health.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -282,66 +284,71 @@ Partial Class ChildInfoAdd
         '
         'ファイルFToolStripMenuItem
         '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存SToolStripMenuItem, Me.btn_SaveAsFile, Me.ToolStripMenuItem1, Me.終了XToolStripMenuItem})
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menu_SaveAsFile, Me.ToolStripMenuItem1, Me.menu_Finish})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(85, 22)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
-        '上書き保存SToolStripMenuItem
+        'menu_SaveAsFile
         '
-        Me.上書き保存SToolStripMenuItem.Name = "上書き保存SToolStripMenuItem"
-        Me.上書き保存SToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.上書き保存SToolStripMenuItem.Text = "上書き保存(&S)"
-        '
-        'btn_SaveAsFile
-        '
-        Me.btn_SaveAsFile.Name = "btn_SaveAsFile"
-        Me.btn_SaveAsFile.Size = New System.Drawing.Size(190, 22)
-        Me.btn_SaveAsFile.Text = "名前を付けて保存(&A)"
+        Me.menu_SaveAsFile.Name = "menu_SaveAsFile"
+        Me.menu_SaveAsFile.Size = New System.Drawing.Size(190, 22)
+        Me.menu_SaveAsFile.Text = "名前を付けて保存(&A)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(187, 6)
         '
-        '終了XToolStripMenuItem
+        'menu_Finish
         '
-        Me.終了XToolStripMenuItem.Name = "終了XToolStripMenuItem"
-        Me.終了XToolStripMenuItem.Size = New System.Drawing.Size(190, 22)
-        Me.終了XToolStripMenuItem.Text = "終了(&X)"
+        Me.menu_Finish.Name = "menu_Finish"
+        Me.menu_Finish.Size = New System.Drawing.Size(190, 22)
+        Me.menu_Finish.Text = "終了(&X)"
         '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.tab_Child)
+        Me.TabControl1.Controls.Add(Me.tab_Family)
+        Me.TabControl1.Controls.Add(Me.tab_Health)
         Me.TabControl1.Location = New System.Drawing.Point(12, 139)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(793, 500)
         Me.TabControl1.TabIndex = 2
         '
-        'TabPage1
+        'tab_Child
         '
-        Me.TabPage1.Controls.Add(Me.Button1)
-        Me.TabPage1.Controls.Add(Me.Panel2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(785, 474)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "お子様"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.tab_Child.Controls.Add(Me.Button1)
+        Me.tab_Child.Controls.Add(Me.btn_ChildNext)
+        Me.tab_Child.Controls.Add(Me.Panel2)
+        Me.tab_Child.Location = New System.Drawing.Point(4, 22)
+        Me.tab_Child.Name = "tab_Child"
+        Me.tab_Child.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_Child.Size = New System.Drawing.Size(785, 474)
+        Me.tab_Child.TabIndex = 0
+        Me.tab_Child.Text = "お子様"
+        Me.tab_Child.UseVisualStyleBackColor = True
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button1.Location = New System.Drawing.Point(649, 408)
+        Me.Button1.Location = New System.Drawing.Point(0, 399)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(110, 51)
+        Me.Button1.Size = New System.Drawing.Size(150, 75)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "次へ"
+        Me.Button1.Text = "キャンセル"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btn_ChildNext
+        '
+        Me.btn_ChildNext.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_ChildNext.Location = New System.Drawing.Point(635, 399)
+        Me.btn_ChildNext.Name = "btn_ChildNext"
+        Me.btn_ChildNext.Size = New System.Drawing.Size(150, 75)
+        Me.btn_ChildNext.TabIndex = 1
+        Me.btn_ChildNext.Text = "次へ"
+        Me.btn_ChildNext.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -780,28 +787,39 @@ Partial Class ChildInfoAdd
         Me.dtp_EntranceDay.Size = New System.Drawing.Size(142, 21)
         Me.dtp_EntranceDay.TabIndex = 3
         '
-        'TabPage2
+        'tab_Family
         '
-        Me.TabPage2.AutoScroll = True
-        Me.TabPage2.Controls.Add(Me.Button2)
-        Me.TabPage2.Controls.Add(Me.Panel3)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(785, 474)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "家族構成"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.tab_Family.AutoScroll = True
+        Me.tab_Family.Controls.Add(Me.btn_FamilyBack)
+        Me.tab_Family.Controls.Add(Me.btn_FamilyNext)
+        Me.tab_Family.Controls.Add(Me.Panel3)
+        Me.tab_Family.Location = New System.Drawing.Point(4, 22)
+        Me.tab_Family.Name = "tab_Family"
+        Me.tab_Family.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_Family.Size = New System.Drawing.Size(785, 474)
+        Me.tab_Family.TabIndex = 1
+        Me.tab_Family.Text = "家族構成"
+        Me.tab_Family.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_FamilyBack
         '
-        Me.Button2.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button2.Location = New System.Drawing.Point(688, 630)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 78)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "次へ"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_FamilyBack.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_FamilyBack.Location = New System.Drawing.Point(688, 630)
+        Me.btn_FamilyBack.Name = "btn_FamilyBack"
+        Me.btn_FamilyBack.Size = New System.Drawing.Size(75, 78)
+        Me.btn_FamilyBack.TabIndex = 1
+        Me.btn_FamilyBack.Text = "前へ"
+        Me.btn_FamilyBack.UseVisualStyleBackColor = True
+        '
+        'btn_FamilyNext
+        '
+        Me.btn_FamilyNext.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_FamilyNext.Location = New System.Drawing.Point(688, 510)
+        Me.btn_FamilyNext.Name = "btn_FamilyNext"
+        Me.btn_FamilyNext.Size = New System.Drawing.Size(75, 78)
+        Me.btn_FamilyNext.TabIndex = 1
+        Me.btn_FamilyNext.Text = "次へ"
+        Me.btn_FamilyNext.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -1875,27 +1893,38 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily1.TabIndex = 1
         Me.txt_RelationFamily1.Text = "い"
         '
-        'TabPage3
+        'tab_Health
         '
-        Me.TabPage3.Controls.Add(Me.Button3)
-        Me.TabPage3.Controls.Add(Me.Panel4)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(785, 474)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "健康面"
-        Me.TabPage3.UseVisualStyleBackColor = True
+        Me.tab_Health.Controls.Add(Me.btn_HealthBack)
+        Me.tab_Health.Controls.Add(Me.btn_SaveAsFile)
+        Me.tab_Health.Controls.Add(Me.Panel4)
+        Me.tab_Health.Location = New System.Drawing.Point(4, 22)
+        Me.tab_Health.Name = "tab_Health"
+        Me.tab_Health.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_Health.Size = New System.Drawing.Size(785, 474)
+        Me.tab_Health.TabIndex = 2
+        Me.tab_Health.Text = "健康面"
+        Me.tab_Health.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btn_HealthBack
         '
-        Me.Button3.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Button3.Location = New System.Drawing.Point(599, 389)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(180, 79)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "保存"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btn_HealthBack.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_HealthBack.Location = New System.Drawing.Point(0, 399)
+        Me.btn_HealthBack.Name = "btn_HealthBack"
+        Me.btn_HealthBack.Size = New System.Drawing.Size(124, 75)
+        Me.btn_HealthBack.TabIndex = 15
+        Me.btn_HealthBack.Text = "前へ"
+        Me.btn_HealthBack.UseVisualStyleBackColor = True
+        '
+        'btn_SaveAsFile
+        '
+        Me.btn_SaveAsFile.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.btn_SaveAsFile.Location = New System.Drawing.Point(661, 399)
+        Me.btn_SaveAsFile.Name = "btn_SaveAsFile"
+        Me.btn_SaveAsFile.Size = New System.Drawing.Size(124, 75)
+        Me.btn_SaveAsFile.TabIndex = 15
+        Me.btn_SaveAsFile.Text = "保存"
+        Me.btn_SaveAsFile.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -1928,7 +1957,7 @@ Partial Class ChildInfoAdd
         Me.rtb_AnxietyAndAttention.Name = "rtb_AnxietyAndAttention"
         Me.rtb_AnxietyAndAttention.Size = New System.Drawing.Size(674, 50)
         Me.rtb_AnxietyAndAttention.TabIndex = 4
-        Me.rtb_AnxietyAndAttention.Text = ""
+        Me.rtb_AnxietyAndAttention.Text = "おおお"
         '
         'chb_IllnessEtc
         '
@@ -1941,6 +1970,7 @@ Partial Class ChildInfoAdd
         '
         'txt_IllnessEtc
         '
+        Me.txt_IllnessEtc.Enabled = False
         Me.txt_IllnessEtc.Font = New System.Drawing.Font("MS UI Gothic", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.txt_IllnessEtc.Location = New System.Drawing.Point(599, 83)
         Me.txt_IllnessEtc.Name = "txt_IllnessEtc"
@@ -1954,6 +1984,7 @@ Partial Class ChildInfoAdd
         Me.txt_AllergyDetails.Name = "txt_AllergyDetails"
         Me.txt_AllergyDetails.Size = New System.Drawing.Size(179, 21)
         Me.txt_AllergyDetails.TabIndex = 0
+        Me.txt_AllergyDetails.Text = "あいうえお"
         '
         'txt_SusceptibleIllness
         '
@@ -1962,6 +1993,7 @@ Partial Class ChildInfoAdd
         Me.txt_SusceptibleIllness.Name = "txt_SusceptibleIllness"
         Me.txt_SusceptibleIllness.Size = New System.Drawing.Size(424, 39)
         Me.txt_SusceptibleIllness.TabIndex = 3
+        Me.txt_SusceptibleIllness.Text = "いいい"
         '
         'txt_Operation
         '
@@ -1970,6 +2002,7 @@ Partial Class ChildInfoAdd
         Me.txt_Operation.Name = "txt_Operation"
         Me.txt_Operation.Size = New System.Drawing.Size(544, 39)
         Me.txt_Operation.TabIndex = 2
+        Me.txt_Operation.Text = "あああ"
         '
         'chb_VaccinationEncephalitis
         '
@@ -2106,14 +2139,14 @@ Partial Class ChildInfoAdd
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
-        Me.TabPage1.ResumeLayout(False)
+        Me.tab_Child.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabPage2.ResumeLayout(False)
+        Me.tab_Family.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.TabPage3.ResumeLayout(False)
+        Me.tab_Health.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
@@ -2128,14 +2161,13 @@ Partial Class ChildInfoAdd
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
     Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
-    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents tab_Child As System.Windows.Forms.TabPage
+    Friend WithEvents tab_Family As System.Windows.Forms.TabPage
     Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 上書き保存SToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents btn_SaveAsFile As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents menu_SaveAsFile As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents 終了XToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents menu_Finish As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tab_Health As System.Windows.Forms.TabPage
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents txt_ChildTEL1 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -2295,7 +2327,10 @@ Partial Class ChildInfoAdd
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents cmb_ClassName As System.Windows.Forms.ComboBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents btn_ChildNext As System.Windows.Forms.Button
+    Friend WithEvents btn_FamilyNext As System.Windows.Forms.Button
+    Friend WithEvents btn_SaveAsFile As System.Windows.Forms.Button
+    Friend WithEvents btn_FamilyBack As System.Windows.Forms.Button
+    Friend WithEvents btn_HealthBack As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class
