@@ -37,7 +37,10 @@ Partial Class ChildInfoAdd
         Me.終了XToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cmb_ClassName = New System.Windows.Forms.ComboBox()
+        Me.Label38 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.btn_PostalCodeSearch = New System.Windows.Forms.Button()
@@ -75,6 +78,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildNameKana = New System.Windows.Forms.TextBox()
         Me.dtp_EntranceDay = New System.Windows.Forms.DateTimePicker()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -177,6 +181,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily2 = New System.Windows.Forms.TextBox()
         Me.txt_RelationFamily1 = New System.Windows.Forms.TextBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.rtb_AnxietyAndAttention = New System.Windows.Forms.RichTextBox()
         Me.chb_IllnessEtc = New System.Windows.Forms.CheckBox()
@@ -196,8 +201,6 @@ Partial Class ChildInfoAdd
         Me.rdb_AllergyWithout = New System.Windows.Forms.RadioButton()
         Me.rdb_AllergyExist = New System.Windows.Forms.RadioButton()
         Me.cmb_Author = New System.Windows.Forms.ComboBox()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.cmb_ClassName = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -320,6 +323,7 @@ Partial Class ChildInfoAdd
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Button1)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
@@ -328,6 +332,16 @@ Partial Class ChildInfoAdd
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "お子様"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button1.Location = New System.Drawing.Point(649, 408)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(110, 51)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "次へ"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -375,6 +389,26 @@ Partial Class ChildInfoAdd
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(778, 392)
         Me.Panel2.TabIndex = 0
+        '
+        'cmb_ClassName
+        '
+        Me.cmb_ClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_ClassName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.cmb_ClassName.FormattingEnabled = True
+        Me.cmb_ClassName.Location = New System.Drawing.Point(617, 9)
+        Me.cmb_ClassName.Name = "cmb_ClassName"
+        Me.cmb_ClassName.Size = New System.Drawing.Size(142, 24)
+        Me.cmb_ClassName.TabIndex = 50
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Label38.Location = New System.Drawing.Point(559, 12)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(51, 16)
+        Me.Label38.TabIndex = 49
+        Me.Label38.Text = "クラス"
         '
         'Label37
         '
@@ -495,6 +529,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL3.Name = "txt_DoctorTEL3"
         Me.txt_DoctorTEL3.Size = New System.Drawing.Size(40, 23)
         Me.txt_DoctorTEL3.TabIndex = 20
+        Me.txt_DoctorTEL3.Text = "3333"
         '
         'txt_ChildTEL3
         '
@@ -505,6 +540,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL3.Name = "txt_ChildTEL3"
         Me.txt_ChildTEL3.Size = New System.Drawing.Size(40, 23)
         Me.txt_ChildTEL3.TabIndex = 14
+        Me.txt_ChildTEL3.Text = "2222"
         '
         'txt_DoctorTEL2
         '
@@ -515,6 +551,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL2.Name = "txt_DoctorTEL2"
         Me.txt_DoctorTEL2.Size = New System.Drawing.Size(40, 23)
         Me.txt_DoctorTEL2.TabIndex = 19
+        Me.txt_DoctorTEL2.Text = "333"
         '
         'txt_DoctorTEL1
         '
@@ -525,6 +562,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorTEL1.Name = "txt_DoctorTEL1"
         Me.txt_DoctorTEL1.Size = New System.Drawing.Size(40, 23)
         Me.txt_DoctorTEL1.TabIndex = 18
+        Me.txt_DoctorTEL1.Text = "333"
         '
         'txt_ChildTEL2
         '
@@ -535,6 +573,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL2.Name = "txt_ChildTEL2"
         Me.txt_ChildTEL2.Size = New System.Drawing.Size(40, 23)
         Me.txt_ChildTEL2.TabIndex = 13
+        Me.txt_ChildTEL2.Text = "222"
         '
         'txt_PostalCode2
         '
@@ -545,6 +584,7 @@ Partial Class ChildInfoAdd
         Me.txt_PostalCode2.Name = "txt_PostalCode2"
         Me.txt_PostalCode2.Size = New System.Drawing.Size(40, 23)
         Me.txt_PostalCode2.TabIndex = 8
+        Me.txt_PostalCode2.Text = "0024"
         '
         'txt_PostalCode1
         '
@@ -555,6 +595,7 @@ Partial Class ChildInfoAdd
         Me.txt_PostalCode1.Name = "txt_PostalCode1"
         Me.txt_PostalCode1.Size = New System.Drawing.Size(40, 23)
         Me.txt_PostalCode1.TabIndex = 7
+        Me.txt_PostalCode1.Text = "700"
         '
         'txt_ChildTEL1
         '
@@ -565,6 +606,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildTEL1.Name = "txt_ChildTEL1"
         Me.txt_ChildTEL1.Size = New System.Drawing.Size(40, 23)
         Me.txt_ChildTEL1.TabIndex = 12
+        Me.txt_ChildTEL1.Text = "222"
         '
         'Label3
         '
@@ -586,6 +628,7 @@ Partial Class ChildInfoAdd
         Me.txt_Temperature.Name = "txt_Temperature"
         Me.txt_Temperature.Size = New System.Drawing.Size(87, 23)
         Me.txt_Temperature.TabIndex = 11
+        Me.txt_Temperature.Text = "12"
         '
         'txt_DoctorName
         '
@@ -594,6 +637,7 @@ Partial Class ChildInfoAdd
         Me.txt_DoctorName.Name = "txt_DoctorName"
         Me.txt_DoctorName.Size = New System.Drawing.Size(398, 34)
         Me.txt_DoctorName.TabIndex = 17
+        Me.txt_DoctorName.Text = "あああ"
         '
         'txt_BuildingName
         '
@@ -602,6 +646,7 @@ Partial Class ChildInfoAdd
         Me.txt_BuildingName.Name = "txt_BuildingName"
         Me.txt_BuildingName.Size = New System.Drawing.Size(353, 23)
         Me.txt_BuildingName.TabIndex = 10
+        Me.txt_BuildingName.Text = "あああ"
         '
         'txt_Address
         '
@@ -618,6 +663,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildName.Name = "txt_ChildName"
         Me.txt_ChildName.Size = New System.Drawing.Size(262, 34)
         Me.txt_ChildName.TabIndex = 1
+        Me.txt_ChildName.Text = "あああ"
         '
         'txt_NickName
         '
@@ -627,6 +673,7 @@ Partial Class ChildInfoAdd
         Me.txt_NickName.Name = "txt_NickName"
         Me.txt_NickName.Size = New System.Drawing.Size(88, 34)
         Me.txt_NickName.TabIndex = 2
+        Me.txt_NickName.Text = "あああ"
         '
         'Label13
         '
@@ -702,6 +749,7 @@ Partial Class ChildInfoAdd
         Me.txt_MailDomain.Name = "txt_MailDomain"
         Me.txt_MailDomain.Size = New System.Drawing.Size(173, 23)
         Me.txt_MailDomain.TabIndex = 16
+        Me.txt_MailDomain.Text = "aaa"
         '
         'txt_MailLocal
         '
@@ -711,6 +759,7 @@ Partial Class ChildInfoAdd
         Me.txt_MailLocal.Name = "txt_MailLocal"
         Me.txt_MailLocal.Size = New System.Drawing.Size(398, 23)
         Me.txt_MailLocal.TabIndex = 15
+        Me.txt_MailLocal.Text = "aaa"
         '
         'txt_ChildNameKana
         '
@@ -720,6 +769,7 @@ Partial Class ChildInfoAdd
         Me.txt_ChildNameKana.Name = "txt_ChildNameKana"
         Me.txt_ChildNameKana.Size = New System.Drawing.Size(262, 23)
         Me.txt_ChildNameKana.TabIndex = 0
+        Me.txt_ChildNameKana.Text = "アアア"
         '
         'dtp_EntranceDay
         '
@@ -733,6 +783,7 @@ Partial Class ChildInfoAdd
         'TabPage2
         '
         Me.TabPage2.AutoScroll = True
+        Me.TabPage2.Controls.Add(Me.Button2)
         Me.TabPage2.Controls.Add(Me.Panel3)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -741,6 +792,16 @@ Partial Class ChildInfoAdd
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "家族構成"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button2.Location = New System.Drawing.Point(688, 630)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 78)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "次へ"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -1088,6 +1149,7 @@ Partial Class ChildInfoAdd
         Me.txt_CommutingMin.Name = "txt_CommutingMin"
         Me.txt_CommutingMin.Size = New System.Drawing.Size(27, 23)
         Me.txt_CommutingMin.TabIndex = 75
+        Me.txt_CommutingMin.Text = "15"
         '
         'Label5
         '
@@ -1107,6 +1169,7 @@ Partial Class ChildInfoAdd
         Me.txt_CommutingHour.Name = "txt_CommutingHour"
         Me.txt_CommutingHour.Size = New System.Drawing.Size(29, 23)
         Me.txt_CommutingHour.TabIndex = 74
+        Me.txt_CommutingHour.Text = "3"
         '
         'rtb_CommutingMethod
         '
@@ -1114,7 +1177,7 @@ Partial Class ChildInfoAdd
         Me.rtb_CommutingMethod.Name = "rtb_CommutingMethod"
         Me.rtb_CommutingMethod.Size = New System.Drawing.Size(304, 52)
         Me.rtb_CommutingMethod.TabIndex = 73
-        Me.rtb_CommutingMethod.Text = ""
+        Me.rtb_CommutingMethod.Text = "あいうえお"
         '
         'txt_RelationEmergency2
         '
@@ -1123,6 +1186,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationEmergency2.Name = "txt_RelationEmergency2"
         Me.txt_RelationEmergency2.Size = New System.Drawing.Size(54, 23)
         Me.txt_RelationEmergency2.TabIndex = 69
+        Me.txt_RelationEmergency2.Text = "あああ"
         '
         'txt_RelationEmergency1
         '
@@ -1131,6 +1195,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationEmergency1.Name = "txt_RelationEmergency1"
         Me.txt_RelationEmergency1.Size = New System.Drawing.Size(54, 23)
         Me.txt_RelationEmergency1.TabIndex = 64
+        Me.txt_RelationEmergency1.Text = "あああ"
         '
         'txt_EmergencyName2
         '
@@ -1139,6 +1204,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyName2.Name = "txt_EmergencyName2"
         Me.txt_EmergencyName2.Size = New System.Drawing.Size(218, 23)
         Me.txt_EmergencyName2.TabIndex = 68
+        Me.txt_EmergencyName2.Text = "おおお"
         '
         'txt_EmergencyName1
         '
@@ -1147,6 +1213,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyName1.Name = "txt_EmergencyName1"
         Me.txt_EmergencyName1.Size = New System.Drawing.Size(218, 23)
         Me.txt_EmergencyName1.TabIndex = 63
+        Me.txt_EmergencyName1.Text = "えええ"
         '
         'txt_FamilyName9
         '
@@ -1203,6 +1270,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyName3.Name = "txt_FamilyName3"
         Me.txt_FamilyName3.Size = New System.Drawing.Size(119, 19)
         Me.txt_FamilyName3.TabIndex = 14
+        Me.txt_FamilyName3.Text = "えええ"
         '
         'txt_FamilyName2
         '
@@ -1211,6 +1279,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyName2.Name = "txt_FamilyName2"
         Me.txt_FamilyName2.Size = New System.Drawing.Size(119, 19)
         Me.txt_FamilyName2.TabIndex = 7
+        Me.txt_FamilyName2.Text = "ううう"
         '
         'txt_FamilyName1
         '
@@ -1219,6 +1288,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyName1.Name = "txt_FamilyName1"
         Me.txt_FamilyName1.Size = New System.Drawing.Size(119, 19)
         Me.txt_FamilyName1.TabIndex = 0
+        Me.txt_FamilyName1.Text = "いいい"
         '
         'rtb_WorkPlace9
         '
@@ -1274,7 +1344,7 @@ Partial Class ChildInfoAdd
         Me.rtb_WorkPlace3.Name = "rtb_WorkPlace3"
         Me.rtb_WorkPlace3.Size = New System.Drawing.Size(183, 51)
         Me.rtb_WorkPlace3.TabIndex = 17
-        Me.rtb_WorkPlace3.Text = ""
+        Me.rtb_WorkPlace3.Text = "ううう"
         '
         'rtb_WorkPlace2
         '
@@ -1282,7 +1352,7 @@ Partial Class ChildInfoAdd
         Me.rtb_WorkPlace2.Name = "rtb_WorkPlace2"
         Me.rtb_WorkPlace2.Size = New System.Drawing.Size(183, 51)
         Me.rtb_WorkPlace2.TabIndex = 10
-        Me.rtb_WorkPlace2.Text = ""
+        Me.rtb_WorkPlace2.Text = "いいい"
         '
         'txt_FamilyAge9
         '
@@ -1362,7 +1432,7 @@ Partial Class ChildInfoAdd
         Me.rtb_WorkPlace1.Name = "rtb_WorkPlace1"
         Me.rtb_WorkPlace1.Size = New System.Drawing.Size(183, 51)
         Me.rtb_WorkPlace1.TabIndex = 3
-        Me.rtb_WorkPlace1.Text = ""
+        Me.rtb_WorkPlace1.Text = "あああ"
         '
         'txt_EmergencyTEL2_3
         '
@@ -1373,6 +1443,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL2_3.Name = "txt_EmergencyTEL2_3"
         Me.txt_EmergencyTEL2_3.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL2_3.TabIndex = 72
+        Me.txt_EmergencyTEL2_3.Text = "5555"
         '
         'txt_EmergencyTEL1_3
         '
@@ -1383,6 +1454,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL1_3.Name = "txt_EmergencyTEL1_3"
         Me.txt_EmergencyTEL1_3.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL1_3.TabIndex = 67
+        Me.txt_EmergencyTEL1_3.Text = "4444"
         '
         'txt_EmergencyTEL2_2
         '
@@ -1393,6 +1465,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL2_2.Name = "txt_EmergencyTEL2_2"
         Me.txt_EmergencyTEL2_2.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL2_2.TabIndex = 71
+        Me.txt_EmergencyTEL2_2.Text = "555"
         '
         'txt_FamilyTEL9_3
         '
@@ -1413,6 +1486,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL1_2.Name = "txt_EmergencyTEL1_2"
         Me.txt_EmergencyTEL1_2.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL1_2.TabIndex = 66
+        Me.txt_EmergencyTEL1_2.Text = "444"
         '
         'txt_FamilyTEL8_3
         '
@@ -1493,6 +1567,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL2_1.Name = "txt_EmergencyTEL2_1"
         Me.txt_EmergencyTEL2_1.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL2_1.TabIndex = 70
+        Me.txt_EmergencyTEL2_1.Text = "555"
         '
         'txt_FamilyTEL5_3
         '
@@ -1513,6 +1588,7 @@ Partial Class ChildInfoAdd
         Me.txt_EmergencyTEL1_1.Name = "txt_EmergencyTEL1_1"
         Me.txt_EmergencyTEL1_1.Size = New System.Drawing.Size(48, 23)
         Me.txt_EmergencyTEL1_1.TabIndex = 65
+        Me.txt_EmergencyTEL1_1.Text = "444"
         '
         'txt_FamilyTEL5_2
         '
@@ -1583,6 +1659,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL3_3.Name = "txt_FamilyTEL3_3"
         Me.txt_FamilyTEL3_3.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL3_3.TabIndex = 20
+        Me.txt_FamilyTEL3_3.Text = "4444"
         '
         'txt_FamilyTEL6_1
         '
@@ -1603,6 +1680,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL3_2.Name = "txt_FamilyTEL3_2"
         Me.txt_FamilyTEL3_2.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL3_2.TabIndex = 19
+        Me.txt_FamilyTEL3_2.Text = "444"
         '
         'txt_FamilyTEL5_1
         '
@@ -1623,6 +1701,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL2_3.Name = "txt_FamilyTEL2_3"
         Me.txt_FamilyTEL2_3.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL2_3.TabIndex = 13
+        Me.txt_FamilyTEL2_3.Text = "3333"
         '
         'txt_FamilyTEL4_1
         '
@@ -1643,6 +1722,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL2_2.Name = "txt_FamilyTEL2_2"
         Me.txt_FamilyTEL2_2.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL2_2.TabIndex = 12
+        Me.txt_FamilyTEL2_2.Text = "333"
         '
         'txt_FamilyTEL3_1
         '
@@ -1653,6 +1733,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL3_1.Name = "txt_FamilyTEL3_1"
         Me.txt_FamilyTEL3_1.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL3_1.TabIndex = 18
+        Me.txt_FamilyTEL3_1.Text = "444"
         '
         'txt_FamilyTEL1_3
         '
@@ -1663,6 +1744,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL1_3.Name = "txt_FamilyTEL1_3"
         Me.txt_FamilyTEL1_3.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL1_3.TabIndex = 6
+        Me.txt_FamilyTEL1_3.Text = "2222"
         '
         'txt_FamilyTEL2_1
         '
@@ -1673,6 +1755,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL2_1.Name = "txt_FamilyTEL2_1"
         Me.txt_FamilyTEL2_1.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL2_1.TabIndex = 11
+        Me.txt_FamilyTEL2_1.Text = "333"
         '
         'txt_FamilyTEL1_2
         '
@@ -1683,6 +1766,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL1_2.Name = "txt_FamilyTEL1_2"
         Me.txt_FamilyTEL1_2.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL1_2.TabIndex = 5
+        Me.txt_FamilyTEL1_2.Text = "222"
         '
         'txt_FamilyTEL1_1
         '
@@ -1693,6 +1777,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyTEL1_1.Name = "txt_FamilyTEL1_1"
         Me.txt_FamilyTEL1_1.Size = New System.Drawing.Size(48, 29)
         Me.txt_FamilyTEL1_1.TabIndex = 4
+        Me.txt_FamilyTEL1_1.Text = "222"
         '
         'txt_FamilyAge5
         '
@@ -1723,6 +1808,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyAge3.Name = "txt_FamilyAge3"
         Me.txt_FamilyAge3.Size = New System.Drawing.Size(48, 34)
         Me.txt_FamilyAge3.TabIndex = 16
+        Me.txt_FamilyAge3.Text = "25"
         '
         'txt_FamilyAge2
         '
@@ -1733,6 +1819,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyAge2.Name = "txt_FamilyAge2"
         Me.txt_FamilyAge2.Size = New System.Drawing.Size(48, 34)
         Me.txt_FamilyAge2.TabIndex = 9
+        Me.txt_FamilyAge2.Text = "12"
         '
         'txt_FamilyAge1
         '
@@ -1743,6 +1830,7 @@ Partial Class ChildInfoAdd
         Me.txt_FamilyAge1.Name = "txt_FamilyAge1"
         Me.txt_FamilyAge1.Size = New System.Drawing.Size(48, 34)
         Me.txt_FamilyAge1.TabIndex = 2
+        Me.txt_FamilyAge1.Text = "15"
         '
         'txt_RelationFamily5
         '
@@ -1767,6 +1855,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily3.Name = "txt_RelationFamily3"
         Me.txt_RelationFamily3.Size = New System.Drawing.Size(48, 34)
         Me.txt_RelationFamily3.TabIndex = 15
+        Me.txt_RelationFamily3.Text = "え"
         '
         'txt_RelationFamily2
         '
@@ -1775,6 +1864,7 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily2.Name = "txt_RelationFamily2"
         Me.txt_RelationFamily2.Size = New System.Drawing.Size(48, 34)
         Me.txt_RelationFamily2.TabIndex = 8
+        Me.txt_RelationFamily2.Text = "う"
         '
         'txt_RelationFamily1
         '
@@ -1783,9 +1873,11 @@ Partial Class ChildInfoAdd
         Me.txt_RelationFamily1.Name = "txt_RelationFamily1"
         Me.txt_RelationFamily1.Size = New System.Drawing.Size(48, 34)
         Me.txt_RelationFamily1.TabIndex = 1
+        Me.txt_RelationFamily1.Text = "い"
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Button3)
         Me.TabPage3.Controls.Add(Me.Panel4)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
@@ -1794,6 +1886,16 @@ Partial Class ChildInfoAdd
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "健康面"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Button3.Location = New System.Drawing.Point(599, 389)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(180, 79)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "保存"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Panel4
         '
@@ -1978,26 +2080,7 @@ Partial Class ChildInfoAdd
         Me.cmb_Author.Name = "cmb_Author"
         Me.cmb_Author.Size = New System.Drawing.Size(121, 21)
         Me.cmb_Author.TabIndex = 0
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label38.Location = New System.Drawing.Point(559, 12)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(51, 16)
-        Me.Label38.TabIndex = 49
-        Me.Label38.Text = "クラス"
-        '
-        'cmb_ClassName
-        '
-        Me.cmb_ClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_ClassName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.cmb_ClassName.FormattingEnabled = True
-        Me.cmb_ClassName.Location = New System.Drawing.Point(617, 9)
-        Me.cmb_ClassName.Name = "cmb_ClassName"
-        Me.cmb_ClassName.Size = New System.Drawing.Size(142, 24)
-        Me.cmb_ClassName.TabIndex = 50
+        Me.cmb_Author.Text = "あああ"
         '
         'ChildInfoAdd
         '
@@ -2212,4 +2295,7 @@ Partial Class ChildInfoAdd
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents cmb_ClassName As System.Windows.Forms.ComboBox
     Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class
