@@ -26,10 +26,11 @@ Partial Class Month35Age
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Month35Age))
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.BnfImgBtn = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MenuStrip2 = New System.Windows.Forms.MenuStrip()
         Me.PastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemDBSave = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItemFileSave = New System.Windows.Forms.ToolStripMenuItem()
         Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,7 +72,7 @@ Partial Class Month35Age
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.header.SuspendLayout()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BnfImgBtn, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip2.SuspendLayout()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -84,7 +85,7 @@ Partial Class Month35Age
         Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
         Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.header.Controls.Add(Me.BnfImgBtnHelp)
-        Me.header.Controls.Add(Me.BnfImgBtn)
+        Me.header.Controls.Add(Me.BnfImgBtnClose)
         Me.header.Controls.Add(Me.MenuStrip2)
         Me.header.Controls.Add(Me.BnfImgBtnLoad)
         Me.header.Dock = System.Windows.Forms.DockStyle.Top
@@ -113,19 +114,19 @@ Partial Class Month35Age
         Me.BnfImgBtnHelp.TabStop = False
         Me.BnfImgBtnHelp.Zoom = 10
         '
-        'BnfImgBtn
+        'BnfImgBtnClose
         '
-        Me.BnfImgBtn.BackColor = System.Drawing.Color.Transparent
-        Me.BnfImgBtn.Image = CType(resources.GetObject("BnfImgBtn.Image"), System.Drawing.Image)
-        Me.BnfImgBtn.ImageActive = Nothing
-        Me.BnfImgBtn.Location = New System.Drawing.Point(905, 5)
-        Me.BnfImgBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BnfImgBtn.Name = "BnfImgBtn"
-        Me.BnfImgBtn.Size = New System.Drawing.Size(40, 39)
-        Me.BnfImgBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.BnfImgBtn.TabIndex = 11
-        Me.BnfImgBtn.TabStop = False
-        Me.BnfImgBtn.Zoom = 10
+        Me.BnfImgBtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnClose.Image = CType(resources.GetObject("BnfImgBtnClose.Image"), System.Drawing.Image)
+        Me.BnfImgBtnClose.ImageActive = Nothing
+        Me.BnfImgBtnClose.Location = New System.Drawing.Point(905, 5)
+        Me.BnfImgBtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnClose.Name = "BnfImgBtnClose"
+        Me.BnfImgBtnClose.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnClose.TabIndex = 11
+        Me.BnfImgBtnClose.TabStop = False
+        Me.BnfImgBtnClose.Zoom = 10
         '
         'MenuStrip2
         '
@@ -134,23 +135,29 @@ Partial Class Month35Age
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PastToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(75, 24)
+        Me.MenuStrip2.Size = New System.Drawing.Size(78, 24)
         Me.MenuStrip2.TabIndex = 2
         Me.MenuStrip2.Text = "MenuStrip2"
         '
         'PastToolStripMenuItem
         '
-        Me.PastToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.CopyToolStripMenuItem, Me.ToolStripSeparator1, Me.閉じるToolStripMenuItem})
+        Me.PastToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItemDBSave, Me.ToolStripMenuItemFileSave, Me.CopyToolStripMenuItem, Me.ToolStripSeparator1, Me.閉じるToolStripMenuItem})
         Me.PastToolStripMenuItem.Name = "PastToolStripMenuItem"
         Me.PastToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.PastToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.PastToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.PastToolStripMenuItem.Text = "ファイル(&F)"
         '
-        'NewToolStripMenuItem
+        'ToolStripMenuItemDBSave
         '
-        Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.NewToolStripMenuItem.Text = "保存(&S)"
+        Me.ToolStripMenuItemDBSave.Name = "ToolStripMenuItemDBSave"
+        Me.ToolStripMenuItemDBSave.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItemDBSave.Text = "DB保存(&S)"
+        '
+        'ToolStripMenuItemFileSave
+        '
+        Me.ToolStripMenuItemFileSave.Name = "ToolStripMenuItemFileSave"
+        Me.ToolStripMenuItemFileSave.Size = New System.Drawing.Size(152, 22)
+        Me.ToolStripMenuItemFileSave.Text = "ファイル保存"
         '
         'CopyToolStripMenuItem
         '
@@ -539,7 +546,7 @@ Partial Class Month35Age
         Me.header.ResumeLayout(False)
         Me.header.PerformLayout()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BnfImgBtn, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip2.ResumeLayout(False)
         Me.MenuStrip2.PerformLayout()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
@@ -552,10 +559,10 @@ Partial Class Month35Age
     End Sub
     Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BnfImgBtn As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents MenuStrip2 As System.Windows.Forms.MenuStrip
     Friend WithEvents PastToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItemFileSave As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CopyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As System.Windows.Forms.ToolStripSeparator
     Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -595,4 +602,5 @@ Partial Class Month35Age
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents ToolStripMenuItemDBSave As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -2,14 +2,17 @@
 
 Public Class TeacherEdit
 
-    Dim Sql As New SQLConnectClass
+    Dim Sql As SQLConnectClass
 
+    Public Sub SetID(s As SQLConnectClass)
+        Sql = s
+    End Sub
 
     Private Sub Form3_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Load
         encsjis = System.Text.Encoding.GetEncoding("Shift_JIS")
         PositionComboBox.SelectedIndex = 1
         Year.Value = Now.Year
-        Panel1.Location=New Point(12,12)
+        Panel1.Location = New Point(12, 12)
     End Sub
 
     Private Sub RegistrationButton_Click_1(sender As Object, e As EventArgs) Handles RegistrationButton.Click
@@ -70,6 +73,8 @@ Public Class TeacherEdit
             worker_atai4 = Me.WomenRadioButton.Text
         ElseIf MenRadioButton.Checked = True Then
             worker_atai4 = Me.MenRadioButton.Text
+        Else
+            worker_atai4 = ""
         End If
 
         worker_atai5 = Me.PositionComboBox.Text
@@ -398,8 +403,9 @@ Public Class TeacherEdit
         Dim sKey As String = PostalCode1.Text + PostalCode2.Text
 
         Try
+
             'StreamReaderオブジェクトの作成
-            Dim sr As New System.IO.StreamReader("C:\Users\15110007\Documents\Visual Studio 2013\Projects\最新版NurseryTeacher\ken_all\KEN_ALL.CSV", System.Text.Encoding.Default)
+            Dim sr As New System.IO.StreamReader(My.Application.Info.DirectoryPath & "\ken_all\KEN_ALL.CSV", System.Text.Encoding.Default)
             '1行ずつ読み込み
             Dim dat As String = sr.ReadLine()
 
@@ -500,4 +506,10 @@ Public Class TeacherEdit
     '   End If
     'End Sub
 
+    Private Sub TeacherEdit_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        If IsNothing(Owner) = False Then
+            Owner.Enabled = True
+            Me.Dispose()
+        End If
+    End Sub
 End Class

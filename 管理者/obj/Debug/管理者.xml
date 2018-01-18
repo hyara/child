@@ -6,61 +6,27 @@
 </name>
 </assembly>
 <members>
-<member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
+<member name="M:WindowsApplication1.Month35Age.MonthDBDraw(System.String,WindowsApplication1.SQLConnectClass)">
 	<summary>
- 進行状況を設定する
+ 月案をDBから反映させる
  </summary>
-	<param name="i">設定値</param>
+	<param name="id">メイン主キーの値</param>
 	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32)">
+</member><member name="M:WindowsApplication1.SearchChild.SearchExe(System.Windows.Forms.DataGridView)">
 	<summary>
- 進行状況を更新する
+ 児童表を検索する関数
  </summary>
-	<param name="i">指定数値だけ加算する</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.String)">
+	<param name="d">呼び出し元で宣言してあるDataGridViewを代入</param>
+</member><member name="M:WindowsApplication1.SearchChild.SearchReflect(System.Windows.Forms.DataGridView)">
 	<summary>
- 進行状況を更新し、進行内容を記録する
+ 検索結果をDataGridViewに反映させる
  </summary>
-	<param name="s">進行内容</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32,System.String)">
+	<param name="d">呼び出し元で宣言してあるDataGridViewを代入</param>
+</member><member name="M:WindowsApplication1.SearchChild.sqlStringCreate">
 	<summary>
- 進行状況を更新し、進行内容を記録する
+ SearchExe専用のSQL文を生成する
  </summary>
-	<param name="i">指定数値だけ加算する</param>
-	<param name="s">進行内容</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate">
-	<summary>
- 進行状況を更新する
- </summary>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesMaxSet(System.Int32)">
-	<summary>
- 最大値を設定する
- </summary>
-	<param name="m">最大値</param>
-	<remarks></remarks>
-</member><member name="M:WindowsApplication1.ProgressStatesForm.ProcessContentsSet(System.String)">
-	<summary>
- 進行内容を記録する
- </summary>
-	<param name="s">進行内容</param>
-	<remarks></remarks>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
-	<summary>
-  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
-</summary>
-</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
-	<summary>
-  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
-  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
-</summary>
-</member><member name="T:WindowsApplication1.My.Resources.Resources">
-	<summary>
-  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
-</summary>
+	<returns>完成したSQL文(String)</returns>
 </member><member name="M:WindowsApplication1.TeacherEdit.InputErrorCheck">
 	<summary>
  入力値のエラーチェックとエラーメッセージの表示をする。
@@ -72,21 +38,6 @@
  エラーメッセージ全てを隠す
  </summary>
 	<remarks></remarks>
-</member><member name="M:WindowsApplication1.Hash.GetSaltedPassword(System.String,System.String)">
-	<summary>'
- salt ＋ハッシュ化したパスワードを取得'
- </summary>'
-
-</member><member name="M:WindowsApplication1.Hash.GetStretchedPassword(System.String,System.String)">
-	<summary>'
- salt + ストレッチングしたパスワードを取得(推奨)'
- </summary>'
-
-</member><member name="M:WindowsApplication1.Hash.GetSha256(System.String)">
-	<summary>'
- 文字列から SHA256 のハッシュ値を取得'
- </summary>'
-
 </member><member name="M:WindowsApplication1.AdministratorForm.sqlConnectChecker">
 	<summary>
  SQL接続の可否を取得します。
@@ -102,18 +53,33 @@
 	<param name="e">eventそのまま代入</param>
 	<returns>クリックされたボタンの内容</returns>
 	<remarks></remarks>
-</member><member name="M:WindowsApplication1.Month1Age.MonthDBDraw(System.Int32)">
+</member><member name="M:WindowsApplication1.AdministratorForm.GetCellChildInfo(System.Object,System.Windows.Forms.DataGridViewCellEventArgs)">
+	<summary>
+ 必要物が全てハードコーティング済みのDataGridViewから、
+ クリックされたボタンの児童表の種類を取得する。
+ </summary>
+	<param name="sender">senderそのまま代入</param>
+	<param name="e">eventそのまま代入</param>
+	<returns>クリックされたボタンに対する児童表の内容</returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.Month2Age.MonthDBDraw(System.String,WindowsApplication1.SQLConnectClass)">
 	<summary>
  月案をDBから反映させる
  </summary>
 	<param name="id">メイン主キーの値</param>
 	<remarks></remarks>
-</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+</member><member name="M:WindowsApplication1.Month1Age.MonthDBDraw(System.String,WindowsApplication1.SQLConnectClass)">
 	<summary>
- 画面を遷移する
+ 月案をDBから反映させる
  </summary>
-	<param name="TransitionOriginal">遷移元</param>
-	<param name="TransitionTarget">遷移先</param>
+	<param name="id">メイン主キーの値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ChildInfoAdd.InputErrorCheck">
+	<summary>
+ 入力値のエラーチェックとエラーメッセージの表示をする。
+ </summary>
+	<returns>True: エラー False: 正常終了</returns>
+	<remarks></remarks>
 </member><member name="M:WindowsApplication1.SQLConnectClass.DBConnect(System.String)">
 	<summary>
  指定されたSQLを実行します。
@@ -161,6 +127,82 @@
 	<summary>
  version 2.0
  </summary>
+</member><member name="M:WindowsApplication1.Hash.GetSaltedPassword(System.String,System.String)">
+	<summary>'
+ salt ＋ハッシュ化したパスワードを取得'
+ </summary>'
+
+</member><member name="M:WindowsApplication1.Hash.GetStretchedPassword(System.String,System.String)">
+	<summary>'
+ salt + ストレッチングしたパスワードを取得(推奨)'
+ </summary>'
+
+</member><member name="M:WindowsApplication1.Hash.GetSha256(System.String)">
+	<summary>'
+ 文字列から SHA256 のハッシュ値を取得'
+ </summary>'
+
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelSet(System.Int32)">
+	<summary>
+ 進行状況を設定する
+ </summary>
+	<param name="i">設定値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32)">
+	<summary>
+ 進行状況を更新する
+ </summary>
+	<param name="i">指定数値だけ加算する</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.String)">
+	<summary>
+ 進行状況を更新し、進行内容を記録する
+ </summary>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate(System.Int32,System.String)">
+	<summary>
+ 進行状況を更新し、進行内容を記録する
+ </summary>
+	<param name="i">指定数値だけ加算する</param>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesLabelUpdate">
+	<summary>
+ 進行状況を更新する
+ </summary>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProgressStatesMaxSet(System.Int32)">
+	<summary>
+ 最大値を設定する
+ </summary>
+	<param name="m">最大値</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.ProgressStatesForm.ProcessContentsSet(System.String)">
+	<summary>
+ 進行内容を記録する
+ </summary>
+	<param name="s">進行内容</param>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.BaseForm.forwardScreen(System.Windows.Forms.Form,System.Windows.Forms.Form)">
+	<summary>
+ 画面を遷移する
+ </summary>
+	<param name="TransitionOriginal">遷移元</param>
+	<param name="TransitionTarget">遷移先</param>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.ResourceManager">
+	<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member><member name="P:WindowsApplication1.My.Resources.Resources.Culture">
+	<summary>
+  厳密に型指定されたこのリソース クラスを使用して、すべての検索リソースに対し、
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member><member name="T:WindowsApplication1.My.Resources.Resources">
+	<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
 </member>
 </members>
 </doc>

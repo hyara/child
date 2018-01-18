@@ -22,6 +22,8 @@ Partial Class TeacherEdit
     'コード エディターを使って変更しないでください。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TeacherEdit))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.NewUser = New System.Windows.Forms.GroupBox()
         Me.ContactInformationGroupBox = New System.Windows.Forms.GroupBox()
@@ -29,14 +31,6 @@ Partial Class TeacherEdit
         Me.EmailError1 = New System.Windows.Forms.Label()
         Me.EmergencyError = New System.Windows.Forms.Label()
         Me.DaytimeError = New System.Windows.Forms.Label()
-        Me.EmailTextBox2 = New WindowsApplication1.Watermark()
-        Me.EmailTextBox1 = New WindowsApplication1.Watermark()
-        Me.TellEmergency3 = New WindowsApplication1.Watermark()
-        Me.TellEmergency2 = New WindowsApplication1.Watermark()
-        Me.TellEmergency = New WindowsApplication1.Watermark()
-        Me.Tell3 = New WindowsApplication1.Watermark()
-        Me.Tell2 = New WindowsApplication1.Watermark()
-        Me.Tell1 = New WindowsApplication1.Watermark()
         Me.AtMark = New System.Windows.Forms.Label()
         Me.Email = New System.Windows.Forms.Label()
         Me.HyphenMark4 = New System.Windows.Forms.Label()
@@ -61,12 +55,6 @@ Partial Class TeacherEdit
         Me.PostalCodeError = New System.Windows.Forms.Label()
         Me.AddressError = New System.Windows.Forms.Label()
         Me.MunicipalityError = New System.Windows.Forms.Label()
-        Me.RoomNumberTextBox = New WindowsApplication1.Watermark()
-        Me.BuildingNameTextBox = New WindowsApplication1.Watermark()
-        Me.AddressTextBox = New WindowsApplication1.Watermark()
-        Me.MunicipalityTextBox = New WindowsApplication1.Watermark()
-        Me.PostalCode2 = New WindowsApplication1.Watermark()
-        Me.PostalCode1 = New WindowsApplication1.Watermark()
         Me.RoomNumber = New System.Windows.Forms.Label()
         Me.BuildingName = New System.Windows.Forms.Label()
         Me.Address = New System.Windows.Forms.Label()
@@ -87,13 +75,9 @@ Partial Class TeacherEdit
         Me.FuriganaNameGroupBox = New System.Windows.Forms.GroupBox()
         Me.FirstNameError2 = New System.Windows.Forms.Label()
         Me.LastNameError2 = New System.Windows.Forms.Label()
-        Me.FirstName2 = New WindowsApplication1.Watermark()
-        Me.Lastname2 = New WindowsApplication1.Watermark()
         Me.NameGroupBox = New System.Windows.Forms.GroupBox()
         Me.FirstNameError1 = New System.Windows.Forms.Label()
         Me.LastNameError1 = New System.Windows.Forms.Label()
-        Me.FirstName = New WindowsApplication1.Watermark()
-        Me.LastName = New WindowsApplication1.Watermark()
         Me.UserGroupBox = New System.Windows.Forms.GroupBox()
         Me.UserPassError2 = New System.Windows.Forms.Label()
         Me.UserPassError1 = New System.Windows.Forms.Label()
@@ -105,6 +89,32 @@ Partial Class TeacherEdit
         Me.ConfirmationUserPassError = New System.Windows.Forms.Label()
         Me.ConfirmationUserPassTextbox = New System.Windows.Forms.TextBox()
         Me.UserId = New System.Windows.Forms.Label()
+        Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.LabelSQLStatus = New System.Windows.Forms.Label()
+        Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.LabelHeaderTitle = New System.Windows.Forms.Label()
+        Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.EmailTextBox2 = New WindowsApplication1.Watermark()
+        Me.EmailTextBox1 = New WindowsApplication1.Watermark()
+        Me.TellEmergency3 = New WindowsApplication1.Watermark()
+        Me.TellEmergency2 = New WindowsApplication1.Watermark()
+        Me.TellEmergency = New WindowsApplication1.Watermark()
+        Me.Tell3 = New WindowsApplication1.Watermark()
+        Me.Tell2 = New WindowsApplication1.Watermark()
+        Me.Tell1 = New WindowsApplication1.Watermark()
+        Me.RoomNumberTextBox = New WindowsApplication1.Watermark()
+        Me.BuildingNameTextBox = New WindowsApplication1.Watermark()
+        Me.AddressTextBox = New WindowsApplication1.Watermark()
+        Me.MunicipalityTextBox = New WindowsApplication1.Watermark()
+        Me.PostalCode2 = New WindowsApplication1.Watermark()
+        Me.PostalCode1 = New WindowsApplication1.Watermark()
+        Me.FirstName2 = New WindowsApplication1.Watermark()
+        Me.Lastname2 = New WindowsApplication1.Watermark()
+        Me.FirstName = New WindowsApplication1.Watermark()
+        Me.LastName = New WindowsApplication1.Watermark()
         Me.Panel1.SuspendLayout()
         Me.NewUser.SuspendLayout()
         Me.ContactInformationGroupBox.SuspendLayout()
@@ -117,6 +127,11 @@ Partial Class TeacherEdit
         Me.FuriganaNameGroupBox.SuspendLayout()
         Me.NameGroupBox.SuspendLayout()
         Me.UserGroupBox.SuspendLayout()
+        Me.header.SuspendLayout()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -125,9 +140,9 @@ Partial Class TeacherEdit
         Me.Panel1.BackColor = System.Drawing.Color.White
         Me.Panel1.Controls.Add(Me.NewUser)
         Me.Panel1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Panel1.Location = New System.Drawing.Point(12, 12)
+        Me.Panel1.Location = New System.Drawing.Point(0, 1)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(664, 1429)
+        Me.Panel1.Size = New System.Drawing.Size(667, 1373)
         Me.Panel1.TabIndex = 1
         '
         'NewUser
@@ -150,7 +165,7 @@ Partial Class TeacherEdit
         Me.NewUser.Font = New System.Drawing.Font("メイリオ", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.NewUser.Location = New System.Drawing.Point(12, 12)
         Me.NewUser.Name = "NewUser"
-        Me.NewUser.Size = New System.Drawing.Size(638, 1405)
+        Me.NewUser.Size = New System.Drawing.Size(641, 1349)
         Me.NewUser.TabIndex = 0
         Me.NewUser.TabStop = False
         '
@@ -231,100 +246,6 @@ Partial Class TeacherEdit
         Me.DaytimeError.TabIndex = 25
         Me.DaytimeError.Text = "日中の連絡先を入力してください"
         Me.DaytimeError.Visible = False
-        '
-        'EmailTextBox2
-        '
-        Me.EmailTextBox2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.EmailTextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.EmailTextBox2.Location = New System.Drawing.Point(330, 115)
-        Me.EmailTextBox2.Name = "EmailTextBox2"
-        Me.EmailTextBox2.Size = New System.Drawing.Size(165, 31)
-        Me.EmailTextBox2.TabIndex = 7
-        Me.EmailTextBox2.WatermarkColor = System.Drawing.Color.Gray
-        Me.EmailTextBox2.WatermarkText = "example.exe.com"
-        '
-        'EmailTextBox1
-        '
-        Me.EmailTextBox1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.EmailTextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.EmailTextBox1.Location = New System.Drawing.Point(73, 115)
-        Me.EmailTextBox1.Name = "EmailTextBox1"
-        Me.EmailTextBox1.Size = New System.Drawing.Size(217, 31)
-        Me.EmailTextBox1.TabIndex = 6
-        Me.EmailTextBox1.WatermarkColor = System.Drawing.Color.Gray
-        Me.EmailTextBox1.WatermarkText = "Example"
-        '
-        'TellEmergency3
-        '
-        Me.TellEmergency3.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TellEmergency3.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TellEmergency3.Location = New System.Drawing.Point(236, 62)
-        Me.TellEmergency3.MaxLength = 4
-        Me.TellEmergency3.Name = "TellEmergency3"
-        Me.TellEmergency3.Size = New System.Drawing.Size(54, 31)
-        Me.TellEmergency3.TabIndex = 5
-        Me.TellEmergency3.WatermarkColor = System.Drawing.Color.Gray
-        Me.TellEmergency3.WatermarkText = "0000"
-        '
-        'TellEmergency2
-        '
-        Me.TellEmergency2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TellEmergency2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TellEmergency2.Location = New System.Drawing.Point(152, 62)
-        Me.TellEmergency2.MaxLength = 4
-        Me.TellEmergency2.Name = "TellEmergency2"
-        Me.TellEmergency2.Size = New System.Drawing.Size(54, 31)
-        Me.TellEmergency2.TabIndex = 4
-        Me.TellEmergency2.WatermarkColor = System.Drawing.Color.Gray
-        Me.TellEmergency2.WatermarkText = "0000"
-        '
-        'TellEmergency
-        '
-        Me.TellEmergency.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TellEmergency.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.TellEmergency.Location = New System.Drawing.Point(73, 62)
-        Me.TellEmergency.MaxLength = 4
-        Me.TellEmergency.Name = "TellEmergency"
-        Me.TellEmergency.Size = New System.Drawing.Size(54, 31)
-        Me.TellEmergency.TabIndex = 3
-        Me.TellEmergency.WatermarkColor = System.Drawing.Color.Gray
-        Me.TellEmergency.WatermarkText = "090"
-        '
-        'Tell3
-        '
-        Me.Tell3.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Tell3.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.Tell3.Location = New System.Drawing.Point(236, 20)
-        Me.Tell3.MaxLength = 4
-        Me.Tell3.Name = "Tell3"
-        Me.Tell3.Size = New System.Drawing.Size(54, 31)
-        Me.Tell3.TabIndex = 2
-        Me.Tell3.WatermarkColor = System.Drawing.Color.Gray
-        Me.Tell3.WatermarkText = "0000"
-        '
-        'Tell2
-        '
-        Me.Tell2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Tell2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.Tell2.Location = New System.Drawing.Point(153, 20)
-        Me.Tell2.MaxLength = 4
-        Me.Tell2.Name = "Tell2"
-        Me.Tell2.Size = New System.Drawing.Size(54, 31)
-        Me.Tell2.TabIndex = 1
-        Me.Tell2.WatermarkColor = System.Drawing.Color.Gray
-        Me.Tell2.WatermarkText = "0000"
-        '
-        'Tell1
-        '
-        Me.Tell1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Tell1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.Tell1.Location = New System.Drawing.Point(73, 20)
-        Me.Tell1.MaxLength = 4
-        Me.Tell1.Name = "Tell1"
-        Me.Tell1.Size = New System.Drawing.Size(54, 31)
-        Me.Tell1.TabIndex = 0
-        Me.Tell1.WatermarkColor = System.Drawing.Color.Gray
-        Me.Tell1.WatermarkText = "090"
         '
         'AtMark
         '
@@ -408,11 +329,11 @@ Partial Class TeacherEdit
         '
         'CancelButton
         '
-        Me.CancelButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CancelButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.CancelButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CancelButton.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.CancelButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CancelButton.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CancelButton.ForeColor = System.Drawing.Color.Gray
         Me.CancelButton.Location = New System.Drawing.Point(482, 1280)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(109, 55)
@@ -422,11 +343,11 @@ Partial Class TeacherEdit
         '
         'RegistrationButton
         '
-        Me.RegistrationButton.BackColor = System.Drawing.Color.White
+        Me.RegistrationButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.RegistrationButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RegistrationButton.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.RegistrationButton.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RegistrationButton.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.RegistrationButton.ForeColor = System.Drawing.Color.Gray
         Me.RegistrationButton.Location = New System.Drawing.Point(350, 1280)
         Me.RegistrationButton.Name = "RegistrationButton"
         Me.RegistrationButton.Size = New System.Drawing.Size(109, 55)
@@ -609,72 +530,6 @@ Partial Class TeacherEdit
         Me.MunicipalityError.TabIndex = 24
         Me.MunicipalityError.Text = "市区町村を入力してください"
         Me.MunicipalityError.Visible = False
-        '
-        'RoomNumberTextBox
-        '
-        Me.RoomNumberTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.RoomNumberTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.RoomNumberTextBox.Location = New System.Drawing.Point(89, 241)
-        Me.RoomNumberTextBox.Name = "RoomNumberTextBox"
-        Me.RoomNumberTextBox.Size = New System.Drawing.Size(100, 31)
-        Me.RoomNumberTextBox.TabIndex = 7
-        Me.RoomNumberTextBox.WatermarkColor = System.Drawing.Color.Gray
-        Me.RoomNumberTextBox.WatermarkText = "111"
-        '
-        'BuildingNameTextBox
-        '
-        Me.BuildingNameTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.BuildingNameTextBox.Location = New System.Drawing.Point(89, 201)
-        Me.BuildingNameTextBox.Name = "BuildingNameTextBox"
-        Me.BuildingNameTextBox.Size = New System.Drawing.Size(255, 31)
-        Me.BuildingNameTextBox.TabIndex = 6
-        Me.BuildingNameTextBox.WatermarkColor = System.Drawing.Color.Gray
-        Me.BuildingNameTextBox.WatermarkText = "駅元マンション"
-        '
-        'AddressTextBox
-        '
-        Me.AddressTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.AddressTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.AddressTextBox.Location = New System.Drawing.Point(89, 161)
-        Me.AddressTextBox.Name = "AddressTextBox"
-        Me.AddressTextBox.Size = New System.Drawing.Size(255, 31)
-        Me.AddressTextBox.TabIndex = 5
-        Me.AddressTextBox.WatermarkColor = System.Drawing.Color.Gray
-        Me.AddressTextBox.WatermarkText = "1-1-1"
-        '
-        'MunicipalityTextBox
-        '
-        Me.MunicipalityTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.MunicipalityTextBox.Location = New System.Drawing.Point(89, 120)
-        Me.MunicipalityTextBox.Name = "MunicipalityTextBox"
-        Me.MunicipalityTextBox.Size = New System.Drawing.Size(255, 31)
-        Me.MunicipalityTextBox.TabIndex = 4
-        Me.MunicipalityTextBox.WatermarkColor = System.Drawing.Color.Gray
-        Me.MunicipalityTextBox.WatermarkText = "(例)岡山市北区駅元町"
-        '
-        'PostalCode2
-        '
-        Me.PostalCode2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.PostalCode2.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.PostalCode2.Location = New System.Drawing.Point(189, 40)
-        Me.PostalCode2.MaxLength = 4
-        Me.PostalCode2.Name = "PostalCode2"
-        Me.PostalCode2.Size = New System.Drawing.Size(68, 31)
-        Me.PostalCode2.TabIndex = 1
-        Me.PostalCode2.WatermarkColor = System.Drawing.Color.Gray
-        Me.PostalCode2.WatermarkText = "0000"
-        '
-        'PostalCode1
-        '
-        Me.PostalCode1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.PostalCode1.ImeMode = System.Windows.Forms.ImeMode.Disable
-        Me.PostalCode1.Location = New System.Drawing.Point(110, 40)
-        Me.PostalCode1.MaxLength = 3
-        Me.PostalCode1.Name = "PostalCode1"
-        Me.PostalCode1.Size = New System.Drawing.Size(50, 31)
-        Me.PostalCode1.TabIndex = 0
-        Me.PostalCode1.WatermarkColor = System.Drawing.Color.Gray
-        Me.PostalCode1.WatermarkText = "000"
         '
         'RoomNumber
         '
@@ -899,28 +754,6 @@ Partial Class TeacherEdit
         Me.LastNameError2.Text = "姓のフリガナを入力してください"
         Me.LastNameError2.Visible = False
         '
-        'FirstName2
-        '
-        Me.FirstName2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.FirstName2.ImeMode = System.Windows.Forms.ImeMode.Katakana
-        Me.FirstName2.Location = New System.Drawing.Point(17, 101)
-        Me.FirstName2.Name = "FirstName2"
-        Me.FirstName2.Size = New System.Drawing.Size(230, 31)
-        Me.FirstName2.TabIndex = 1
-        Me.FirstName2.WatermarkColor = System.Drawing.Color.Gray
-        Me.FirstName2.WatermarkText = "メイ"
-        '
-        'Lastname2
-        '
-        Me.Lastname2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Lastname2.ImeMode = System.Windows.Forms.ImeMode.Katakana
-        Me.Lastname2.Location = New System.Drawing.Point(17, 37)
-        Me.Lastname2.Name = "Lastname2"
-        Me.Lastname2.Size = New System.Drawing.Size(230, 31)
-        Me.Lastname2.TabIndex = 0
-        Me.Lastname2.WatermarkColor = System.Drawing.Color.Gray
-        Me.Lastname2.WatermarkText = "セイ"
-        '
         'NameGroupBox
         '
         Me.NameGroupBox.Controls.Add(Me.FirstNameError1)
@@ -960,28 +793,6 @@ Partial Class TeacherEdit
         Me.LastNameError1.TabIndex = 26
         Me.LastNameError1.Text = "姓を入力してください"
         Me.LastNameError1.Visible = False
-        '
-        'FirstName
-        '
-        Me.FirstName.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.FirstName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
-        Me.FirstName.Location = New System.Drawing.Point(25, 101)
-        Me.FirstName.Name = "FirstName"
-        Me.FirstName.Size = New System.Drawing.Size(230, 31)
-        Me.FirstName.TabIndex = 1
-        Me.FirstName.WatermarkColor = System.Drawing.Color.Gray
-        Me.FirstName.WatermarkText = "名"
-        '
-        'LastName
-        '
-        Me.LastName.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.LastName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
-        Me.LastName.Location = New System.Drawing.Point(26, 37)
-        Me.LastName.Name = "LastName"
-        Me.LastName.Size = New System.Drawing.Size(230, 31)
-        Me.LastName.TabIndex = 0
-        Me.LastName.WatermarkColor = System.Drawing.Color.Gray
-        Me.LastName.WatermarkText = "姓"
         '
         'UserGroupBox
         '
@@ -1110,15 +921,324 @@ Partial Class TeacherEdit
         Me.UserId.TabIndex = 52
         Me.UserId.Text = "ユーザーID"
         '
+        'header
+        '
+        Me.header.BackColor = System.Drawing.Color.FromArgb(CType(CType(99, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(120, Byte), Integer))
+        Me.header.BackgroundImage = CType(resources.GetObject("header.BackgroundImage"), System.Drawing.Image)
+        Me.header.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.header.Controls.Add(Me.LabelSQLStatus)
+        Me.header.Controls.Add(Me.BnfImgBtnHelp)
+        Me.header.Controls.Add(Me.BnfImgBtnClose)
+        Me.header.Controls.Add(Me.BnfImgBtnLoad)
+        Me.header.Controls.Add(Me.LabelHeaderTitle)
+        Me.header.Dock = System.Windows.Forms.DockStyle.Top
+        Me.header.GradientBottomLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientBottomRight = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopLeft = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
+        Me.header.GradientTopRight = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.header.Location = New System.Drawing.Point(0, 0)
+        Me.header.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.header.Name = "header"
+        Me.header.Quality = 10
+        Me.header.Size = New System.Drawing.Size(705, 50)
+        Me.header.TabIndex = 66
+        '
+        'LabelSQLStatus
+        '
+        Me.LabelSQLStatus.AutoSize = True
+        Me.LabelSQLStatus.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSQLStatus.Font = New System.Drawing.Font("MS UI Gothic", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.LabelSQLStatus.Location = New System.Drawing.Point(1005, 27)
+        Me.LabelSQLStatus.Name = "LabelSQLStatus"
+        Me.LabelSQLStatus.Size = New System.Drawing.Size(104, 16)
+        Me.LabelSQLStatus.TabIndex = 13
+        Me.LabelSQLStatus.Text = "SQL接続中..."
+        '
+        'BnfImgBtnHelp
+        '
+        Me.BnfImgBtnHelp.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnHelp.Image = CType(resources.GetObject("BnfImgBtnHelp.Image"), System.Drawing.Image)
+        Me.BnfImgBtnHelp.ImageActive = Nothing
+        Me.BnfImgBtnHelp.Location = New System.Drawing.Point(1218, 4)
+        Me.BnfImgBtnHelp.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnHelp.Name = "BnfImgBtnHelp"
+        Me.BnfImgBtnHelp.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnHelp.TabIndex = 12
+        Me.BnfImgBtnHelp.TabStop = False
+        Me.BnfImgBtnHelp.Zoom = 10
+        '
+        'BnfImgBtnClose
+        '
+        Me.BnfImgBtnClose.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnClose.Image = CType(resources.GetObject("BnfImgBtnClose.Image"), System.Drawing.Image)
+        Me.BnfImgBtnClose.ImageActive = Nothing
+        Me.BnfImgBtnClose.Location = New System.Drawing.Point(1310, 4)
+        Me.BnfImgBtnClose.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnClose.Name = "BnfImgBtnClose"
+        Me.BnfImgBtnClose.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnClose.TabIndex = 11
+        Me.BnfImgBtnClose.TabStop = False
+        Me.BnfImgBtnClose.Zoom = 10
+        '
+        'BnfImgBtnLoad
+        '
+        Me.BnfImgBtnLoad.BackColor = System.Drawing.Color.Transparent
+        Me.BnfImgBtnLoad.Image = CType(resources.GetObject("BnfImgBtnLoad.Image"), System.Drawing.Image)
+        Me.BnfImgBtnLoad.ImageActive = Nothing
+        Me.BnfImgBtnLoad.Location = New System.Drawing.Point(1126, 4)
+        Me.BnfImgBtnLoad.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BnfImgBtnLoad.Name = "BnfImgBtnLoad"
+        Me.BnfImgBtnLoad.Size = New System.Drawing.Size(40, 39)
+        Me.BnfImgBtnLoad.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BnfImgBtnLoad.TabIndex = 10
+        Me.BnfImgBtnLoad.TabStop = False
+        Me.BnfImgBtnLoad.Zoom = 10
+        '
+        'LabelHeaderTitle
+        '
+        Me.LabelHeaderTitle.BackColor = System.Drawing.Color.Transparent
+        Me.LabelHeaderTitle.Font = New System.Drawing.Font("HGP創英ﾌﾟﾚｾﾞﾝｽEB", 17.0!)
+        Me.LabelHeaderTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.LabelHeaderTitle.Location = New System.Drawing.Point(13, 12)
+        Me.LabelHeaderTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LabelHeaderTitle.Name = "LabelHeaderTitle"
+        Me.LabelHeaderTitle.Size = New System.Drawing.Size(307, 31)
+        Me.LabelHeaderTitle.TabIndex = 5
+        Me.LabelHeaderTitle.Text = "保育士情報登録画面"
+        '
+        'BunifuDragControl1
+        '
+        Me.BunifuDragControl1.Fixed = True
+        Me.BunifuDragControl1.Horizontal = True
+        Me.BunifuDragControl1.TargetControl = Me.header
+        Me.BunifuDragControl1.Vertical = True
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.AutoScroll = True
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Panel1)
+        Me.Panel2.Location = New System.Drawing.Point(2, 55)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(700, 538)
+        Me.Panel2.TabIndex = 67
+        '
+        'EmailTextBox2
+        '
+        Me.EmailTextBox2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.EmailTextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EmailTextBox2.Location = New System.Drawing.Point(330, 115)
+        Me.EmailTextBox2.Name = "EmailTextBox2"
+        Me.EmailTextBox2.Size = New System.Drawing.Size(165, 31)
+        Me.EmailTextBox2.TabIndex = 7
+        Me.EmailTextBox2.WatermarkColor = System.Drawing.Color.Gray
+        Me.EmailTextBox2.WatermarkText = "example.com"
+        '
+        'EmailTextBox1
+        '
+        Me.EmailTextBox1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.EmailTextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.EmailTextBox1.Location = New System.Drawing.Point(73, 115)
+        Me.EmailTextBox1.Name = "EmailTextBox1"
+        Me.EmailTextBox1.Size = New System.Drawing.Size(217, 31)
+        Me.EmailTextBox1.TabIndex = 6
+        Me.EmailTextBox1.WatermarkColor = System.Drawing.Color.Gray
+        Me.EmailTextBox1.WatermarkText = "example"
+        '
+        'TellEmergency3
+        '
+        Me.TellEmergency3.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TellEmergency3.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TellEmergency3.Location = New System.Drawing.Point(236, 62)
+        Me.TellEmergency3.MaxLength = 4
+        Me.TellEmergency3.Name = "TellEmergency3"
+        Me.TellEmergency3.Size = New System.Drawing.Size(54, 31)
+        Me.TellEmergency3.TabIndex = 5
+        Me.TellEmergency3.WatermarkColor = System.Drawing.Color.Gray
+        Me.TellEmergency3.WatermarkText = "0000"
+        '
+        'TellEmergency2
+        '
+        Me.TellEmergency2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TellEmergency2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TellEmergency2.Location = New System.Drawing.Point(152, 62)
+        Me.TellEmergency2.MaxLength = 4
+        Me.TellEmergency2.Name = "TellEmergency2"
+        Me.TellEmergency2.Size = New System.Drawing.Size(54, 31)
+        Me.TellEmergency2.TabIndex = 4
+        Me.TellEmergency2.WatermarkColor = System.Drawing.Color.Gray
+        Me.TellEmergency2.WatermarkText = "0000"
+        '
+        'TellEmergency
+        '
+        Me.TellEmergency.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TellEmergency.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.TellEmergency.Location = New System.Drawing.Point(73, 62)
+        Me.TellEmergency.MaxLength = 4
+        Me.TellEmergency.Name = "TellEmergency"
+        Me.TellEmergency.Size = New System.Drawing.Size(54, 31)
+        Me.TellEmergency.TabIndex = 3
+        Me.TellEmergency.WatermarkColor = System.Drawing.Color.Gray
+        Me.TellEmergency.WatermarkText = "090"
+        '
+        'Tell3
+        '
+        Me.Tell3.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Tell3.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.Tell3.Location = New System.Drawing.Point(236, 20)
+        Me.Tell3.MaxLength = 4
+        Me.Tell3.Name = "Tell3"
+        Me.Tell3.Size = New System.Drawing.Size(54, 31)
+        Me.Tell3.TabIndex = 2
+        Me.Tell3.WatermarkColor = System.Drawing.Color.Gray
+        Me.Tell3.WatermarkText = "0000"
+        '
+        'Tell2
+        '
+        Me.Tell2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Tell2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.Tell2.Location = New System.Drawing.Point(153, 20)
+        Me.Tell2.MaxLength = 4
+        Me.Tell2.Name = "Tell2"
+        Me.Tell2.Size = New System.Drawing.Size(54, 31)
+        Me.Tell2.TabIndex = 1
+        Me.Tell2.WatermarkColor = System.Drawing.Color.Gray
+        Me.Tell2.WatermarkText = "0000"
+        '
+        'Tell1
+        '
+        Me.Tell1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Tell1.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.Tell1.Location = New System.Drawing.Point(73, 20)
+        Me.Tell1.MaxLength = 4
+        Me.Tell1.Name = "Tell1"
+        Me.Tell1.Size = New System.Drawing.Size(54, 31)
+        Me.Tell1.TabIndex = 0
+        Me.Tell1.WatermarkColor = System.Drawing.Color.Gray
+        Me.Tell1.WatermarkText = "090"
+        '
+        'RoomNumberTextBox
+        '
+        Me.RoomNumberTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.RoomNumberTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.RoomNumberTextBox.Location = New System.Drawing.Point(89, 241)
+        Me.RoomNumberTextBox.Name = "RoomNumberTextBox"
+        Me.RoomNumberTextBox.Size = New System.Drawing.Size(100, 31)
+        Me.RoomNumberTextBox.TabIndex = 7
+        Me.RoomNumberTextBox.WatermarkColor = System.Drawing.Color.Gray
+        Me.RoomNumberTextBox.WatermarkText = "111"
+        '
+        'BuildingNameTextBox
+        '
+        Me.BuildingNameTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.BuildingNameTextBox.Location = New System.Drawing.Point(89, 201)
+        Me.BuildingNameTextBox.Name = "BuildingNameTextBox"
+        Me.BuildingNameTextBox.Size = New System.Drawing.Size(255, 31)
+        Me.BuildingNameTextBox.TabIndex = 6
+        Me.BuildingNameTextBox.WatermarkColor = System.Drawing.Color.Gray
+        Me.BuildingNameTextBox.WatermarkText = "駅元マンション"
+        '
+        'AddressTextBox
+        '
+        Me.AddressTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.AddressTextBox.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.AddressTextBox.Location = New System.Drawing.Point(89, 161)
+        Me.AddressTextBox.Name = "AddressTextBox"
+        Me.AddressTextBox.Size = New System.Drawing.Size(255, 31)
+        Me.AddressTextBox.TabIndex = 5
+        Me.AddressTextBox.WatermarkColor = System.Drawing.Color.Gray
+        Me.AddressTextBox.WatermarkText = "1-1-1"
+        '
+        'MunicipalityTextBox
+        '
+        Me.MunicipalityTextBox.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.MunicipalityTextBox.Location = New System.Drawing.Point(89, 120)
+        Me.MunicipalityTextBox.Name = "MunicipalityTextBox"
+        Me.MunicipalityTextBox.Size = New System.Drawing.Size(255, 31)
+        Me.MunicipalityTextBox.TabIndex = 4
+        Me.MunicipalityTextBox.WatermarkColor = System.Drawing.Color.Gray
+        Me.MunicipalityTextBox.WatermarkText = "(例)岡山市北区駅元町"
+        '
+        'PostalCode2
+        '
+        Me.PostalCode2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.PostalCode2.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.PostalCode2.Location = New System.Drawing.Point(189, 40)
+        Me.PostalCode2.MaxLength = 4
+        Me.PostalCode2.Name = "PostalCode2"
+        Me.PostalCode2.Size = New System.Drawing.Size(68, 31)
+        Me.PostalCode2.TabIndex = 1
+        Me.PostalCode2.WatermarkColor = System.Drawing.Color.Gray
+        Me.PostalCode2.WatermarkText = "0000"
+        '
+        'PostalCode1
+        '
+        Me.PostalCode1.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.PostalCode1.ImeMode = System.Windows.Forms.ImeMode.Disable
+        Me.PostalCode1.Location = New System.Drawing.Point(110, 40)
+        Me.PostalCode1.MaxLength = 3
+        Me.PostalCode1.Name = "PostalCode1"
+        Me.PostalCode1.Size = New System.Drawing.Size(50, 31)
+        Me.PostalCode1.TabIndex = 0
+        Me.PostalCode1.WatermarkColor = System.Drawing.Color.Gray
+        Me.PostalCode1.WatermarkText = "000"
+        '
+        'FirstName2
+        '
+        Me.FirstName2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.FirstName2.ImeMode = System.Windows.Forms.ImeMode.Katakana
+        Me.FirstName2.Location = New System.Drawing.Point(17, 101)
+        Me.FirstName2.Name = "FirstName2"
+        Me.FirstName2.Size = New System.Drawing.Size(230, 31)
+        Me.FirstName2.TabIndex = 1
+        Me.FirstName2.WatermarkColor = System.Drawing.Color.Gray
+        Me.FirstName2.WatermarkText = "メイ"
+        '
+        'Lastname2
+        '
+        Me.Lastname2.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.Lastname2.ImeMode = System.Windows.Forms.ImeMode.Katakana
+        Me.Lastname2.Location = New System.Drawing.Point(17, 37)
+        Me.Lastname2.Name = "Lastname2"
+        Me.Lastname2.Size = New System.Drawing.Size(230, 31)
+        Me.Lastname2.TabIndex = 0
+        Me.Lastname2.WatermarkColor = System.Drawing.Color.Gray
+        Me.Lastname2.WatermarkText = "セイ"
+        '
+        'FirstName
+        '
+        Me.FirstName.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.FirstName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
+        Me.FirstName.Location = New System.Drawing.Point(25, 101)
+        Me.FirstName.Name = "FirstName"
+        Me.FirstName.Size = New System.Drawing.Size(230, 31)
+        Me.FirstName.TabIndex = 1
+        Me.FirstName.WatermarkColor = System.Drawing.Color.Gray
+        Me.FirstName.WatermarkText = "名"
+        '
+        'LastName
+        '
+        Me.LastName.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.LastName.ImeMode = System.Windows.Forms.ImeMode.Hiragana
+        Me.LastName.Location = New System.Drawing.Point(26, 37)
+        Me.LastName.Name = "LastName"
+        Me.LastName.Size = New System.Drawing.Size(230, 31)
+        Me.LastName.TabIndex = 0
+        Me.LastName.WatermarkColor = System.Drawing.Color.Gray
+        Me.LastName.WatermarkText = "姓"
+        '
         'TeacherEdit
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.AutoSize = True
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(773, 595)
-        Me.Controls.Add(Me.Panel1)
+        Me.BackColor = System.Drawing.Color.White
+        Me.ClientSize = New System.Drawing.Size(705, 595)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.header)
         Me.Font = New System.Drawing.Font("メイリオ", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Location = New System.Drawing.Point(12, 12)
@@ -1146,6 +1266,12 @@ Partial Class TeacherEdit
         Me.NameGroupBox.PerformLayout()
         Me.UserGroupBox.ResumeLayout(False)
         Me.UserGroupBox.PerformLayout()
+        Me.header.ResumeLayout(False)
+        Me.header.PerformLayout()
+        CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1232,4 +1358,12 @@ Partial Class TeacherEdit
     Friend WithEvents LastNameError1 As System.Windows.Forms.Label
     Friend WithEvents UserPassError2 As System.Windows.Forms.Label
     Friend WithEvents UserPassError1 As System.Windows.Forms.Label
+    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents LabelSQLStatus As System.Windows.Forms.Label
+    Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents LabelHeaderTitle As System.Windows.Forms.Label
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
 End Class

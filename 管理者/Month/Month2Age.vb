@@ -5,35 +5,186 @@ Public Class Month2Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
     Dim sqlConnect As SQLConnectClass
 
-    Public Sub SetID(sqlConnect As SQLConnectClass)
+    Public Sub SetID(s As SQLConnectClass)
+        sqlConnect = s
+
+        Me.Refresh()
+
+        ReflectClassName()
+        ReflectTeacherName()
+        ReflectChildName()
+    End Sub
+    Private Sub ReflectClassName()
+        Dim count As String
         'クラス名を反映
-        If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM test_cluss") = False Then
+        If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
 
-        Dim count As String = sqlConnect.DBResult(0, 0)
+        count = sqlConnect.DBResult(0, 0)
 
         Dim j As Integer
-        If sqlConnect.DBConnect("SELECT ClassName FROM test_cluss") = False Then
+        If sqlConnect.DBConnect("SELECT ClassName FROM class") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         For j = 0 To Integer.Parse(count) - 1 Step 1
             ClassName.Items.Add(sqlConnect.DBResult(j, 0))
         Next
+    End Sub
+    Private Sub ReflectTeacherName()
+        Dim count As String
         '教員名を反映
-        If sqlConnect.DBConnect("SELECT COUNT(userName) FROM test_id") = False Then
+        If sqlConnect.DBConnect("SELECT COUNT(`worker_main_id`) FROM worker") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         count = sqlConnect.DBResult(0, 0)
 
-        If sqlConnect.DBConnect("SELECT userName FROM test_id") = False Then
+        If sqlConnect.DBConnect("SELECT worker_name FROM worker") = False Then
             MsgBox(sqlConnect.ErrorMessage())
         End If
         For j = 0 To Integer.Parse(count) - 1 Step 1
             LeaderName.Items.Add(sqlConnect.DBResult(j, 0))
         Next
-
     End Sub
+    Private Sub ReflectChildName()
+        Dim count As String
+        '児童名を反映
+        If sqlConnect.DBConnect("SELECT COUNT(`children_main_id`) FROM children") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+        count = sqlConnect.DBResult(0, 0)
+
+        If sqlConnect.DBConnect("SELECT children_name FROM children") = False Then
+            MsgBox(sqlConnect.ErrorMessage())
+        End If
+        For j = 0 To Integer.Parse(count) - 1 Step 1
+            ChildName1.Items.Add(sqlConnect.DBResult(j, 0))
+            ChildName2.Items.Add(sqlConnect.DBResult(j, 0))
+            ChildName3.Items.Add(sqlConnect.DBResult(j, 0))
+            ChildName4.Items.Add(sqlConnect.DBResult(j, 0))
+            ChildName5.Items.Add(sqlConnect.DBResult(j, 0))
+            ChildName6.Items.Add(sqlConnect.DBResult(j, 0))
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' 月案をDBから反映させる
+    ''' </summary>
+    ''' <param name="id">メイン主キーの値</param>
+    ''' <remarks></remarks>
+    Public Sub MonthDBDraw(id As String, s As SQLConnectClass)
+        sqlConnect = s
+        Dim pF As New ProgressStatesForm
+        pF.Show() : pF.ProgressStatesMaxSet(8)
+        pF.ProgressStatesLabelUpdate("メインデータ反映準備中...")
+        If sqlConnect.DBConnect("SELECT * FROM child_monthplan_main_2to2 WHERE month_main_2to2_id = '" & id & "'") = False Then
+            MsgBox(sqlConnect.ErrorMessage)
+        Else
+            pF.ProgressStatesLabelUpdate("メインデータ反映中")
+            '表に反映させる
+            Draw_main(sqlConnect.DBResult().Tables.Item(0))
+
+
+            pF.ProgressStatesLabelUpdate("サブデータ反映準備中...")
+            '表への反映確認
+            Dim tableNum As String = MainDBReflectCheck(id)
+
+            If tableNum = 5 Then
+                pF.ProgressStatesLabelUpdate("サブデータ[ " & tableNum + 1 & " ]準備中")
+                '表への反映
+                TableDBReflect(id)
+                Draw_table(sqlConnect.DBResult().Tables.Item(0))
+            End If
+        End If
+        pF.ProgressStatesEnd()
+        MsgBox("反映完了!!", MsgBoxStyle.OkOnly, "確認画面")
+    End Sub
+
+    Private Function MainDBReflectCheck(id As String) As String
+        Dim sqlString As String = "SELECT COUNT(*) " _
+        & "FROM `child_monthplan_table_2to2` " _
+        & "WHERE " & id & " = month_main_2to2_id;"
+        sqlConnect.DBConnect(sqlString)
+        Return sqlConnect.DBResult(0)
+    End Function
+    Private Sub TableDBReflect(id As String)
+        Dim sqlString As String
+        sqlString = "SELECT * " _
+                    & "FROM `child_monthplan_table_2to2` " _
+                    & "WHERE " & id & " = month_main_2to2_id;"
+        sqlConnect.DBConnect(sqlString)
+    End Sub
+
+    Private Sub Draw_table(dt As System.Data.DataTable)
+        '確実に六回のみ呼び出してください
+        Dim ChildName = New ComboBox() {
+                ChildName1,
+                ChildName2,
+                ChildName3,
+                ChildName4,
+                ChildName5,
+                ChildName6
+            }
+        Dim ChildAge = New NumericUpDown() {
+                ChildAge1,
+                ChildAge2,
+                ChildAge3,
+                ChildAge4,
+                ChildAge5,
+                ChildAge6
+            }
+        Dim ChildAim = New RichTextBox() {
+                ChildAim1,
+                ChildAim2,
+                ChildAim3,
+                ChildAim4,
+                ChildAim5,
+                ChildAim6
+            }
+        Dim NurseryTeachers = New RichTextBox() {
+                NurseryTeachers1,
+                NurseryTeachers2,
+                NurseryTeachers3,
+                NurseryTeachers4,
+                NurseryTeachers5,
+                NurseryTeachers6
+            }
+        Dim Contact = New RichTextBox() {
+                Contact1,
+                Contact2,
+                Contact3,
+                Contact4,
+                Contact5,
+                Contact6
+            }
+        For i = 0 To 5
+            ChildName(i).Text = dt.Rows(i).Item("ChildName").ToString
+            ChildAge(i).Text = dt.Rows(i).Item("ChildAge").ToString
+            ChildAim(i).Text = dt.Rows(i).Item("ChildAim").ToString
+            NurseryTeachers(i).Text = dt.Rows(i).Item("NurseryTeachers").ToString
+            Contact(i).Text = dt.Rows(i).Item("Contact").ToString
+        Next
+    End Sub
+
+    Private Sub Draw_main(dt As System.Data.DataTable)
+        ClassName.Text = dt.Rows(0).Item("ClassName").ToString
+        TextBoxBoysNumber.Text = dt.Rows(0).Item("BoysNumber").ToString
+        TextBoxGirlsNumber.Text = dt.Rows(0).Item("GirlsNumber").ToString
+        TargetYear.Text = dt.Rows(0).Item("TargetYear").ToString
+        TargetMonth.Text = dt.Rows(0).Item("TargetMonth").ToString
+        LeaderName.Text = dt.Rows(0).Item("LeaderName").ToString
+        StateMonth.Text = dt.Rows(0).Item("StateMonth").ToString
+        AimNursing.Text = dt.Rows(0).Item("AimNursing").ToString
+        AimEducation.Text = dt.Rows(0).Item("AimEducation").ToString
+        RichTextBox_Event.Text = dt.Rows(0).Item("Event").ToString
+        Contents.Text = dt.Rows(0).Item("Contents").ToString
+        HealthSafety.Text = dt.Rows(0).Item("HealthSafety").ToString
+        EnvironmentalComposition.Text = dt.Rows(0).Item("EnvironmentalComposition").ToString
+        Eat.Text = dt.Rows(0).Item("Eat").ToString
+        EvaluationReflection.Text = dt.Rows(0).Item("EvaluationReflection").ToString
+        NextPoint.Text = dt.Rows(0).Item("NextPoint").ToString
+    End Sub
+
 
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
@@ -92,13 +243,13 @@ Public Class Month2Age
         End If
     End Sub
     Private Sub AutoText_Enter(sender As Object, e As EventArgs)
-        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "0" Then
             tBox.Clear()
         End If
     End Sub
     Private Sub AutoText_Leave(sender As Object, e As EventArgs)
-        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "" Then
             tBox.Text = "0"
         End If
@@ -243,7 +394,8 @@ Public Class Month2Age
     End Sub
 
     Public Sub closecheck()
-        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
+        Dim AppDirPath As String = My.Application.Info.DirectoryPath
+        Dim fileName As String = AppDirPath & "\month2age\保育指導月案（2歳用）" & _
               ClassName.Text & TargetMonth.Text & "月.xlsm"
         If System.IO.File.Exists(fileName.ToString) Then
             Dim xlApp As New Application()
@@ -303,6 +455,7 @@ Public Class Month2Age
     End Sub
 
     Private Sub 上書き保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        Dim AppDirPath As String = My.Application.Info.DirectoryPath
         Dim fileName As String
         fileName = "保育指導月案（2歳用）" & _
                        ClassName.Text & LeaderName.Text & "月.xlsm"
@@ -312,13 +465,13 @@ Public Class Month2Age
         '                                       MessageBoxIcon.Exclamation, _
         '                                       MessageBoxDefaultButton.Button2)
 
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) = False Then
-            System.IO.File.Copy("C:\test\templ\2agetempl.xlsm", "C:\test\month2age\" & fileName.ToString)
+        If System.IO.File.Exists(AppDirPath & "\month2age\" & fileName.ToString) = False Then
+            System.IO.File.Copy(AppDirPath & "\template\2agetempl.xlsm", AppDirPath & "\month2age\" & fileName.ToString)
         End If
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
             xlApp.Visible = True
-            xlApp.Workbooks.Open("C:\test\month2age\" & fileName)
+            xlApp.Workbooks.Open(AppDirPath & "\month2age\" & fileName)
             CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
             Dim arrayData As String(,)
             Dim aRange As Range
@@ -345,40 +498,38 @@ Public Class Month2Age
     End Sub
 
     Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
-        '印刷するファイルの参照
-        Dim fileName As String = "C:\test\month2age\保育指導月案（2歳用）" & _
-                        ClassName.Text & TargetMonth.Text & "月.xlsm"
+        Dim AppDirPath As String = My.Application.Info.DirectoryPath
+        Dim fileName As String = AppDirPath & "\template\2agetempl.xlsm"
 
-        'ファイルがあるか確認
-        If System.IO.File.Exists("C:\test\month2age\" & fileName.ToString) Then
-            Dim xlApp As New Application()
-            If xlApp IsNot Nothing Then
-                xlApp.Visible = False
-                xlApp.Workbooks.Open(fileName)
-                CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
-                Dim arrayData As String(,)
+        Dim xlApp As New Application()
+        If xlApp IsNot Nothing Then
+            xlApp.Visible = True
+            xlApp.Workbooks.Open(fileName)
+            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+            Dim arrayData As String(,)
+            Dim aRange As Range
 
-                arrayData = addData()
-                xlApp.Worksheets.PrintPreview(fileName)
-                xlApp.ActiveWorkbook.Close()
-                xlApp.Quit()
-            End If
+            arrayData = addData()
+            Dim j = 0
+            '入力されているものをexcelへ置き換える
+            For i = 0 To 43
+
+                aRange = xlApp.Range(arrayData(i, 1))
+                If aRange IsNot Nothing Then
+                    Console.WriteLine(aRange.Value2)
+                    aRange.Value2 = arrayData(j, 0)
+                    Console.WriteLine(aRange.Value2)
+                End If
+                j = j + 1
+            Next
+            xlApp.ActiveWorkbook.Save()
+            xlApp.Worksheets.PrintPreview(fileName)
+            xlApp.Quit()
+            MsgBox("test")
         Else
-            MsgBox("保存をしてください")
+            MsgBox("ereer")
         End If
-        'Dim j = 0
-        ''入力されているものをexselへ置き換える
-        'For i = 0 To 42
 
-        '    aRange = xlApp.Range(arrayData(i, 1))
-        '    If aRange IsNot Nothing Then
-        '        Console.WriteLine(aRange.Value2)
-        '        aRange.Value2 = arrayData(j, 0)
-        '        Console.WriteLine(aRange.Value2)
-        '    End If
-        '    j = j + 1
-        'Next
-        'プレビュー画面を呼び出す
     End Sub
 
     Public Function addData() As String(,)
@@ -433,5 +584,6 @@ Public Class Month2Age
     Private Sub BnfImgBtn_Click(sender As Object, e As EventArgs) Handles BnfuImgBtnClose.Click
         closecheck()
     End Sub
-End Class 
+
+End Class
 

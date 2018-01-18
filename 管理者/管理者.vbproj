@@ -13,6 +13,21 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -86,6 +101,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCluss.designer.vb">
+      <DependentUpon>AddCluss.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCluss.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AdministratorForm.designer.vb">
       <DependentUpon>AdministratorForm.vb</DependentUpon>
     </Compile>
@@ -104,23 +125,41 @@
     <Compile Include="ChildDBView.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="DelClass.designer.vb">
+      <DependentUpon>DelClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DelClass.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleateuser.designer.vb">
+      <DependentUpon>deleateuser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="deleateuser.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Hash.vb" />
+    <Compile Include="login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Month\AddClass.designer.vb">
       <DependentUpon>AddClass.vb</DependentUpon>
     </Compile>
     <Compile Include="Month\AddClass.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ChildInfo\ChildInfoAdd.designer.vb">
+      <DependentUpon>ChildInfoAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChildInfo\ChildInfoAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Month\Month1Age.designer.vb">
       <DependentUpon>Month1Age.vb</DependentUpon>
     </Compile>
     <Compile Include="Month\Month1Age.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Month\Month1AgeShownDummy.designer.vb">
-      <DependentUpon>Month1AgeShownDummy.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Month\Month1AgeShownDummy.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Month\Month2Age.designer.vb">
@@ -176,6 +215,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SQLConnectClass.vb" />
+    <Compile Include="TestClass\ChildInfoSelect.Designer.vb">
+      <DependentUpon>ChildInfoSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TestClass\ChildInfoSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TestClass\ProgressStatesForm.Designer.vb">
       <DependentUpon>ProgressStatesForm.vb</DependentUpon>
     </Compile>
@@ -194,6 +239,15 @@
     <Compile Include="TopPagevb.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TopSearch\MonthSearch.vb" />
+    <Compile Include="TopSearch\SearchChild.vb" />
+    <Compile Include="TopSearch\SearchSelect.Designer.vb">
+      <DependentUpon>SearchSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TopSearch\SearchSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TopSearch\SearchSharedDim.vb" />
     <Compile Include="watermark.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -211,6 +265,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCluss.resx">
+      <DependentUpon>AddCluss.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministratorForm.resx">
       <DependentUpon>AdministratorForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -220,14 +277,23 @@
     <EmbeddedResource Include="ChildDBView.resx">
       <DependentUpon>ChildDBView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DelClass.resx">
+      <DependentUpon>DelClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleateuser.resx">
+      <DependentUpon>deleateuser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Month\AddClass.resx">
       <DependentUpon>AddClass.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChildInfo\ChildInfoAdd.resx">
+      <DependentUpon>ChildInfoAdd.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Month\Month1Age.resx">
       <DependentUpon>Month1Age.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Month\Month1AgeShownDummy.resx">
-      <DependentUpon>Month1AgeShownDummy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Month\Month2Age.resx">
       <DependentUpon>Month2Age.vb</DependentUpon>
@@ -253,6 +319,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="TestClass\ChildInfoSelect.resx">
+      <DependentUpon>ChildInfoSelect.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TestClass\ProgressStatesForm.resx">
       <DependentUpon>ProgressStatesForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TopPagevb.resx">
       <DependentUpon>TopPagevb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TopSearch\SearchSelect.resx">
+      <DependentUpon>SearchSelect.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="watermark.resx">
       <DependentUpon>watermark.vb</DependentUpon>
@@ -289,7 +361,18 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

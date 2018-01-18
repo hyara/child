@@ -25,46 +25,20 @@ Partial Class Month1Age
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Month1Age))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBoxChildName6 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxChildName5 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxChildName4 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxChildName3 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxChildName2 = New System.Windows.Forms.ComboBox()
         Me.ComboBoxChildName1 = New System.Windows.Forms.ComboBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LabelSum = New System.Windows.Forms.Label()
         Me.DateTimePickerCreatedDate = New System.Windows.Forms.DateTimePicker()
         Me.RichTextBoxNextPoint = New System.Windows.Forms.RichTextBox()
         Me.RichTextBoxEnvironmentalComposition = New System.Windows.Forms.RichTextBox()
         Me.RichTextBoxHealthSafety = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers6 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers5 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers4 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers3 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxNurseryTeachers1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxChildActivities6 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxChildActivities5 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxChildActivities4 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxChildActivities3 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxChildActivities2 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBoxExpectesChild1 = New System.Windows.Forms.RichTextBox()
         Me.RichTextBoxContents = New System.Windows.Forms.RichTextBox()
         Me.RichTextBoxEvent = New System.Windows.Forms.RichTextBox()
         Me.RichTextBoxAimEducation = New System.Windows.Forms.RichTextBox()
@@ -79,44 +53,54 @@ Partial Class Month1Age
         Me.NumericUpDownChildAge3 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownChildAge4 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownChildAge5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDownChildAge6 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownChildAge2 = New System.Windows.Forms.NumericUpDown()
         Me.NumericUpDownChildAge1 = New System.Windows.Forms.NumericUpDown()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TextBoxGirlsNumber = New System.Windows.Forms.TextBox()
-        Me.TextBoxBoysNumber = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.header = New Bunifu.Framework.UI.BunifuGradientPanel()
         Me.BnfImgBtnHelp = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BnfImgBtnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ファイルFToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.上書き保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.名前を付けて保存ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PastToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
         Me.閉じるToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BnfImgBtnLoad = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.ComboBoxChildName6 = New System.Windows.Forms.ComboBox()
+        Me.NumericUpDownChildAge6 = New System.Windows.Forms.NumericUpDown()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers5 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers6 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxChildActivities6 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxChildActivities5 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers4 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxChildActivities4 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxExpectesChild1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxChildActivities2 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxChildActivities3 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers3 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers2 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBoxNurseryTeachers1 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
+        Me.TextBoxBoysNumber = New System.Windows.Forms.TextBox()
+        Me.TextBoxGirlsNumber = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownChildAge3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownChildAge4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownChildAge5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDownChildAge6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownChildAge2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDownChildAge1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.header.SuspendLayout()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BnfImgBtnClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NumericUpDownChildAge6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -125,8 +109,12 @@ Partial Class Month1Age
         Me.Panel1.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Panel1.Controls.Add(Me.LabelSum)
+        Me.Panel1.Controls.Add(Me.TextBoxGirlsNumber)
         Me.Panel1.Controls.Add(Me.RichTextBox1)
+        Me.Panel1.Controls.Add(Me.TextBoxBoysNumber)
         Me.Panel1.Controls.Add(Me.RichTextBox2)
+        Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.RichTextBox3)
         Me.Panel1.Controls.Add(Me.RichTextBox4)
         Me.Panel1.Controls.Add(Me.RichTextBox5)
@@ -140,15 +128,7 @@ Partial Class Month1Age
         Me.Panel1.Controls.Add(Me.ComboBoxChildName3)
         Me.Panel1.Controls.Add(Me.ComboBoxChildName2)
         Me.Panel1.Controls.Add(Me.ComboBoxChildName1)
-        Me.Panel1.Controls.Add(Me.PictureBox7)
-        Me.Panel1.Controls.Add(Me.PictureBox6)
-        Me.Panel1.Controls.Add(Me.PictureBox5)
-        Me.Panel1.Controls.Add(Me.PictureBox4)
-        Me.Panel1.Controls.Add(Me.PictureBox3)
-        Me.Panel1.Controls.Add(Me.PictureBox2)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.LabelSum)
         Me.Panel1.Controls.Add(Me.DateTimePickerCreatedDate)
         Me.Panel1.Controls.Add(Me.RichTextBoxNextPoint)
         Me.Panel1.Controls.Add(Me.RichTextBoxEnvironmentalComposition)
@@ -182,60 +162,11 @@ Partial Class Month1Age
         Me.Panel1.Controls.Add(Me.NumericUpDownChildAge6)
         Me.Panel1.Controls.Add(Me.NumericUpDownChildAge2)
         Me.Panel1.Controls.Add(Me.NumericUpDownChildAge1)
-        Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.Panel1.Location = New System.Drawing.Point(-1, 43)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(791, 701)
         Me.Panel1.TabIndex = 0
-        '
-        'RichTextBox1
-        '
-        Me.RichTextBox1.Location = New System.Drawing.Point(616, 505)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox1.TabIndex = 99
-        Me.RichTextBox1.Text = ""
-        '
-        'RichTextBox2
-        '
-        Me.RichTextBox2.Location = New System.Drawing.Point(616, 442)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox2.TabIndex = 98
-        Me.RichTextBox2.Text = ""
-        '
-        'RichTextBox3
-        '
-        Me.RichTextBox3.Location = New System.Drawing.Point(616, 380)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox3.TabIndex = 97
-        Me.RichTextBox3.Text = ""
-        '
-        'RichTextBox4
-        '
-        Me.RichTextBox4.Location = New System.Drawing.Point(616, 317)
-        Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox4.TabIndex = 96
-        Me.RichTextBox4.Text = ""
-        '
-        'RichTextBox5
-        '
-        Me.RichTextBox5.Location = New System.Drawing.Point(616, 255)
-        Me.RichTextBox5.Name = "RichTextBox5"
-        Me.RichTextBox5.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox5.TabIndex = 95
-        Me.RichTextBox5.Text = ""
-        '
-        'RichTextBox6
-        '
-        Me.RichTextBox6.Location = New System.Drawing.Point(616, 193)
-        Me.RichTextBox6.Name = "RichTextBox6"
-        Me.RichTextBox6.Size = New System.Drawing.Size(145, 62)
-        Me.RichTextBox6.TabIndex = 94
-        Me.RichTextBox6.Text = ""
         '
         'Label7
         '
@@ -267,18 +198,10 @@ Partial Class Month1Age
         Me.Label5.TabIndex = 91
         Me.Label5.Text = "個別の家庭連絡"
         '
-        'ComboBoxChildName6
-        '
-        Me.ComboBoxChildName6.FormattingEnabled = True
-        Me.ComboBoxChildName6.Location = New System.Drawing.Point(169, 516)
-        Me.ComboBoxChildName6.Name = "ComboBoxChildName6"
-        Me.ComboBoxChildName6.Size = New System.Drawing.Size(121, 20)
-        Me.ComboBoxChildName6.TabIndex = 90
-        '
         'ComboBoxChildName5
         '
         Me.ComboBoxChildName5.FormattingEnabled = True
-        Me.ComboBoxChildName5.Location = New System.Drawing.Point(168, 449)
+        Me.ComboBoxChildName5.Location = New System.Drawing.Point(166, 449)
         Me.ComboBoxChildName5.Name = "ComboBoxChildName5"
         Me.ComboBoxChildName5.Size = New System.Drawing.Size(121, 20)
         Me.ComboBoxChildName5.TabIndex = 89
@@ -286,7 +209,7 @@ Partial Class Month1Age
         'ComboBoxChildName4
         '
         Me.ComboBoxChildName4.FormattingEnabled = True
-        Me.ComboBoxChildName4.Location = New System.Drawing.Point(168, 387)
+        Me.ComboBoxChildName4.Location = New System.Drawing.Point(166, 387)
         Me.ComboBoxChildName4.Name = "ComboBoxChildName4"
         Me.ComboBoxChildName4.Size = New System.Drawing.Size(121, 20)
         Me.ComboBoxChildName4.TabIndex = 88
@@ -294,7 +217,7 @@ Partial Class Month1Age
         'ComboBoxChildName3
         '
         Me.ComboBoxChildName3.FormattingEnabled = True
-        Me.ComboBoxChildName3.Location = New System.Drawing.Point(168, 331)
+        Me.ComboBoxChildName3.Location = New System.Drawing.Point(166, 331)
         Me.ComboBoxChildName3.Name = "ComboBoxChildName3"
         Me.ComboBoxChildName3.Size = New System.Drawing.Size(121, 20)
         Me.ComboBoxChildName3.TabIndex = 87
@@ -302,7 +225,7 @@ Partial Class Month1Age
         'ComboBoxChildName2
         '
         Me.ComboBoxChildName2.FormattingEnabled = True
-        Me.ComboBoxChildName2.Location = New System.Drawing.Point(168, 262)
+        Me.ComboBoxChildName2.Location = New System.Drawing.Point(166, 262)
         Me.ComboBoxChildName2.Name = "ComboBoxChildName2"
         Me.ComboBoxChildName2.Size = New System.Drawing.Size(121, 20)
         Me.ComboBoxChildName2.TabIndex = 86
@@ -310,83 +233,27 @@ Partial Class Month1Age
         'ComboBoxChildName1
         '
         Me.ComboBoxChildName1.FormattingEnabled = True
-        Me.ComboBoxChildName1.Location = New System.Drawing.Point(168, 203)
+        Me.ComboBoxChildName1.Location = New System.Drawing.Point(166, 203)
         Me.ComboBoxChildName1.Name = "ComboBoxChildName1"
         Me.ComboBoxChildName1.Size = New System.Drawing.Size(121, 20)
         Me.ComboBoxChildName1.TabIndex = 85
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Location = New System.Drawing.Point(243, 287)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox7.TabIndex = 84
-        Me.PictureBox7.TabStop = False
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Location = New System.Drawing.Point(243, 356)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox6.TabIndex = 83
-        Me.PictureBox6.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Location = New System.Drawing.Point(243, 413)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox5.TabIndex = 82
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Location = New System.Drawing.Point(243, 478)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox4.TabIndex = 81
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Location = New System.Drawing.Point(243, 541)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox3.TabIndex = 80
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Location = New System.Drawing.Point(243, 229)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(10, 20)
-        Me.PictureBox2.TabIndex = 79
-        Me.PictureBox2.TabStop = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label2.Location = New System.Drawing.Point(45, 45)
+        Me.Label2.Location = New System.Drawing.Point(57, 46)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(274, 24)
         Me.Label2.TabIndex = 78
         Me.Label2.Text = "保育指導月案（0～1歳用）"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(44, 35)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(287, 43)
-        Me.PictureBox1.TabIndex = 76
-        Me.PictureBox1.TabStop = False
         '
         'LabelSum
         '
         Me.LabelSum.AutoSize = True
         Me.LabelSum.BackColor = System.Drawing.SystemColors.ControlLightLight
         Me.LabelSum.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.LabelSum.Location = New System.Drawing.Point(397, 63)
+        Me.LabelSum.Location = New System.Drawing.Point(395, 63)
         Me.LabelSum.Name = "LabelSum"
         Me.LabelSum.Size = New System.Drawing.Size(0, 16)
         Me.LabelSum.TabIndex = 14
@@ -422,102 +289,6 @@ Partial Class Month1Age
         Me.RichTextBoxHealthSafety.Size = New System.Drawing.Size(255, 113)
         Me.RichTextBoxHealthSafety.TabIndex = 72
         Me.RichTextBoxHealthSafety.Text = ""
-        '
-        'RichTextBoxNurseryTeachers6
-        '
-        Me.RichTextBoxNurseryTeachers6.Location = New System.Drawing.Point(462, 505)
-        Me.RichTextBoxNurseryTeachers6.Name = "RichTextBoxNurseryTeachers6"
-        Me.RichTextBoxNurseryTeachers6.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers6.TabIndex = 70
-        Me.RichTextBoxNurseryTeachers6.Text = ""
-        '
-        'RichTextBoxNurseryTeachers5
-        '
-        Me.RichTextBoxNurseryTeachers5.Location = New System.Drawing.Point(462, 442)
-        Me.RichTextBoxNurseryTeachers5.Name = "RichTextBoxNurseryTeachers5"
-        Me.RichTextBoxNurseryTeachers5.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers5.TabIndex = 69
-        Me.RichTextBoxNurseryTeachers5.Text = ""
-        '
-        'RichTextBoxNurseryTeachers4
-        '
-        Me.RichTextBoxNurseryTeachers4.Location = New System.Drawing.Point(462, 380)
-        Me.RichTextBoxNurseryTeachers4.Name = "RichTextBoxNurseryTeachers4"
-        Me.RichTextBoxNurseryTeachers4.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers4.TabIndex = 68
-        Me.RichTextBoxNurseryTeachers4.Text = ""
-        '
-        'RichTextBoxNurseryTeachers3
-        '
-        Me.RichTextBoxNurseryTeachers3.Location = New System.Drawing.Point(462, 317)
-        Me.RichTextBoxNurseryTeachers3.Name = "RichTextBoxNurseryTeachers3"
-        Me.RichTextBoxNurseryTeachers3.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers3.TabIndex = 67
-        Me.RichTextBoxNurseryTeachers3.Text = ""
-        '
-        'RichTextBoxNurseryTeachers2
-        '
-        Me.RichTextBoxNurseryTeachers2.Location = New System.Drawing.Point(462, 255)
-        Me.RichTextBoxNurseryTeachers2.Name = "RichTextBoxNurseryTeachers2"
-        Me.RichTextBoxNurseryTeachers2.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers2.TabIndex = 66
-        Me.RichTextBoxNurseryTeachers2.Text = ""
-        '
-        'RichTextBoxNurseryTeachers1
-        '
-        Me.RichTextBoxNurseryTeachers1.Location = New System.Drawing.Point(462, 193)
-        Me.RichTextBoxNurseryTeachers1.Name = "RichTextBoxNurseryTeachers1"
-        Me.RichTextBoxNurseryTeachers1.Size = New System.Drawing.Size(153, 60)
-        Me.RichTextBoxNurseryTeachers1.TabIndex = 65
-        Me.RichTextBoxNurseryTeachers1.Text = ""
-        '
-        'RichTextBoxChildActivities6
-        '
-        Me.RichTextBoxChildActivities6.Location = New System.Drawing.Point(290, 504)
-        Me.RichTextBoxChildActivities6.Name = "RichTextBoxChildActivities6"
-        Me.RichTextBoxChildActivities6.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxChildActivities6.TabIndex = 64
-        Me.RichTextBoxChildActivities6.Text = ""
-        '
-        'RichTextBoxChildActivities5
-        '
-        Me.RichTextBoxChildActivities5.Location = New System.Drawing.Point(290, 442)
-        Me.RichTextBoxChildActivities5.Name = "RichTextBoxChildActivities5"
-        Me.RichTextBoxChildActivities5.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxChildActivities5.TabIndex = 63
-        Me.RichTextBoxChildActivities5.Text = ""
-        '
-        'RichTextBoxChildActivities4
-        '
-        Me.RichTextBoxChildActivities4.Location = New System.Drawing.Point(290, 380)
-        Me.RichTextBoxChildActivities4.Name = "RichTextBoxChildActivities4"
-        Me.RichTextBoxChildActivities4.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxChildActivities4.TabIndex = 62
-        Me.RichTextBoxChildActivities4.Text = ""
-        '
-        'RichTextBoxChildActivities3
-        '
-        Me.RichTextBoxChildActivities3.Location = New System.Drawing.Point(290, 317)
-        Me.RichTextBoxChildActivities3.Name = "RichTextBoxChildActivities3"
-        Me.RichTextBoxChildActivities3.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxChildActivities3.TabIndex = 61
-        Me.RichTextBoxChildActivities3.Text = ""
-        '
-        'RichTextBoxChildActivities2
-        '
-        Me.RichTextBoxChildActivities2.Location = New System.Drawing.Point(290, 255)
-        Me.RichTextBoxChildActivities2.Name = "RichTextBoxChildActivities2"
-        Me.RichTextBoxChildActivities2.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxChildActivities2.TabIndex = 60
-        Me.RichTextBoxChildActivities2.Text = ""
-        '
-        'RichTextBoxExpectesChild1
-        '
-        Me.RichTextBoxExpectesChild1.Location = New System.Drawing.Point(290, 192)
-        Me.RichTextBoxExpectesChild1.Name = "RichTextBoxExpectesChild1"
-        Me.RichTextBoxExpectesChild1.Size = New System.Drawing.Size(171, 60)
-        Me.RichTextBoxExpectesChild1.TabIndex = 59
-        Me.RichTextBoxExpectesChild1.Text = ""
         '
         'RichTextBoxContents
         '
@@ -579,21 +350,22 @@ Partial Class Month1Age
         '
         'ComboBoxTargetMonth
         '
-        Me.ComboBoxTargetMonth.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.ComboBoxTargetMonth.DisplayMember = "1"
+        Me.ComboBoxTargetMonth.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 10.0!)
         Me.ComboBoxTargetMonth.FormattingEnabled = True
-        Me.ComboBoxTargetMonth.Location = New System.Drawing.Point(701, 35)
+        Me.ComboBoxTargetMonth.Location = New System.Drawing.Point(704, 34)
         Me.ComboBoxTargetMonth.Name = "ComboBoxTargetMonth"
-        Me.ComboBoxTargetMonth.Size = New System.Drawing.Size(38, 17)
+        Me.ComboBoxTargetMonth.Size = New System.Drawing.Size(38, 21)
         Me.ComboBoxTargetMonth.TabIndex = 51
         Me.ComboBoxTargetMonth.Text = "1"
         '
         'ComboBoxTargetYear
         '
-        Me.ComboBoxTargetYear.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.ComboBoxTargetYear.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 10.0!)
         Me.ComboBoxTargetYear.FormattingEnabled = True
-        Me.ComboBoxTargetYear.Location = New System.Drawing.Point(616, 36)
+        Me.ComboBoxTargetYear.Location = New System.Drawing.Point(618, 34)
         Me.ComboBoxTargetYear.Name = "ComboBoxTargetYear"
-        Me.ComboBoxTargetYear.Size = New System.Drawing.Size(62, 17)
+        Me.ComboBoxTargetYear.Size = New System.Drawing.Size(62, 21)
         Me.ComboBoxTargetYear.TabIndex = 50
         Me.ComboBoxTargetYear.Text = "2000"
         '
@@ -636,13 +408,6 @@ Partial Class Month1Age
         Me.NumericUpDownChildAge5.Size = New System.Drawing.Size(47, 19)
         Me.NumericUpDownChildAge5.TabIndex = 35
         '
-        'NumericUpDownChildAge6
-        '
-        Me.NumericUpDownChildAge6.Location = New System.Drawing.Point(168, 542)
-        Me.NumericUpDownChildAge6.Name = "NumericUpDownChildAge6"
-        Me.NumericUpDownChildAge6.Size = New System.Drawing.Size(47, 19)
-        Me.NumericUpDownChildAge6.TabIndex = 34
-        '
         'NumericUpDownChildAge2
         '
         Me.NumericUpDownChildAge2.Location = New System.Drawing.Point(168, 288)
@@ -657,48 +422,15 @@ Partial Class Month1Age
         Me.NumericUpDownChildAge1.Size = New System.Drawing.Size(47, 19)
         Me.NumericUpDownChildAge1.TabIndex = 31
         '
-        'Panel2
-        '
-        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
-        Me.Panel2.Controls.Add(Me.TextBoxGirlsNumber)
-        Me.Panel2.Controls.Add(Me.TextBoxBoysNumber)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(394, 58)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(159, 25)
-        Me.Panel2.TabIndex = 9
-        '
-        'TextBoxGirlsNumber
-        '
-        Me.TextBoxGirlsNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TextBoxGirlsNumber.Location = New System.Drawing.Point(118, 3)
-        Me.TextBoxGirlsNumber.MaxLength = 3
-        Me.TextBoxGirlsNumber.Name = "TextBoxGirlsNumber"
-        Me.TextBoxGirlsNumber.Size = New System.Drawing.Size(22, 19)
-        Me.TextBoxGirlsNumber.TabIndex = 11
-        Me.TextBoxGirlsNumber.Text = "0"
-        Me.TextBoxGirlsNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'TextBoxBoysNumber
-        '
-        Me.TextBoxBoysNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(55, 3)
-        Me.TextBoxBoysNumber.MaxLength = 3
-        Me.TextBoxBoysNumber.Name = "TextBoxBoysNumber"
-        Me.TextBoxBoysNumber.Size = New System.Drawing.Size(22, 19)
-        Me.TextBoxBoysNumber.TabIndex = 10
-        Me.TextBoxBoysNumber.Text = "0"
-        Me.TextBoxBoysNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.Label1.Location = New System.Drawing.Point(-3, 7)
+        Me.Label1.Location = New System.Drawing.Point(395, 64)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(166, 13)
+        Me.Label1.Size = New System.Drawing.Size(159, 13)
         Me.Label1.TabIndex = 12
-        Me.Label1.Text = "    　人(男：　　人 , 女：　　人)"
+        Me.Label1.Text = "　　人(男：　　人 , 女：　　人)"
         '
         'header
         '
@@ -756,39 +488,39 @@ Partial Class Month1Age
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(167, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(78, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ファイルFToolStripMenuItem
         '
-        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.上書き保存ToolStripMenuItem, Me.名前を付けて保存ToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
+        Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveToolStripMenuItem, Me.PastToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
-        '上書き保存ToolStripMenuItem
+        'SaveToolStripMenuItem
         '
-        Me.上書き保存ToolStripMenuItem.Name = "上書き保存ToolStripMenuItem"
-        Me.上書き保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.上書き保存ToolStripMenuItem.Text = "上書き保存(&S)"
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.SaveToolStripMenuItem.Text = "保存(&S)"
         '
-        '名前を付けて保存ToolStripMenuItem
+        'PastToolStripMenuItem
         '
-        Me.名前を付けて保存ToolStripMenuItem.Name = "名前を付けて保存ToolStripMenuItem"
-        Me.名前を付けて保存ToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.名前を付けて保存ToolStripMenuItem.Text = "名前を付けて保存(&A)"
+        Me.PastToolStripMenuItem.Name = "PastToolStripMenuItem"
+        Me.PastToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
+        Me.PastToolStripMenuItem.Text = "印刷(&P)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(174, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 6)
         '
         '閉じるToolStripMenuItem
         '
         Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
-        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
         '
         'BnfImgBtnLoad
@@ -812,6 +544,187 @@ Partial Class Month1Age
         Me.BunifuDragControl1.TargetControl = Me.header
         Me.BunifuDragControl1.Vertical = True
         '
+        'ComboBoxChildName6
+        '
+        Me.ComboBoxChildName6.FormattingEnabled = True
+        Me.ComboBoxChildName6.Location = New System.Drawing.Point(166, 516)
+        Me.ComboBoxChildName6.Name = "ComboBoxChildName6"
+        Me.ComboBoxChildName6.Size = New System.Drawing.Size(121, 20)
+        Me.ComboBoxChildName6.TabIndex = 90
+        '
+        'NumericUpDownChildAge6
+        '
+        Me.NumericUpDownChildAge6.Location = New System.Drawing.Point(168, 542)
+        Me.NumericUpDownChildAge6.Name = "NumericUpDownChildAge6"
+        Me.NumericUpDownChildAge6.Size = New System.Drawing.Size(47, 19)
+        Me.NumericUpDownChildAge6.TabIndex = 34
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(616, 505)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox1.TabIndex = 99
+        Me.RichTextBox1.Text = ""
+        '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.Location = New System.Drawing.Point(616, 442)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox2.TabIndex = 98
+        Me.RichTextBox2.Text = ""
+        '
+        'RichTextBoxNurseryTeachers5
+        '
+        Me.RichTextBoxNurseryTeachers5.Location = New System.Drawing.Point(462, 442)
+        Me.RichTextBoxNurseryTeachers5.Name = "RichTextBoxNurseryTeachers5"
+        Me.RichTextBoxNurseryTeachers5.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers5.TabIndex = 69
+        Me.RichTextBoxNurseryTeachers5.Text = ""
+        '
+        'RichTextBoxNurseryTeachers6
+        '
+        Me.RichTextBoxNurseryTeachers6.Location = New System.Drawing.Point(462, 505)
+        Me.RichTextBoxNurseryTeachers6.Name = "RichTextBoxNurseryTeachers6"
+        Me.RichTextBoxNurseryTeachers6.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers6.TabIndex = 70
+        Me.RichTextBoxNurseryTeachers6.Text = ""
+        '
+        'RichTextBoxChildActivities6
+        '
+        Me.RichTextBoxChildActivities6.Location = New System.Drawing.Point(290, 504)
+        Me.RichTextBoxChildActivities6.Name = "RichTextBoxChildActivities6"
+        Me.RichTextBoxChildActivities6.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxChildActivities6.TabIndex = 64
+        Me.RichTextBoxChildActivities6.Text = ""
+        '
+        'RichTextBoxChildActivities5
+        '
+        Me.RichTextBoxChildActivities5.Location = New System.Drawing.Point(290, 442)
+        Me.RichTextBoxChildActivities5.Name = "RichTextBoxChildActivities5"
+        Me.RichTextBoxChildActivities5.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxChildActivities5.TabIndex = 63
+        Me.RichTextBoxChildActivities5.Text = ""
+        '
+        'RichTextBox3
+        '
+        Me.RichTextBox3.Location = New System.Drawing.Point(616, 380)
+        Me.RichTextBox3.Name = "RichTextBox3"
+        Me.RichTextBox3.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox3.TabIndex = 97
+        Me.RichTextBox3.Text = ""
+        '
+        'RichTextBoxNurseryTeachers4
+        '
+        Me.RichTextBoxNurseryTeachers4.Location = New System.Drawing.Point(462, 380)
+        Me.RichTextBoxNurseryTeachers4.Name = "RichTextBoxNurseryTeachers4"
+        Me.RichTextBoxNurseryTeachers4.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers4.TabIndex = 68
+        Me.RichTextBoxNurseryTeachers4.Text = ""
+        '
+        'RichTextBoxChildActivities4
+        '
+        Me.RichTextBoxChildActivities4.Location = New System.Drawing.Point(290, 380)
+        Me.RichTextBoxChildActivities4.Name = "RichTextBoxChildActivities4"
+        Me.RichTextBoxChildActivities4.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxChildActivities4.TabIndex = 62
+        Me.RichTextBoxChildActivities4.Text = ""
+        '
+        'RichTextBoxExpectesChild1
+        '
+        Me.RichTextBoxExpectesChild1.Location = New System.Drawing.Point(290, 192)
+        Me.RichTextBoxExpectesChild1.Name = "RichTextBoxExpectesChild1"
+        Me.RichTextBoxExpectesChild1.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxExpectesChild1.TabIndex = 59
+        Me.RichTextBoxExpectesChild1.Text = ""
+        '
+        'RichTextBoxChildActivities2
+        '
+        Me.RichTextBoxChildActivities2.Location = New System.Drawing.Point(290, 255)
+        Me.RichTextBoxChildActivities2.Name = "RichTextBoxChildActivities2"
+        Me.RichTextBoxChildActivities2.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxChildActivities2.TabIndex = 60
+        Me.RichTextBoxChildActivities2.Text = ""
+        '
+        'RichTextBoxChildActivities3
+        '
+        Me.RichTextBoxChildActivities3.Location = New System.Drawing.Point(290, 317)
+        Me.RichTextBoxChildActivities3.Name = "RichTextBoxChildActivities3"
+        Me.RichTextBoxChildActivities3.Size = New System.Drawing.Size(171, 60)
+        Me.RichTextBoxChildActivities3.TabIndex = 61
+        Me.RichTextBoxChildActivities3.Text = ""
+        '
+        'RichTextBoxNurseryTeachers3
+        '
+        Me.RichTextBoxNurseryTeachers3.Location = New System.Drawing.Point(462, 317)
+        Me.RichTextBoxNurseryTeachers3.Name = "RichTextBoxNurseryTeachers3"
+        Me.RichTextBoxNurseryTeachers3.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers3.TabIndex = 67
+        Me.RichTextBoxNurseryTeachers3.Text = ""
+        '
+        'RichTextBoxNurseryTeachers2
+        '
+        Me.RichTextBoxNurseryTeachers2.Location = New System.Drawing.Point(462, 255)
+        Me.RichTextBoxNurseryTeachers2.Name = "RichTextBoxNurseryTeachers2"
+        Me.RichTextBoxNurseryTeachers2.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers2.TabIndex = 66
+        Me.RichTextBoxNurseryTeachers2.Text = ""
+        '
+        'RichTextBoxNurseryTeachers1
+        '
+        Me.RichTextBoxNurseryTeachers1.Location = New System.Drawing.Point(462, 193)
+        Me.RichTextBoxNurseryTeachers1.Name = "RichTextBoxNurseryTeachers1"
+        Me.RichTextBoxNurseryTeachers1.Size = New System.Drawing.Size(153, 60)
+        Me.RichTextBoxNurseryTeachers1.TabIndex = 65
+        Me.RichTextBoxNurseryTeachers1.Text = ""
+        '
+        'RichTextBox6
+        '
+        Me.RichTextBox6.Location = New System.Drawing.Point(616, 193)
+        Me.RichTextBox6.Name = "RichTextBox6"
+        Me.RichTextBox6.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox6.TabIndex = 94
+        Me.RichTextBox6.Text = ""
+        '
+        'RichTextBox5
+        '
+        Me.RichTextBox5.Location = New System.Drawing.Point(616, 255)
+        Me.RichTextBox5.Name = "RichTextBox5"
+        Me.RichTextBox5.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox5.TabIndex = 95
+        Me.RichTextBox5.Text = ""
+        '
+        'RichTextBox4
+        '
+        Me.RichTextBox4.Location = New System.Drawing.Point(616, 317)
+        Me.RichTextBox4.Name = "RichTextBox4"
+        Me.RichTextBox4.Size = New System.Drawing.Size(145, 62)
+        Me.RichTextBox4.TabIndex = 96
+        Me.RichTextBox4.Text = ""
+        '
+        'TextBoxBoysNumber
+        '
+        Me.TextBoxBoysNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(446, 61)
+        Me.TextBoxBoysNumber.MaxLength = 3
+        Me.TextBoxBoysNumber.Name = "TextBoxBoysNumber"
+        Me.TextBoxBoysNumber.Size = New System.Drawing.Size(22, 19)
+        Me.TextBoxBoysNumber.TabIndex = 10
+        Me.TextBoxBoysNumber.Text = "0"
+        Me.TextBoxBoysNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBoxGirlsNumber
+        '
+        Me.TextBoxGirlsNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TextBoxGirlsNumber.Location = New System.Drawing.Point(508, 61)
+        Me.TextBoxGirlsNumber.MaxLength = 3
+        Me.TextBoxGirlsNumber.Name = "TextBoxGirlsNumber"
+        Me.TextBoxGirlsNumber.Size = New System.Drawing.Size(22, 19)
+        Me.TextBoxGirlsNumber.TabIndex = 11
+        Me.TextBoxGirlsNumber.Text = "0"
+        Me.TextBoxGirlsNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'Month1Age
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
@@ -824,21 +737,11 @@ Partial Class Month1Age
         Me.Name = "Month1Age"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownChildAge3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownChildAge4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownChildAge5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDownChildAge6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownChildAge2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.NumericUpDownChildAge1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.header.ResumeLayout(False)
         Me.header.PerformLayout()
         CType(Me.BnfImgBtnHelp, System.ComponentModel.ISupportInitialize).EndInit()
@@ -846,16 +749,15 @@ Partial Class Month1Age
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.BnfImgBtnLoad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.NumericUpDownChildAge6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents NumericUpDownChildAge1 As System.Windows.Forms.NumericUpDown
     Friend WithEvents NumericUpDownChildAge3 As System.Windows.Forms.NumericUpDown
     Friend WithEvents NumericUpDownChildAge4 As System.Windows.Forms.NumericUpDown
     Friend WithEvents NumericUpDownChildAge5 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDownChildAge6 As System.Windows.Forms.NumericUpDown
     Friend WithEvents NumericUpDownChildAge2 As System.Windows.Forms.NumericUpDown
     Friend WithEvents ComboBoxLeaderName As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox_ClassName As System.Windows.Forms.ComboBox
@@ -868,6 +770,40 @@ Partial Class Month1Age
     Friend WithEvents RichTextBoxAimEducation As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxAimNursing As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxStateMonth As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBoxNextPoint As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBoxEnvironmentalComposition As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBoxHealthSafety As System.Windows.Forms.RichTextBox
+    Friend WithEvents DateTimePickerCreatedDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents LabelSum As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents ComboBoxChildName5 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBoxChildName4 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBoxChildName3 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBoxChildName2 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBoxChildName1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
+    Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SaveToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
+    Friend WithEvents PastToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBox3 As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBox4 As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBox5 As System.Windows.Forms.RichTextBox
+    Friend WithEvents RichTextBox6 As System.Windows.Forms.RichTextBox
+    Friend WithEvents ComboBoxChildName6 As System.Windows.Forms.ComboBox
+    Friend WithEvents RichTextBoxNurseryTeachers6 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxNurseryTeachers5 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxNurseryTeachers4 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxNurseryTeachers3 As System.Windows.Forms.RichTextBox
@@ -879,48 +815,8 @@ Partial Class Month1Age
     Friend WithEvents RichTextBoxChildActivities3 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxChildActivities2 As System.Windows.Forms.RichTextBox
     Friend WithEvents RichTextBoxExpectesChild1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBoxNextPoint As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBoxEnvironmentalComposition As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBoxHealthSafety As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBoxNurseryTeachers6 As System.Windows.Forms.RichTextBox
-    Friend WithEvents DateTimePickerCreatedDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents NumericUpDownChildAge6 As System.Windows.Forms.NumericUpDown
     Friend WithEvents TextBoxGirlsNumber As System.Windows.Forms.TextBox
     Friend WithEvents TextBoxBoysNumber As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents LabelSum As System.Windows.Forms.Label
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents ComboBoxChildName6 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBoxChildName5 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBoxChildName4 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBoxChildName3 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBoxChildName2 As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBoxChildName1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBox3 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBox4 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBox5 As System.Windows.Forms.RichTextBox
-    Friend WithEvents RichTextBox6 As System.Windows.Forms.RichTextBox
-    Friend WithEvents header As Bunifu.Framework.UI.BunifuGradientPanel
-    Friend WithEvents BnfImgBtnHelp As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BnfImgBtnClose As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
-    Friend WithEvents ファイルFToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 上書き保存ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents 名前を付けて保存ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents 閉じるToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BnfImgBtnLoad As Bunifu.Framework.UI.BunifuImageButton
-    Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
 
 End Class

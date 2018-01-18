@@ -113,7 +113,7 @@ Partial Class Month2Age
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ファイルFToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 24)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(75, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(78, 24)
         Me.MenuStrip1.TabIndex = 2
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -122,30 +122,30 @@ Partial Class Month2Age
         Me.ファイルFToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.CopyToolStripMenuItem, Me.ToolStripMenuItem1, Me.閉じるToolStripMenuItem})
         Me.ファイルFToolStripMenuItem.Name = "ファイルFToolStripMenuItem"
         Me.ファイルFToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
-        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.ファイルFToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.ファイルFToolStripMenuItem.Text = "ファイル(&F)"
         '
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.NewToolStripMenuItem.Text = "保存(&S)"
         '
         'CopyToolStripMenuItem
         '
         Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.CopyToolStripMenuItem.Text = "印刷(&A)"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(119, 6)
         '
         '閉じるToolStripMenuItem
         '
         Me.閉じるToolStripMenuItem.Name = "閉じるToolStripMenuItem"
-        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.閉じるToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.閉じるToolStripMenuItem.Text = "閉じる(&X)"
         '
         'header
@@ -281,7 +281,7 @@ Partial Class Month2Age
         Me.Panel2.Controls.Add(Me.StateMonth)
         Me.Panel2.Location = New System.Drawing.Point(0, 50)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(773, 606)
+        Me.Panel2.Size = New System.Drawing.Size(773, 674)
         Me.Panel2.TabIndex = 2
         '
         'MonthLabel6
@@ -340,7 +340,7 @@ Partial Class Month2Age
         '
         'RichTextBox_Event
         '
-        Me.RichTextBox_Event.Location = New System.Drawing.Point(530, 69)
+        Me.RichTextBox_Event.Location = New System.Drawing.Point(532, 69)
         Me.RichTextBox_Event.Name = "RichTextBox_Event"
         Me.RichTextBox_Event.Size = New System.Drawing.Size(208, 92)
         Me.RichTextBox_Event.TabIndex = 20
@@ -391,7 +391,7 @@ Partial Class Month2Age
         'ChildName6
         '
         Me.ChildName6.FormattingEnabled = True
-        Me.ChildName6.Location = New System.Drawing.Point(143, 495)
+        Me.ChildName6.Location = New System.Drawing.Point(144, 495)
         Me.ChildName6.Name = "ChildName6"
         Me.ChildName6.Size = New System.Drawing.Size(121, 20)
         Me.ChildName6.TabIndex = 96
@@ -399,7 +399,7 @@ Partial Class Month2Age
         'ChildName5
         '
         Me.ChildName5.FormattingEnabled = True
-        Me.ChildName5.Location = New System.Drawing.Point(143, 434)
+        Me.ChildName5.Location = New System.Drawing.Point(144, 434)
         Me.ChildName5.Name = "ChildName5"
         Me.ChildName5.Size = New System.Drawing.Size(121, 20)
         Me.ChildName5.TabIndex = 95
@@ -407,7 +407,7 @@ Partial Class Month2Age
         'ChildName4
         '
         Me.ChildName4.FormattingEnabled = True
-        Me.ChildName4.Location = New System.Drawing.Point(143, 371)
+        Me.ChildName4.Location = New System.Drawing.Point(144, 371)
         Me.ChildName4.Name = "ChildName4"
         Me.ChildName4.Size = New System.Drawing.Size(121, 20)
         Me.ChildName4.TabIndex = 94
@@ -415,7 +415,7 @@ Partial Class Month2Age
         'ChildName3
         '
         Me.ChildName3.FormattingEnabled = True
-        Me.ChildName3.Location = New System.Drawing.Point(143, 309)
+        Me.ChildName3.Location = New System.Drawing.Point(144, 309)
         Me.ChildName3.Name = "ChildName3"
         Me.ChildName3.Size = New System.Drawing.Size(121, 20)
         Me.ChildName3.TabIndex = 93
@@ -423,7 +423,7 @@ Partial Class Month2Age
         'ChildName2
         '
         Me.ChildName2.FormattingEnabled = True
-        Me.ChildName2.Location = New System.Drawing.Point(143, 247)
+        Me.ChildName2.Location = New System.Drawing.Point(144, 247)
         Me.ChildName2.Name = "ChildName2"
         Me.ChildName2.Size = New System.Drawing.Size(121, 20)
         Me.ChildName2.TabIndex = 92
@@ -431,7 +431,7 @@ Partial Class Month2Age
         'ChildName1
         '
         Me.ChildName1.FormattingEnabled = True
-        Me.ChildName1.Location = New System.Drawing.Point(143, 186)
+        Me.ChildName1.Location = New System.Drawing.Point(144, 186)
         Me.ChildName1.Name = "ChildName1"
         Me.ChildName1.Size = New System.Drawing.Size(121, 20)
         Me.ChildName1.TabIndex = 91
@@ -440,7 +440,7 @@ Partial Class Month2Age
         '
         Me.LeaderName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.LeaderName.FormattingEnabled = True
-        Me.LeaderName.Location = New System.Drawing.Point(593, 43)
+        Me.LeaderName.Location = New System.Drawing.Point(595, 42)
         Me.LeaderName.Name = "LeaderName"
         Me.LeaderName.Size = New System.Drawing.Size(146, 27)
         Me.LeaderName.TabIndex = 62
@@ -460,7 +460,7 @@ Partial Class Month2Age
         'TextBoxGirlsNumber
         '
         Me.TextBoxGirlsNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TextBoxGirlsNumber.Location = New System.Drawing.Point(484, 48)
+        Me.TextBoxGirlsNumber.Location = New System.Drawing.Point(484, 47)
         Me.TextBoxGirlsNumber.MaxLength = 3
         Me.TextBoxGirlsNumber.Name = "TextBoxGirlsNumber"
         Me.TextBoxGirlsNumber.Size = New System.Drawing.Size(22, 19)
@@ -471,7 +471,7 @@ Partial Class Month2Age
         'TextBoxBoysNumber
         '
         Me.TextBoxBoysNumber.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
-        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(424, 49)
+        Me.TextBoxBoysNumber.Location = New System.Drawing.Point(423, 47)
         Me.TextBoxBoysNumber.MaxLength = 3
         Me.TextBoxBoysNumber.Name = "TextBoxBoysNumber"
         Me.TextBoxBoysNumber.Size = New System.Drawing.Size(22, 19)
@@ -509,29 +509,29 @@ Partial Class Month2Age
         '
         'TargetMonth
         '
-        Me.TargetMonth.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TargetMonth.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 10.0!)
         Me.TargetMonth.FormattingEnabled = True
-        Me.TargetMonth.Location = New System.Drawing.Point(678, 21)
+        Me.TargetMonth.Location = New System.Drawing.Point(682, 19)
         Me.TargetMonth.Name = "TargetMonth"
-        Me.TargetMonth.Size = New System.Drawing.Size(38, 17)
+        Me.TargetMonth.Size = New System.Drawing.Size(38, 21)
         Me.TargetMonth.TabIndex = 55
         Me.TargetMonth.Text = "1"
         '
         'TargetYear
         '
-        Me.TargetYear.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.TargetYear.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 10.0!)
         Me.TargetYear.FormattingEnabled = True
-        Me.TargetYear.Location = New System.Drawing.Point(594, 21)
+        Me.TargetYear.Location = New System.Drawing.Point(597, 19)
         Me.TargetYear.Name = "TargetYear"
-        Me.TargetYear.Size = New System.Drawing.Size(62, 17)
+        Me.TargetYear.Size = New System.Drawing.Size(62, 21)
         Me.TargetYear.TabIndex = 54
-        Me.TargetYear.Text = "018"
+        Me.TargetYear.Text = "2018"
         '
         'ClassName
         '
         Me.ClassName.Font = New System.Drawing.Font("ＭＳ Ｐゴシック", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
         Me.ClassName.FormattingEnabled = True
-        Me.ClassName.Location = New System.Drawing.Point(371, 15)
+        Me.ClassName.Location = New System.Drawing.Point(372, 16)
         Me.ClassName.Name = "ClassName"
         Me.ClassName.Size = New System.Drawing.Size(159, 27)
         Me.ClassName.TabIndex = 49
@@ -539,7 +539,7 @@ Partial Class Month2Age
         '
         'NextPoint
         '
-        Me.NextPoint.Location = New System.Drawing.Point(507, 658)
+        Me.NextPoint.Location = New System.Drawing.Point(509, 658)
         Me.NextPoint.Name = "NextPoint"
         Me.NextPoint.Size = New System.Drawing.Size(231, 111)
         Me.NextPoint.TabIndex = 28
@@ -547,7 +547,7 @@ Partial Class Month2Age
         '
         'EvaluationReflection
         '
-        Me.EvaluationReflection.Location = New System.Drawing.Point(313, 658)
+        Me.EvaluationReflection.Location = New System.Drawing.Point(314, 658)
         Me.EvaluationReflection.Name = "EvaluationReflection"
         Me.EvaluationReflection.Size = New System.Drawing.Size(171, 111)
         Me.EvaluationReflection.TabIndex = 27
@@ -555,7 +555,7 @@ Partial Class Month2Age
         '
         'Eat
         '
-        Me.Eat.Location = New System.Drawing.Point(34, 658)
+        Me.Eat.Location = New System.Drawing.Point(36, 658)
         Me.Eat.Name = "Eat"
         Me.Eat.Size = New System.Drawing.Size(255, 111)
         Me.Eat.TabIndex = 26
@@ -563,7 +563,7 @@ Partial Class Month2Age
         '
         'EnvironmentalComposition
         '
-        Me.EnvironmentalComposition.Location = New System.Drawing.Point(393, 545)
+        Me.EnvironmentalComposition.Location = New System.Drawing.Point(395, 545)
         Me.EnvironmentalComposition.Name = "EnvironmentalComposition"
         Me.EnvironmentalComposition.Size = New System.Drawing.Size(345, 112)
         Me.EnvironmentalComposition.TabIndex = 25
@@ -571,7 +571,7 @@ Partial Class Month2Age
         '
         'HealthSafety
         '
-        Me.HealthSafety.Location = New System.Drawing.Point(34, 545)
+        Me.HealthSafety.Location = New System.Drawing.Point(36, 545)
         Me.HealthSafety.Name = "HealthSafety"
         Me.HealthSafety.Size = New System.Drawing.Size(335, 112)
         Me.HealthSafety.TabIndex = 24
@@ -579,17 +579,17 @@ Partial Class Month2Age
         '
         'AimEducation
         '
-        Me.AimEducation.Location = New System.Drawing.Point(312, 115)
+        Me.AimEducation.Location = New System.Drawing.Point(314, 115)
         Me.AimEducation.Name = "AimEducation"
-        Me.AimEducation.Size = New System.Drawing.Size(194, 46)
+        Me.AimEducation.Size = New System.Drawing.Size(195, 46)
         Me.AimEducation.TabIndex = 23
         Me.AimEducation.Text = ""
         '
         'AimNursing
         '
-        Me.AimNursing.Location = New System.Drawing.Point(312, 69)
+        Me.AimNursing.Location = New System.Drawing.Point(314, 69)
         Me.AimNursing.Name = "AimNursing"
-        Me.AimNursing.Size = New System.Drawing.Size(194, 46)
+        Me.AimNursing.Size = New System.Drawing.Size(195, 46)
         Me.AimNursing.TabIndex = 21
         Me.AimNursing.Text = ""
         '
@@ -597,13 +597,13 @@ Partial Class Month2Age
         '
         Me.Contents.Location = New System.Drawing.Point(9, 176)
         Me.Contents.Name = "Contents"
-        Me.Contents.Size = New System.Drawing.Size(131, 368)
+        Me.Contents.Size = New System.Drawing.Size(133, 368)
         Me.Contents.TabIndex = 19
         Me.Contents.Text = ""
         '
         'Contact5
         '
-        Me.Contact5.Location = New System.Drawing.Point(593, 422)
+        Me.Contact5.Location = New System.Drawing.Point(595, 422)
         Me.Contact5.Name = "Contact5"
         Me.Contact5.Size = New System.Drawing.Size(145, 61)
         Me.Contact5.TabIndex = 18
@@ -611,7 +611,7 @@ Partial Class Month2Age
         '
         'Contact6
         '
-        Me.Contact6.Location = New System.Drawing.Point(593, 484)
+        Me.Contact6.Location = New System.Drawing.Point(595, 484)
         Me.Contact6.Name = "Contact6"
         Me.Contact6.Size = New System.Drawing.Size(145, 60)
         Me.Contact6.TabIndex = 17
@@ -619,7 +619,7 @@ Partial Class Month2Age
         '
         'Contact2
         '
-        Me.Contact2.Location = New System.Drawing.Point(593, 237)
+        Me.Contact2.Location = New System.Drawing.Point(595, 237)
         Me.Contact2.Name = "Contact2"
         Me.Contact2.Size = New System.Drawing.Size(145, 61)
         Me.Contact2.TabIndex = 16
@@ -627,7 +627,7 @@ Partial Class Month2Age
         '
         'Contact3
         '
-        Me.Contact3.Location = New System.Drawing.Point(593, 299)
+        Me.Contact3.Location = New System.Drawing.Point(595, 299)
         Me.Contact3.Name = "Contact3"
         Me.Contact3.Size = New System.Drawing.Size(145, 61)
         Me.Contact3.TabIndex = 15
@@ -635,7 +635,7 @@ Partial Class Month2Age
         '
         'Contact4
         '
-        Me.Contact4.Location = New System.Drawing.Point(593, 361)
+        Me.Contact4.Location = New System.Drawing.Point(595, 361)
         Me.Contact4.Name = "Contact4"
         Me.Contact4.Size = New System.Drawing.Size(145, 60)
         Me.Contact4.TabIndex = 14
@@ -643,7 +643,7 @@ Partial Class Month2Age
         '
         'Contact1
         '
-        Me.Contact1.Location = New System.Drawing.Point(593, 175)
+        Me.Contact1.Location = New System.Drawing.Point(595, 175)
         Me.Contact1.Name = "Contact1"
         Me.Contact1.Size = New System.Drawing.Size(145, 61)
         Me.Contact1.TabIndex = 13
@@ -651,7 +651,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers5
         '
-        Me.NurseryTeachers5.Location = New System.Drawing.Point(438, 422)
+        Me.NurseryTeachers5.Location = New System.Drawing.Point(440, 422)
         Me.NurseryTeachers5.Name = "NurseryTeachers5"
         Me.NurseryTeachers5.Size = New System.Drawing.Size(155, 61)
         Me.NurseryTeachers5.TabIndex = 12
@@ -659,7 +659,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers6
         '
-        Me.NurseryTeachers6.Location = New System.Drawing.Point(438, 484)
+        Me.NurseryTeachers6.Location = New System.Drawing.Point(440, 484)
         Me.NurseryTeachers6.Name = "NurseryTeachers6"
         Me.NurseryTeachers6.Size = New System.Drawing.Size(155, 60)
         Me.NurseryTeachers6.TabIndex = 11
@@ -667,7 +667,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers2
         '
-        Me.NurseryTeachers2.Location = New System.Drawing.Point(438, 237)
+        Me.NurseryTeachers2.Location = New System.Drawing.Point(440, 237)
         Me.NurseryTeachers2.Name = "NurseryTeachers2"
         Me.NurseryTeachers2.Size = New System.Drawing.Size(155, 61)
         Me.NurseryTeachers2.TabIndex = 10
@@ -675,7 +675,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers3
         '
-        Me.NurseryTeachers3.Location = New System.Drawing.Point(438, 299)
+        Me.NurseryTeachers3.Location = New System.Drawing.Point(440, 299)
         Me.NurseryTeachers3.Name = "NurseryTeachers3"
         Me.NurseryTeachers3.Size = New System.Drawing.Size(155, 61)
         Me.NurseryTeachers3.TabIndex = 9
@@ -683,7 +683,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers4
         '
-        Me.NurseryTeachers4.Location = New System.Drawing.Point(438, 361)
+        Me.NurseryTeachers4.Location = New System.Drawing.Point(440, 361)
         Me.NurseryTeachers4.Name = "NurseryTeachers4"
         Me.NurseryTeachers4.Size = New System.Drawing.Size(155, 60)
         Me.NurseryTeachers4.TabIndex = 8
@@ -691,7 +691,7 @@ Partial Class Month2Age
         '
         'NurseryTeachers1
         '
-        Me.NurseryTeachers1.Location = New System.Drawing.Point(438, 175)
+        Me.NurseryTeachers1.Location = New System.Drawing.Point(440, 175)
         Me.NurseryTeachers1.Name = "NurseryTeachers1"
         Me.NurseryTeachers1.Size = New System.Drawing.Size(155, 61)
         Me.NurseryTeachers1.TabIndex = 7
@@ -699,7 +699,7 @@ Partial Class Month2Age
         '
         'ChildAim6
         '
-        Me.ChildAim6.Location = New System.Drawing.Point(266, 484)
+        Me.ChildAim6.Location = New System.Drawing.Point(268, 484)
         Me.ChildAim6.Name = "ChildAim6"
         Me.ChildAim6.Size = New System.Drawing.Size(172, 60)
         Me.ChildAim6.TabIndex = 6
@@ -707,7 +707,7 @@ Partial Class Month2Age
         '
         'ChildAim2
         '
-        Me.ChildAim2.Location = New System.Drawing.Point(266, 237)
+        Me.ChildAim2.Location = New System.Drawing.Point(268, 237)
         Me.ChildAim2.Name = "ChildAim2"
         Me.ChildAim2.Size = New System.Drawing.Size(172, 61)
         Me.ChildAim2.TabIndex = 5
@@ -715,7 +715,7 @@ Partial Class Month2Age
         '
         'ChildAim3
         '
-        Me.ChildAim3.Location = New System.Drawing.Point(266, 299)
+        Me.ChildAim3.Location = New System.Drawing.Point(268, 299)
         Me.ChildAim3.Name = "ChildAim3"
         Me.ChildAim3.Size = New System.Drawing.Size(172, 61)
         Me.ChildAim3.TabIndex = 4
@@ -723,7 +723,7 @@ Partial Class Month2Age
         '
         'ChildAim5
         '
-        Me.ChildAim5.Location = New System.Drawing.Point(266, 422)
+        Me.ChildAim5.Location = New System.Drawing.Point(268, 422)
         Me.ChildAim5.Name = "ChildAim5"
         Me.ChildAim5.Size = New System.Drawing.Size(172, 61)
         Me.ChildAim5.TabIndex = 3
@@ -731,7 +731,7 @@ Partial Class Month2Age
         '
         'ChildAim4
         '
-        Me.ChildAim4.Location = New System.Drawing.Point(266, 361)
+        Me.ChildAim4.Location = New System.Drawing.Point(268, 361)
         Me.ChildAim4.Name = "ChildAim4"
         Me.ChildAim4.Size = New System.Drawing.Size(172, 60)
         Me.ChildAim4.TabIndex = 2
@@ -739,7 +739,7 @@ Partial Class Month2Age
         '
         'ChildAim1
         '
-        Me.ChildAim1.Location = New System.Drawing.Point(266, 175)
+        Me.ChildAim1.Location = New System.Drawing.Point(268, 175)
         Me.ChildAim1.Name = "ChildAim1"
         Me.ChildAim1.Size = New System.Drawing.Size(172, 61)
         Me.ChildAim1.TabIndex = 1
@@ -749,7 +749,7 @@ Partial Class Month2Age
         '
         Me.StateMonth.Location = New System.Drawing.Point(33, 68)
         Me.StateMonth.Name = "StateMonth"
-        Me.StateMonth.Size = New System.Drawing.Size(233, 93)
+        Me.StateMonth.Size = New System.Drawing.Size(235, 93)
         Me.StateMonth.TabIndex = 0
         Me.StateMonth.Text = ""
         '

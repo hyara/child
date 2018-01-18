@@ -332,7 +332,7 @@ Public Class week05
                 RichConsideration6.Text
             }
         sqlString = "INSERT INTO " _
-                    & "`child_monthplan_table_3to5`" _
+                    & "`child_weekplan_table_0to5`" _
                     & "(" _
                         & "`week_main_0to5_id`," _
                         & "`TargetMonth`," _

@@ -5,7 +5,20 @@ Public Class Month35Age
     Private TextBoxChildrenNum() As System.Windows.Forms.TextBox
     Dim sqlConnect As SQLConnectClass
 
-    Public Sub SetID(sqlConnect As SQLConnectClass)
+#Region "  初期Load関連  "
+#Region "  SetID関連  "
+    Public Sub SetID(s As SQLConnectClass)
+        'これが最初にないとすごく重く見える
+        Me.Refresh()
+
+        sqlConnect = s
+
+        ReflectClassName()
+        ReflectTeacherName()
+    End Sub
+
+    Private Sub ReflectClassName()
+
         'クラス名を反映
         If sqlConnect.DBConnect("SELECT COUNT(main_id) FROM class") = False Then
             MsgBox(sqlConnect.ErrorMessage())
@@ -20,6 +33,9 @@ Public Class Month35Age
         For j = 0 To Integer.Parse(count) - 1 Step 1
             ComboBoxClassName.Items.Add(sqlConnect.DBResult(j, 0))
         Next
+    End Sub
+    Private Sub ReflectTeacherName()
+        Dim count As String
         '教員名を反映
         If sqlConnect.DBConnect("SELECT COUNT(`worker_main_id`) FROM worker") = False Then
             MsgBox(sqlConnect.ErrorMessage())
@@ -32,8 +48,109 @@ Public Class Month35Age
         For j = 0 To Integer.Parse(count) - 1 Step 1
             ComboBoxLeaderName.Items.Add(sqlConnect.DBResult(j, 0))
         Next
-
     End Sub
+#End Region
+
+    ''' <summary>
+    ''' 月案をDBから反映させる
+    ''' </summary>
+    ''' <param name="id">メイン主キーの値</param>
+    ''' <remarks></remarks>
+    Public Sub MonthDBDraw(id As String, s As SQLConnectClass)
+        sqlConnect = s
+        Dim pF As New ProgressStatesForm
+        pF.Show() : pF.ProgressStatesMaxSet(8)
+        pF.ProgressStatesLabelUpdate("メインデータ反映準備中...")
+        If sqlConnect.DBConnect("SELECT * FROM child_monthplan_main_3to5 WHERE month_main_3to5_id = '" & id & "'") = False Then
+            MsgBox(sqlConnect.ErrorMessage)
+        Else
+            pF.ProgressStatesLabelUpdate("メインデータ反映中")
+            '表に反映させる
+            Draw_main(sqlConnect.DBResult().Tables.Item(0))
+
+
+            pF.ProgressStatesLabelUpdate("サブデータ反映準備中...")
+            '表への反映確認
+            Dim tableNum As String = MainDBReflectCheck(id)
+
+            If tableNum = 5 Then
+                pF.ProgressStatesLabelUpdate("サブデータ[ " & tableNum + 1 & " ]準備中")
+                '表への反映
+                TableDBReflect(id)
+                Draw_table(sqlConnect.DBResult().Tables.Item(0))
+            End If
+        End If
+        pF.ProgressStatesEnd()
+        MsgBox("反映完了!!", MsgBoxStyle.OkOnly, "確認画面")
+    End Sub
+
+    Private Function MainDBReflectCheck(id As String) As String
+        Dim sqlString As String = "SELECT COUNT(*) " _
+        & "FROM `child_monthplan_table_3to5` " _
+        & "WHERE " & id & " = month_main_3to5_id;"
+        sqlConnect.DBConnect(sqlString)
+        Return sqlConnect.DBResult(0)
+    End Function
+    Private Sub TableDBReflect(id As String)
+        Dim sqlString As String
+        sqlString = "SELECT * " _
+                    & "FROM `child_monthplan_table_3to5` " _
+                    & "WHERE " & id & " = month_main_3to5_id;"
+        sqlConnect.DBConnect(sqlString)
+    End Sub
+
+    Private Sub Draw_table(dt As System.Data.DataTable)
+        Dim type = New String() {
+            "Nursing", "Education", "Food"
+            }
+        Dim Contents = New RichTextBox() {
+                RichTextBoxNursingContents,
+                RichTextBoxEducationContents,
+                RichTextBoxFoodContents
+            }
+        Dim EnvironmentalComposition = New RichTextBox() {
+                RichTextBoxNursingConstitution,
+                RichTextBoxEducationConstitution,
+                RichTextBoxFoodConstitution
+            }
+        Dim ExpectedChild = New RichTextBox() {
+                RichTextBoxNursingExpectedChild,
+                RichTextBoxEducationExpectedChild,
+                RichTextBoxFoodExpectedChild
+            }
+        Dim ChildcareAssistance = New RichTextBox() {
+                RichTextBoxNursingAssistance,
+                RichTextBoxEducationAssistance,
+                RichTextBoxFoodAssistance
+            }
+        For i As Integer = 0 To 2
+            Contents(i).Text = dt.Rows(i).Item("Contents").ToString
+            EnvironmentalComposition(i).Text = dt.Rows(i).Item("EnvironmentalComposition").ToString
+            ExpectedChild(i).Text = dt.Rows(i).Item("ExpectedChild").ToString
+            ChildcareAssistance(i).Text = dt.Rows(i).Item("ChildcareAssistance").ToString
+        Next
+    End Sub
+
+    Private Sub Draw_main(dt As System.Data.DataTable)
+        ComboBoxClassName.Text = dt.Rows(0).Item("ClassName").ToString
+        TextBoxBoysNumber.Text = dt.Rows(0).Item("BoysNumber").ToString
+        TextBoxGirlsNumber.Text = dt.Rows(0).Item("GirlsNumber").ToString
+        ComboBoxTargetYear.Text = dt.Rows(0).Item("TargetYear").ToString
+        ComboBoxTargetMonth.Text = dt.Rows(0).Item("TargetMonth").ToString
+        ComboBoxLeaderName.Text = dt.Rows(0).Item("LeaderName").ToString
+
+        RichTextBoxStateMonth.Text = dt.Rows(0).Item("StateMonth").ToString
+        RichTextBoxAim.Text = dt.Rows(0).Item("Aim").ToString
+        RichTextBoxEvaluationTeacher.Text = dt.Rows(0).Item("EvaluationTeacher").ToString
+
+        RichTextBoxCollaborationRegion.Text = dt.Rows(0).Item("CollaborationRegion").ToString
+        RichTextBoxEvent.Text = dt.Rows(0).Item("Event").ToString
+        RichTextBoxCollaborationStaff.Text = dt.Rows(0).Item("CollaborationStaff").ToString
+        RichTextBoxCooperationHome.Text = dt.Rows(0).Item("CooperationHome").ToString
+        RichTextBoxSpecificChild.Text = dt.Rows(0).Item("SpecificChild").ToString
+    End Sub
+
+
 
     Private Sub MonthHigh_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ShowInTaskbar = False
@@ -90,21 +207,22 @@ Public Class Month35Age
         End If
     End Sub
     Private Sub AutoText_Enter(sender As Object, e As EventArgs)
-        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "0" Then
             tBox.Clear()
         End If
     End Sub
     Private Sub AutoText_Leave(sender As Object, e As EventArgs)
-        Dim tBox As TextBox = CType(sender, System.Windows.Forms.TextBox)
+        Dim tBox As System.Windows.Forms.TextBox = CType(sender, System.Windows.Forms.TextBox)
         If tBox.Text = "" Then
             tBox.Text = "0"
         End If
     End Sub
 
-    Private Sub ButtonEnter_Click(sender As Object, e As EventArgs)
+#End Region
 
-
+#Region "  DBへの保存関連  "
+    Private Sub ToolStripMenuItemDBSave_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemDBSave.Click
         Dim sqlString As String = Input_month_main_high()
         Dim sqlConnect As New SQLConnectClass
 
@@ -207,6 +325,7 @@ Public Class Month35Age
         Return sqlString
     End Function
 
+#End Region
 
     Private Sub MonthHigh_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         If IsNothing(Owner) = False Then
@@ -215,14 +334,8 @@ Public Class Month35Age
         End If
     End Sub
 
-    Private Sub Xend_Click(sender As Object, e As EventArgs)
-        Owner.Enabled = True
-        Me.Dispose()
-    End Sub
-
-  
     Public Sub closecheck()
-        Dim fileName As String = "C:\test\month35age\保育指導月案（3～5歳用）" & _
+        Dim fileName As String = My.Application.Info.DirectoryPath & "\month35age\保育指導月案（3～5歳用）" & _
               ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
         If System.IO.File.Exists(fileName.ToString) Then
             Dim xlApp As New Application()
@@ -255,7 +368,7 @@ Public Class Month35Age
                 xlApp.Quit()
 
                 If errflg = 1 Then
-                    Dim result As DialogResult = MessageBox.Show("保存されtていない変更箇所は保存されません。このページを閉じますか？",
+                    Dim result As DialogResult = MessageBox.Show("保存されていない変更箇所は保存されません。このページを閉じますか？",
                                                   "質問",
                                                   MessageBoxButtons.YesNoCancel,
                                                   MessageBoxIcon.Exclamation,
@@ -281,7 +394,7 @@ Public Class Month35Age
 
     End Sub
 
-    Private Sub 上書き保存ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+    Private Sub ToolStripMenuItemFileSave_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItemFileSave.Click
         Dim fileName As String
         fileName = "保育指導月案（3～5歳用）" & _
                        ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
@@ -290,14 +403,15 @@ Public Class Month35Age
         '                                       MessageBoxButtons.YesNo, _
         '                                       MessageBoxIcon.Exclamation, _
         '                                       MessageBoxDefaultButton.Button2)
+        Dim AppDirPath As String = My.Application.Info.DirectoryPath
 
-        If System.IO.File.Exists("C:\test\month35age\" & fileName.ToString) = False Then
-            System.IO.File.Copy("C:\test\templ\35agetempl.xlsm", "C:\test\month35age\" & fileName.ToString)
+        If System.IO.File.Exists(AppDirPath & "\month35age\" & fileName.ToString) = False Then
+            System.IO.File.Copy(AppDirPath & "\template\35agetempl.xlsm", AppDirPath & "\month35age\" & fileName.ToString)
         End If
         Dim xlApp As New Application()
         If xlApp IsNot Nothing Then
             xlApp.Visible = False
-            xlApp.Workbooks.Open("C:\test\month35age\" & fileName)
+            xlApp.Workbooks.Open(AppDirPath & "\month35age\" & fileName)
             CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
             Dim arrayData As String(,)
             Dim aRange As Range
@@ -325,40 +439,38 @@ Public Class Month35Age
     End Sub
 
     Private Sub CopyToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CopyToolStripMenuItem.Click
-        '印刷するファイルの参照
-        Dim fileName As String = "C:\test\month35age\保育指導月案（3～5歳用）" & _
-                        ComboBoxClassName.Text & ComboBoxTargetMonth.Text & "月.xlsm"
+        Dim AppDirPath As String = My.Application.Info.DirectoryPath
+        Dim fileName As String = AppDirPath & "\template\35agetempl.xlsm"
 
-        'ファイルがあるか確認
-        If System.IO.File.Exists(fileName.ToString) Then
-            Dim xlApp As New Application()
-            If xlApp IsNot Nothing Then
-                xlApp.Visible = True
-                xlApp.Workbooks.Open(fileName)
-                CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
-                Dim arrayData As String(,)
+        Dim xlApp As New Application()
+        If xlApp IsNot Nothing Then
+            xlApp.Visible = True
+            xlApp.Workbooks.Open(fileName)
+            CType(xlApp.ActiveWorkbook.Sheets(1), Worksheet).Select()
+            Dim arrayData As String(,)
+            Dim aRange As Range
 
-                arrayData = addData()
-                xlApp.Worksheets.PrintPreview(fileName)
-                xlApp.ActiveWorkbook.Close()
-                xlApp.Quit()
-            End If
+            arrayData = addData()
+            Dim j = 0
+            '入力されているものをexcelへ置き換える
+            For i = 0 To 24
+
+                aRange = xlApp.Range(arrayData(i, 1))
+                If aRange IsNot Nothing Then
+                    Console.WriteLine(aRange.Value2)
+                    aRange.Value2 = arrayData(j, 0)
+                    Console.WriteLine(aRange.Value2)
+                End If
+                j = j + 1
+            Next
+            xlApp.ActiveWorkbook.Save()
+            xlApp.Worksheets.PrintPreview(fileName)
+            xlApp.Quit()
+            MsgBox("test")
         Else
-            MsgBox("保存をしてください")
+            MsgBox("ereer")
         End If
-        'Dim j = 0
-        ''入力されているものをexselへ置き換える
-        'For i = 0 To 42
 
-        '    aRange = xlApp.Range(arrayData(i, 1))
-        '    If aRange IsNot Nothing Then
-        '        Console.WriteLine(aRange.Value2)
-        '        aRange.Value2 = arrayData(j, 0)
-        '        Console.WriteLine(aRange.Value2)
-        '    End If
-        '    j = j + 1
-        'Next
-        'プレビュー画面を呼び出す
     End Sub
 
     Public Function addData() As String(,)
@@ -391,9 +503,10 @@ Public Class Month35Age
         Return arrayData
     End Function
 
-    Private Sub BnfImgBtn_Click(sender As Object, e As EventArgs) Handles BnfImgBtn.Click
+    Private Sub BnfImgBtnClose_Click(sender As Object, e As EventArgs) Handles BnfImgBtnClose.Click
         closecheck()
     End Sub
+
 
 
 End Class

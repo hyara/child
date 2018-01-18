@@ -45,14 +45,14 @@ Partial Class AdministratorForm
         Me.BnfImgBtnDelete = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.BunifuGradientPanel1 = New Bunifu.Framework.UI.BunifuGradientPanel()
+        Me.BnfFlatBtnRegister = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BunifuCustomLabel2 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BunifuCustomLabel1 = New Bunifu.Framework.UI.BunifuCustomLabel()
         Me.BnfFlatBtnMail = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.GroupBoxSearch = New System.Windows.Forms.GroupBox()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.ChkBoxDelete = New System.Windows.Forms.CheckBox()
-        Me.ChkBoxRetireFlg = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.BnfFlatBtnSearchClear = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BnfFlatBtnSearch = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -65,11 +65,11 @@ Partial Class AdministratorForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ClassName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LeaderName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CreatedDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UpdateDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BackgroundWorkerSQLConnect = New System.ComponentModel.BackgroundWorker()
         Me.GroupBoxSort.SuspendLayout()
         Me.header.SuspendLayout()
@@ -99,7 +99,7 @@ Partial Class AdministratorForm
         Me.GroupBoxSort.Size = New System.Drawing.Size(294, 214)
         Me.GroupBoxSort.TabIndex = 64
         Me.GroupBoxSort.TabStop = False
-        Me.GroupBoxSort.Text = "ソートボタン"
+        Me.GroupBoxSort.Text = "詳細検索"
         '
         'BnfFlatBtnSimpleSortCreateDate
         '
@@ -177,7 +177,7 @@ Partial Class AdministratorForm
         Me.BnfFlatBtnSimpleSortAny.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BnfFlatBtnSimpleSortAny.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BnfFlatBtnSimpleSortAny.BorderRadius = 0
-        Me.BnfFlatBtnSimpleSortAny.ButtonText = "　　なんか"
+        Me.BnfFlatBtnSimpleSortAny.ButtonText = "　　検索対象"
         Me.BnfFlatBtnSimpleSortAny.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BnfFlatBtnSimpleSortAny.DisabledColor = System.Drawing.Color.Gray
         Me.BnfFlatBtnSimpleSortAny.Iconcolor = System.Drawing.Color.Transparent
@@ -201,14 +201,14 @@ Partial Class AdministratorForm
         Me.BnfFlatBtnSimpleSortAny.selected = False
         Me.BnfFlatBtnSimpleSortAny.Size = New System.Drawing.Size(269, 54)
         Me.BnfFlatBtnSimpleSortAny.TabIndex = 42
-        Me.BnfFlatBtnSimpleSortAny.Text = "　　なんか"
+        Me.BnfFlatBtnSimpleSortAny.Text = "　　検索対象"
         Me.BnfFlatBtnSimpleSortAny.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BnfFlatBtnSimpleSortAny.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
         Me.BnfFlatBtnSimpleSortAny.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
         '
         'BnfFlatBtnChildTable
         '
-        Me.BnfFlatBtnChildTable.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BnfFlatBtnChildTable.Activecolor = System.Drawing.Color.SeaGreen
         Me.BnfFlatBtnChildTable.BackColor = System.Drawing.Color.Transparent
         Me.BnfFlatBtnChildTable.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BnfFlatBtnChildTable.BorderRadius = 0
@@ -243,7 +243,7 @@ Partial Class AdministratorForm
         '
         'BnfFlatBtnAll
         '
-        Me.BnfFlatBtnAll.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BnfFlatBtnAll.Activecolor = System.Drawing.Color.SeaGreen
         Me.BnfFlatBtnAll.BackColor = System.Drawing.Color.Transparent
         Me.BnfFlatBtnAll.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BnfFlatBtnAll.BorderRadius = 0
@@ -480,6 +480,8 @@ Partial Class AdministratorForm
         Me.BunifuGradientPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(101, Byte), Integer), CType(CType(160, Byte), Integer), CType(CType(123, Byte), Integer))
         Me.BunifuGradientPanel1.BackgroundImage = CType(resources.GetObject("BunifuGradientPanel1.BackgroundImage"), System.Drawing.Image)
         Me.BunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnRegister)
+        Me.BunifuGradientPanel1.Controls.Add(Me.BunifuCustomLabel2)
         Me.BunifuGradientPanel1.Controls.Add(Me.BunifuCustomLabel1)
         Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnMail)
         Me.BunifuGradientPanel1.Controls.Add(Me.BnfFlatBtnChildDiary)
@@ -496,6 +498,53 @@ Partial Class AdministratorForm
         Me.BunifuGradientPanel1.Quality = 10
         Me.BunifuGradientPanel1.Size = New System.Drawing.Size(219, 727)
         Me.BunifuGradientPanel1.TabIndex = 66
+        '
+        'BnfFlatBtnRegister
+        '
+        Me.BnfFlatBtnRegister.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
+        Me.BnfFlatBtnRegister.BackColor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnRegister.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BnfFlatBtnRegister.BorderRadius = 0
+        Me.BnfFlatBtnRegister.ButtonText = "　職員登録"
+        Me.BnfFlatBtnRegister.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BnfFlatBtnRegister.DisabledColor = System.Drawing.Color.Gray
+        Me.BnfFlatBtnRegister.Iconcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnRegister.Iconimage = CType(resources.GetObject("BnfFlatBtnRegister.Iconimage"), System.Drawing.Image)
+        Me.BnfFlatBtnRegister.Iconimage_right = Nothing
+        Me.BnfFlatBtnRegister.Iconimage_right_Selected = Nothing
+        Me.BnfFlatBtnRegister.Iconimage_Selected = Nothing
+        Me.BnfFlatBtnRegister.IconMarginLeft = 0
+        Me.BnfFlatBtnRegister.IconMarginRight = 0
+        Me.BnfFlatBtnRegister.IconRightVisible = True
+        Me.BnfFlatBtnRegister.IconRightZoom = 0.0R
+        Me.BnfFlatBtnRegister.IconVisible = True
+        Me.BnfFlatBtnRegister.IconZoom = 70.0R
+        Me.BnfFlatBtnRegister.IsTab = False
+        Me.BnfFlatBtnRegister.Location = New System.Drawing.Point(10, 442)
+        Me.BnfFlatBtnRegister.Margin = New System.Windows.Forms.Padding(6, 5, 6, 5)
+        Me.BnfFlatBtnRegister.Name = "BnfFlatBtnRegister"
+        Me.BnfFlatBtnRegister.Normalcolor = System.Drawing.Color.Transparent
+        Me.BnfFlatBtnRegister.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(66, Byte), Integer))
+        Me.BnfFlatBtnRegister.OnHoverTextColor = System.Drawing.Color.White
+        Me.BnfFlatBtnRegister.selected = False
+        Me.BnfFlatBtnRegister.Size = New System.Drawing.Size(195, 70)
+        Me.BnfFlatBtnRegister.TabIndex = 52
+        Me.BnfFlatBtnRegister.Text = "　職員登録"
+        Me.BnfFlatBtnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BnfFlatBtnRegister.Textcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BnfFlatBtnRegister.TextFont = New System.Drawing.Font("メイリオ", 10.0!, System.Drawing.FontStyle.Bold)
+        '
+        'BunifuCustomLabel2
+        '
+        Me.BunifuCustomLabel2.AutoSize = True
+        Me.BunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent
+        Me.BunifuCustomLabel2.Font = New System.Drawing.Font("メイリオ", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.BunifuCustomLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(102, Byte), Integer))
+        Me.BunifuCustomLabel2.Location = New System.Drawing.Point(47, 409)
+        Me.BunifuCustomLabel2.Name = "BunifuCustomLabel2"
+        Me.BunifuCustomLabel2.Size = New System.Drawing.Size(126, 28)
+        Me.BunifuCustomLabel2.TabIndex = 51
+        Me.BunifuCustomLabel2.Text = "編集書類変更"
         '
         'BunifuCustomLabel1
         '
@@ -565,62 +614,40 @@ Partial Class AdministratorForm
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
-        Me.TableLayoutPanel3.ColumnCount = 4
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.56204!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.43796!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160.0!))
-        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxDelete, 3, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.ChkBoxRetireFlg, 1, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 2, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Label3, 0, 0)
-        Me.TableLayoutPanel3.Location = New System.Drawing.Point(8, 154)
+        Me.TableLayoutPanel3.ColumnCount = 2
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 77.92208!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.07792!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180.0!))
+        Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanel3.Controls.Add(Me.CheckBox3, 0, 0)
+        Me.TableLayoutPanel3.Controls.Add(Me.Label5, 0, 0)
+        Me.TableLayoutPanel3.Location = New System.Drawing.Point(8, 156)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49.0!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(463, 50)
-        Me.TableLayoutPanel3.TabIndex = 53
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 47.0!))
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(244, 48)
+        Me.TableLayoutPanel3.TabIndex = 54
         '
-        'ChkBoxDelete
+        'CheckBox3
         '
-        Me.ChkBoxDelete.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.ChkBoxDelete.AutoSize = True
-        Me.ChkBoxDelete.Location = New System.Drawing.Point(410, 18)
-        Me.ChkBoxDelete.Name = "ChkBoxDelete"
-        Me.ChkBoxDelete.Size = New System.Drawing.Size(15, 14)
-        Me.ChkBoxDelete.TabIndex = 3
-        Me.ChkBoxDelete.UseVisualStyleBackColor = True
-        '
-        'ChkBoxRetireFlg
-        '
-        Me.ChkBoxRetireFlg.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.ChkBoxRetireFlg.AutoSize = True
-        Me.ChkBoxRetireFlg.Location = New System.Drawing.Point(182, 18)
-        Me.ChkBoxRetireFlg.Name = "ChkBoxRetireFlg"
-        Me.ChkBoxRetireFlg.Size = New System.Drawing.Size(15, 14)
-        Me.ChkBoxRetireFlg.TabIndex = 1
-        Me.ChkBoxRetireFlg.UseVisualStyleBackColor = True
+        Me.CheckBox3.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(208, 17)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
+        Me.CheckBox3.TabIndex = 5
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'Label5
         '
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(219, 11)
+        Me.Label5.Location = New System.Drawing.Point(22, 10)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(145, 28)
-        Me.Label5.TabIndex = 2
+        Me.Label5.TabIndex = 4
         Me.Label5.Text = "削除済みを含む"
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 11)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(145, 28)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "退職済みを含む"
         '
         'BnfFlatBtnSearchClear
         '
@@ -659,7 +686,7 @@ Partial Class AdministratorForm
         '
         'BnfFlatBtnSearch
         '
-        Me.BnfFlatBtnSearch.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.BnfFlatBtnSearch.Activecolor = System.Drawing.Color.SeaGreen
         Me.BnfFlatBtnSearch.BackColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(164, Byte), Integer))
         Me.BnfFlatBtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BnfFlatBtnSearch.BorderRadius = 0
@@ -697,7 +724,7 @@ Partial Class AdministratorForm
         Me.TableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.[Single]
         Me.TableLayoutPanel1.ColumnCount = 2
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 678.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 685.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label4, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBoxSearchAny, 1, 0)
@@ -718,11 +745,11 @@ Partial Class AdministratorForm
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label2.ForeColor = System.Drawing.Color.Gray
-        Me.Label2.Location = New System.Drawing.Point(35, 12)
+        Me.Label2.Location = New System.Drawing.Point(22, 12)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 28)
+        Me.Label2.Size = New System.Drawing.Size(88, 28)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "なんか"
+        Me.Label2.Text = "タイトル"
         '
         'Label4
         '
@@ -730,17 +757,17 @@ Partial Class AdministratorForm
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("メイリオ", 14.0!)
         Me.Label4.ForeColor = System.Drawing.Color.Gray
-        Me.Label4.Location = New System.Drawing.Point(26, 64)
+        Me.Label4.Location = New System.Drawing.Point(22, 64)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 28)
         Me.Label4.TabIndex = 1
-        Me.Label4.Text = "タイトル"
+        Me.Label4.Text = "クラス名"
         '
         'TextBoxSearchAny
         '
         Me.TextBoxSearchAny.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxSearchAny.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBoxSearchAny.Location = New System.Drawing.Point(149, 7)
+        Me.TextBoxSearchAny.Location = New System.Drawing.Point(146, 7)
         Me.TextBoxSearchAny.Name = "TextBoxSearchAny"
         Me.TextBoxSearchAny.Size = New System.Drawing.Size(659, 39)
         Me.TextBoxSearchAny.TabIndex = 2
@@ -749,7 +776,7 @@ Partial Class AdministratorForm
         '
         Me.TextBoxSearchTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.TextBoxSearchTitle.Font = New System.Drawing.Font("メイリオ", 16.0!)
-        Me.TextBoxSearchTitle.Location = New System.Drawing.Point(149, 59)
+        Me.TextBoxSearchTitle.Location = New System.Drawing.Point(146, 59)
         Me.TextBoxSearchTitle.Name = "TextBoxSearchTitle"
         Me.TextBoxSearchTitle.Size = New System.Drawing.Size(659, 39)
         Me.TextBoxSearchTitle.TabIndex = 3
@@ -789,7 +816,7 @@ Partial Class AdministratorForm
         Me.DataGridView.AllowUserToAddRows = False
         Me.DataGridView.AllowUserToDeleteRows = False
         Me.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.ClassName, Me.LeaderName, Me.CreatedDate, Me.UpdateDate, Me.Column1})
+        Me.DataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Type, Me.ClassName, Me.LeaderName, Me.CreatedDate, Me.UpdateDate})
         Me.DataGridView.Location = New System.Drawing.Point(225, 284)
         Me.DataGridView.Name = "DataGridView"
         Me.DataGridView.ReadOnly = True
@@ -805,40 +832,40 @@ Partial Class AdministratorForm
         Me.id.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
+        'Type
+        '
+        Me.Type.HeaderText = "書類の種類"
+        Me.Type.Name = "Type"
+        Me.Type.ReadOnly = True
+        Me.Type.Width = 132
+        '
         'ClassName
         '
         Me.ClassName.HeaderText = "クラス名"
         Me.ClassName.Name = "ClassName"
         Me.ClassName.ReadOnly = True
-        Me.ClassName.Width = 200
+        Me.ClassName.Width = 225
         '
         'LeaderName
         '
         Me.LeaderName.HeaderText = "指導者名"
         Me.LeaderName.Name = "LeaderName"
         Me.LeaderName.ReadOnly = True
-        Me.LeaderName.Width = 200
+        Me.LeaderName.Width = 225
         '
         'CreatedDate
         '
         Me.CreatedDate.HeaderText = "作成日"
         Me.CreatedDate.Name = "CreatedDate"
         Me.CreatedDate.ReadOnly = True
-        Me.CreatedDate.Width = 250
+        Me.CreatedDate.Width = 200
         '
         'UpdateDate
         '
         Me.UpdateDate.HeaderText = "更新日"
         Me.UpdateDate.Name = "UpdateDate"
         Me.UpdateDate.ReadOnly = True
-        Me.UpdateDate.Width = 250
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        Me.Column1.Width = 118
+        Me.UpdateDate.Width = 200
         '
         'BackgroundWorkerSQLConnect
         '
@@ -908,11 +935,6 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents BunifuGradientPanel1 As Bunifu.Framework.UI.BunifuGradientPanel
     Friend WithEvents GroupBoxSearch As System.Windows.Forms.GroupBox
-    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
-    Friend WithEvents ChkBoxDelete As System.Windows.Forms.CheckBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents ChkBoxRetireFlg As System.Windows.Forms.CheckBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents BnfFlatBtnSearchClear As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BnfFlatBtnSearch As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents TableLayoutPanel1 As System.Windows.Forms.TableLayoutPanel
@@ -926,12 +948,17 @@ Partial Class AdministratorForm
     Friend WithEvents BunifuCustomLabel1 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BnfFlatBtnMail As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents DataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents BackgroundWorkerSQLConnect As System.ComponentModel.BackgroundWorker
+    Friend WithEvents LabelSQLStatus As System.Windows.Forms.Label
+    Friend WithEvents TableLayoutPanel3 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents BnfFlatBtnRegister As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BunifuCustomLabel2 As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents id As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents Type As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ClassName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents LeaderName As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CreatedDate As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UpdateDate As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents BackgroundWorkerSQLConnect As System.ComponentModel.BackgroundWorker
-    Friend WithEvents LabelSQLStatus As System.Windows.Forms.Label
 End Class
